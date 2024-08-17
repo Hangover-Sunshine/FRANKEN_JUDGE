@@ -20,7 +20,7 @@ TRANSITIONS = Array[Resource("res://addons/verho/resources/TransitionResource.gd
 [node name="FactionStats" type="Node" parent="."]
 script = ExtResource("4_fdghg")
 
-[node name="ReptuationStats" type="Node" parent="."]
+[node name="RepuationStats" type="Node" parent="."]
 script = ExtResource("5_4xgmw")
 
 [node name="HubPause" parent="." instance=ExtResource("7_3lo3u")]
