@@ -1,10 +1,13 @@
-[gd_scene load_steps=13 format=3 uid="uid://2nl8bwm5pvgk"]
+[gd_scene load_steps=22 format=3 uid="uid://2nl8bwm5pvgk"]
 
 [ext_resource type="Script" path="res://addons/verho/resources/TransitionBank.gd" id="1_8l5ad"]
 [ext_resource type="Resource" uid="uid://cokyxyvryfnhm" path="res://prefabs/transitions/black_fade.tres" id="2_vph7e"]
 [ext_resource type="FontFile" uid="uid://73eyyuro8nvv" path="res://assets/fonts/PirataOne.ttf" id="3_0g7i0"]
 [ext_resource type="Shader" path="res://scenes/background.gdshader" id="4_qemv0"]
 [ext_resource type="FontFile" uid="uid://cqxld14ctgocv" path="res://assets/fonts/MedulaOne.ttf" id="4_ruet7"]
+[ext_resource type="Texture2D" uid="uid://dntpgbii5m0bl" path="res://assets/particle/FJ_Triangle.png" id="5_l46yl"]
+[ext_resource type="Texture2D" uid="uid://sublheuvq7ev" path="res://assets/particle/FJ_Square.png" id="6_m1qif"]
+[ext_resource type="Texture2D" uid="uid://7tbs218cpwgv" path="res://assets/particle/FJ_Circle.png" id="7_iuc0u"]
 
 [sub_resource type="Animation" id="Animation_glr1j"]
 length = 0.001
@@ -20,25 +23,65 @@ _data = {
 "sdfedsf": SubResource("Animation_hm1ql")
 }
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_autsm"]
-bg_color = Color(0.341176, 0.341176, 0.341176, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_63sq7"]
+bg_color = Color(0.0784314, 0.4, 0.356863, 1)
 corner_radius_top_left = 50
 corner_radius_top_right = 50
 corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oho6b"]
-bg_color = Color(0.568973, 0.568973, 0.568973, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_82deb"]
+bg_color = Color(0.258824, 0.737255, 0.498039, 1)
 corner_radius_top_left = 50
 corner_radius_top_right = 50
 corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 
-[sub_resource type="Theme" id="Theme_6fum4"]
+[sub_resource type="Theme" id="Theme_lvfo6"]
 ProgressBar/font_sizes/font_size = 40
 ProgressBar/fonts/font = ExtResource("4_ruet7")
-ProgressBar/styles/background = SubResource("StyleBoxFlat_autsm")
-ProgressBar/styles/fill = SubResource("StyleBoxFlat_oho6b")
+ProgressBar/styles/background = SubResource("StyleBoxFlat_63sq7")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_82deb")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dlile"]
+bg_color = Color(0.364706, 0.184314, 0.54902, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ip0co"]
+bg_color = Color(0.705882, 0.513726, 0.937255, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="Theme" id="Theme_j7iwl"]
+ProgressBar/font_sizes/font_size = 40
+ProgressBar/fonts/font = ExtResource("4_ruet7")
+ProgressBar/styles/background = SubResource("StyleBoxFlat_dlile")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_ip0co")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6ovd8"]
+bg_color = Color(0.698039, 0.235294, 0.25098, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qb33q"]
+bg_color = Color(0.975779, 0.606596, 0.319656, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="Theme" id="Theme_p6xst"]
+ProgressBar/font_sizes/font_size = 40
+ProgressBar/fonts/font = ExtResource("4_ruet7")
+ProgressBar/styles/background = SubResource("StyleBoxFlat_6ovd8")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_qb33q")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3xfqu"]
 shader = ExtResource("4_qemv0")
@@ -72,16 +115,15 @@ position = Vector2(960, 0)
 [node name="Portrait" type="Control" parent="TopRow"]
 layout_mode = 3
 anchors_preset = 0
-offset_top = 247.0
-offset_bottom = 247.0
 
 [node name="ColorRect" type="ColorRect" parent="TopRow/Portrait"]
 show_behind_parent = true
 layout_mode = 0
-offset_left = -122.0
-offset_top = -137.0
-offset_right = 128.0
-offset_bottom = 113.0
+offset_left = -170.0
+offset_top = 33.0
+offset_right = 130.0
+offset_bottom = 333.0
+scale = Vector2(1.19381, 1.19381)
 
 [node name="ColorRect2" type="ColorRect" parent="TopRow/Portrait/ColorRect"]
 layout_mode = 0
@@ -89,7 +131,7 @@ offset_left = 18.0
 offset_top = 17.0
 offset_right = 298.0
 offset_bottom = 297.0
-scale = Vector2(0.754408, 0.754408)
+scale = Vector2(0.924738, 0.928248)
 color = Color(0.666667, 0.658824, 0.619608, 1)
 
 [node name="TextureRect" type="TextureRect" parent="TopRow/Portrait"]
@@ -100,63 +142,67 @@ offset_bottom = 40.0
 [node name="Reputation" type="Control" parent="TopRow"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = -688.0
-offset_top = 20.0
-offset_right = -648.0
-offset_bottom = 60.0
+offset_left = -843.0
+offset_top = 53.0
+offset_right = -803.0
+offset_bottom = 93.0
 
-[node name="Vbox_Reputation" type="VBoxContainer" parent="TopRow/Reputation"]
+[node name="Reputation_Vbox" type="VBoxContainer" parent="TopRow/Reputation"]
+custom_minimum_size = Vector2(650, 0)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -88.0
-offset_top = 95.0
-offset_right = 439.0
-offset_bottom = 301.0
+offset_left = 4.0
+offset_top = 3.0
+offset_right = 614.0
+offset_bottom = 272.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 10
 
-[node name="Header_Reputation" type="Label" parent="TopRow/Reputation/Vbox_Reputation"]
+[node name="Reputation_Header" type="Label" parent="TopRow/Reputation/Reputation_Vbox"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_0g7i0")
 theme_override_font_sizes/font_size = 60
 text = "Reputation"
 horizontal_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="TopRow/Reputation/Vbox_Reputation"]
+[node name="Reputation_Hbox" type="HBoxContainer" parent="TopRow/Reputation/Reputation_Vbox"]
 layout_mode = 2
+theme_override_constants/separation = 20
 
-[node name="VBoxContainer" type="VBoxContainer" parent="TopRow/Reputation/Vbox_Reputation/HBoxContainer"]
+[node name="Reputation_Vbox" type="VBoxContainer" parent="TopRow/Reputation/Reputation_Vbox/Reputation_Hbox"]
 layout_mode = 2
+theme_override_constants/separation = 10
 
-[node name="Peasantry" type="HBoxContainer" parent="TopRow/Reputation/Vbox_Reputation/HBoxContainer/VBoxContainer"]
+[node name="Rep_Peasantry_Hbox" type="HBoxContainer" parent="TopRow/Reputation/Reputation_Vbox/Reputation_Hbox/Reputation_Vbox"]
 layout_mode = 2
 theme_override_constants/separation = 15
 alignment = 1
 
-[node name="Label_Peasantry" type="Label" parent="TopRow/Reputation/Vbox_Reputation/HBoxContainer/VBoxContainer/Peasantry"]
+[node name="Peasantry_Label" type="Label" parent="TopRow/Reputation/Reputation_Vbox/Reputation_Hbox/Reputation_Vbox/Rep_Peasantry_Hbox"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_ruet7")
 theme_override_font_sizes/font_size = 50
 text = "Peasantry"
 horizontal_alignment = 2
 
-[node name="Bar_Peasantry" type="ProgressBar" parent="TopRow/Reputation/Vbox_Reputation/HBoxContainer/VBoxContainer/Peasantry"]
+[node name="Peasantry_Rep_Bar" type="ProgressBar" parent="TopRow/Reputation/Reputation_Vbox/Reputation_Hbox/Reputation_Vbox/Rep_Peasantry_Hbox"]
 custom_minimum_size = Vector2(350, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
-theme = SubResource("Theme_6fum4")
+theme = SubResource("Theme_lvfo6")
 step = 1.0
 value = 50.0
 
-[node name="Peasantry2" type="HBoxContainer" parent="TopRow/Reputation/Vbox_Reputation/HBoxContainer/VBoxContainer"]
+[node name="Rep_Nobility_Hbox" type="HBoxContainer" parent="TopRow/Reputation/Reputation_Vbox/Reputation_Hbox/Reputation_Vbox"]
 layout_mode = 2
 theme_override_constants/separation = 15
 alignment = 1
 
-[node name="Label_Peasantry" type="Label" parent="TopRow/Reputation/Vbox_Reputation/HBoxContainer/VBoxContainer/Peasantry2"]
+[node name="Nobility_Label" type="Label" parent="TopRow/Reputation/Reputation_Vbox/Reputation_Hbox/Reputation_Vbox/Rep_Nobility_Hbox"]
 custom_minimum_size = Vector2(133, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_ruet7")
@@ -164,21 +210,21 @@ theme_override_font_sizes/font_size = 50
 text = "Nobility"
 horizontal_alignment = 2
 
-[node name="Bar_Peasantry" type="ProgressBar" parent="TopRow/Reputation/Vbox_Reputation/HBoxContainer/VBoxContainer/Peasantry2"]
+[node name="Nobility_Rep_Bar" type="ProgressBar" parent="TopRow/Reputation/Reputation_Vbox/Reputation_Hbox/Reputation_Vbox/Rep_Nobility_Hbox"]
 custom_minimum_size = Vector2(350, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
-theme = SubResource("Theme_6fum4")
+theme = SubResource("Theme_j7iwl")
 step = 1.0
 value = 50.0
 
-[node name="Peasantry3" type="HBoxContainer" parent="TopRow/Reputation/Vbox_Reputation/HBoxContainer/VBoxContainer"]
+[node name="Rep_Clergy_Hbox" type="HBoxContainer" parent="TopRow/Reputation/Reputation_Vbox/Reputation_Hbox/Reputation_Vbox"]
 layout_mode = 2
 theme_override_constants/separation = 15
 alignment = 1
 
-[node name="Label_Peasantry" type="Label" parent="TopRow/Reputation/Vbox_Reputation/HBoxContainer/VBoxContainer/Peasantry3"]
+[node name="Clergy_Label" type="Label" parent="TopRow/Reputation/Reputation_Vbox/Reputation_Hbox/Reputation_Vbox/Rep_Clergy_Hbox"]
 custom_minimum_size = Vector2(133, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_ruet7")
@@ -186,19 +232,20 @@ theme_override_font_sizes/font_size = 50
 text = "Clergy"
 horizontal_alignment = 2
 
-[node name="Bar_Peasantry" type="ProgressBar" parent="TopRow/Reputation/Vbox_Reputation/HBoxContainer/VBoxContainer/Peasantry3"]
+[node name="Clergy_Rep_Bar" type="ProgressBar" parent="TopRow/Reputation/Reputation_Vbox/Reputation_Hbox/Reputation_Vbox/Rep_Clergy_Hbox"]
 custom_minimum_size = Vector2(350, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
-theme = SubResource("Theme_6fum4")
+theme = SubResource("Theme_p6xst")
 step = 1.0
 value = 50.0
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="TopRow/Reputation/Vbox_Reputation/HBoxContainer"]
+[node name="Reputation_Rates_Vbox" type="VBoxContainer" parent="TopRow/Reputation/Reputation_Vbox/Reputation_Hbox"]
 layout_mode = 2
+theme_override_constants/separation = 10
 
-[node name="Label_Clergy4" type="Label" parent="TopRow/Reputation/Vbox_Reputation/HBoxContainer/VBoxContainer2"]
+[node name="Peasantry_Rep_Rate" type="Label" parent="TopRow/Reputation/Reputation_Vbox/Reputation_Hbox/Reputation_Rates_Vbox"]
 custom_minimum_size = Vector2(65, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_ruet7")
@@ -206,7 +253,7 @@ theme_override_font_sizes/font_size = 50
 text = "(+00)"
 horizontal_alignment = 1
 
-[node name="Label_Clergy5" type="Label" parent="TopRow/Reputation/Vbox_Reputation/HBoxContainer/VBoxContainer2"]
+[node name="Nobility_Rep_Rate" type="Label" parent="TopRow/Reputation/Reputation_Vbox/Reputation_Hbox/Reputation_Rates_Vbox"]
 custom_minimum_size = Vector2(65, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_ruet7")
@@ -214,205 +261,453 @@ theme_override_font_sizes/font_size = 50
 text = "(+00)"
 horizontal_alignment = 1
 
-[node name="Label_Clergy6" type="Label" parent="TopRow/Reputation/Vbox_Reputation/HBoxContainer/VBoxContainer2"]
+[node name="Clergy_Rep_Rate" type="Label" parent="TopRow/Reputation/Reputation_Vbox/Reputation_Hbox/Reputation_Rates_Vbox"]
 custom_minimum_size = Vector2(65, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_ruet7")
 theme_override_font_sizes/font_size = 50
 text = "(+00)"
 horizontal_alignment = 1
+
+[node name="Reputation_Icons" type="HBoxContainer" parent="TopRow/Reputation/Reputation_Vbox"]
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="TopRow/Reputation/Reputation_Vbox/Reputation_Icons"]
+modulate = Color(0.258824, 0.737255, 0.498039, 1)
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+texture = ExtResource("5_l46yl")
+
+[node name="TextureRect2" type="TextureRect" parent="TopRow/Reputation/Reputation_Vbox/Reputation_Icons"]
+modulate = Color(0.705882, 0.513726, 0.937255, 1)
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+texture = ExtResource("6_m1qif")
+
+[node name="TextureRect3" type="TextureRect" parent="TopRow/Reputation/Reputation_Vbox/Reputation_Icons"]
+modulate = Color(0.976471, 0.607843, 0.317647, 1)
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+texture = ExtResource("7_iuc0u")
 
 [node name="Society" type="Control" parent="TopRow"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 313.0
-offset_top = 20.0
-offset_right = 353.0
-offset_bottom = 60.0
+offset_left = 232.0
+offset_top = 62.0
+offset_right = 232.0
+offset_bottom = 62.0
 
-[node name="Vbox_Reputation" type="VBoxContainer" parent="TopRow/Society"]
+[node name="Society_Vbox" type="VBoxContainer" parent="TopRow/Society"]
 layout_mode = 0
-offset_left = -77.0
-offset_right = 451.82
-offset_bottom = 367.0
+offset_left = 19.0
+offset_top = 1.0
+offset_right = 641.0
+offset_bottom = 308.0
+theme_override_constants/separation = -5
 
-[node name="Header_Society" type="Label" parent="TopRow/Society/Vbox_Reputation"]
+[node name="Society_Hbox" type="HBoxContainer" parent="TopRow/Society/Society_Vbox"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_0g7i0")
-theme_override_font_sizes/font_size = 60
-text = "Society"
-horizontal_alignment = 1
-
-[node name="Hbox_SocietyRank" type="HBoxContainer" parent="TopRow/Society/Vbox_Reputation"]
-layout_mode = 2
-theme_override_constants/separation = 15
+size_flags_horizontal = 0
+theme_override_constants/separation = 20
 alignment = 1
 
-[node name="Hbox_Headers" type="VBoxContainer" parent="TopRow/Society/Vbox_Reputation/Hbox_SocietyRank"]
+[node name="Society_Header_Hbox" type="VBoxContainer" parent="TopRow/Society/Society_Vbox/Society_Hbox"]
 layout_mode = 2
+alignment = 2
 
-[node name="Label_Taxation" type="Label" parent="TopRow/Society/Vbox_Reputation/Hbox_SocietyRank/Hbox_Headers"]
+[node name="Taxation_Label" type="Label" parent="TopRow/Society/Society_Vbox/Society_Hbox/Society_Header_Hbox"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_ruet7")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 45
 text = "Taxation"
 horizontal_alignment = 2
 
-[node name="Label_Taxation2" type="Label" parent="TopRow/Society/Vbox_Reputation/Hbox_SocietyRank/Hbox_Headers"]
+[node name="Literacy_Label" type="Label" parent="TopRow/Society/Society_Vbox/Society_Hbox/Society_Header_Hbox"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_ruet7")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 45
 text = "Literacy"
 horizontal_alignment = 2
 
-[node name="Label_Taxation3" type="Label" parent="TopRow/Society/Vbox_Reputation/Hbox_SocietyRank/Hbox_Headers"]
+[node name="Policing_Label" type="Label" parent="TopRow/Society/Society_Vbox/Society_Hbox/Society_Header_Hbox"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_ruet7")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 45
 text = "Policing"
 horizontal_alignment = 2
 
-[node name="Label_Taxation4" type="Label" parent="TopRow/Society/Vbox_Reputation/Hbox_SocietyRank/Hbox_Headers"]
+[node name="Labor_Label" type="Label" parent="TopRow/Society/Society_Vbox/Society_Hbox/Society_Header_Hbox"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_ruet7")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 45
 text = "Labor"
 horizontal_alignment = 2
 
-[node name="Label_Taxation5" type="Label" parent="TopRow/Society/Vbox_Reputation/Hbox_SocietyRank/Hbox_Headers"]
+[node name="Healthcare_Label" type="Label" parent="TopRow/Society/Society_Vbox/Society_Hbox/Society_Header_Hbox"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_ruet7")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 45
 text = "Healthcare"
 horizontal_alignment = 2
 
-[node name="Hbox_Peasantry" type="VBoxContainer" parent="TopRow/Society/Vbox_Reputation/Hbox_SocietyRank"]
+[node name="Peasantry" type="VBoxContainer" parent="TopRow/Society/Society_Vbox/Society_Hbox"]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
-[node name="Label_Taxation" type="Label" parent="TopRow/Society/Vbox_Reputation/Hbox_SocietyRank/Hbox_Peasantry"]
+[node name="Peasant_Header" type="Label" parent="TopRow/Society/Society_Vbox/Society_Hbox/Peasantry"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_ruet7")
 theme_override_font_sizes/font_size = 50
+text = "Peasantry"
+horizontal_alignment = 1
+
+[node name="Society_Peasant_Ranks_Hbox" type="HBoxContainer" parent="TopRow/Society/Society_Vbox/Society_Hbox/Peasantry"]
+layout_mode = 2
+alignment = 1
+
+[node name="Vbox_Peasantry" type="VBoxContainer" parent="TopRow/Society/Society_Vbox/Society_Hbox/Peasantry/Society_Peasant_Ranks_Hbox"]
+layout_mode = 2
+alignment = 1
+
+[node name="Peasant_Tax_Hbox" type="HBoxContainer" parent="TopRow/Society/Society_Vbox/Society_Hbox/Peasantry/Society_Peasant_Ranks_Hbox/Vbox_Peasantry"]
+custom_minimum_size = Vector2(145, 0)
+layout_mode = 2
+alignment = 1
+
+[node name="Peasant_Tax" type="Label" parent="TopRow/Society/Society_Vbox/Society_Hbox/Peasantry/Society_Peasant_Ranks_Hbox/Vbox_Peasantry/Peasant_Tax_Hbox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 45
 text = "000%"
-horizontal_alignment = 2
+horizontal_alignment = 1
 
-[node name="Label_Taxation2" type="Label" parent="TopRow/Society/Vbox_Reputation/Hbox_SocietyRank/Hbox_Peasantry"]
+[node name="Peasant_Tax_GL" type="Label" parent="TopRow/Society/Society_Vbox/Society_Hbox/Peasantry/Society_Peasant_Ranks_Hbox/Vbox_Peasantry/Peasant_Tax_Hbox"]
+visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_ruet7")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 45
+text = "(+00%)"
+
+[node name="Peasant_Lit_Hbox" type="HBoxContainer" parent="TopRow/Society/Society_Vbox/Society_Hbox/Peasantry/Society_Peasant_Ranks_Hbox/Vbox_Peasantry"]
+custom_minimum_size = Vector2(145, 0)
+layout_mode = 2
+alignment = 1
+
+[node name="Peasant_Lit" type="Label" parent="TopRow/Society/Society_Vbox/Society_Hbox/Peasantry/Society_Peasant_Ranks_Hbox/Vbox_Peasantry/Peasant_Lit_Hbox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 45
 text = "00"
-horizontal_alignment = 2
+horizontal_alignment = 1
 
-[node name="Label_Taxation3" type="Label" parent="TopRow/Society/Vbox_Reputation/Hbox_SocietyRank/Hbox_Peasantry"]
+[node name="Peasant_Lit_GL" type="Label" parent="TopRow/Society/Society_Vbox/Society_Hbox/Peasantry/Society_Peasant_Ranks_Hbox/Vbox_Peasantry/Peasant_Lit_Hbox"]
+visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_ruet7")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 45
+text = "(+00)"
+
+[node name="Peasant_Pol_Hbox" type="HBoxContainer" parent="TopRow/Society/Society_Vbox/Society_Hbox/Peasantry/Society_Peasant_Ranks_Hbox/Vbox_Peasantry"]
+custom_minimum_size = Vector2(145, 0)
+layout_mode = 2
+alignment = 1
+
+[node name="Peasant_Pol" type="Label" parent="TopRow/Society/Society_Vbox/Society_Hbox/Peasantry/Society_Peasant_Ranks_Hbox/Vbox_Peasantry/Peasant_Pol_Hbox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 45
 text = "00"
-horizontal_alignment = 2
+horizontal_alignment = 1
 
-[node name="Label_Taxation4" type="Label" parent="TopRow/Society/Vbox_Reputation/Hbox_SocietyRank/Hbox_Peasantry"]
+[node name="Peasant_Pol_GL" type="Label" parent="TopRow/Society/Society_Vbox/Society_Hbox/Peasantry/Society_Peasant_Ranks_Hbox/Vbox_Peasantry/Peasant_Pol_Hbox"]
+visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_ruet7")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 45
+text = "(+00)"
+
+[node name="Peasant_Lab_Hbox" type="HBoxContainer" parent="TopRow/Society/Society_Vbox/Society_Hbox/Peasantry/Society_Peasant_Ranks_Hbox/Vbox_Peasantry"]
+custom_minimum_size = Vector2(145, 0)
+layout_mode = 2
+alignment = 1
+
+[node name="Peasant_Lab_Rank" type="Label" parent="TopRow/Society/Society_Vbox/Society_Hbox/Peasantry/Society_Peasant_Ranks_Hbox/Vbox_Peasantry/Peasant_Lab_Hbox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 45
 text = "00"
-horizontal_alignment = 2
+horizontal_alignment = 1
 
-[node name="Label_Taxation5" type="Label" parent="TopRow/Society/Vbox_Reputation/Hbox_SocietyRank/Hbox_Peasantry"]
+[node name="Peasant_Lab_GL" type="Label" parent="TopRow/Society/Society_Vbox/Society_Hbox/Peasantry/Society_Peasant_Ranks_Hbox/Vbox_Peasantry/Peasant_Lab_Hbox"]
+visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_ruet7")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 45
+text = "(+00)"
+
+[node name="Peasant_Hea_Hbox" type="HBoxContainer" parent="TopRow/Society/Society_Vbox/Society_Hbox/Peasantry/Society_Peasant_Ranks_Hbox/Vbox_Peasantry"]
+custom_minimum_size = Vector2(145, 0)
+layout_mode = 2
+alignment = 1
+
+[node name="Peasant_Hea_Rank" type="Label" parent="TopRow/Society/Society_Vbox/Society_Hbox/Peasantry/Society_Peasant_Ranks_Hbox/Vbox_Peasantry/Peasant_Hea_Hbox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 45
 text = "00"
-horizontal_alignment = 2
+horizontal_alignment = 1
 
-[node name="Hbox_Nobility" type="VBoxContainer" parent="TopRow/Society/Vbox_Reputation/Hbox_SocietyRank"]
+[node name="Peasant_Hea_GL" type="Label" parent="TopRow/Society/Society_Vbox/Society_Hbox/Peasantry/Society_Peasant_Ranks_Hbox/Vbox_Peasantry/Peasant_Hea_Hbox"]
+visible = false
 layout_mode = 2
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 45
+text = "(+00)"
 
-[node name="Label_Taxation" type="Label" parent="TopRow/Society/Vbox_Reputation/Hbox_SocietyRank/Hbox_Nobility"]
+[node name="Nobility" type="VBoxContainer" parent="TopRow/Society/Society_Vbox/Society_Hbox"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Nobility_Header" type="Label" parent="TopRow/Society/Society_Vbox/Society_Hbox/Nobility"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_ruet7")
 theme_override_font_sizes/font_size = 50
+text = "Peasantry"
+horizontal_alignment = 1
+
+[node name="Society_Nobility_Ranks_Hbox" type="HBoxContainer" parent="TopRow/Society/Society_Vbox/Society_Hbox/Nobility"]
+layout_mode = 2
+alignment = 1
+
+[node name="Vbox_Nobility" type="VBoxContainer" parent="TopRow/Society/Society_Vbox/Society_Hbox/Nobility/Society_Nobility_Ranks_Hbox"]
+layout_mode = 2
+alignment = 1
+
+[node name="Nobility_Tax_Hbox" type="HBoxContainer" parent="TopRow/Society/Society_Vbox/Society_Hbox/Nobility/Society_Nobility_Ranks_Hbox/Vbox_Nobility"]
+custom_minimum_size = Vector2(145, 0)
+layout_mode = 2
+alignment = 1
+
+[node name="Nobility_Tax" type="Label" parent="TopRow/Society/Society_Vbox/Society_Hbox/Nobility/Society_Nobility_Ranks_Hbox/Vbox_Nobility/Nobility_Tax_Hbox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 45
 text = "000%"
-horizontal_alignment = 2
+horizontal_alignment = 1
 
-[node name="Label_Taxation2" type="Label" parent="TopRow/Society/Vbox_Reputation/Hbox_SocietyRank/Hbox_Nobility"]
+[node name="Nobility_Tax_GL" type="Label" parent="TopRow/Society/Society_Vbox/Society_Hbox/Nobility/Society_Nobility_Ranks_Hbox/Vbox_Nobility/Nobility_Tax_Hbox"]
+visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_ruet7")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 45
+text = "(+00%)"
+
+[node name="Nobility_Lit_Hbox" type="HBoxContainer" parent="TopRow/Society/Society_Vbox/Society_Hbox/Nobility/Society_Nobility_Ranks_Hbox/Vbox_Nobility"]
+custom_minimum_size = Vector2(145, 0)
+layout_mode = 2
+alignment = 1
+
+[node name="Nobility_Lit" type="Label" parent="TopRow/Society/Society_Vbox/Society_Hbox/Nobility/Society_Nobility_Ranks_Hbox/Vbox_Nobility/Nobility_Lit_Hbox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 45
 text = "00"
-horizontal_alignment = 2
+horizontal_alignment = 1
 
-[node name="Label_Taxation3" type="Label" parent="TopRow/Society/Vbox_Reputation/Hbox_SocietyRank/Hbox_Nobility"]
+[node name="Nobility_Lit_GL" type="Label" parent="TopRow/Society/Society_Vbox/Society_Hbox/Nobility/Society_Nobility_Ranks_Hbox/Vbox_Nobility/Nobility_Lit_Hbox"]
+visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_ruet7")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 45
+text = "(+00)"
+
+[node name="Nobility_Pol_Hbox" type="HBoxContainer" parent="TopRow/Society/Society_Vbox/Society_Hbox/Nobility/Society_Nobility_Ranks_Hbox/Vbox_Nobility"]
+custom_minimum_size = Vector2(145, 0)
+layout_mode = 2
+alignment = 1
+
+[node name="Nobility_Pol" type="Label" parent="TopRow/Society/Society_Vbox/Society_Hbox/Nobility/Society_Nobility_Ranks_Hbox/Vbox_Nobility/Nobility_Pol_Hbox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 45
 text = "00"
-horizontal_alignment = 2
+horizontal_alignment = 1
 
-[node name="Label_Taxation4" type="Label" parent="TopRow/Society/Vbox_Reputation/Hbox_SocietyRank/Hbox_Nobility"]
+[node name="Nobility_Pol_GL" type="Label" parent="TopRow/Society/Society_Vbox/Society_Hbox/Nobility/Society_Nobility_Ranks_Hbox/Vbox_Nobility/Nobility_Pol_Hbox"]
+visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_ruet7")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 45
+text = "(+00)"
+
+[node name="Nobility_Lab_Hbox" type="HBoxContainer" parent="TopRow/Society/Society_Vbox/Society_Hbox/Nobility/Society_Nobility_Ranks_Hbox/Vbox_Nobility"]
+custom_minimum_size = Vector2(145, 0)
+layout_mode = 2
+alignment = 1
+
+[node name="Nobility_Lab_Rank" type="Label" parent="TopRow/Society/Society_Vbox/Society_Hbox/Nobility/Society_Nobility_Ranks_Hbox/Vbox_Nobility/Nobility_Lab_Hbox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 45
 text = "00"
-horizontal_alignment = 2
+horizontal_alignment = 1
 
-[node name="Label_Taxation5" type="Label" parent="TopRow/Society/Vbox_Reputation/Hbox_SocietyRank/Hbox_Nobility"]
+[node name="Nobility_Lab_GL" type="Label" parent="TopRow/Society/Society_Vbox/Society_Hbox/Nobility/Society_Nobility_Ranks_Hbox/Vbox_Nobility/Nobility_Lab_Hbox"]
+visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_ruet7")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 45
+text = "(+00)"
+
+[node name="Nobility_Hea_Hbox" type="HBoxContainer" parent="TopRow/Society/Society_Vbox/Society_Hbox/Nobility/Society_Nobility_Ranks_Hbox/Vbox_Nobility"]
+custom_minimum_size = Vector2(145, 0)
+layout_mode = 2
+alignment = 1
+
+[node name="Nobility_Hea_Rank" type="Label" parent="TopRow/Society/Society_Vbox/Society_Hbox/Nobility/Society_Nobility_Ranks_Hbox/Vbox_Nobility/Nobility_Hea_Hbox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 45
 text = "00"
-horizontal_alignment = 2
+horizontal_alignment = 1
 
-[node name="Hbox_Clergy" type="VBoxContainer" parent="TopRow/Society/Vbox_Reputation/Hbox_SocietyRank"]
+[node name="Nobility_Hea_GL" type="Label" parent="TopRow/Society/Society_Vbox/Society_Hbox/Nobility/Society_Nobility_Ranks_Hbox/Vbox_Nobility/Nobility_Hea_Hbox"]
+visible = false
 layout_mode = 2
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 45
+text = "(+00)"
 
-[node name="Label_Taxation" type="Label" parent="TopRow/Society/Vbox_Reputation/Hbox_SocietyRank/Hbox_Clergy"]
+[node name="Clergy" type="VBoxContainer" parent="TopRow/Society/Society_Vbox/Society_Hbox"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Clergy_Header" type="Label" parent="TopRow/Society/Society_Vbox/Society_Hbox/Clergy"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_ruet7")
 theme_override_font_sizes/font_size = 50
+text = "Clergy"
+horizontal_alignment = 1
+
+[node name="Society_Clergy_Ranks_Hbox" type="HBoxContainer" parent="TopRow/Society/Society_Vbox/Society_Hbox/Clergy"]
+layout_mode = 2
+alignment = 1
+
+[node name="Vbox_Clergy" type="VBoxContainer" parent="TopRow/Society/Society_Vbox/Society_Hbox/Clergy/Society_Clergy_Ranks_Hbox"]
+layout_mode = 2
+alignment = 1
+
+[node name="Clergy_Tax_Hbox" type="HBoxContainer" parent="TopRow/Society/Society_Vbox/Society_Hbox/Clergy/Society_Clergy_Ranks_Hbox/Vbox_Clergy"]
+custom_minimum_size = Vector2(145, 0)
+layout_mode = 2
+alignment = 1
+
+[node name="Clergy_Tax" type="Label" parent="TopRow/Society/Society_Vbox/Society_Hbox/Clergy/Society_Clergy_Ranks_Hbox/Vbox_Clergy/Clergy_Tax_Hbox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 45
 text = "000%"
-horizontal_alignment = 2
+horizontal_alignment = 1
 
-[node name="Label_Taxation2" type="Label" parent="TopRow/Society/Vbox_Reputation/Hbox_SocietyRank/Hbox_Clergy"]
+[node name="Clergy_Tax_GL" type="Label" parent="TopRow/Society/Society_Vbox/Society_Hbox/Clergy/Society_Clergy_Ranks_Hbox/Vbox_Clergy/Clergy_Tax_Hbox"]
+visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_ruet7")
-theme_override_font_sizes/font_size = 50
-text = "00"
-horizontal_alignment = 2
+theme_override_font_sizes/font_size = 45
+text = "(+00%)"
 
-[node name="Label_Taxation3" type="Label" parent="TopRow/Society/Vbox_Reputation/Hbox_SocietyRank/Hbox_Clergy"]
+[node name="Clergy_Lit_Hbox" type="HBoxContainer" parent="TopRow/Society/Society_Vbox/Society_Hbox/Clergy/Society_Clergy_Ranks_Hbox/Vbox_Clergy"]
+custom_minimum_size = Vector2(145, 0)
+layout_mode = 2
+alignment = 1
+
+[node name="Clergy_Lit" type="Label" parent="TopRow/Society/Society_Vbox/Society_Hbox/Clergy/Society_Clergy_Ranks_Hbox/Vbox_Clergy/Clergy_Lit_Hbox"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_ruet7")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 45
 text = "00"
-horizontal_alignment = 2
+horizontal_alignment = 1
 
-[node name="Label_Taxation4" type="Label" parent="TopRow/Society/Vbox_Reputation/Hbox_SocietyRank/Hbox_Clergy"]
+[node name="Clergy_Lit_GL" type="Label" parent="TopRow/Society/Society_Vbox/Society_Hbox/Clergy/Society_Clergy_Ranks_Hbox/Vbox_Clergy/Clergy_Lit_Hbox"]
+visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_ruet7")
-theme_override_font_sizes/font_size = 50
-text = "00"
-horizontal_alignment = 2
+theme_override_font_sizes/font_size = 45
+text = "(+00)"
 
-[node name="Label_Taxation5" type="Label" parent="TopRow/Society/Vbox_Reputation/Hbox_SocietyRank/Hbox_Clergy"]
+[node name="Clergy_Pol_Hbox" type="HBoxContainer" parent="TopRow/Society/Society_Vbox/Society_Hbox/Clergy/Society_Clergy_Ranks_Hbox/Vbox_Clergy"]
+custom_minimum_size = Vector2(145, 0)
+layout_mode = 2
+alignment = 1
+
+[node name="Clergy_Pol" type="Label" parent="TopRow/Society/Society_Vbox/Society_Hbox/Clergy/Society_Clergy_Ranks_Hbox/Vbox_Clergy/Clergy_Pol_Hbox"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_ruet7")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 45
 text = "00"
-horizontal_alignment = 2
+horizontal_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="TopRow/Society/Vbox_Reputation/Hbox_SocietyRank"]
+[node name="Clergy_Pol_GL" type="Label" parent="TopRow/Society/Society_Vbox/Society_Hbox/Clergy/Society_Clergy_Ranks_Hbox/Vbox_Clergy/Clergy_Pol_Hbox"]
+visible = false
 layout_mode = 2
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 45
+text = "(+00)"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="TopRow/Society/Vbox_Reputation"]
+[node name="Clergy_Lab_Hbox" type="HBoxContainer" parent="TopRow/Society/Society_Vbox/Society_Hbox/Clergy/Society_Clergy_Ranks_Hbox/Vbox_Clergy"]
+custom_minimum_size = Vector2(145, 0)
 layout_mode = 2
+alignment = 1
+
+[node name="Clergy_Lab_Rank" type="Label" parent="TopRow/Society/Society_Vbox/Society_Hbox/Clergy/Society_Clergy_Ranks_Hbox/Vbox_Clergy/Clergy_Lab_Hbox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 45
+text = "00"
+horizontal_alignment = 1
+
+[node name="Clergy_Lab_GL" type="Label" parent="TopRow/Society/Society_Vbox/Society_Hbox/Clergy/Society_Clergy_Ranks_Hbox/Vbox_Clergy/Clergy_Lab_Hbox"]
+visible = false
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 45
+text = "(+00)"
+
+[node name="Clergy_Hea_Hbox" type="HBoxContainer" parent="TopRow/Society/Society_Vbox/Society_Hbox/Clergy/Society_Clergy_Ranks_Hbox/Vbox_Clergy"]
+custom_minimum_size = Vector2(145, 0)
+layout_mode = 2
+alignment = 1
+
+[node name="Clergy_Hea_Rank" type="Label" parent="TopRow/Society/Society_Vbox/Society_Hbox/Clergy/Society_Clergy_Ranks_Hbox/Vbox_Clergy/Clergy_Hea_Hbox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 45
+text = "00"
+horizontal_alignment = 1
+
+[node name="Clergy_Hea_GL" type="Label" parent="TopRow/Society/Society_Vbox/Society_Hbox/Clergy/Society_Clergy_Ranks_Hbox/Vbox_Clergy/Clergy_Hea_Hbox"]
+visible = false
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 45
+text = "(+00)"
 
 [node name="Days" type="Control" parent="TopRow"]
+visible = false
 layout_mode = 3
 anchors_preset = 0
-offset_top = 78.0
-offset_bottom = 78.0
+offset_left = -19.0
+offset_top = 817.0
+offset_right = -19.0
+offset_bottom = 817.0
 
-[node name="Header_Day" type="Label" parent="TopRow/Days"]
+[node name="Day_Header" type="Label" parent="TopRow/Days"]
 layout_mode = 0
 offset_left = -119.0
 offset_top = -60.0
@@ -423,7 +718,7 @@ theme_override_font_sizes/font_size = 70
 text = "DAY"
 horizontal_alignment = 1
 
-[node name="Header_DayNumber" type="Label" parent="TopRow/Days"]
+[node name="Day_Number_Header" type="Label" parent="TopRow/Days"]
 layout_mode = 0
 offset_left = 28.0
 offset_top = -60.0
@@ -439,55 +734,58 @@ layout_mode = 3
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
+offset_left = 11.0
+offset_top = 414.0
+offset_right = 11.0
+offset_bottom = 414.0
 grow_horizontal = 2
 
-[node name="Vbox_CaseBrief" type="VBoxContainer" parent="TopRow/CaseBrief"]
+[node name="Casebrief_Vbox" type="VBoxContainer" parent="TopRow/CaseBrief"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -458.0
-offset_top = 452.0
-offset_right = 458.0
-offset_bottom = 785.0
+offset_left = -471.0
+offset_right = 445.0
+offset_bottom = 333.0
 grow_horizontal = 2
 theme_override_constants/separation = -20
 
-[node name="Hbox_Header" type="HBoxContainer" parent="TopRow/CaseBrief/Vbox_CaseBrief"]
+[node name="Header_Hbox" type="HBoxContainer" parent="TopRow/CaseBrief/Casebrief_Vbox"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 alignment = 1
 
-[node name="Header_Case" type="Label" parent="TopRow/CaseBrief/Vbox_CaseBrief/Hbox_Header"]
+[node name="Case_Header" type="Label" parent="TopRow/CaseBrief/Casebrief_Vbox/Header_Hbox"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_0g7i0")
 theme_override_font_sizes/font_size = 100
 text = "CASE "
 horizontal_alignment = 1
 
-[node name="Header_CaseNumber" type="Label" parent="TopRow/CaseBrief/Vbox_CaseBrief/Hbox_Header"]
+[node name="Case_Number_Header" type="Label" parent="TopRow/CaseBrief/Casebrief_Vbox/Header_Hbox"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_0g7i0")
 theme_override_font_sizes/font_size = 100
 text = "00"
 horizontal_alignment = 1
 
-[node name="Header_Dash" type="Label" parent="TopRow/CaseBrief/Vbox_CaseBrief/Hbox_Header"]
+[node name="Dash_Header" type="Label" parent="TopRow/CaseBrief/Casebrief_Vbox/Header_Hbox"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_0g7i0")
 theme_override_font_sizes/font_size = 100
 text = " -"
 horizontal_alignment = 1
 
-[node name="Header_CaseName" type="Label" parent="TopRow/CaseBrief/Vbox_CaseBrief/Hbox_Header"]
+[node name="CaseName_Header" type="Label" parent="TopRow/CaseBrief/Casebrief_Vbox/Header_Hbox"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_0g7i0")
 theme_override_font_sizes/font_size = 100
 text = " Name of case"
 horizontal_alignment = 1
 
-[node name="Body_CaseBrief" type="Label" parent="TopRow/CaseBrief/Vbox_CaseBrief"]
+[node name="Casebrief_Body" type="Label" parent="TopRow/CaseBrief/Casebrief_Vbox"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_ruet7")
 theme_override_font_sizes/font_size = 90
