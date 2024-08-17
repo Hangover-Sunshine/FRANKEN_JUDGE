@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_h8b32")
-Group = 0
+Group = 2
 Affect = 1
 RandomAmount = false
 ValueChange = 1

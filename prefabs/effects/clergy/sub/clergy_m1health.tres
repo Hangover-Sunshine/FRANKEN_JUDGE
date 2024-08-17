@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_wpogf")
-Group = 0
+Group = 2
 Affect = 2
 RandomAmount = false
 ValueChange = -1
