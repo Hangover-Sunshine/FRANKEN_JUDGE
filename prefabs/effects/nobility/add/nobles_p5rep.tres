@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_51wkh")
-Group = 0
+Group = 1
 Affect = 0
 RandomAmount = false
 ValueChange = 5

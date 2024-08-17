@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_mom18")
-Group = 0
+Group = 1
 Affect = 2
 RandomAmount = false
 ValueChange = 2
