@@ -38,6 +38,9 @@ func show_brief():
 	$CaseBrief/Casebrief_Vbox/Header_Hbox/Case_Number_Letter.text = display_text
 	$CaseBrief/Casebrief_Vbox/Header_Hbox/CaseName_Header.text = _case.CASE_NAME
 	
+	# Split into lines based on new lines
+	var lines = _case.CASE_DESCRIPTION.split("\n")
+	
 ##
 
 func _case_picked(case_id:int):
