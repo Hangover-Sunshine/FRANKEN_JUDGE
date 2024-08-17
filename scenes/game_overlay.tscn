@@ -341,6 +341,36 @@ _data = {
 "RESET": SubResource("Animation_glr1j")
 }
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vk5qw"]
+bg_color = Color(0.0784314, 0.4, 0.356863, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="Theme" id="Theme_ufjen"]
+Panel/styles/panel = SubResource("StyleBoxFlat_vk5qw")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n6w1f"]
+bg_color = Color(0.364706, 0.184314, 0.54902, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="Theme" id="Theme_ycdtd"]
+Panel/styles/panel = SubResource("StyleBoxFlat_n6w1f")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ip0y6"]
+bg_color = Color(0.698039, 0.235294, 0.25098, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="Theme" id="Theme_0q1lr"]
+Panel/styles/panel = SubResource("StyleBoxFlat_ip0y6")
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_63sq7"]
 bg_color = Color(0.0784314, 0.4, 0.356863, 1)
 corner_radius_top_left = 50
@@ -410,39 +440,9 @@ shader_parameter/tide = 0.1
 shader_parameter/foamthickness = 0.1
 shader_parameter/timescale = 0.5
 shader_parameter/waterdeep = 0.3
-shader_parameter/WATER_COL = Color(0.0588235, 0.0588235, 0.0588235, 1)
-shader_parameter/WATER2_COL = Color(0.0784314, 0.0784314, 0.0784314, 1)
-shader_parameter/FOAM_COL = Color(0.0941176, 0.0941176, 0.0941176, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vk5qw"]
-bg_color = Color(0.0784314, 0.4, 0.356863, 1)
-corner_radius_top_left = 50
-corner_radius_top_right = 50
-corner_radius_bottom_right = 50
-corner_radius_bottom_left = 50
-
-[sub_resource type="Theme" id="Theme_ufjen"]
-Panel/styles/panel = SubResource("StyleBoxFlat_vk5qw")
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n6w1f"]
-bg_color = Color(0.364706, 0.184314, 0.54902, 1)
-corner_radius_top_left = 50
-corner_radius_top_right = 50
-corner_radius_bottom_right = 50
-corner_radius_bottom_left = 50
-
-[sub_resource type="Theme" id="Theme_ycdtd"]
-Panel/styles/panel = SubResource("StyleBoxFlat_n6w1f")
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ip0y6"]
-bg_color = Color(0.698039, 0.235294, 0.25098, 1)
-corner_radius_top_left = 50
-corner_radius_top_right = 50
-corner_radius_bottom_right = 50
-corner_radius_bottom_left = 50
-
-[sub_resource type="Theme" id="Theme_0q1lr"]
-Panel/styles/panel = SubResource("StyleBoxFlat_ip0y6")
+shader_parameter/WATER_COL = Color(0.0862745, 0.0980392, 0.117647, 1)
+shader_parameter/WATER2_COL = Color(0.0666667, 0.0784314, 0.0980392, 1)
+shader_parameter/FOAM_COL = Color(0.133333, 0.145098, 0.168627, 1)
 
 [node name="Game_Overlay" type="Node2D"]
 script = ExtResource("1_hcafl")
@@ -488,6 +488,590 @@ color = Color(0.815686, 0.815686, 0.815686, 1)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="Scale" type="Node2D" parent="."]
+visible = false
+position = Vector2(960, 720)
+
+[node name="Scale_Body" type="Sprite2D" parent="Scale"]
+texture = ExtResource("7_tixm6")
+
+[node name="Scale_Arm" type="Sprite2D" parent="Scale/Scale_Body"]
+show_behind_parent = true
+position = Vector2(0, -244)
+texture = ExtResource("8_lnds5")
+
+[node name="Scale_Left" type="Sprite2D" parent="Scale/Scale_Body"]
+position = Vector2(-513, 246)
+texture = ExtResource("9_7s0gt")
+
+[node name="Left_Peasant_Card" type="Panel" parent="Scale/Scale_Body/Scale_Left"]
+custom_minimum_size = Vector2(325, 400)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -390.5
+offset_top = -493.0
+offset_right = -65.5
+offset_bottom = -93.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_ufjen")
+
+[node name="Peasant_Card_Vbox" type="VBoxContainer" parent="Scale/Scale_Body/Scale_Left/Left_Peasant_Card"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -137.5
+offset_top = -185.0
+offset_right = 137.5
+offset_bottom = 185.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Peasant_Header" type="Label" parent="Scale/Scale_Body/Scale_Left/Left_Peasant_Card/Peasant_Card_Vbox"]
+custom_minimum_size = Vector2(275, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.533333, 0.819608, 0.67451, 1)
+theme_override_fonts/font = ExtResource("2_o6xmb")
+theme_override_font_sizes/font_size = 70
+text = "Peasantry"
+horizontal_alignment = 1
+
+[node name="Peasant_TopDivider" type="ColorRect" parent="Scale/Scale_Body/Scale_Left/Left_Peasant_Card/Peasant_Card_Vbox"]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+color = Color(0.533333, 0.819608, 0.67451, 1)
+
+[node name="Peasant_Label1" type="Label" parent="Scale/Scale_Body/Scale_Left/Left_Peasant_Card/Peasant_Card_Vbox"]
+custom_minimum_size = Vector2(275, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.533333, 0.819608, 0.67451, 1)
+theme_override_fonts/font = ExtResource("2_o6xmb")
+theme_override_font_sizes/font_size = 50
+text = "line1line1line1line1li"
+horizontal_alignment = 1
+
+[node name="Peasant_Label2" type="Label" parent="Scale/Scale_Body/Scale_Left/Left_Peasant_Card/Peasant_Card_Vbox"]
+custom_minimum_size = Vector2(275, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.533333, 0.819608, 0.67451, 1)
+theme_override_fonts/font = ExtResource("2_o6xmb")
+theme_override_font_sizes/font_size = 50
+text = "line2line2line2line2li"
+horizontal_alignment = 1
+
+[node name="Peasant_Label3" type="Label" parent="Scale/Scale_Body/Scale_Left/Left_Peasant_Card/Peasant_Card_Vbox"]
+custom_minimum_size = Vector2(275, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.533333, 0.819608, 0.67451, 1)
+theme_override_fonts/font = ExtResource("2_o6xmb")
+theme_override_font_sizes/font_size = 50
+text = "line3line3line3line3li"
+horizontal_alignment = 1
+
+[node name="Peasant_BotDivider" type="ColorRect" parent="Scale/Scale_Body/Scale_Left/Left_Peasant_Card/Peasant_Card_Vbox"]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+color = Color(0.533333, 0.819608, 0.67451, 1)
+
+[node name="Peasant_FxLabel1" type="Label" parent="Scale/Scale_Body/Scale_Left/Left_Peasant_Card/Peasant_Card_Vbox"]
+custom_minimum_size = Vector2(275, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.533333, 0.819608, 0.67451, 1)
+theme_override_fonts/font = ExtResource("2_o6xmb")
+theme_override_font_sizes/font_size = 50
+text = "effectsEFFECTSeffec"
+horizontal_alignment = 1
+
+[node name="Peasant_FxLabel2" type="Label" parent="Scale/Scale_Body/Scale_Left/Left_Peasant_Card/Peasant_Card_Vbox"]
+custom_minimum_size = Vector2(275, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.533333, 0.819608, 0.67451, 1)
+theme_override_fonts/font = ExtResource("2_o6xmb")
+theme_override_font_sizes/font_size = 50
+text = "effectsEFFECTSeffec"
+horizontal_alignment = 1
+
+[node name="Left_Nobility_Card" type="Panel" parent="Scale/Scale_Body/Scale_Left"]
+custom_minimum_size = Vector2(325, 400)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -390.5
+offset_top = -493.0
+offset_right = -65.5
+offset_bottom = -93.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_ycdtd")
+
+[node name="Nobility_Card_Vbox" type="VBoxContainer" parent="Scale/Scale_Body/Scale_Left/Left_Nobility_Card"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -137.5
+offset_top = -185.0
+offset_right = 137.5
+offset_bottom = 185.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Nobility_Header" type="Label" parent="Scale/Scale_Body/Scale_Left/Left_Nobility_Card/Nobility_Card_Vbox"]
+custom_minimum_size = Vector2(275, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.87451, 0.8, 0.976471, 1)
+theme_override_fonts/font = ExtResource("2_o6xmb")
+theme_override_font_sizes/font_size = 70
+text = "Nobility"
+horizontal_alignment = 1
+
+[node name="Nobility_TopDivider" type="ColorRect" parent="Scale/Scale_Body/Scale_Left/Left_Nobility_Card/Nobility_Card_Vbox"]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+color = Color(0.87451, 0.8, 0.976471, 1)
+
+[node name="Nobility_Label1" type="Label" parent="Scale/Scale_Body/Scale_Left/Left_Nobility_Card/Nobility_Card_Vbox"]
+custom_minimum_size = Vector2(275, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.87451, 0.8, 0.976471, 1)
+theme_override_fonts/font = ExtResource("2_o6xmb")
+theme_override_font_sizes/font_size = 50
+text = "line1line1line1line1li"
+horizontal_alignment = 1
+
+[node name="Nobility_Label2" type="Label" parent="Scale/Scale_Body/Scale_Left/Left_Nobility_Card/Nobility_Card_Vbox"]
+custom_minimum_size = Vector2(275, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.87451, 0.8, 0.976471, 1)
+theme_override_fonts/font = ExtResource("2_o6xmb")
+theme_override_font_sizes/font_size = 50
+text = "line2line2line2line2li"
+horizontal_alignment = 1
+
+[node name="Nobility_Label3" type="Label" parent="Scale/Scale_Body/Scale_Left/Left_Nobility_Card/Nobility_Card_Vbox"]
+custom_minimum_size = Vector2(275, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.87451, 0.8, 0.976471, 1)
+theme_override_fonts/font = ExtResource("2_o6xmb")
+theme_override_font_sizes/font_size = 50
+text = "line3line3line3line3li"
+horizontal_alignment = 1
+
+[node name="Nobility_BotDivider" type="ColorRect" parent="Scale/Scale_Body/Scale_Left/Left_Nobility_Card/Nobility_Card_Vbox"]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+color = Color(0.87451, 0.8, 0.976471, 1)
+
+[node name="Nobility_FxLabel1" type="Label" parent="Scale/Scale_Body/Scale_Left/Left_Nobility_Card/Nobility_Card_Vbox"]
+custom_minimum_size = Vector2(275, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.87451, 0.8, 0.976471, 1)
+theme_override_fonts/font = ExtResource("2_o6xmb")
+theme_override_font_sizes/font_size = 50
+text = "effectsEFFECTSeffec"
+horizontal_alignment = 1
+
+[node name="Nobility_FxLabel2" type="Label" parent="Scale/Scale_Body/Scale_Left/Left_Nobility_Card/Nobility_Card_Vbox"]
+custom_minimum_size = Vector2(275, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.87451, 0.8, 0.976471, 1)
+theme_override_fonts/font = ExtResource("2_o6xmb")
+theme_override_font_sizes/font_size = 50
+text = "effectsEFFECTSeffec"
+horizontal_alignment = 1
+
+[node name="Left_Clergy_Card" type="Panel" parent="Scale/Scale_Body/Scale_Left"]
+custom_minimum_size = Vector2(325, 400)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -390.5
+offset_top = -493.0
+offset_right = -65.5
+offset_bottom = -93.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_0q1lr")
+
+[node name="Clergy_Card_Vbox" type="VBoxContainer" parent="Scale/Scale_Body/Scale_Left/Left_Clergy_Card"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -137.5
+offset_top = -185.0
+offset_right = 137.5
+offset_bottom = 185.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Clergy_Header" type="Label" parent="Scale/Scale_Body/Scale_Left/Left_Clergy_Card/Clergy_Card_Vbox"]
+custom_minimum_size = Vector2(275, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.996078, 0.827451, 0.709804, 1)
+theme_override_fonts/font = ExtResource("2_o6xmb")
+theme_override_font_sizes/font_size = 70
+text = "Clergy"
+horizontal_alignment = 1
+
+[node name="Clergy_TopDivider" type="ColorRect" parent="Scale/Scale_Body/Scale_Left/Left_Clergy_Card/Clergy_Card_Vbox"]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+color = Color(0.996078, 0.827451, 0.709804, 1)
+
+[node name="Clergy_Label1" type="Label" parent="Scale/Scale_Body/Scale_Left/Left_Clergy_Card/Clergy_Card_Vbox"]
+custom_minimum_size = Vector2(275, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.996078, 0.827451, 0.709804, 1)
+theme_override_fonts/font = ExtResource("2_o6xmb")
+theme_override_font_sizes/font_size = 50
+text = "line1line1line1line1li"
+horizontal_alignment = 1
+
+[node name="Clergy_Label2" type="Label" parent="Scale/Scale_Body/Scale_Left/Left_Clergy_Card/Clergy_Card_Vbox"]
+custom_minimum_size = Vector2(275, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.996078, 0.827451, 0.709804, 1)
+theme_override_fonts/font = ExtResource("2_o6xmb")
+theme_override_font_sizes/font_size = 50
+text = "line2line2line2line2li"
+horizontal_alignment = 1
+
+[node name="Clergy_Label3" type="Label" parent="Scale/Scale_Body/Scale_Left/Left_Clergy_Card/Clergy_Card_Vbox"]
+custom_minimum_size = Vector2(275, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.996078, 0.827451, 0.709804, 1)
+theme_override_fonts/font = ExtResource("2_o6xmb")
+theme_override_font_sizes/font_size = 50
+text = "line3line3line3line3li"
+horizontal_alignment = 1
+
+[node name="Clergy_BotDivider" type="ColorRect" parent="Scale/Scale_Body/Scale_Left/Left_Clergy_Card/Clergy_Card_Vbox"]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+color = Color(0.996078, 0.827451, 0.709804, 1)
+
+[node name="Clergy_FxLabel1" type="Label" parent="Scale/Scale_Body/Scale_Left/Left_Clergy_Card/Clergy_Card_Vbox"]
+custom_minimum_size = Vector2(275, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.996078, 0.827451, 0.709804, 1)
+theme_override_fonts/font = ExtResource("2_o6xmb")
+theme_override_font_sizes/font_size = 50
+text = "effectsEFFECTSeffec"
+horizontal_alignment = 1
+
+[node name="Clergy_FxLabel2" type="Label" parent="Scale/Scale_Body/Scale_Left/Left_Clergy_Card/Clergy_Card_Vbox"]
+custom_minimum_size = Vector2(275, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.996078, 0.827451, 0.709804, 1)
+theme_override_fonts/font = ExtResource("2_o6xmb")
+theme_override_font_sizes/font_size = 50
+text = "effectsEFFECTSeffec"
+horizontal_alignment = 1
+
+[node name="Scale_Right" type="Sprite2D" parent="Scale/Scale_Body"]
+position = Vector2(514, 246)
+texture = ExtResource("9_7s0gt")
+
+[node name="Right_Peasant_Card" type="Panel" parent="Scale/Scale_Body/Scale_Right"]
+custom_minimum_size = Vector2(325, 400)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -390.5
+offset_top = -493.0
+offset_right = -65.5
+offset_bottom = -93.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_ufjen")
+
+[node name="Peasant_Card_Vbox" type="VBoxContainer" parent="Scale/Scale_Body/Scale_Right/Right_Peasant_Card"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -137.5
+offset_top = -185.0
+offset_right = 137.5
+offset_bottom = 185.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Peasant_Header" type="Label" parent="Scale/Scale_Body/Scale_Right/Right_Peasant_Card/Peasant_Card_Vbox"]
+custom_minimum_size = Vector2(275, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.533333, 0.819608, 0.67451, 1)
+theme_override_fonts/font = ExtResource("2_o6xmb")
+theme_override_font_sizes/font_size = 70
+text = "Peasantry"
+horizontal_alignment = 1
+
+[node name="Peasant_TopDivider" type="ColorRect" parent="Scale/Scale_Body/Scale_Right/Right_Peasant_Card/Peasant_Card_Vbox"]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+color = Color(0.533333, 0.819608, 0.67451, 1)
+
+[node name="Peasant_Label1" type="Label" parent="Scale/Scale_Body/Scale_Right/Right_Peasant_Card/Peasant_Card_Vbox"]
+custom_minimum_size = Vector2(275, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.533333, 0.819608, 0.67451, 1)
+theme_override_fonts/font = ExtResource("2_o6xmb")
+theme_override_font_sizes/font_size = 50
+text = "line1line1line1line1li"
+horizontal_alignment = 1
+
+[node name="Peasant_Label2" type="Label" parent="Scale/Scale_Body/Scale_Right/Right_Peasant_Card/Peasant_Card_Vbox"]
+custom_minimum_size = Vector2(275, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.533333, 0.819608, 0.67451, 1)
+theme_override_fonts/font = ExtResource("2_o6xmb")
+theme_override_font_sizes/font_size = 50
+text = "line2line2line2line2li"
+horizontal_alignment = 1
+
+[node name="Peasant_Label3" type="Label" parent="Scale/Scale_Body/Scale_Right/Right_Peasant_Card/Peasant_Card_Vbox"]
+custom_minimum_size = Vector2(275, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.533333, 0.819608, 0.67451, 1)
+theme_override_fonts/font = ExtResource("2_o6xmb")
+theme_override_font_sizes/font_size = 50
+text = "line3line3line3line3li"
+horizontal_alignment = 1
+
+[node name="Peasant_BotDivider" type="ColorRect" parent="Scale/Scale_Body/Scale_Right/Right_Peasant_Card/Peasant_Card_Vbox"]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+color = Color(0.533333, 0.819608, 0.67451, 1)
+
+[node name="Peasant_FxLabel1" type="Label" parent="Scale/Scale_Body/Scale_Right/Right_Peasant_Card/Peasant_Card_Vbox"]
+custom_minimum_size = Vector2(275, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.533333, 0.819608, 0.67451, 1)
+theme_override_fonts/font = ExtResource("2_o6xmb")
+theme_override_font_sizes/font_size = 50
+text = "effectsEFFECTSeffec"
+horizontal_alignment = 1
+
+[node name="Peasant_FxLabel2" type="Label" parent="Scale/Scale_Body/Scale_Right/Right_Peasant_Card/Peasant_Card_Vbox"]
+custom_minimum_size = Vector2(275, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.533333, 0.819608, 0.67451, 1)
+theme_override_fonts/font = ExtResource("2_o6xmb")
+theme_override_font_sizes/font_size = 50
+text = "effectsEFFECTSeffec"
+horizontal_alignment = 1
+
+[node name="Right_Nobility_Card" type="Panel" parent="Scale/Scale_Body/Scale_Right"]
+custom_minimum_size = Vector2(325, 400)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -390.5
+offset_top = -493.0
+offset_right = -65.5
+offset_bottom = -93.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_ycdtd")
+
+[node name="Nobility_Card_Vbox" type="VBoxContainer" parent="Scale/Scale_Body/Scale_Right/Right_Nobility_Card"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -137.5
+offset_top = -185.0
+offset_right = 137.5
+offset_bottom = 185.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Nobility_Header" type="Label" parent="Scale/Scale_Body/Scale_Right/Right_Nobility_Card/Nobility_Card_Vbox"]
+custom_minimum_size = Vector2(275, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.87451, 0.8, 0.976471, 1)
+theme_override_fonts/font = ExtResource("2_o6xmb")
+theme_override_font_sizes/font_size = 70
+text = "Nobility"
+horizontal_alignment = 1
+
+[node name="Nobility_TopDivider" type="ColorRect" parent="Scale/Scale_Body/Scale_Right/Right_Nobility_Card/Nobility_Card_Vbox"]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+color = Color(0.87451, 0.8, 0.976471, 1)
+
+[node name="Nobility_Label1" type="Label" parent="Scale/Scale_Body/Scale_Right/Right_Nobility_Card/Nobility_Card_Vbox"]
+custom_minimum_size = Vector2(275, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.87451, 0.8, 0.976471, 1)
+theme_override_fonts/font = ExtResource("2_o6xmb")
+theme_override_font_sizes/font_size = 50
+text = "line1line1line1line1li"
+horizontal_alignment = 1
+
+[node name="Nobility_Label2" type="Label" parent="Scale/Scale_Body/Scale_Right/Right_Nobility_Card/Nobility_Card_Vbox"]
+custom_minimum_size = Vector2(275, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.87451, 0.8, 0.976471, 1)
+theme_override_fonts/font = ExtResource("2_o6xmb")
+theme_override_font_sizes/font_size = 50
+text = "line2line2line2line2li"
+horizontal_alignment = 1
+
+[node name="Nobility_Label3" type="Label" parent="Scale/Scale_Body/Scale_Right/Right_Nobility_Card/Nobility_Card_Vbox"]
+custom_minimum_size = Vector2(275, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.87451, 0.8, 0.976471, 1)
+theme_override_fonts/font = ExtResource("2_o6xmb")
+theme_override_font_sizes/font_size = 50
+text = "line3line3line3line3li"
+horizontal_alignment = 1
+
+[node name="Nobility_BotDivider" type="ColorRect" parent="Scale/Scale_Body/Scale_Right/Right_Nobility_Card/Nobility_Card_Vbox"]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+color = Color(0.87451, 0.8, 0.976471, 1)
+
+[node name="Nobility_FxLabel1" type="Label" parent="Scale/Scale_Body/Scale_Right/Right_Nobility_Card/Nobility_Card_Vbox"]
+custom_minimum_size = Vector2(275, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.87451, 0.8, 0.976471, 1)
+theme_override_fonts/font = ExtResource("2_o6xmb")
+theme_override_font_sizes/font_size = 50
+text = "effectsEFFECTSeffec"
+horizontal_alignment = 1
+
+[node name="Nobility_FxLabel2" type="Label" parent="Scale/Scale_Body/Scale_Right/Right_Nobility_Card/Nobility_Card_Vbox"]
+custom_minimum_size = Vector2(275, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.87451, 0.8, 0.976471, 1)
+theme_override_fonts/font = ExtResource("2_o6xmb")
+theme_override_font_sizes/font_size = 50
+text = "effectsEFFECTSeffec"
+horizontal_alignment = 1
+
+[node name="Right_Clergy_Card" type="Panel" parent="Scale/Scale_Body/Scale_Right"]
+custom_minimum_size = Vector2(325, 400)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -390.5
+offset_top = -493.0
+offset_right = -65.5
+offset_bottom = -93.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_0q1lr")
+
+[node name="Clergy_Card_Vbox" type="VBoxContainer" parent="Scale/Scale_Body/Scale_Right/Right_Clergy_Card"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -137.5
+offset_top = -185.0
+offset_right = 137.5
+offset_bottom = 185.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Clergy_Header" type="Label" parent="Scale/Scale_Body/Scale_Right/Right_Clergy_Card/Clergy_Card_Vbox"]
+custom_minimum_size = Vector2(275, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.996078, 0.827451, 0.709804, 1)
+theme_override_fonts/font = ExtResource("2_o6xmb")
+theme_override_font_sizes/font_size = 70
+text = "Clergy"
+horizontal_alignment = 1
+
+[node name="Clergy_TopDivider" type="ColorRect" parent="Scale/Scale_Body/Scale_Right/Right_Clergy_Card/Clergy_Card_Vbox"]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+color = Color(0.996078, 0.827451, 0.709804, 1)
+
+[node name="Clergy_Label1" type="Label" parent="Scale/Scale_Body/Scale_Right/Right_Clergy_Card/Clergy_Card_Vbox"]
+custom_minimum_size = Vector2(275, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.996078, 0.827451, 0.709804, 1)
+theme_override_fonts/font = ExtResource("2_o6xmb")
+theme_override_font_sizes/font_size = 50
+text = "line1line1line1line1li"
+horizontal_alignment = 1
+
+[node name="Clergy_Label2" type="Label" parent="Scale/Scale_Body/Scale_Right/Right_Clergy_Card/Clergy_Card_Vbox"]
+custom_minimum_size = Vector2(275, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.996078, 0.827451, 0.709804, 1)
+theme_override_fonts/font = ExtResource("2_o6xmb")
+theme_override_font_sizes/font_size = 50
+text = "line2line2line2line2li"
+horizontal_alignment = 1
+
+[node name="Clergy_Label3" type="Label" parent="Scale/Scale_Body/Scale_Right/Right_Clergy_Card/Clergy_Card_Vbox"]
+custom_minimum_size = Vector2(275, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.996078, 0.827451, 0.709804, 1)
+theme_override_fonts/font = ExtResource("2_o6xmb")
+theme_override_font_sizes/font_size = 50
+text = "line3line3line3line3li"
+horizontal_alignment = 1
+
+[node name="Clergy_BotDivider" type="ColorRect" parent="Scale/Scale_Body/Scale_Right/Right_Clergy_Card/Clergy_Card_Vbox"]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+color = Color(0.996078, 0.827451, 0.709804, 1)
+
+[node name="Clergy_FxLabel1" type="Label" parent="Scale/Scale_Body/Scale_Right/Right_Clergy_Card/Clergy_Card_Vbox"]
+custom_minimum_size = Vector2(275, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.996078, 0.827451, 0.709804, 1)
+theme_override_fonts/font = ExtResource("2_o6xmb")
+theme_override_font_sizes/font_size = 50
+text = "effectsEFFECTSeffec"
+horizontal_alignment = 1
+
+[node name="Clergy_FxLabel2" type="Label" parent="Scale/Scale_Body/Scale_Right/Right_Clergy_Card/Clergy_Card_Vbox"]
+custom_minimum_size = Vector2(275, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.996078, 0.827451, 0.709804, 1)
+theme_override_fonts/font = ExtResource("2_o6xmb")
+theme_override_font_sizes/font_size = 50
+text = "effectsEFFECTSeffec"
+horizontal_alignment = 1
 
 [node name="Reputation" type="Control" parent="."]
 layout_mode = 3
@@ -1280,587 +1864,3 @@ offset_left = 108.0
 offset_top = 434.0
 offset_right = 1808.0
 offset_bottom = 1034.0
-
-[node name="Scale" type="Node2D" parent="."]
-visible = false
-position = Vector2(960, 740)
-
-[node name="Scale_Body" type="Sprite2D" parent="Scale"]
-texture = ExtResource("7_tixm6")
-
-[node name="Scale_Arm" type="Sprite2D" parent="Scale/Scale_Body"]
-show_behind_parent = true
-position = Vector2(0, -244)
-texture = ExtResource("8_lnds5")
-
-[node name="Scale_Left" type="Sprite2D" parent="Scale/Scale_Body"]
-position = Vector2(-513, 246)
-texture = ExtResource("9_7s0gt")
-
-[node name="Left_Peasant_Card" type="Panel" parent="Scale/Scale_Body/Scale_Left"]
-custom_minimum_size = Vector2(325, 400)
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -390.5
-offset_top = -493.0
-offset_right = -65.5
-offset_bottom = -93.0
-grow_horizontal = 2
-grow_vertical = 0
-theme = SubResource("Theme_ufjen")
-
-[node name="Peasant_Card_Vbox" type="VBoxContainer" parent="Scale/Scale_Body/Scale_Left/Left_Peasant_Card"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -137.5
-offset_top = -185.0
-offset_right = 137.5
-offset_bottom = 185.0
-grow_horizontal = 2
-grow_vertical = 2
-alignment = 1
-
-[node name="Peasant_Header" type="Label" parent="Scale/Scale_Body/Scale_Left/Left_Peasant_Card/Peasant_Card_Vbox"]
-custom_minimum_size = Vector2(275, 0)
-layout_mode = 2
-theme_override_colors/font_color = Color(0.533333, 0.819608, 0.67451, 1)
-theme_override_fonts/font = ExtResource("2_o6xmb")
-theme_override_font_sizes/font_size = 70
-text = "Peasantry"
-horizontal_alignment = 1
-
-[node name="Peasant_TopDivider" type="ColorRect" parent="Scale/Scale_Body/Scale_Left/Left_Peasant_Card/Peasant_Card_Vbox"]
-custom_minimum_size = Vector2(0, 5)
-layout_mode = 2
-color = Color(0.533333, 0.819608, 0.67451, 1)
-
-[node name="Peasant_Label1" type="Label" parent="Scale/Scale_Body/Scale_Left/Left_Peasant_Card/Peasant_Card_Vbox"]
-custom_minimum_size = Vector2(275, 0)
-layout_mode = 2
-theme_override_colors/font_color = Color(0.533333, 0.819608, 0.67451, 1)
-theme_override_fonts/font = ExtResource("2_o6xmb")
-theme_override_font_sizes/font_size = 50
-text = "line1line1line1line1li"
-horizontal_alignment = 1
-
-[node name="Peasant_Label2" type="Label" parent="Scale/Scale_Body/Scale_Left/Left_Peasant_Card/Peasant_Card_Vbox"]
-custom_minimum_size = Vector2(275, 0)
-layout_mode = 2
-theme_override_colors/font_color = Color(0.533333, 0.819608, 0.67451, 1)
-theme_override_fonts/font = ExtResource("2_o6xmb")
-theme_override_font_sizes/font_size = 50
-text = "line2line2line2line2li"
-horizontal_alignment = 1
-
-[node name="Peasant_Label3" type="Label" parent="Scale/Scale_Body/Scale_Left/Left_Peasant_Card/Peasant_Card_Vbox"]
-custom_minimum_size = Vector2(275, 0)
-layout_mode = 2
-theme_override_colors/font_color = Color(0.533333, 0.819608, 0.67451, 1)
-theme_override_fonts/font = ExtResource("2_o6xmb")
-theme_override_font_sizes/font_size = 50
-text = "line3line3line3line3li"
-horizontal_alignment = 1
-
-[node name="Peasant_BotDivider" type="ColorRect" parent="Scale/Scale_Body/Scale_Left/Left_Peasant_Card/Peasant_Card_Vbox"]
-custom_minimum_size = Vector2(0, 5)
-layout_mode = 2
-color = Color(0.533333, 0.819608, 0.67451, 1)
-
-[node name="Peasant_FxLabel1" type="Label" parent="Scale/Scale_Body/Scale_Left/Left_Peasant_Card/Peasant_Card_Vbox"]
-custom_minimum_size = Vector2(275, 0)
-layout_mode = 2
-theme_override_colors/font_color = Color(0.533333, 0.819608, 0.67451, 1)
-theme_override_fonts/font = ExtResource("2_o6xmb")
-theme_override_font_sizes/font_size = 50
-text = "effectsEFFECTSeffec"
-horizontal_alignment = 1
-
-[node name="Peasant_FxLabel2" type="Label" parent="Scale/Scale_Body/Scale_Left/Left_Peasant_Card/Peasant_Card_Vbox"]
-custom_minimum_size = Vector2(275, 0)
-layout_mode = 2
-theme_override_colors/font_color = Color(0.533333, 0.819608, 0.67451, 1)
-theme_override_fonts/font = ExtResource("2_o6xmb")
-theme_override_font_sizes/font_size = 50
-text = "effectsEFFECTSeffec"
-horizontal_alignment = 1
-
-[node name="Left_Nobility_Card" type="Panel" parent="Scale/Scale_Body/Scale_Left"]
-custom_minimum_size = Vector2(325, 400)
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -390.5
-offset_top = -493.0
-offset_right = -65.5
-offset_bottom = -93.0
-grow_horizontal = 2
-grow_vertical = 0
-theme = SubResource("Theme_ycdtd")
-
-[node name="Nobility_Card_Vbox" type="VBoxContainer" parent="Scale/Scale_Body/Scale_Left/Left_Nobility_Card"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -137.5
-offset_top = -185.0
-offset_right = 137.5
-offset_bottom = 185.0
-grow_horizontal = 2
-grow_vertical = 2
-alignment = 1
-
-[node name="Nobility_Header" type="Label" parent="Scale/Scale_Body/Scale_Left/Left_Nobility_Card/Nobility_Card_Vbox"]
-custom_minimum_size = Vector2(275, 0)
-layout_mode = 2
-theme_override_colors/font_color = Color(0.87451, 0.8, 0.976471, 1)
-theme_override_fonts/font = ExtResource("2_o6xmb")
-theme_override_font_sizes/font_size = 70
-text = "Nobility"
-horizontal_alignment = 1
-
-[node name="Nobility_TopDivider" type="ColorRect" parent="Scale/Scale_Body/Scale_Left/Left_Nobility_Card/Nobility_Card_Vbox"]
-custom_minimum_size = Vector2(0, 5)
-layout_mode = 2
-color = Color(0.87451, 0.8, 0.976471, 1)
-
-[node name="Nobility_Label1" type="Label" parent="Scale/Scale_Body/Scale_Left/Left_Nobility_Card/Nobility_Card_Vbox"]
-custom_minimum_size = Vector2(275, 0)
-layout_mode = 2
-theme_override_colors/font_color = Color(0.87451, 0.8, 0.976471, 1)
-theme_override_fonts/font = ExtResource("2_o6xmb")
-theme_override_font_sizes/font_size = 50
-text = "line1line1line1line1li"
-horizontal_alignment = 1
-
-[node name="Nobility_Label2" type="Label" parent="Scale/Scale_Body/Scale_Left/Left_Nobility_Card/Nobility_Card_Vbox"]
-custom_minimum_size = Vector2(275, 0)
-layout_mode = 2
-theme_override_colors/font_color = Color(0.87451, 0.8, 0.976471, 1)
-theme_override_fonts/font = ExtResource("2_o6xmb")
-theme_override_font_sizes/font_size = 50
-text = "line2line2line2line2li"
-horizontal_alignment = 1
-
-[node name="Nobility_Label3" type="Label" parent="Scale/Scale_Body/Scale_Left/Left_Nobility_Card/Nobility_Card_Vbox"]
-custom_minimum_size = Vector2(275, 0)
-layout_mode = 2
-theme_override_colors/font_color = Color(0.87451, 0.8, 0.976471, 1)
-theme_override_fonts/font = ExtResource("2_o6xmb")
-theme_override_font_sizes/font_size = 50
-text = "line3line3line3line3li"
-horizontal_alignment = 1
-
-[node name="Nobility_BotDivider" type="ColorRect" parent="Scale/Scale_Body/Scale_Left/Left_Nobility_Card/Nobility_Card_Vbox"]
-custom_minimum_size = Vector2(0, 5)
-layout_mode = 2
-color = Color(0.87451, 0.8, 0.976471, 1)
-
-[node name="Nobility_FxLabel1" type="Label" parent="Scale/Scale_Body/Scale_Left/Left_Nobility_Card/Nobility_Card_Vbox"]
-custom_minimum_size = Vector2(275, 0)
-layout_mode = 2
-theme_override_colors/font_color = Color(0.87451, 0.8, 0.976471, 1)
-theme_override_fonts/font = ExtResource("2_o6xmb")
-theme_override_font_sizes/font_size = 50
-text = "effectsEFFECTSeffec"
-horizontal_alignment = 1
-
-[node name="Nobility_FxLabel2" type="Label" parent="Scale/Scale_Body/Scale_Left/Left_Nobility_Card/Nobility_Card_Vbox"]
-custom_minimum_size = Vector2(275, 0)
-layout_mode = 2
-theme_override_colors/font_color = Color(0.87451, 0.8, 0.976471, 1)
-theme_override_fonts/font = ExtResource("2_o6xmb")
-theme_override_font_sizes/font_size = 50
-text = "effectsEFFECTSeffec"
-horizontal_alignment = 1
-
-[node name="Left_Clergy_Card" type="Panel" parent="Scale/Scale_Body/Scale_Left"]
-custom_minimum_size = Vector2(325, 400)
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -390.5
-offset_top = -493.0
-offset_right = -65.5
-offset_bottom = -93.0
-grow_horizontal = 2
-grow_vertical = 0
-theme = SubResource("Theme_0q1lr")
-
-[node name="Clergy_Card_Vbox" type="VBoxContainer" parent="Scale/Scale_Body/Scale_Left/Left_Clergy_Card"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -137.5
-offset_top = -185.0
-offset_right = 137.5
-offset_bottom = 185.0
-grow_horizontal = 2
-grow_vertical = 2
-alignment = 1
-
-[node name="Clergy_Header" type="Label" parent="Scale/Scale_Body/Scale_Left/Left_Clergy_Card/Clergy_Card_Vbox"]
-custom_minimum_size = Vector2(275, 0)
-layout_mode = 2
-theme_override_colors/font_color = Color(0.996078, 0.827451, 0.709804, 1)
-theme_override_fonts/font = ExtResource("2_o6xmb")
-theme_override_font_sizes/font_size = 70
-text = "Clergy"
-horizontal_alignment = 1
-
-[node name="Clergy_TopDivider" type="ColorRect" parent="Scale/Scale_Body/Scale_Left/Left_Clergy_Card/Clergy_Card_Vbox"]
-custom_minimum_size = Vector2(0, 5)
-layout_mode = 2
-color = Color(0.996078, 0.827451, 0.709804, 1)
-
-[node name="Clergy_Label1" type="Label" parent="Scale/Scale_Body/Scale_Left/Left_Clergy_Card/Clergy_Card_Vbox"]
-custom_minimum_size = Vector2(275, 0)
-layout_mode = 2
-theme_override_colors/font_color = Color(0.996078, 0.827451, 0.709804, 1)
-theme_override_fonts/font = ExtResource("2_o6xmb")
-theme_override_font_sizes/font_size = 50
-text = "line1line1line1line1li"
-horizontal_alignment = 1
-
-[node name="Clergy_Label2" type="Label" parent="Scale/Scale_Body/Scale_Left/Left_Clergy_Card/Clergy_Card_Vbox"]
-custom_minimum_size = Vector2(275, 0)
-layout_mode = 2
-theme_override_colors/font_color = Color(0.996078, 0.827451, 0.709804, 1)
-theme_override_fonts/font = ExtResource("2_o6xmb")
-theme_override_font_sizes/font_size = 50
-text = "line2line2line2line2li"
-horizontal_alignment = 1
-
-[node name="Clergy_Label3" type="Label" parent="Scale/Scale_Body/Scale_Left/Left_Clergy_Card/Clergy_Card_Vbox"]
-custom_minimum_size = Vector2(275, 0)
-layout_mode = 2
-theme_override_colors/font_color = Color(0.996078, 0.827451, 0.709804, 1)
-theme_override_fonts/font = ExtResource("2_o6xmb")
-theme_override_font_sizes/font_size = 50
-text = "line3line3line3line3li"
-horizontal_alignment = 1
-
-[node name="Clergy_BotDivider" type="ColorRect" parent="Scale/Scale_Body/Scale_Left/Left_Clergy_Card/Clergy_Card_Vbox"]
-custom_minimum_size = Vector2(0, 5)
-layout_mode = 2
-color = Color(0.996078, 0.827451, 0.709804, 1)
-
-[node name="Clergy_FxLabel1" type="Label" parent="Scale/Scale_Body/Scale_Left/Left_Clergy_Card/Clergy_Card_Vbox"]
-custom_minimum_size = Vector2(275, 0)
-layout_mode = 2
-theme_override_colors/font_color = Color(0.996078, 0.827451, 0.709804, 1)
-theme_override_fonts/font = ExtResource("2_o6xmb")
-theme_override_font_sizes/font_size = 50
-text = "effectsEFFECTSeffec"
-horizontal_alignment = 1
-
-[node name="Clergy_FxLabel2" type="Label" parent="Scale/Scale_Body/Scale_Left/Left_Clergy_Card/Clergy_Card_Vbox"]
-custom_minimum_size = Vector2(275, 0)
-layout_mode = 2
-theme_override_colors/font_color = Color(0.996078, 0.827451, 0.709804, 1)
-theme_override_fonts/font = ExtResource("2_o6xmb")
-theme_override_font_sizes/font_size = 50
-text = "effectsEFFECTSeffec"
-horizontal_alignment = 1
-
-[node name="Scale_Right" type="Sprite2D" parent="Scale/Scale_Body"]
-position = Vector2(514, 246)
-texture = ExtResource("9_7s0gt")
-
-[node name="Right_Peasant_Card" type="Panel" parent="Scale/Scale_Body/Scale_Right"]
-custom_minimum_size = Vector2(325, 400)
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -390.5
-offset_top = -493.0
-offset_right = -65.5
-offset_bottom = -93.0
-grow_horizontal = 2
-grow_vertical = 0
-theme = SubResource("Theme_ufjen")
-
-[node name="Peasant_Card_Vbox" type="VBoxContainer" parent="Scale/Scale_Body/Scale_Right/Right_Peasant_Card"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -137.5
-offset_top = -185.0
-offset_right = 137.5
-offset_bottom = 185.0
-grow_horizontal = 2
-grow_vertical = 2
-alignment = 1
-
-[node name="Peasant_Header" type="Label" parent="Scale/Scale_Body/Scale_Right/Right_Peasant_Card/Peasant_Card_Vbox"]
-custom_minimum_size = Vector2(275, 0)
-layout_mode = 2
-theme_override_colors/font_color = Color(0.533333, 0.819608, 0.67451, 1)
-theme_override_fonts/font = ExtResource("2_o6xmb")
-theme_override_font_sizes/font_size = 70
-text = "Peasantry"
-horizontal_alignment = 1
-
-[node name="Peasant_TopDivider" type="ColorRect" parent="Scale/Scale_Body/Scale_Right/Right_Peasant_Card/Peasant_Card_Vbox"]
-custom_minimum_size = Vector2(0, 5)
-layout_mode = 2
-color = Color(0.533333, 0.819608, 0.67451, 1)
-
-[node name="Peasant_Label1" type="Label" parent="Scale/Scale_Body/Scale_Right/Right_Peasant_Card/Peasant_Card_Vbox"]
-custom_minimum_size = Vector2(275, 0)
-layout_mode = 2
-theme_override_colors/font_color = Color(0.533333, 0.819608, 0.67451, 1)
-theme_override_fonts/font = ExtResource("2_o6xmb")
-theme_override_font_sizes/font_size = 50
-text = "line1line1line1line1li"
-horizontal_alignment = 1
-
-[node name="Peasant_Label2" type="Label" parent="Scale/Scale_Body/Scale_Right/Right_Peasant_Card/Peasant_Card_Vbox"]
-custom_minimum_size = Vector2(275, 0)
-layout_mode = 2
-theme_override_colors/font_color = Color(0.533333, 0.819608, 0.67451, 1)
-theme_override_fonts/font = ExtResource("2_o6xmb")
-theme_override_font_sizes/font_size = 50
-text = "line2line2line2line2li"
-horizontal_alignment = 1
-
-[node name="Peasant_Label3" type="Label" parent="Scale/Scale_Body/Scale_Right/Right_Peasant_Card/Peasant_Card_Vbox"]
-custom_minimum_size = Vector2(275, 0)
-layout_mode = 2
-theme_override_colors/font_color = Color(0.533333, 0.819608, 0.67451, 1)
-theme_override_fonts/font = ExtResource("2_o6xmb")
-theme_override_font_sizes/font_size = 50
-text = "line3line3line3line3li"
-horizontal_alignment = 1
-
-[node name="Peasant_BotDivider" type="ColorRect" parent="Scale/Scale_Body/Scale_Right/Right_Peasant_Card/Peasant_Card_Vbox"]
-custom_minimum_size = Vector2(0, 5)
-layout_mode = 2
-color = Color(0.533333, 0.819608, 0.67451, 1)
-
-[node name="Peasant_FxLabel1" type="Label" parent="Scale/Scale_Body/Scale_Right/Right_Peasant_Card/Peasant_Card_Vbox"]
-custom_minimum_size = Vector2(275, 0)
-layout_mode = 2
-theme_override_colors/font_color = Color(0.533333, 0.819608, 0.67451, 1)
-theme_override_fonts/font = ExtResource("2_o6xmb")
-theme_override_font_sizes/font_size = 50
-text = "effectsEFFECTSeffec"
-horizontal_alignment = 1
-
-[node name="Peasant_FxLabel2" type="Label" parent="Scale/Scale_Body/Scale_Right/Right_Peasant_Card/Peasant_Card_Vbox"]
-custom_minimum_size = Vector2(275, 0)
-layout_mode = 2
-theme_override_colors/font_color = Color(0.533333, 0.819608, 0.67451, 1)
-theme_override_fonts/font = ExtResource("2_o6xmb")
-theme_override_font_sizes/font_size = 50
-text = "effectsEFFECTSeffec"
-horizontal_alignment = 1
-
-[node name="Right_Nobility_Card" type="Panel" parent="Scale/Scale_Body/Scale_Right"]
-custom_minimum_size = Vector2(325, 400)
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -390.5
-offset_top = -493.0
-offset_right = -65.5
-offset_bottom = -93.0
-grow_horizontal = 2
-grow_vertical = 0
-theme = SubResource("Theme_ycdtd")
-
-[node name="Nobility_Card_Vbox" type="VBoxContainer" parent="Scale/Scale_Body/Scale_Right/Right_Nobility_Card"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -137.5
-offset_top = -185.0
-offset_right = 137.5
-offset_bottom = 185.0
-grow_horizontal = 2
-grow_vertical = 2
-alignment = 1
-
-[node name="Nobility_Header" type="Label" parent="Scale/Scale_Body/Scale_Right/Right_Nobility_Card/Nobility_Card_Vbox"]
-custom_minimum_size = Vector2(275, 0)
-layout_mode = 2
-theme_override_colors/font_color = Color(0.87451, 0.8, 0.976471, 1)
-theme_override_fonts/font = ExtResource("2_o6xmb")
-theme_override_font_sizes/font_size = 70
-text = "Nobility"
-horizontal_alignment = 1
-
-[node name="Nobility_TopDivider" type="ColorRect" parent="Scale/Scale_Body/Scale_Right/Right_Nobility_Card/Nobility_Card_Vbox"]
-custom_minimum_size = Vector2(0, 5)
-layout_mode = 2
-color = Color(0.87451, 0.8, 0.976471, 1)
-
-[node name="Nobility_Label1" type="Label" parent="Scale/Scale_Body/Scale_Right/Right_Nobility_Card/Nobility_Card_Vbox"]
-custom_minimum_size = Vector2(275, 0)
-layout_mode = 2
-theme_override_colors/font_color = Color(0.87451, 0.8, 0.976471, 1)
-theme_override_fonts/font = ExtResource("2_o6xmb")
-theme_override_font_sizes/font_size = 50
-text = "line1line1line1line1li"
-horizontal_alignment = 1
-
-[node name="Nobility_Label2" type="Label" parent="Scale/Scale_Body/Scale_Right/Right_Nobility_Card/Nobility_Card_Vbox"]
-custom_minimum_size = Vector2(275, 0)
-layout_mode = 2
-theme_override_colors/font_color = Color(0.87451, 0.8, 0.976471, 1)
-theme_override_fonts/font = ExtResource("2_o6xmb")
-theme_override_font_sizes/font_size = 50
-text = "line2line2line2line2li"
-horizontal_alignment = 1
-
-[node name="Nobility_Label3" type="Label" parent="Scale/Scale_Body/Scale_Right/Right_Nobility_Card/Nobility_Card_Vbox"]
-custom_minimum_size = Vector2(275, 0)
-layout_mode = 2
-theme_override_colors/font_color = Color(0.87451, 0.8, 0.976471, 1)
-theme_override_fonts/font = ExtResource("2_o6xmb")
-theme_override_font_sizes/font_size = 50
-text = "line3line3line3line3li"
-horizontal_alignment = 1
-
-[node name="Nobility_BotDivider" type="ColorRect" parent="Scale/Scale_Body/Scale_Right/Right_Nobility_Card/Nobility_Card_Vbox"]
-custom_minimum_size = Vector2(0, 5)
-layout_mode = 2
-color = Color(0.87451, 0.8, 0.976471, 1)
-
-[node name="Nobility_FxLabel1" type="Label" parent="Scale/Scale_Body/Scale_Right/Right_Nobility_Card/Nobility_Card_Vbox"]
-custom_minimum_size = Vector2(275, 0)
-layout_mode = 2
-theme_override_colors/font_color = Color(0.87451, 0.8, 0.976471, 1)
-theme_override_fonts/font = ExtResource("2_o6xmb")
-theme_override_font_sizes/font_size = 50
-text = "effectsEFFECTSeffec"
-horizontal_alignment = 1
-
-[node name="Nobility_FxLabel2" type="Label" parent="Scale/Scale_Body/Scale_Right/Right_Nobility_Card/Nobility_Card_Vbox"]
-custom_minimum_size = Vector2(275, 0)
-layout_mode = 2
-theme_override_colors/font_color = Color(0.87451, 0.8, 0.976471, 1)
-theme_override_fonts/font = ExtResource("2_o6xmb")
-theme_override_font_sizes/font_size = 50
-text = "effectsEFFECTSeffec"
-horizontal_alignment = 1
-
-[node name="Right_Clergy_Card" type="Panel" parent="Scale/Scale_Body/Scale_Right"]
-custom_minimum_size = Vector2(325, 400)
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -390.5
-offset_top = -493.0
-offset_right = -65.5
-offset_bottom = -93.0
-grow_horizontal = 2
-grow_vertical = 0
-theme = SubResource("Theme_0q1lr")
-
-[node name="Clergy_Card_Vbox" type="VBoxContainer" parent="Scale/Scale_Body/Scale_Right/Right_Clergy_Card"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -137.5
-offset_top = -185.0
-offset_right = 137.5
-offset_bottom = 185.0
-grow_horizontal = 2
-grow_vertical = 2
-alignment = 1
-
-[node name="Clergy_Header" type="Label" parent="Scale/Scale_Body/Scale_Right/Right_Clergy_Card/Clergy_Card_Vbox"]
-custom_minimum_size = Vector2(275, 0)
-layout_mode = 2
-theme_override_colors/font_color = Color(0.996078, 0.827451, 0.709804, 1)
-theme_override_fonts/font = ExtResource("2_o6xmb")
-theme_override_font_sizes/font_size = 70
-text = "Clergy"
-horizontal_alignment = 1
-
-[node name="Clergy_TopDivider" type="ColorRect" parent="Scale/Scale_Body/Scale_Right/Right_Clergy_Card/Clergy_Card_Vbox"]
-custom_minimum_size = Vector2(0, 5)
-layout_mode = 2
-color = Color(0.996078, 0.827451, 0.709804, 1)
-
-[node name="Clergy_Label1" type="Label" parent="Scale/Scale_Body/Scale_Right/Right_Clergy_Card/Clergy_Card_Vbox"]
-custom_minimum_size = Vector2(275, 0)
-layout_mode = 2
-theme_override_colors/font_color = Color(0.996078, 0.827451, 0.709804, 1)
-theme_override_fonts/font = ExtResource("2_o6xmb")
-theme_override_font_sizes/font_size = 50
-text = "line1line1line1line1li"
-horizontal_alignment = 1
-
-[node name="Clergy_Label2" type="Label" parent="Scale/Scale_Body/Scale_Right/Right_Clergy_Card/Clergy_Card_Vbox"]
-custom_minimum_size = Vector2(275, 0)
-layout_mode = 2
-theme_override_colors/font_color = Color(0.996078, 0.827451, 0.709804, 1)
-theme_override_fonts/font = ExtResource("2_o6xmb")
-theme_override_font_sizes/font_size = 50
-text = "line2line2line2line2li"
-horizontal_alignment = 1
-
-[node name="Clergy_Label3" type="Label" parent="Scale/Scale_Body/Scale_Right/Right_Clergy_Card/Clergy_Card_Vbox"]
-custom_minimum_size = Vector2(275, 0)
-layout_mode = 2
-theme_override_colors/font_color = Color(0.996078, 0.827451, 0.709804, 1)
-theme_override_fonts/font = ExtResource("2_o6xmb")
-theme_override_font_sizes/font_size = 50
-text = "line3line3line3line3li"
-horizontal_alignment = 1
-
-[node name="Clergy_BotDivider" type="ColorRect" parent="Scale/Scale_Body/Scale_Right/Right_Clergy_Card/Clergy_Card_Vbox"]
-custom_minimum_size = Vector2(0, 5)
-layout_mode = 2
-color = Color(0.996078, 0.827451, 0.709804, 1)
-
-[node name="Clergy_FxLabel1" type="Label" parent="Scale/Scale_Body/Scale_Right/Right_Clergy_Card/Clergy_Card_Vbox"]
-custom_minimum_size = Vector2(275, 0)
-layout_mode = 2
-theme_override_colors/font_color = Color(0.996078, 0.827451, 0.709804, 1)
-theme_override_fonts/font = ExtResource("2_o6xmb")
-theme_override_font_sizes/font_size = 50
-text = "effectsEFFECTSeffec"
-horizontal_alignment = 1
-
-[node name="Clergy_FxLabel2" type="Label" parent="Scale/Scale_Body/Scale_Right/Right_Clergy_Card/Clergy_Card_Vbox"]
-custom_minimum_size = Vector2(275, 0)
-layout_mode = 2
-theme_override_colors/font_color = Color(0.996078, 0.827451, 0.709804, 1)
-theme_override_fonts/font = ExtResource("2_o6xmb")
-theme_override_font_sizes/font_size = 50
-text = "effectsEFFECTSeffec"
-horizontal_alignment = 1
