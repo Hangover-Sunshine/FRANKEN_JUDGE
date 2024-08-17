@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://2nl8bwm5pvgk"]
+[gd_scene load_steps=34 format=3 uid="uid://2nl8bwm5pvgk"]
 
 [ext_resource type="Script" path="res://addons/verho/resources/TransitionBank.gd" id="1_8l5ad"]
 [ext_resource type="Resource" uid="uid://cokyxyvryfnhm" path="res://prefabs/transitions/black_fade.tres" id="2_vph7e"]
@@ -14,16 +14,330 @@
 
 [sub_resource type="Animation" id="Animation_glr1j"]
 length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BigDays:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CaseBrief:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CasePick:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Scale:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("LilDays:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
-[sub_resource type="Animation" id="Animation_hm1ql"]
-resource_name = "sdfedsf"
-length = 5.0
-loop_mode = 2
+[sub_resource type="Animation" id="Animation_fi0l2"]
+resource_name = "Part1"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BigDays:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CaseBrief:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CasePick:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Scale:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("LilDays:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_pw6ya"]
+resource_name = "Part2"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BigDays:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CaseBrief:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CasePick:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Scale:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("LilDays:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_3ogeh"]
+resource_name = "Part3"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BigDays:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CaseBrief:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CasePick:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Scale:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("LilDays:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_xffcq"]
+resource_name = "Part4"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BigDays:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CaseBrief:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CasePick:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Scale:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("LilDays:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rkl8t"]
 _data = {
-"RESET": SubResource("Animation_glr1j"),
-"sdfedsf": SubResource("Animation_hm1ql")
+"Part1": SubResource("Animation_fi0l2"),
+"Part2": SubResource("Animation_pw6ya"),
+"Part3": SubResource("Animation_3ogeh"),
+"Part4": SubResource("Animation_xffcq"),
+"RESET": SubResource("Animation_glr1j")
 }
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_63sq7"]
@@ -99,6 +413,36 @@ shader_parameter/WATER_COL = Color(0.0588235, 0.0588235, 0.0588235, 1)
 shader_parameter/WATER2_COL = Color(0.0784314, 0.0784314, 0.0784314, 1)
 shader_parameter/FOAM_COL = Color(0.0941176, 0.0941176, 0.0941176, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vk5qw"]
+bg_color = Color(0.0784314, 0.4, 0.356863, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="Theme" id="Theme_ufjen"]
+Panel/styles/panel = SubResource("StyleBoxFlat_vk5qw")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n6w1f"]
+bg_color = Color(0.364706, 0.184314, 0.54902, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="Theme" id="Theme_ycdtd"]
+Panel/styles/panel = SubResource("StyleBoxFlat_n6w1f")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ip0y6"]
+bg_color = Color(0.698039, 0.235294, 0.25098, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="Theme" id="Theme_0q1lr"]
+Panel/styles/panel = SubResource("StyleBoxFlat_ip0y6")
+
 [node name="Art_Demo" type="Node2D"]
 
 [node name="AP_States" type="AnimationPlayer" parent="."]
@@ -113,11 +457,14 @@ TRANSITIONS = Array[Resource("res://addons/verho/resources/TransitionResource.gd
 [node name="Portrait" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 960.0
-offset_right = 960.0
+offset_left = 959.0
+offset_top = 8.0
+offset_right = 959.0
+offset_bottom = 8.0
 mouse_filter = 1
 
 [node name="ColorRect" type="ColorRect" parent="Portrait"]
+modulate = Color(0.756863, 0.85098, 0.94902, 1)
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 5
@@ -137,7 +484,7 @@ offset_top = 21.0
 offset_right = 306.0
 offset_bottom = 301.0
 scale = Vector2(1.0512, 1.06836)
-color = Color(0.666667, 0.658824, 0.619608, 1)
+color = Color(0.815686, 0.815686, 0.815686, 1)
 
 [node name="TextureRect" type="TextureRect" parent="Portrait"]
 layout_mode = 0
@@ -276,36 +623,6 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("4_ruet7")
 theme_override_font_sizes/font_size = 50
 text = "(+00)"
-horizontal_alignment = 1
-
-[node name="Days" type="Control" parent="Reputation"]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 313.0
-offset_top = 338.0
-offset_right = 313.0
-offset_bottom = 338.0
-
-[node name="Day_Header" type="Label" parent="Reputation/Days"]
-layout_mode = 0
-offset_left = -114.0
-offset_top = -54.0
-offset_right = 13.0
-offset_bottom = 75.0
-theme_override_fonts/font = ExtResource("4_ruet7")
-theme_override_font_sizes/font_size = 50
-text = "DAY"
-horizontal_alignment = 1
-
-[node name="Day_Number_Header" type="Label" parent="Reputation/Days"]
-layout_mode = 0
-offset_left = 33.0
-offset_top = -54.0
-offset_right = 127.0
-offset_bottom = 75.0
-theme_override_fonts/font = ExtResource("4_ruet7")
-theme_override_font_sizes/font_size = 50
-text = "00 / 30"
 horizontal_alignment = 1
 
 [node name="Society" type="Control" parent="."]
@@ -718,6 +1035,67 @@ theme_override_fonts/font = ExtResource("4_ruet7")
 theme_override_font_sizes/font_size = 45
 text = "(+00)"
 
+[node name="LilDays" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 431.0
+offset_top = 389.0
+offset_right = 431.0
+offset_bottom = 389.0
+
+[node name="Day_Header" type="Label" parent="LilDays"]
+layout_mode = 0
+offset_left = -114.0
+offset_top = -54.0
+offset_right = 13.0
+offset_bottom = 75.0
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 50
+text = "DAY"
+horizontal_alignment = 1
+
+[node name="Day_Number_Header" type="Label" parent="LilDays"]
+layout_mode = 0
+offset_left = 33.0
+offset_top = -54.0
+offset_right = 127.0
+offset_bottom = 75.0
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 50
+text = "00 / 30"
+horizontal_alignment = 1
+
+[node name="BigDays" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 943.0
+offset_top = 643.0
+offset_right = 943.0
+offset_bottom = 643.0
+
+[node name="Day_Header" type="Label" parent="BigDays"]
+layout_mode = 0
+offset_left = -366.0
+offset_top = -95.0
+offset_right = -119.0
+offset_bottom = 158.0
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 250
+text = "DAY"
+horizontal_alignment = 1
+
+[node name="Day_Number_Header" type="Label" parent="BigDays"]
+layout_mode = 0
+offset_left = -66.0
+offset_top = -95.0
+offset_right = 405.0
+offset_bottom = 158.0
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 250
+text = "00 / 30"
+horizontal_alignment = 1
+
 [node name="CaseBrief" type="Control" parent="."]
 visible = false
 layout_mode = 3
@@ -725,9 +1103,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = 971.0
-offset_top = 429.0
+offset_top = 454.0
 offset_right = 971.0
-offset_bottom = 429.0
+offset_bottom = 454.0
 grow_horizontal = 2
 mouse_filter = 1
 
@@ -740,7 +1118,7 @@ offset_left = -471.0
 offset_right = 445.0
 offset_bottom = 333.0
 grow_horizontal = 2
-theme_override_constants/separation = -20
+theme_override_constants/separation = -10
 
 [node name="Header_Hbox" type="HBoxContainer" parent="CaseBrief/Casebrief_Vbox"]
 layout_mode = 2
@@ -781,6 +1159,38 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("4_ruet7")
 theme_override_font_sizes/font_size = 90
 text = "Blagh blagh blagh blagh blagh blagh blagh
+"
+horizontal_alignment = 1
+
+[node name="Casebrief_Body2" type="Label" parent="CaseBrief/Casebrief_Vbox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 90
+text = "Blagh blagh blagh blagh blagh blagh blagh
+"
+horizontal_alignment = 1
+
+[node name="Casebrief_Body3" type="Label" parent="CaseBrief/Casebrief_Vbox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 90
+text = "Blagh blagh blagh blagh blagh blagh blagh
+"
+horizontal_alignment = 1
+
+[node name="Casebrief_Body4" type="Label" parent="CaseBrief/Casebrief_Vbox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 90
+text = "Blagh blagh blagh blagh blagh blagh blagh
+"
+horizontal_alignment = 1
+
+[node name="Casebrief_Body5" type="Label" parent="CaseBrief/Casebrief_Vbox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 90
+text = "Press BUTTON to CONTINUE
 "
 horizontal_alignment = 1
 
@@ -866,19 +1276,586 @@ offset_top = 434.0
 offset_right = 1808.0
 offset_bottom = 1034.0
 
-[node name="ScaleBody" type="Sprite2D" parent="."]
-position = Vector2(960, 804)
+[node name="Scale" type="Node2D" parent="."]
+visible = false
+position = Vector2(960, 740)
+
+[node name="Scale_Body" type="Sprite2D" parent="Scale"]
 texture = ExtResource("9_5rxgq")
 
-[node name="ScaleHand" type="Sprite2D" parent="ScaleBody"]
-position = Vector2(-513, 116)
-texture = ExtResource("11_tlqga")
-
-[node name="ScaleHand2" type="Sprite2D" parent="ScaleBody"]
-position = Vector2(519, 120)
-texture = ExtResource("11_tlqga")
-
-[node name="ScaleArm" type="Sprite2D" parent="ScaleBody"]
+[node name="Scale_Arm" type="Sprite2D" parent="Scale/Scale_Body"]
 show_behind_parent = true
-position = Vector2(0, -225)
+position = Vector2(0, -244)
 texture = ExtResource("10_l68yr")
+
+[node name="Scale_Left" type="Sprite2D" parent="Scale/Scale_Body"]
+position = Vector2(-513, 246)
+texture = ExtResource("11_tlqga")
+
+[node name="Left_Peasant_Card" type="Panel" parent="Scale/Scale_Body/Scale_Left"]
+custom_minimum_size = Vector2(325, 400)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -390.5
+offset_top = -493.0
+offset_right = -65.5
+offset_bottom = -93.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_ufjen")
+
+[node name="Peasant_Card_Vbox" type="VBoxContainer" parent="Scale/Scale_Body/Scale_Left/Left_Peasant_Card"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -137.5
+offset_top = -185.0
+offset_right = 137.5
+offset_bottom = 185.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Peasant_Header" type="Label" parent="Scale/Scale_Body/Scale_Left/Left_Peasant_Card/Peasant_Card_Vbox"]
+custom_minimum_size = Vector2(275, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.533333, 0.819608, 0.67451, 1)
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 70
+text = "Peasantry"
+horizontal_alignment = 1
+
+[node name="Peasant_TopDivider" type="ColorRect" parent="Scale/Scale_Body/Scale_Left/Left_Peasant_Card/Peasant_Card_Vbox"]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+color = Color(0.533333, 0.819608, 0.67451, 1)
+
+[node name="Peasant_Label1" type="Label" parent="Scale/Scale_Body/Scale_Left/Left_Peasant_Card/Peasant_Card_Vbox"]
+custom_minimum_size = Vector2(275, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.533333, 0.819608, 0.67451, 1)
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 50
+text = "line1line1line1line1li"
+horizontal_alignment = 1
+
+[node name="Peasant_Label2" type="Label" parent="Scale/Scale_Body/Scale_Left/Left_Peasant_Card/Peasant_Card_Vbox"]
+custom_minimum_size = Vector2(275, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.533333, 0.819608, 0.67451, 1)
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 50
+text = "line2line2line2line2li"
+horizontal_alignment = 1
+
+[node name="Peasant_Label3" type="Label" parent="Scale/Scale_Body/Scale_Left/Left_Peasant_Card/Peasant_Card_Vbox"]
+custom_minimum_size = Vector2(275, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.533333, 0.819608, 0.67451, 1)
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 50
+text = "line3line3line3line3li"
+horizontal_alignment = 1
+
+[node name="Peasant_BotDivider" type="ColorRect" parent="Scale/Scale_Body/Scale_Left/Left_Peasant_Card/Peasant_Card_Vbox"]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+color = Color(0.533333, 0.819608, 0.67451, 1)
+
+[node name="Peasant_FxLabel1" type="Label" parent="Scale/Scale_Body/Scale_Left/Left_Peasant_Card/Peasant_Card_Vbox"]
+custom_minimum_size = Vector2(275, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.533333, 0.819608, 0.67451, 1)
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 50
+text = "effectsEFFECTSeffec"
+horizontal_alignment = 1
+
+[node name="Peasant_FxLabel2" type="Label" parent="Scale/Scale_Body/Scale_Left/Left_Peasant_Card/Peasant_Card_Vbox"]
+custom_minimum_size = Vector2(275, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.533333, 0.819608, 0.67451, 1)
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 50
+text = "effectsEFFECTSeffec"
+horizontal_alignment = 1
+
+[node name="Left_Nobility_Card" type="Panel" parent="Scale/Scale_Body/Scale_Left"]
+custom_minimum_size = Vector2(325, 400)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -390.5
+offset_top = -493.0
+offset_right = -65.5
+offset_bottom = -93.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_ycdtd")
+
+[node name="Nobility_Card_Vbox" type="VBoxContainer" parent="Scale/Scale_Body/Scale_Left/Left_Nobility_Card"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -137.5
+offset_top = -185.0
+offset_right = 137.5
+offset_bottom = 185.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Nobility_Header" type="Label" parent="Scale/Scale_Body/Scale_Left/Left_Nobility_Card/Nobility_Card_Vbox"]
+custom_minimum_size = Vector2(275, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.87451, 0.8, 0.976471, 1)
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 70
+text = "Nobility"
+horizontal_alignment = 1
+
+[node name="Nobility_TopDivider" type="ColorRect" parent="Scale/Scale_Body/Scale_Left/Left_Nobility_Card/Nobility_Card_Vbox"]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+color = Color(0.87451, 0.8, 0.976471, 1)
+
+[node name="Nobility_Label1" type="Label" parent="Scale/Scale_Body/Scale_Left/Left_Nobility_Card/Nobility_Card_Vbox"]
+custom_minimum_size = Vector2(275, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.87451, 0.8, 0.976471, 1)
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 50
+text = "line1line1line1line1li"
+horizontal_alignment = 1
+
+[node name="Nobility_Label2" type="Label" parent="Scale/Scale_Body/Scale_Left/Left_Nobility_Card/Nobility_Card_Vbox"]
+custom_minimum_size = Vector2(275, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.87451, 0.8, 0.976471, 1)
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 50
+text = "line2line2line2line2li"
+horizontal_alignment = 1
+
+[node name="Nobility_Label3" type="Label" parent="Scale/Scale_Body/Scale_Left/Left_Nobility_Card/Nobility_Card_Vbox"]
+custom_minimum_size = Vector2(275, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.87451, 0.8, 0.976471, 1)
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 50
+text = "line3line3line3line3li"
+horizontal_alignment = 1
+
+[node name="Nobility_BotDivider" type="ColorRect" parent="Scale/Scale_Body/Scale_Left/Left_Nobility_Card/Nobility_Card_Vbox"]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+color = Color(0.87451, 0.8, 0.976471, 1)
+
+[node name="Nobility_FxLabel1" type="Label" parent="Scale/Scale_Body/Scale_Left/Left_Nobility_Card/Nobility_Card_Vbox"]
+custom_minimum_size = Vector2(275, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.87451, 0.8, 0.976471, 1)
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 50
+text = "effectsEFFECTSeffec"
+horizontal_alignment = 1
+
+[node name="Nobility_FxLabel2" type="Label" parent="Scale/Scale_Body/Scale_Left/Left_Nobility_Card/Nobility_Card_Vbox"]
+custom_minimum_size = Vector2(275, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.87451, 0.8, 0.976471, 1)
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 50
+text = "effectsEFFECTSeffec"
+horizontal_alignment = 1
+
+[node name="Left_Clergy_Card" type="Panel" parent="Scale/Scale_Body/Scale_Left"]
+custom_minimum_size = Vector2(325, 400)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -390.5
+offset_top = -493.0
+offset_right = -65.5
+offset_bottom = -93.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_0q1lr")
+
+[node name="Clergy_Card_Vbox" type="VBoxContainer" parent="Scale/Scale_Body/Scale_Left/Left_Clergy_Card"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -137.5
+offset_top = -185.0
+offset_right = 137.5
+offset_bottom = 185.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Clergy_Header" type="Label" parent="Scale/Scale_Body/Scale_Left/Left_Clergy_Card/Clergy_Card_Vbox"]
+custom_minimum_size = Vector2(275, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.996078, 0.827451, 0.709804, 1)
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 70
+text = "Clergy"
+horizontal_alignment = 1
+
+[node name="Clergy_TopDivider" type="ColorRect" parent="Scale/Scale_Body/Scale_Left/Left_Clergy_Card/Clergy_Card_Vbox"]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+color = Color(0.996078, 0.827451, 0.709804, 1)
+
+[node name="Clergy_Label1" type="Label" parent="Scale/Scale_Body/Scale_Left/Left_Clergy_Card/Clergy_Card_Vbox"]
+custom_minimum_size = Vector2(275, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.996078, 0.827451, 0.709804, 1)
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 50
+text = "line1line1line1line1li"
+horizontal_alignment = 1
+
+[node name="Clergy_Label2" type="Label" parent="Scale/Scale_Body/Scale_Left/Left_Clergy_Card/Clergy_Card_Vbox"]
+custom_minimum_size = Vector2(275, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.996078, 0.827451, 0.709804, 1)
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 50
+text = "line2line2line2line2li"
+horizontal_alignment = 1
+
+[node name="Clergy_Label3" type="Label" parent="Scale/Scale_Body/Scale_Left/Left_Clergy_Card/Clergy_Card_Vbox"]
+custom_minimum_size = Vector2(275, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.996078, 0.827451, 0.709804, 1)
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 50
+text = "line3line3line3line3li"
+horizontal_alignment = 1
+
+[node name="Clergy_BotDivider" type="ColorRect" parent="Scale/Scale_Body/Scale_Left/Left_Clergy_Card/Clergy_Card_Vbox"]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+color = Color(0.996078, 0.827451, 0.709804, 1)
+
+[node name="Clergy_FxLabel1" type="Label" parent="Scale/Scale_Body/Scale_Left/Left_Clergy_Card/Clergy_Card_Vbox"]
+custom_minimum_size = Vector2(275, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.996078, 0.827451, 0.709804, 1)
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 50
+text = "effectsEFFECTSeffec"
+horizontal_alignment = 1
+
+[node name="Clergy_FxLabel2" type="Label" parent="Scale/Scale_Body/Scale_Left/Left_Clergy_Card/Clergy_Card_Vbox"]
+custom_minimum_size = Vector2(275, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.996078, 0.827451, 0.709804, 1)
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 50
+text = "effectsEFFECTSeffec"
+horizontal_alignment = 1
+
+[node name="Scale_Right" type="Sprite2D" parent="Scale/Scale_Body"]
+position = Vector2(514, 246)
+texture = ExtResource("11_tlqga")
+
+[node name="Right_Peasant_Card" type="Panel" parent="Scale/Scale_Body/Scale_Right"]
+custom_minimum_size = Vector2(325, 400)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -390.5
+offset_top = -493.0
+offset_right = -65.5
+offset_bottom = -93.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_ufjen")
+
+[node name="Peasant_Card_Vbox" type="VBoxContainer" parent="Scale/Scale_Body/Scale_Right/Right_Peasant_Card"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -137.5
+offset_top = -185.0
+offset_right = 137.5
+offset_bottom = 185.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Peasant_Header" type="Label" parent="Scale/Scale_Body/Scale_Right/Right_Peasant_Card/Peasant_Card_Vbox"]
+custom_minimum_size = Vector2(275, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.533333, 0.819608, 0.67451, 1)
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 70
+text = "Peasantry"
+horizontal_alignment = 1
+
+[node name="Peasant_TopDivider" type="ColorRect" parent="Scale/Scale_Body/Scale_Right/Right_Peasant_Card/Peasant_Card_Vbox"]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+color = Color(0.533333, 0.819608, 0.67451, 1)
+
+[node name="Peasant_Label1" type="Label" parent="Scale/Scale_Body/Scale_Right/Right_Peasant_Card/Peasant_Card_Vbox"]
+custom_minimum_size = Vector2(275, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.533333, 0.819608, 0.67451, 1)
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 50
+text = "line1line1line1line1li"
+horizontal_alignment = 1
+
+[node name="Peasant_Label2" type="Label" parent="Scale/Scale_Body/Scale_Right/Right_Peasant_Card/Peasant_Card_Vbox"]
+custom_minimum_size = Vector2(275, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.533333, 0.819608, 0.67451, 1)
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 50
+text = "line2line2line2line2li"
+horizontal_alignment = 1
+
+[node name="Peasant_Label3" type="Label" parent="Scale/Scale_Body/Scale_Right/Right_Peasant_Card/Peasant_Card_Vbox"]
+custom_minimum_size = Vector2(275, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.533333, 0.819608, 0.67451, 1)
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 50
+text = "line3line3line3line3li"
+horizontal_alignment = 1
+
+[node name="Peasant_BotDivider" type="ColorRect" parent="Scale/Scale_Body/Scale_Right/Right_Peasant_Card/Peasant_Card_Vbox"]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+color = Color(0.533333, 0.819608, 0.67451, 1)
+
+[node name="Peasant_FxLabel1" type="Label" parent="Scale/Scale_Body/Scale_Right/Right_Peasant_Card/Peasant_Card_Vbox"]
+custom_minimum_size = Vector2(275, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.533333, 0.819608, 0.67451, 1)
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 50
+text = "effectsEFFECTSeffec"
+horizontal_alignment = 1
+
+[node name="Peasant_FxLabel2" type="Label" parent="Scale/Scale_Body/Scale_Right/Right_Peasant_Card/Peasant_Card_Vbox"]
+custom_minimum_size = Vector2(275, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.533333, 0.819608, 0.67451, 1)
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 50
+text = "effectsEFFECTSeffec"
+horizontal_alignment = 1
+
+[node name="Right_Nobility_Card" type="Panel" parent="Scale/Scale_Body/Scale_Right"]
+custom_minimum_size = Vector2(325, 400)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -390.5
+offset_top = -493.0
+offset_right = -65.5
+offset_bottom = -93.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_ycdtd")
+
+[node name="Nobility_Card_Vbox" type="VBoxContainer" parent="Scale/Scale_Body/Scale_Right/Right_Nobility_Card"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -137.5
+offset_top = -185.0
+offset_right = 137.5
+offset_bottom = 185.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Nobility_Header" type="Label" parent="Scale/Scale_Body/Scale_Right/Right_Nobility_Card/Nobility_Card_Vbox"]
+custom_minimum_size = Vector2(275, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.87451, 0.8, 0.976471, 1)
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 70
+text = "Nobility"
+horizontal_alignment = 1
+
+[node name="Nobility_TopDivider" type="ColorRect" parent="Scale/Scale_Body/Scale_Right/Right_Nobility_Card/Nobility_Card_Vbox"]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+color = Color(0.87451, 0.8, 0.976471, 1)
+
+[node name="Nobility_Label1" type="Label" parent="Scale/Scale_Body/Scale_Right/Right_Nobility_Card/Nobility_Card_Vbox"]
+custom_minimum_size = Vector2(275, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.87451, 0.8, 0.976471, 1)
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 50
+text = "line1line1line1line1li"
+horizontal_alignment = 1
+
+[node name="Nobility_Label2" type="Label" parent="Scale/Scale_Body/Scale_Right/Right_Nobility_Card/Nobility_Card_Vbox"]
+custom_minimum_size = Vector2(275, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.87451, 0.8, 0.976471, 1)
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 50
+text = "line2line2line2line2li"
+horizontal_alignment = 1
+
+[node name="Nobility_Label3" type="Label" parent="Scale/Scale_Body/Scale_Right/Right_Nobility_Card/Nobility_Card_Vbox"]
+custom_minimum_size = Vector2(275, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.87451, 0.8, 0.976471, 1)
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 50
+text = "line3line3line3line3li"
+horizontal_alignment = 1
+
+[node name="Nobility_BotDivider" type="ColorRect" parent="Scale/Scale_Body/Scale_Right/Right_Nobility_Card/Nobility_Card_Vbox"]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+color = Color(0.87451, 0.8, 0.976471, 1)
+
+[node name="Nobility_FxLabel1" type="Label" parent="Scale/Scale_Body/Scale_Right/Right_Nobility_Card/Nobility_Card_Vbox"]
+custom_minimum_size = Vector2(275, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.87451, 0.8, 0.976471, 1)
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 50
+text = "effectsEFFECTSeffec"
+horizontal_alignment = 1
+
+[node name="Nobility_FxLabel2" type="Label" parent="Scale/Scale_Body/Scale_Right/Right_Nobility_Card/Nobility_Card_Vbox"]
+custom_minimum_size = Vector2(275, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.87451, 0.8, 0.976471, 1)
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 50
+text = "effectsEFFECTSeffec"
+horizontal_alignment = 1
+
+[node name="Right_Clergy_Card" type="Panel" parent="Scale/Scale_Body/Scale_Right"]
+custom_minimum_size = Vector2(325, 400)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -390.5
+offset_top = -493.0
+offset_right = -65.5
+offset_bottom = -93.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_0q1lr")
+
+[node name="Clergy_Card_Vbox" type="VBoxContainer" parent="Scale/Scale_Body/Scale_Right/Right_Clergy_Card"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -137.5
+offset_top = -185.0
+offset_right = 137.5
+offset_bottom = 185.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Clergy_Header" type="Label" parent="Scale/Scale_Body/Scale_Right/Right_Clergy_Card/Clergy_Card_Vbox"]
+custom_minimum_size = Vector2(275, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.996078, 0.827451, 0.709804, 1)
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 70
+text = "Clergy"
+horizontal_alignment = 1
+
+[node name="Clergy_TopDivider" type="ColorRect" parent="Scale/Scale_Body/Scale_Right/Right_Clergy_Card/Clergy_Card_Vbox"]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+color = Color(0.996078, 0.827451, 0.709804, 1)
+
+[node name="Clergy_Label1" type="Label" parent="Scale/Scale_Body/Scale_Right/Right_Clergy_Card/Clergy_Card_Vbox"]
+custom_minimum_size = Vector2(275, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.996078, 0.827451, 0.709804, 1)
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 50
+text = "line1line1line1line1li"
+horizontal_alignment = 1
+
+[node name="Clergy_Label2" type="Label" parent="Scale/Scale_Body/Scale_Right/Right_Clergy_Card/Clergy_Card_Vbox"]
+custom_minimum_size = Vector2(275, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.996078, 0.827451, 0.709804, 1)
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 50
+text = "line2line2line2line2li"
+horizontal_alignment = 1
+
+[node name="Clergy_Label3" type="Label" parent="Scale/Scale_Body/Scale_Right/Right_Clergy_Card/Clergy_Card_Vbox"]
+custom_minimum_size = Vector2(275, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.996078, 0.827451, 0.709804, 1)
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 50
+text = "line3line3line3line3li"
+horizontal_alignment = 1
+
+[node name="Clergy_BotDivider" type="ColorRect" parent="Scale/Scale_Body/Scale_Right/Right_Clergy_Card/Clergy_Card_Vbox"]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+color = Color(0.996078, 0.827451, 0.709804, 1)
+
+[node name="Clergy_FxLabel1" type="Label" parent="Scale/Scale_Body/Scale_Right/Right_Clergy_Card/Clergy_Card_Vbox"]
+custom_minimum_size = Vector2(275, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.996078, 0.827451, 0.709804, 1)
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 50
+text = "effectsEFFECTSeffec"
+horizontal_alignment = 1
+
+[node name="Clergy_FxLabel2" type="Label" parent="Scale/Scale_Body/Scale_Right/Right_Clergy_Card/Clergy_Card_Vbox"]
+custom_minimum_size = Vector2(275, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.996078, 0.827451, 0.709804, 1)
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 50
+text = "effectsEFFECTSeffec"
+horizontal_alignment = 1
