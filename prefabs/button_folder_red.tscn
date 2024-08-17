@@ -1,0 +1,78 @@
+[gd_scene load_steps=12 format=3 uid="uid://dd1ytb4xypau"]
+
+[ext_resource type="Texture2D" uid="uid://hd4h13erod2w" path="res://assets/gui/Folder_Blue.png" id="1_ytbhg"]
+[ext_resource type="Texture2D" uid="uid://xlhidlfg2qdh" path="res://assets/gui/Folder_Click.png" id="2_pkkme"]
+[ext_resource type="Texture2D" uid="uid://cpwho6qtefmjc" path="res://assets/gui/Folder_Red.png" id="2_pxc7h"]
+[ext_resource type="Script" path="res://scenes/Folder_Press.gd" id="3_2tusv"]
+[ext_resource type="Texture2D" uid="uid://7tbs218cpwgv" path="res://assets/particle/FJ_Circle.png" id="4_auvkv"]
+[ext_resource type="FontFile" uid="uid://73eyyuro8nvv" path="res://assets/fonts/PirataOne.ttf" id="5_ijw5s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f1p60"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_otkti"]
+texture = ExtResource("1_ytbhg")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w87u2"]
+texture = ExtResource("2_pxc7h")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_srlm5"]
+texture = ExtResource("2_pkkme")
+
+[sub_resource type="Theme" id="Theme_nbsde"]
+Button/styles/focus = SubResource("StyleBoxEmpty_f1p60")
+Button/styles/hover = SubResource("StyleBoxTexture_otkti")
+Button/styles/normal = SubResource("StyleBoxTexture_w87u2")
+Button/styles/pressed = SubResource("StyleBoxTexture_srlm5")
+
+[node name="Button_Folder_Red" type="Button"]
+custom_minimum_size = Vector2(700, 800)
+offset_right = 700.0
+offset_bottom = 800.0
+theme = SubResource("Theme_nbsde")
+keep_pressed_outside = true
+script = ExtResource("3_2tusv")
+
+[node name="Folder_Labels_Vbox" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -114.0
+offset_top = 138.0
+offset_right = 114.0
+offset_bottom = 301.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="Folder_Stickers" type="HBoxContainer" parent="Folder_Labels_Vbox"]
+layout_mode = 2
+alignment = 1
+
+[node name="Peasantry_Sticker" type="TextureRect" parent="Folder_Labels_Vbox/Folder_Stickers"]
+modulate = Color(0.258824, 0.737255, 0.498039, 1)
+layout_mode = 2
+texture = ExtResource("4_auvkv")
+stretch_mode = 3
+
+[node name="Nobility_Sticker" type="TextureRect" parent="Folder_Labels_Vbox/Folder_Stickers"]
+modulate = Color(0.705882, 0.513726, 0.937255, 1)
+layout_mode = 2
+texture = ExtResource("4_auvkv")
+stretch_mode = 3
+
+[node name="Clergy_Sticker" type="TextureRect" parent="Folder_Labels_Vbox/Folder_Stickers"]
+modulate = Color(0.976471, 0.607843, 0.317647, 1)
+layout_mode = 2
+texture = ExtResource("4_auvkv")
+stretch_mode = 3
+
+[node name="Folder_Label" type="Label" parent="Folder_Labels_Vbox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.756863, 0.278431, 0.333333, 1)
+theme_override_fonts/font = ExtResource("5_ijw5s")
+theme_override_font_sizes/font_size = 100
+text = "CASE C"
+horizontal_alignment = 1
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]
+[connection signal="button_up" from="." to="." method="_on_button_up"]
