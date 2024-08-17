@@ -24,3 +24,5 @@ enum END_CONDITION {
 	LOSS_CLERGY,
 	LOSS_ALL # You really messed up somehow... Congrats? Impressive? You suck?
 }
+
+const TWO_NUM_DISPLAY = "%02d"

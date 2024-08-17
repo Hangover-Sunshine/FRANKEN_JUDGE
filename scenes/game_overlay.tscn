@@ -1,10 +1,13 @@
-[gd_scene load_steps=32 format=3 uid="uid://2nl8bwm5pvgk"]
+[gd_scene load_steps=35 format=3 uid="uid://2nl8bwm5pvgk"]
 
+[ext_resource type="Script" path="res://scripts/game/game_overlay.gd" id="1_hcafl"]
 [ext_resource type="FontFile" uid="uid://73eyyuro8nvv" path="res://assets/fonts/PirataOne.ttf" id="1_qps4p"]
 [ext_resource type="FontFile" uid="uid://cqxld14ctgocv" path="res://assets/fonts/MedulaOne.ttf" id="2_o6xmb"]
 [ext_resource type="PackedScene" uid="uid://dd1ytb4xypau" path="res://prefabs/button_folder_red.tscn" id="3_fwt70"]
 [ext_resource type="PackedScene" uid="uid://bgdpaito5ide6" path="res://prefabs/button_folder_blue.tscn" id="4_4qtwl"]
+[ext_resource type="Script" path="res://scripts/game/game_overlay/day_counter.gd" id="4_lmcgd"]
 [ext_resource type="PackedScene" uid="uid://dx3ikj0a6uvw3" path="res://prefabs/button_folder_yellow.tscn" id="5_6ykol"]
+[ext_resource type="Script" path="res://scripts/game/game_overlay/case_pick.gd" id="5_e5niu"]
 [ext_resource type="Shader" path="res://scenes/background.gdshader" id="6_7v3db"]
 [ext_resource type="Texture2D" uid="uid://dog8w28lktodb" path="res://assets/gui/Scale_Body.png" id="7_tixm6"]
 [ext_resource type="Texture2D" uid="uid://b65tb5y0dqca8" path="res://assets/gui/Scale_Arm.png" id="8_lnds5"]
@@ -442,6 +445,7 @@ corner_radius_bottom_left = 50
 Panel/styles/panel = SubResource("StyleBoxFlat_ip0y6")
 
 [node name="Game_Overlay" type="Node2D"]
+script = ExtResource("1_hcafl")
 
 [node name="AP_States" type="AnimationPlayer" parent="."]
 libraries = {
@@ -1037,6 +1041,7 @@ offset_left = 431.0
 offset_top = 389.0
 offset_right = 431.0
 offset_bottom = 389.0
+script = ExtResource("4_lmcgd")
 
 [node name="Day_Header" type="Label" parent="LilDays"]
 layout_mode = 0
@@ -1067,6 +1072,7 @@ offset_left = 943.0
 offset_top = 643.0
 offset_right = 943.0
 offset_bottom = 643.0
+script = ExtResource("4_lmcgd")
 
 [node name="Day_Header" type="Label" parent="BigDays"]
 layout_mode = 0
@@ -1152,8 +1158,7 @@ horizontal_alignment = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_o6xmb")
 theme_override_font_sizes/font_size = 90
-text = "Blagh blagh blagh blagh blagh blagh blagh
-"
+text = "Blagh blagh blagh blagh blagh blagh blagh"
 horizontal_alignment = 1
 
 [node name="Casebrief_Body2" type="Label" parent="CaseBrief/Casebrief_Vbox"]
@@ -1180,7 +1185,7 @@ text = "Blagh blagh blagh blagh blagh blagh blagh
 "
 horizontal_alignment = 1
 
-[node name="Casebrief_Body5" type="Label" parent="CaseBrief/Casebrief_Vbox"]
+[node name="Casebrief_Instruction" type="Label" parent="CaseBrief/Casebrief_Vbox"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_o6xmb")
 theme_override_font_sizes/font_size = 90
@@ -1199,6 +1204,7 @@ offset_bottom = 495.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 mouse_filter = 1
+script = ExtResource("5_e5niu")
 
 [node name="Case_Header" type="Label" parent="CasePick"]
 layout_mode = 1
@@ -1229,6 +1235,7 @@ offset_bottom = 985.0
 grow_horizontal = 2
 rotation = 0.20944
 pivot_offset = Vector2(350, 0)
+CaseID = 2
 
 [node name="Button_Folder_Blue" parent="CasePick" instance=ExtResource("4_4qtwl")]
 layout_mode = 1
@@ -1241,6 +1248,7 @@ offset_right = 339.352
 offset_bottom = 900.0
 grow_horizontal = 2
 pivot_offset = Vector2(350, 0)
+CaseID = 1
 
 [node name="Button_Folder_Yellow" parent="CasePick" instance=ExtResource("5_6ykol")]
 layout_mode = 1

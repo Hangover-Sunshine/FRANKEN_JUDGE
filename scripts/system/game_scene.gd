@@ -20,6 +20,12 @@ func _ready():
 	Verho.connect("loaded_scene", _loaded_scene)
 	connect("confirm_case", _confirm_case)
 	connect("update_stats_done", _update_stats_done)
+	
+	# Shuffle the cases
+	CASES.shuffle()
+	
+	$Game_Overlay.connect("cases_left", readd_unpicked_cases)
+	$Game_Overlay.initialize(NUMBER_OF_TURNS)
 ##
 
 ## Fired when the case has been submit.
@@ -81,4 +87,25 @@ func _loaded_scene(scene_name):
 	if scene_name != name:
 		queue_free()
 	##
+##
+
+func pick_cases() -> Array[BaseCaseResource]:
+	var cases:Array[BaseCaseResource]
+	
+	while cases.size() < 3:
+		var case = CASES.pick_random()
+		CASES.remove_at(CASES.find(cases))
+		cases.append(case)
+	##
+	
+	return cases
+##
+
+func readd_unpicked_cases(unpicked_cases:Array[BaseCaseResource]):
+	for case in unpicked_cases:
+		CASES.append(case)
+	##
+	
+	# Shuffle everything
+	CASES.shuffle()
 ##

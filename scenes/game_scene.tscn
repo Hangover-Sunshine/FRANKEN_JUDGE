@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://dhix2dusxj10i"]
+[gd_scene load_steps=9 format=3 uid="uid://dhix2dusxj10i"]
 
 [ext_resource type="Script" path="res://scripts/system/game_scene.gd" id="1_s1yw1"]
 [ext_resource type="Script" path="res://addons/verho/resources/TransitionBank.gd" id="1_uelm6"]
 [ext_resource type="Resource" uid="uid://cokyxyvryfnhm" path="res://prefabs/transitions/black_fade.tres" id="2_hubdk"]
 [ext_resource type="Resource" uid="uid://drfrmac6j2ade" path="res://prefabs/cases/illegal_holy_text_case.tres" id="2_ykisd"]
+[ext_resource type="PackedScene" uid="uid://2nl8bwm5pvgk" path="res://scenes/game_overlay.tscn" id="3_6t524"]
 [ext_resource type="Script" path="res://scripts/game/town_stats.gd" id="4_fdghg"]
 [ext_resource type="Script" path="res://scripts/game/reptuation_stats.gd" id="5_4xgmw"]
 [ext_resource type="PackedScene" uid="uid://cvws2phcvy2lr" path="res://scenes/menus/hub_pause.tscn" id="7_3lo3u"]
@@ -12,6 +13,8 @@
 process_mode = 3
 script = ExtResource("1_s1yw1")
 CASES = Array[Resource("res://scripts/resources/base_case_resource.gd")]([ExtResource("2_ykisd")])
+
+[node name="Game_Overlay" parent="." instance=ExtResource("3_6t524")]
 
 [node name="REMOVEME" type="Node" parent="."]
 script = ExtResource("1_uelm6")
