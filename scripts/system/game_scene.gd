@@ -16,6 +16,7 @@ var _curr_day:int = 1
 
 ## Called when node is in the tree.
 func _ready():
+	Verho.connect("loaded_scene", _loaded_scene)
 	connect("confirm_case", _confirm_case)
 ##
 
@@ -48,4 +49,10 @@ func _confirm_case(effects:Array[BaseEffectResource]):
 	# TODO: Save the current day -- let player back out without worry
 	
 	# TODO: Send off for animations :)
+##
+
+func _loaded_scene(scene_name):
+	if scene_name != name:
+		queue_free()
+	##
 ##

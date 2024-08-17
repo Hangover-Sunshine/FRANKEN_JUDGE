@@ -70,8 +70,11 @@ func to_exit():
 func to_load():
 	Verho.change_scene("scenes/game_scene", "", "BlackFade")
 
-func to_free(_scene_name):
-	self.queue_free()
+func to_free(scene_name):
+	if scene_name != name:
+		self.queue_free()
+	##
+##
 
 func _on_menu_timer_timeout():
 	ready_to_click = true
