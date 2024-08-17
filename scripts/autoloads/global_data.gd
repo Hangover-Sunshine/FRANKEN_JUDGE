@@ -14,3 +14,12 @@ enum Effects {
 	TAX,
 	POLICING
 }
+
+enum END_CONDITION {
+	NONE,
+	WIN,
+	LOSS_PEASANT,
+	LOSS_NOBILITY,
+	LOSS_CLERGY,
+	LOSS_ALL # You really messed up somehow... Congrats? Impressive? You suck?
+}
