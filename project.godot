@@ -31,10 +31,10 @@ manager/music/bus="Music"
 
 GlobalSignals="*res://scripts/autoloads/global_signals.gd"
 GlobalSettings="*res://scripts/autoloads/global_settings.gd"
+GlobalData="*res://scripts/autoloads/global_data.gd"
 SoundManager="*res://addons/resonate/sound_manager/sound_manager.gd"
 MusicManager="*res://addons/resonate/music_manager/music_manager.gd"
 Verho="*res://addons/verho/transition_manager/verho.tscn"
-GlobalData="*res://scripts/autoloads/global_data.gd"
 
 [display]
 

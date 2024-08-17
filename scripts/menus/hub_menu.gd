@@ -68,7 +68,7 @@ func to_exit():
 	get_tree().quit()
 
 func to_load():
-	Verho.emit_signal("load_scene", "DummySceneA")
+	Verho.change_scene("scenes/game_scene", "", "BlackFade")
 
 func to_free(_scene_name):
 	self.queue_free()
