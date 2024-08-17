@@ -69,11 +69,11 @@ func get_stats_for(group:GlobalData.Faction, stat:GlobalData.Effects):
 ##
 
 ## Get the change in the faction's ideals of the player.
-func get_faction_rep_change(group:GlobalData.Faction) -> float:
+func get_faction_rep_change(group:GlobalData.Faction) -> int:
 	var vals = _town_stats[group]
 	var fissues = FAVORED_ISSUES[group]
 	
-	var rep_change:float = 0
+	var rep_change:int = 0
 	
 	# everyone cares about taxes -- and they're 0 - 100, not 0 - 10
 	if vals[GlobalData.Effects.TAX] <= 29: # -5

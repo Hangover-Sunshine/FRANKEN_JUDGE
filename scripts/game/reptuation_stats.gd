@@ -1,13 +1,13 @@
 extends Node
 
 ## Starting reptuation for the clergy.
-@export var StartingClergyRep:float = 50
+@export var StartingClergyRep:int = 50
 
 ## Starting reputation for the nobility.
-@export var StartingNobilityRep:float = 50
+@export var StartingNobilityRep:int = 50
 
 ## Starting reputation for the peasants.
-@export var StartingPeasantRep:float = 50
+@export var StartingPeasantRep:int = 50
 
 ## The three reputations of the game.
 var _reputations:Dictionary = {
@@ -60,11 +60,11 @@ func has_lost() -> GlobalData.END_CONDITION:
 	return GlobalData.END_CONDITION.NONE
 ##
 
-func set_reputation_for(group:GlobalData.Faction, value:float):
+func set_reputation_for(group:GlobalData.Faction, value:int):
 	_reputations[group] += value
 	_reputations[group] = min(100, max(0, _reputations[group]))
 ##
 
-func get_reputation_for(group:GlobalData.Faction) -> float:
+func get_reputation_for(group:GlobalData.Faction) -> int:
 	return _reputations[group]
 ##

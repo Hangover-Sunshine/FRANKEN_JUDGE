@@ -1,13 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://demghrccuk3y2"]
+[gd_scene load_steps=7 format=3 uid="uid://demghrccuk3y2"]
 
 [ext_resource type="Script" path="res://scripts/system/game_scene.gd" id="1_s1yw1"]
 [ext_resource type="Script" path="res://addons/verho/resources/TransitionBank.gd" id="1_uelm6"]
 [ext_resource type="Resource" uid="uid://cokyxyvryfnhm" path="res://prefabs/transitions/black_fade.tres" id="2_hubdk"]
+[ext_resource type="Resource" uid="uid://drfrmac6j2ade" path="res://prefabs/cases/illegal_holy_text_case.tres" id="2_ykisd"]
 [ext_resource type="Script" path="res://scripts/game/town_stats.gd" id="4_fdghg"]
 [ext_resource type="Script" path="res://scripts/game/reptuation_stats.gd" id="5_4xgmw"]
 
 [node name="GameScene" type="Node2D"]
+process_mode = 3
 script = ExtResource("1_s1yw1")
+CASES = Array[Resource("res://scripts/resources/base_case_resource.gd")]([ExtResource("2_ykisd")])
 
 [node name="REMOVEME" type="Node" parent="."]
 script = ExtResource("1_uelm6")
@@ -18,5 +21,3 @@ script = ExtResource("4_fdghg")
 
 [node name="ReptuationStats" type="Node" parent="."]
 script = ExtResource("5_4xgmw")
-StartingClergyRep = 70.0
-StartingPeasantRep = 30.0
