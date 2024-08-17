@@ -1162,6 +1162,7 @@ text = "Blagh blagh blagh blagh blagh blagh blagh"
 horizontal_alignment = 1
 
 [node name="Casebrief_Body2" type="Label" parent="CaseBrief/Casebrief_Vbox"]
+visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_o6xmb")
 theme_override_font_sizes/font_size = 90
@@ -1170,6 +1171,7 @@ text = "Blagh blagh blagh blagh blagh blagh blagh
 horizontal_alignment = 1
 
 [node name="Casebrief_Body3" type="Label" parent="CaseBrief/Casebrief_Vbox"]
+visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_o6xmb")
 theme_override_font_sizes/font_size = 90
@@ -1178,6 +1180,7 @@ text = "Blagh blagh blagh blagh blagh blagh blagh
 horizontal_alignment = 1
 
 [node name="Casebrief_Body4" type="Label" parent="CaseBrief/Casebrief_Vbox"]
+visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_o6xmb")
 theme_override_font_sizes/font_size = 90
