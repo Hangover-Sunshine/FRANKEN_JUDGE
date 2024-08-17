@@ -95,6 +95,7 @@ _data = {
 }
 
 [node name="HubPause" type="Node2D"]
+process_mode = 2
 script = ExtResource("1_11pth")
 
 [node name="ColorRect" type="ColorRect" parent="."]
