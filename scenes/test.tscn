@@ -1,0 +1,503 @@
+[gd_scene load_steps=13 format=3 uid="uid://2nl8bwm5pvgk"]
+
+[ext_resource type="Script" path="res://addons/verho/resources/TransitionBank.gd" id="1_8l5ad"]
+[ext_resource type="Resource" uid="uid://cokyxyvryfnhm" path="res://prefabs/transitions/black_fade.tres" id="2_vph7e"]
+[ext_resource type="FontFile" uid="uid://73eyyuro8nvv" path="res://assets/fonts/PirataOne.ttf" id="3_0g7i0"]
+[ext_resource type="Shader" path="res://scenes/background.gdshader" id="4_qemv0"]
+[ext_resource type="FontFile" uid="uid://cqxld14ctgocv" path="res://assets/fonts/MedulaOne.ttf" id="4_ruet7"]
+
+[sub_resource type="Animation" id="Animation_glr1j"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_hm1ql"]
+resource_name = "sdfedsf"
+length = 5.0
+loop_mode = 2
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rkl8t"]
+_data = {
+"RESET": SubResource("Animation_glr1j"),
+"sdfedsf": SubResource("Animation_hm1ql")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_autsm"]
+bg_color = Color(0.341176, 0.341176, 0.341176, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oho6b"]
+bg_color = Color(0.568973, 0.568973, 0.568973, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="Theme" id="Theme_6fum4"]
+ProgressBar/font_sizes/font_size = 40
+ProgressBar/fonts/font = ExtResource("4_ruet7")
+ProgressBar/styles/background = SubResource("StyleBoxFlat_autsm")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_oho6b")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3xfqu"]
+shader = ExtResource("4_qemv0")
+shader_parameter/OCTAVE = 2
+shader_parameter/mulscale = 5.0
+shader_parameter/height = 0.4
+shader_parameter/tide = 0.1
+shader_parameter/foamthickness = 0.1
+shader_parameter/timescale = 0.5
+shader_parameter/waterdeep = 0.3
+shader_parameter/WATER_COL = Color(0.0588235, 0.0588235, 0.0588235, 1)
+shader_parameter/WATER2_COL = Color(0.0784314, 0.0784314, 0.0784314, 1)
+shader_parameter/FOAM_COL = Color(0.0941176, 0.0941176, 0.0941176, 1)
+
+[node name="Art_Demo" type="Node2D"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_rkl8t")
+}
+
+[node name="TransitionBank" type="Node" parent="."]
+script = ExtResource("1_8l5ad")
+TRANSITIONS = Array[Resource("res://addons/verho/resources/TransitionResource.gd")]([ExtResource("2_vph7e")])
+
+[node name="TopRow" type="Node2D" parent="."]
+position = Vector2(960, 0)
+
+[node name="TopRight" type="Node2D" parent="TopRow"]
+
+[node name="Portrait" type="Control" parent="TopRow"]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 247.0
+offset_bottom = 247.0
+
+[node name="ColorRect" type="ColorRect" parent="TopRow/Portrait"]
+show_behind_parent = true
+layout_mode = 0
+offset_left = -122.0
+offset_top = -137.0
+offset_right = 128.0
+offset_bottom = 113.0
+
+[node name="ColorRect2" type="ColorRect" parent="TopRow/Portrait/ColorRect"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 17.0
+offset_right = 298.0
+offset_bottom = 297.0
+scale = Vector2(0.754408, 0.754408)
+color = Color(0.666667, 0.658824, 0.619608, 1)
+
+[node name="TextureRect" type="TextureRect" parent="TopRow/Portrait"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Reputation" type="Control" parent="TopRow"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -688.0
+offset_top = 20.0
+offset_right = -648.0
+offset_bottom = 60.0
+
+[node name="Vbox_Reputation" type="VBoxContainer" parent="TopRow/Reputation"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -88.0
+offset_top = 95.0
+offset_right = 439.0
+offset_bottom = 301.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Header_Reputation" type="Label" parent="TopRow/Reputation/Vbox_Reputation"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_0g7i0")
+theme_override_font_sizes/font_size = 60
+text = "Reputation"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TopRow/Reputation/Vbox_Reputation"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TopRow/Reputation/Vbox_Reputation/HBoxContainer"]
+layout_mode = 2
+
+[node name="Peasantry" type="HBoxContainer" parent="TopRow/Reputation/Vbox_Reputation/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="Label_Peasantry" type="Label" parent="TopRow/Reputation/Vbox_Reputation/HBoxContainer/VBoxContainer/Peasantry"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 50
+text = "Peasantry"
+horizontal_alignment = 2
+
+[node name="Bar_Peasantry" type="ProgressBar" parent="TopRow/Reputation/Vbox_Reputation/HBoxContainer/VBoxContainer/Peasantry"]
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme = SubResource("Theme_6fum4")
+step = 1.0
+value = 50.0
+
+[node name="Peasantry2" type="HBoxContainer" parent="TopRow/Reputation/Vbox_Reputation/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="Label_Peasantry" type="Label" parent="TopRow/Reputation/Vbox_Reputation/HBoxContainer/VBoxContainer/Peasantry2"]
+custom_minimum_size = Vector2(133, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 50
+text = "Nobility"
+horizontal_alignment = 2
+
+[node name="Bar_Peasantry" type="ProgressBar" parent="TopRow/Reputation/Vbox_Reputation/HBoxContainer/VBoxContainer/Peasantry2"]
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme = SubResource("Theme_6fum4")
+step = 1.0
+value = 50.0
+
+[node name="Peasantry3" type="HBoxContainer" parent="TopRow/Reputation/Vbox_Reputation/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="Label_Peasantry" type="Label" parent="TopRow/Reputation/Vbox_Reputation/HBoxContainer/VBoxContainer/Peasantry3"]
+custom_minimum_size = Vector2(133, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 50
+text = "Clergy"
+horizontal_alignment = 2
+
+[node name="Bar_Peasantry" type="ProgressBar" parent="TopRow/Reputation/Vbox_Reputation/HBoxContainer/VBoxContainer/Peasantry3"]
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme = SubResource("Theme_6fum4")
+step = 1.0
+value = 50.0
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="TopRow/Reputation/Vbox_Reputation/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label_Clergy4" type="Label" parent="TopRow/Reputation/Vbox_Reputation/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(65, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 50
+text = "(+00)"
+horizontal_alignment = 1
+
+[node name="Label_Clergy5" type="Label" parent="TopRow/Reputation/Vbox_Reputation/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(65, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 50
+text = "(+00)"
+horizontal_alignment = 1
+
+[node name="Label_Clergy6" type="Label" parent="TopRow/Reputation/Vbox_Reputation/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(65, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 50
+text = "(+00)"
+horizontal_alignment = 1
+
+[node name="Society" type="Control" parent="TopRow"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 313.0
+offset_top = 20.0
+offset_right = 353.0
+offset_bottom = 60.0
+
+[node name="Vbox_Reputation" type="VBoxContainer" parent="TopRow/Society"]
+layout_mode = 0
+offset_left = -77.0
+offset_right = 451.82
+offset_bottom = 367.0
+
+[node name="Header_Society" type="Label" parent="TopRow/Society/Vbox_Reputation"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_0g7i0")
+theme_override_font_sizes/font_size = 60
+text = "Society"
+horizontal_alignment = 1
+
+[node name="Hbox_SocietyRank" type="HBoxContainer" parent="TopRow/Society/Vbox_Reputation"]
+layout_mode = 2
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="Hbox_Headers" type="VBoxContainer" parent="TopRow/Society/Vbox_Reputation/Hbox_SocietyRank"]
+layout_mode = 2
+
+[node name="Label_Taxation" type="Label" parent="TopRow/Society/Vbox_Reputation/Hbox_SocietyRank/Hbox_Headers"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 50
+text = "Taxation"
+horizontal_alignment = 2
+
+[node name="Label_Taxation2" type="Label" parent="TopRow/Society/Vbox_Reputation/Hbox_SocietyRank/Hbox_Headers"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 50
+text = "Literacy"
+horizontal_alignment = 2
+
+[node name="Label_Taxation3" type="Label" parent="TopRow/Society/Vbox_Reputation/Hbox_SocietyRank/Hbox_Headers"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 50
+text = "Policing"
+horizontal_alignment = 2
+
+[node name="Label_Taxation4" type="Label" parent="TopRow/Society/Vbox_Reputation/Hbox_SocietyRank/Hbox_Headers"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 50
+text = "Labor"
+horizontal_alignment = 2
+
+[node name="Label_Taxation5" type="Label" parent="TopRow/Society/Vbox_Reputation/Hbox_SocietyRank/Hbox_Headers"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 50
+text = "Healthcare"
+horizontal_alignment = 2
+
+[node name="Hbox_Peasantry" type="VBoxContainer" parent="TopRow/Society/Vbox_Reputation/Hbox_SocietyRank"]
+layout_mode = 2
+
+[node name="Label_Taxation" type="Label" parent="TopRow/Society/Vbox_Reputation/Hbox_SocietyRank/Hbox_Peasantry"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 50
+text = "000%"
+horizontal_alignment = 2
+
+[node name="Label_Taxation2" type="Label" parent="TopRow/Society/Vbox_Reputation/Hbox_SocietyRank/Hbox_Peasantry"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 50
+text = "00"
+horizontal_alignment = 2
+
+[node name="Label_Taxation3" type="Label" parent="TopRow/Society/Vbox_Reputation/Hbox_SocietyRank/Hbox_Peasantry"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 50
+text = "00"
+horizontal_alignment = 2
+
+[node name="Label_Taxation4" type="Label" parent="TopRow/Society/Vbox_Reputation/Hbox_SocietyRank/Hbox_Peasantry"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 50
+text = "00"
+horizontal_alignment = 2
+
+[node name="Label_Taxation5" type="Label" parent="TopRow/Society/Vbox_Reputation/Hbox_SocietyRank/Hbox_Peasantry"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 50
+text = "00"
+horizontal_alignment = 2
+
+[node name="Hbox_Nobility" type="VBoxContainer" parent="TopRow/Society/Vbox_Reputation/Hbox_SocietyRank"]
+layout_mode = 2
+
+[node name="Label_Taxation" type="Label" parent="TopRow/Society/Vbox_Reputation/Hbox_SocietyRank/Hbox_Nobility"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 50
+text = "000%"
+horizontal_alignment = 2
+
+[node name="Label_Taxation2" type="Label" parent="TopRow/Society/Vbox_Reputation/Hbox_SocietyRank/Hbox_Nobility"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 50
+text = "00"
+horizontal_alignment = 2
+
+[node name="Label_Taxation3" type="Label" parent="TopRow/Society/Vbox_Reputation/Hbox_SocietyRank/Hbox_Nobility"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 50
+text = "00"
+horizontal_alignment = 2
+
+[node name="Label_Taxation4" type="Label" parent="TopRow/Society/Vbox_Reputation/Hbox_SocietyRank/Hbox_Nobility"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 50
+text = "00"
+horizontal_alignment = 2
+
+[node name="Label_Taxation5" type="Label" parent="TopRow/Society/Vbox_Reputation/Hbox_SocietyRank/Hbox_Nobility"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 50
+text = "00"
+horizontal_alignment = 2
+
+[node name="Hbox_Clergy" type="VBoxContainer" parent="TopRow/Society/Vbox_Reputation/Hbox_SocietyRank"]
+layout_mode = 2
+
+[node name="Label_Taxation" type="Label" parent="TopRow/Society/Vbox_Reputation/Hbox_SocietyRank/Hbox_Clergy"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 50
+text = "000%"
+horizontal_alignment = 2
+
+[node name="Label_Taxation2" type="Label" parent="TopRow/Society/Vbox_Reputation/Hbox_SocietyRank/Hbox_Clergy"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 50
+text = "00"
+horizontal_alignment = 2
+
+[node name="Label_Taxation3" type="Label" parent="TopRow/Society/Vbox_Reputation/Hbox_SocietyRank/Hbox_Clergy"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 50
+text = "00"
+horizontal_alignment = 2
+
+[node name="Label_Taxation4" type="Label" parent="TopRow/Society/Vbox_Reputation/Hbox_SocietyRank/Hbox_Clergy"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 50
+text = "00"
+horizontal_alignment = 2
+
+[node name="Label_Taxation5" type="Label" parent="TopRow/Society/Vbox_Reputation/Hbox_SocietyRank/Hbox_Clergy"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 50
+text = "00"
+horizontal_alignment = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TopRow/Society/Vbox_Reputation/Hbox_SocietyRank"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TopRow/Society/Vbox_Reputation"]
+layout_mode = 2
+
+[node name="Days" type="Control" parent="TopRow"]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 78.0
+offset_bottom = 78.0
+
+[node name="Header_Day" type="Label" parent="TopRow/Days"]
+layout_mode = 0
+offset_left = -119.0
+offset_top = -60.0
+offset_right = 8.0
+offset_bottom = 69.0
+theme_override_fonts/font = ExtResource("3_0g7i0")
+theme_override_font_sizes/font_size = 70
+text = "DAY"
+horizontal_alignment = 1
+
+[node name="Header_DayNumber" type="Label" parent="TopRow/Days"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = -60.0
+offset_right = 114.0
+offset_bottom = 69.0
+theme_override_fonts/font = ExtResource("3_0g7i0")
+theme_override_font_sizes/font_size = 70
+text = "00"
+horizontal_alignment = 1
+
+[node name="CaseBrief" type="Control" parent="TopRow"]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+grow_horizontal = 2
+
+[node name="Vbox_CaseBrief" type="VBoxContainer" parent="TopRow/CaseBrief"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -458.0
+offset_top = 452.0
+offset_right = 458.0
+offset_bottom = 785.0
+grow_horizontal = 2
+theme_override_constants/separation = -20
+
+[node name="Hbox_Header" type="HBoxContainer" parent="TopRow/CaseBrief/Vbox_CaseBrief"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="Header_Case" type="Label" parent="TopRow/CaseBrief/Vbox_CaseBrief/Hbox_Header"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_0g7i0")
+theme_override_font_sizes/font_size = 100
+text = "CASE "
+horizontal_alignment = 1
+
+[node name="Header_CaseNumber" type="Label" parent="TopRow/CaseBrief/Vbox_CaseBrief/Hbox_Header"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_0g7i0")
+theme_override_font_sizes/font_size = 100
+text = "00"
+horizontal_alignment = 1
+
+[node name="Header_Dash" type="Label" parent="TopRow/CaseBrief/Vbox_CaseBrief/Hbox_Header"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_0g7i0")
+theme_override_font_sizes/font_size = 100
+text = " -"
+horizontal_alignment = 1
+
+[node name="Header_CaseName" type="Label" parent="TopRow/CaseBrief/Vbox_CaseBrief/Hbox_Header"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_0g7i0")
+theme_override_font_sizes/font_size = 100
+text = " Name of case"
+horizontal_alignment = 1
+
+[node name="Body_CaseBrief" type="Label" parent="TopRow/CaseBrief/Vbox_CaseBrief"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_ruet7")
+theme_override_font_sizes/font_size = 90
+text = "Blagh blagh blagh blagh blagh blagh blagh
+"
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="."]
+show_behind_parent = true
+material = SubResource("ShaderMaterial_3xfqu")
+custom_minimum_size = Vector2(1920, 1080)
+offset_right = 40.0
+offset_bottom = 40.0
