@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="BaseCaseResource" load_steps=6 format=3 uid="uid://drfrmac6j2ade"]
 
 [ext_resource type="Script" path="res://scripts/resources/base_case_resource.gd" id="1_3jpi7"]
-[ext_resource type="Resource" uid="uid://88i1jxh51sxa" path="res://prefabs/effects/clergy/clergy_m5rep.tres" id="1_hjgfy"]
-[ext_resource type="Resource" uid="uid://ds6iqv4r75ik" path="res://prefabs/effects/peasants/peasants_p5rep.tres" id="2_itvxd"]
-[ext_resource type="Resource" uid="uid://0hkwgqqyhwg7" path="res://prefabs/effects/peasants/peasants_m5rep.tres" id="3_apyf8"]
-[ext_resource type="Resource" uid="uid://cttd3057ni4lk" path="res://prefabs/effects/clergy/clergy_p5rep.tres" id="4_t7iyo"]
+[ext_resource type="Resource" uid="uid://88i1jxh51sxa" path="res://prefabs/effects/clergy/sub/clergy_m5rep.tres" id="1_hjgfy"]
+[ext_resource type="Resource" uid="uid://ds6iqv4r75ik" path="res://prefabs/effects/peasants/add/peasants_p5rep.tres" id="2_itvxd"]
+[ext_resource type="Resource" uid="uid://0hkwgqqyhwg7" path="res://prefabs/effects/peasants/sub/peasants_m5rep.tres" id="3_apyf8"]
+[ext_resource type="Resource" uid="uid://cttd3057ni4lk" path="res://prefabs/effects/clergy/add/clergy_p5rep.tres" id="4_t7iyo"]
 
 [resource]
 script = ExtResource("1_3jpi7")

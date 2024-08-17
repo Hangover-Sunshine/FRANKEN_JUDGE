@@ -45,7 +45,7 @@ func _confirm_case(effects:Array[BaseEffectResource]):
 		_reptuation_stats.set_reputation_for(key, changes[key])
 	##
 	
-	# TODO: Save the current day -- let player back out and save
+	# TODO: Save the current day -- let player back out without worry
 	
 	# TODO: Send off for animations :)
 ##
