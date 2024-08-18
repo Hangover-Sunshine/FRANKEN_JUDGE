@@ -75,6 +75,6 @@ func changes_to_reps(affected_reps):
 
 func update_reputations():
 	for key in _changed_stats.keys():
-		bars[key].value -= _changed_stats[key]
+		bars[key].value += _changed_stats[key]
 	##
 ##

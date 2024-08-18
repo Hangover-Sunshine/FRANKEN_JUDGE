@@ -67,6 +67,9 @@ func _confirm_case(effects:Array[BaseEffectResource]):
 		_reputation_stats.set_reputation_for(key, changes[key])
 	##
 	
+	print("Changes:", changes)
+	print("Reps:", _reputation_stats.get_reputations())
+	
 	$Game_Overlay.change_reps_by(changes)
 	
 	# TODO: Save the current day -- let player back out without worry
