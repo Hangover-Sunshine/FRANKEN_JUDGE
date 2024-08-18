@@ -331,7 +331,7 @@ tracks/12/keys = {
 
 [sub_resource type="Animation" id="Animation_3ogeh"]
 resource_name = "Part3"
-length = 0.001
+length = 4.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -403,11 +403,83 @@ tracks/5/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("CaseBrief/Casebrief_Vbox/Header_Hbox/Case_Header:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("CaseBrief/Casebrief_Vbox/Header_Hbox/Case_Number_Letter:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("CaseBrief/Casebrief_Vbox/Header_Hbox/Dash_Header:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("CaseBrief/Casebrief_Vbox/Header_Hbox/CaseName_Header:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("CaseBrief/Casebrief_Vbox/Casebrief_Body:modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(2.1, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("CaseBrief/Casebrief_Vbox/Casebrief_Instruction:modulate")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(3.5, 4.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_xffcq"]
 resource_name = "Part4"
-length = 0.001
+length = 5.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -479,6 +551,126 @@ tracks/5/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Scale:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.7, 0.9, 1.5, 2),
+"transitions": PackedFloat32Array(1, 0.5, 2, 0.5, 2, 2),
+"update": 0,
+"values": [Vector2(960, 1506), Vector2(960, 717), Vector2(960, 680), Vector2(960, 717), Vector2(960, 750), Vector2(960, 740)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Scale/Scale_Body/Scale_Arm:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.2, 0.7, 1, 1.3, 1.6, 1.9, 2.2, 2.5),
+"transitions": PackedFloat32Array(1, 0.5, 2, 0.5, 2, 0.5, 2, 0.5),
+"update": 0,
+"values": [0.0, -0.174533, 0.174533, -0.139626, 0.10472, -0.0698132, 0.0349066, 0.0]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Scale/Scale_Body/Scale_Left:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0.2, 0.7, 1, 1.3, 1.6, 1.9, 2.2, 2.5),
+"transitions": PackedFloat32Array(1, 0.5, 2, 0.5, 2, 0.5, 2, 0.5),
+"update": 0,
+"values": [Vector2(-513, 246), Vector2(-513, 326), Vector2(-513, 166), Vector2(-513, 306), Vector2(-513, 186), Vector2(-513, 286), Vector2(-513, 206), Vector2(-513, 246)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Scale/Scale_Body/Scale_Right:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0.2, 0.7, 1, 1.3, 1.6, 1.9, 2.2, 2.5),
+"transitions": PackedFloat32Array(1, 0.5, 2, 0.5, 2, 0.5, 2, 0.5),
+"update": 0,
+"values": [Vector2(514, 246), Vector2(514, 186), Vector2(514, 346), Vector2(514, 206), Vector2(514, 326), Vector2(514, 186), Vector2(514, 286), Vector2(514, 246)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Scale/Scale_Body/Scale_Left:rotation")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0.5, 0.7, 1, 1.3, 1.6, 1.9, 2.2, 2.5, 2.8, 3.2, 3.6),
+"transitions": PackedFloat32Array(1, 2, 0.5, 2, 0.5, 2, 0.5, 2, 0.5, 2, 0.5),
+"update": 0,
+"values": [0.0, 0.0349066, -0.0698132, 0.0523599, -0.0523599, 0.0349066, -0.0349066, 0.0349066, -0.0349066, 0.0349066, 0.0]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Scale/Scale_Body/Scale_Right:rotation")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0.5, 0.7, 1, 1.3, 1.6, 1.9, 2.2, 2.5, 2.8, 3.2, 3.6),
+"transitions": PackedFloat32Array(1, 2, 0.5, 2, 0.5, 2, 0.5, 2, 0.5, 2, 0.5),
+"update": 0,
+"values": [0.0, -0.0349066, -0.0698132, 0.0523599, -0.0523599, 0.0349066, -0.0349066, 0.0349066, -0.0349066, 0.0349066, 0.0]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Scale/Scale_Body/Scale_Left/LeftMegaCard:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(3.6, 4.5, 4.7, 5),
+"transitions": PackedFloat32Array(1, 0.5, 1, 2),
+"update": 0,
+"values": [Vector2(-170, -1450), Vector2(-170, -410), Vector2(-170, -476), Vector2(-170, -410)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Scale/Scale_Body/Scale_Left/LeftMegaCard:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 3.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Scale/Scale_Body/Scale_Right/RightMegaCard:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0, 3.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Scale/Scale_Body/Scale_Right/RightMegaCard:position")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(3.6, 4.5, 4.7, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-170, -1450), Vector2(-170, -410), Vector2(-170, -476), Vector2(-170, -410)]
 }
 
 [sub_resource type="Animation" id="Animation_8ymef"]
@@ -1437,7 +1629,6 @@ text = "00 / 30"
 horizontal_alignment = 1
 
 [node name="BigDays" type="Control" parent="."]
-modulate = Color(1, 1, 1, 0)
 layout_mode = 3
 anchors_preset = 0
 offset_left = 943.0
@@ -1448,6 +1639,7 @@ mouse_filter = 2
 script = ExtResource("4_lmcgd")
 
 [node name="Day_Header" type="Label" parent="BigDays"]
+visible = false
 layout_mode = 0
 offset_left = -366.0
 offset_top = -95.0
@@ -1459,6 +1651,7 @@ text = "DAY"
 horizontal_alignment = 1
 
 [node name="Day_Number_Header" type="Label" parent="BigDays"]
+visible = false
 layout_mode = 0
 offset_left = -66.0
 offset_top = -95.0
@@ -1501,7 +1694,6 @@ size_flags_vertical = 4
 alignment = 1
 
 [node name="Case_Header" type="Label" parent="CaseBrief/Casebrief_Vbox/Header_Hbox"]
-modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_qps4p")
 theme_override_font_sizes/font_size = 100
@@ -1647,9 +1839,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -400.5
-offset_top = -513.0
+offset_top = -492.0
 offset_right = -55.5
-offset_bottom = -93.0
+offset_bottom = -71.9885
 grow_horizontal = 2
 grow_vertical = 0
 
@@ -1659,9 +1851,9 @@ texture = ExtResource("9_7s0gt")
 
 [node name="RightMegaCard" parent="Scale/Scale_Body/Scale_Right" instance=ExtResource("18_4l78d")]
 offset_left = -170.0
-offset_top = -431.0
+offset_top = -410.0
 offset_right = 175.0
-offset_bottom = -11.0
+offset_bottom = 10.0
 
 [node name="WinningCard" type="Control" parent="."]
 visible = false
