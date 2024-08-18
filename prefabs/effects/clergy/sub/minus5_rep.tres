@@ -4,8 +4,8 @@
 
 [resource]
 script = ExtResource("1_wrpjh")
-Group = 0
+Group = 2
 Affect = 0
 RandomAmount = false
-ValueChange = 1
+ValueChange = -5
 ValueRange = Vector2i(1, 5)

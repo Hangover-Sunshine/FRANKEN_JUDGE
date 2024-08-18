@@ -35,9 +35,8 @@ func load_society_stats(stats):
 	$Society.load_clergy_stats(stats[GlobalData.Faction.CLERGY])
 ##
 
-func update_society_stats(changes):
-	#$Society.update_stat_values(changes)
-	pass
+func change_society_stats_by(changes):
+	$Society.changes_to_stats(changes)
 ##
 
 func load_reputation_stats(reps):
@@ -130,6 +129,8 @@ func _case_complete(case:BaseCaseResource, faction:GlobalData.Faction, chose_A:b
 	
 	# TODO: Play animation of things going away
 	ap_states.play("Part5")
+	
+	$Society.update_stats()
 	
 	await get_tree().create_timer(3).timeout
 	

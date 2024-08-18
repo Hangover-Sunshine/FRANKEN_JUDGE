@@ -58,6 +58,8 @@ func _confirm_case(effects:Array[BaseEffectResource]):
 		##
 	##
 	
+	$Game_Overlay.change_society_stats_by(effects)
+	
 	# Get the amount changes to reputations
 	# ... And Change the reputations - all in one!
 	for key in changes.keys():

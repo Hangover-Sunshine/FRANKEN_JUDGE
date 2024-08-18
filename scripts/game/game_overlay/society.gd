@@ -49,6 +49,7 @@ extends Control
 }
 
 var internal_stats_rep = {}
+var _changed_stats:Array[BaseEffectResource]
 
 func _ready():
 	GlobalSignals.connect("hovered_over_card", _hovered_over_card)
@@ -57,29 +58,17 @@ func _ready():
 
 func load_peasant_stats(pstats):
 	internal_stats_rep[GlobalData.Faction.PEASANTS] = pstats.duplicate()
-	peasant_stat_labels[0].text = (GlobalData.THREE_NUM_DISPLAY % pstats[GlobalData.Effects.TAX]) + "%"
-	peasant_stat_labels[1].text = (GlobalData.TWO_NUM_DISPLAY % pstats[GlobalData.Effects.LITERACY])
-	peasant_stat_labels[2].text = (GlobalData.TWO_NUM_DISPLAY % pstats[GlobalData.Effects.POLICING])
-	peasant_stat_labels[3].text = (GlobalData.TWO_NUM_DISPLAY % pstats[GlobalData.Effects.LABOR])
-	peasant_stat_labels[4].text = (GlobalData.TWO_NUM_DISPLAY % pstats[GlobalData.Effects.HEALTHCARE])
+	update_peasants_display()
 ##
 
 func load_nobility_stats(nstats):
 	internal_stats_rep[GlobalData.Faction.NOBILITY] = nstats.duplicate()
-	nobility_stat_labels[0].text = (GlobalData.THREE_NUM_DISPLAY % nstats[GlobalData.Effects.TAX]) + "%"
-	nobility_stat_labels[1].text = (GlobalData.TWO_NUM_DISPLAY % nstats[GlobalData.Effects.LITERACY])
-	nobility_stat_labels[2].text = (GlobalData.TWO_NUM_DISPLAY % nstats[GlobalData.Effects.POLICING])
-	nobility_stat_labels[3].text = (GlobalData.TWO_NUM_DISPLAY % nstats[GlobalData.Effects.LABOR])
-	nobility_stat_labels[4].text = (GlobalData.TWO_NUM_DISPLAY % nstats[GlobalData.Effects.HEALTHCARE])
+	update_nobility_display()
 ##
 
 func load_clergy_stats(cstats):
 	internal_stats_rep[GlobalData.Faction.CLERGY] = cstats.duplicate()
-	clergy_stat_labels[0].text = (GlobalData.THREE_NUM_DISPLAY % cstats[GlobalData.Effects.TAX]) + "%"
-	clergy_stat_labels[1].text = (GlobalData.TWO_NUM_DISPLAY % cstats[GlobalData.Effects.LITERACY])
-	clergy_stat_labels[2].text = (GlobalData.TWO_NUM_DISPLAY % cstats[GlobalData.Effects.POLICING])
-	clergy_stat_labels[3].text = (GlobalData.TWO_NUM_DISPLAY % cstats[GlobalData.Effects.LABOR])
-	clergy_stat_labels[4].text = (GlobalData.TWO_NUM_DISPLAY % cstats[GlobalData.Effects.HEALTHCARE])
+	update_clergy_display()
 ##
 
 func change_table_display(show_peasants:bool, show_nobility:bool, show_clergy:bool):
@@ -105,13 +94,13 @@ func _hovered_over_card(effects:Array[BaseEffectResource]):
 			
 			if eff.ValueChange < 0:
 				if eff.Affect == GlobalData.Effects.TAX:
-					peasant_change_hover[eff.Affect].text = "-" + (GlobalData.THREE_NUM_DISPLAY % -eff.ValueChange)
+					peasant_change_hover[eff.Affect].text = "-" + (GlobalData.THREE_NUM_DISPLAY % -eff.ValueChange) + "%"
 				else:
 					peasant_change_hover[eff.Affect].text = "-" + (GlobalData.TWO_NUM_DISPLAY % -eff.ValueChange)
 				##
 			else:
 				if eff.Affect == GlobalData.Effects.TAX:
-					peasant_change_hover[eff.Affect].text = "+" + (GlobalData.THREE_NUM_DISPLAY % eff.ValueChange)
+					peasant_change_hover[eff.Affect].text = "+" + (GlobalData.THREE_NUM_DISPLAY % eff.ValueChange) + "%"
 				else:
 					peasant_change_hover[eff.Affect].text = "+" + (GlobalData.TWO_NUM_DISPLAY % eff.ValueChange)
 				##
@@ -121,13 +110,13 @@ func _hovered_over_card(effects:Array[BaseEffectResource]):
 			
 			if eff.ValueChange < 0:
 				if eff.Affect == GlobalData.Effects.TAX:
-					peasant_change_hover[eff.Affect].text = "-" + (GlobalData.THREE_NUM_DISPLAY % -eff.ValueChange)
+					peasant_change_hover[eff.Affect].text = "-" + (GlobalData.THREE_NUM_DISPLAY % -eff.ValueChange) + "%"
 				else:
 					peasant_change_hover[eff.Affect].text = "-" + (GlobalData.TWO_NUM_DISPLAY % -eff.ValueChange)
 				##
 			else:
 				if eff.Affect == GlobalData.Effects.TAX:
-					nobility_change_hover[eff.Affect].text = "+" + (GlobalData.THREE_NUM_DISPLAY % eff.ValueChange)
+					nobility_change_hover[eff.Affect].text = "+" + (GlobalData.THREE_NUM_DISPLAY % eff.ValueChange) + "%"
 				else:
 					nobility_change_hover[eff.Affect].text = "+" + (GlobalData.TWO_NUM_DISPLAY % eff.ValueChange)
 				##
@@ -137,13 +126,13 @@ func _hovered_over_card(effects:Array[BaseEffectResource]):
 			
 			if eff.ValueChange < 0:
 				if eff.Affect == GlobalData.Effects.TAX:
-					peasant_change_hover[eff.Affect].text = "-" + (GlobalData.THREE_NUM_DISPLAY % -eff.ValueChange)
+					peasant_change_hover[eff.Affect].text = "-" + (GlobalData.THREE_NUM_DISPLAY % -eff.ValueChange) + "%"
 				else:
 					peasant_change_hover[eff.Affect].text = "-" + (GlobalData.TWO_NUM_DISPLAY % -eff.ValueChange)
 				##
 			else:
 				if eff.Affect == GlobalData.Effects.TAX:
-					clergy_change_hover[eff.Affect].text = "+" + (GlobalData.THREE_NUM_DISPLAY % eff.ValueChange)
+					clergy_change_hover[eff.Affect].text = "+" + (GlobalData.THREE_NUM_DISPLAY % eff.ValueChange) + "%"
 				else:
 					clergy_change_hover[eff.Affect].text = "+" + (GlobalData.TWO_NUM_DISPLAY % eff.ValueChange)
 				##
@@ -160,6 +149,46 @@ func _not_hovering():
 	##
 ##
 
-func update_stats(affected_stats):
-	pass
+func changes_to_stats(affected_stats):
+	_changed_stats = affected_stats
+##
+
+func update_stats():
+	# TODO: animations -- for now, just update
+	for eff in _changed_stats:
+		if eff.Affect == GlobalData.Effects.REPUTATION:
+			continue
+		##
+		
+		internal_stats_rep[eff.Group][eff.Affect] += eff.ValueChange
+	##
+	
+	# update display
+	update_peasants_display()
+	update_nobility_display()
+	update_clergy_display()
+##
+
+func update_peasants_display():
+	peasant_stat_labels[0].text = (GlobalData.THREE_NUM_DISPLAY % internal_stats_rep[GlobalData.Faction.PEASANTS][GlobalData.Effects.TAX]) + "%"
+	peasant_stat_labels[1].text = (GlobalData.TWO_NUM_DISPLAY % internal_stats_rep[GlobalData.Faction.PEASANTS][GlobalData.Effects.LITERACY])
+	peasant_stat_labels[2].text = (GlobalData.TWO_NUM_DISPLAY % internal_stats_rep[GlobalData.Faction.PEASANTS][GlobalData.Effects.POLICING])
+	peasant_stat_labels[3].text = (GlobalData.TWO_NUM_DISPLAY % internal_stats_rep[GlobalData.Faction.PEASANTS][GlobalData.Effects.LABOR])
+	peasant_stat_labels[4].text = (GlobalData.TWO_NUM_DISPLAY % internal_stats_rep[GlobalData.Faction.PEASANTS][GlobalData.Effects.HEALTHCARE])
+##
+
+func update_nobility_display():
+	nobility_stat_labels[0].text = (GlobalData.THREE_NUM_DISPLAY % internal_stats_rep[GlobalData.Faction.NOBILITY][GlobalData.Effects.TAX]) + "%"
+	nobility_stat_labels[1].text = (GlobalData.TWO_NUM_DISPLAY % internal_stats_rep[GlobalData.Faction.NOBILITY][GlobalData.Effects.LITERACY])
+	nobility_stat_labels[2].text = (GlobalData.TWO_NUM_DISPLAY % internal_stats_rep[GlobalData.Faction.NOBILITY][GlobalData.Effects.POLICING])
+	nobility_stat_labels[3].text = (GlobalData.TWO_NUM_DISPLAY % internal_stats_rep[GlobalData.Faction.NOBILITY][GlobalData.Effects.LABOR])
+	nobility_stat_labels[4].text = (GlobalData.TWO_NUM_DISPLAY % internal_stats_rep[GlobalData.Faction.NOBILITY][GlobalData.Effects.HEALTHCARE])
+##
+
+func update_clergy_display():
+	clergy_stat_labels[0].text = (GlobalData.THREE_NUM_DISPLAY % internal_stats_rep[GlobalData.Faction.CLERGY][GlobalData.Effects.TAX]) + "%"
+	clergy_stat_labels[1].text = (GlobalData.TWO_NUM_DISPLAY % internal_stats_rep[GlobalData.Faction.CLERGY][GlobalData.Effects.LITERACY])
+	clergy_stat_labels[2].text = (GlobalData.TWO_NUM_DISPLAY % internal_stats_rep[GlobalData.Faction.CLERGY][GlobalData.Effects.POLICING])
+	clergy_stat_labels[3].text = (GlobalData.TWO_NUM_DISPLAY % internal_stats_rep[GlobalData.Faction.CLERGY][GlobalData.Effects.LABOR])
+	clergy_stat_labels[4].text = (GlobalData.TWO_NUM_DISPLAY % internal_stats_rep[GlobalData.Faction.CLERGY][GlobalData.Effects.HEALTHCARE])
 ##

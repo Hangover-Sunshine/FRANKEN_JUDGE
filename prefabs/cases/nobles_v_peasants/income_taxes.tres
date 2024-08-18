@@ -17,4 +17,4 @@ PARTY_A_ARGUMENT = "We peasants pay too much in taxes!"
 EFFECTS_A = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("1_7sj0g"), ExtResource("2_yv5x5"), ExtResource("1_obfw1"), ExtResource("2_vsi6m")])
 PARTY_B = 1
 PARTY_B_ARGUMENT = "Pull yourselves up by the bootstraps!"
-EFFECTS_B = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("1_522f7"), ExtResource("2_vsi6m"), ExtResource("3_kff0v")])
+EFFECTS_B = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("1_522f7"), ExtResource("3_kff0v")])
