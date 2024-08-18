@@ -82,6 +82,18 @@ func load_clergy_stats(cstats):
 	clergy_stat_labels[4].text = (GlobalData.TWO_NUM_DISPLAY % cstats[GlobalData.Effects.HEALTHCARE])
 ##
 
+func change_table_display(show_peasants:bool, show_nobility:bool, show_clergy:bool):
+	peasant_stat_labels[0].get_parent().get_parent().get_parent().get_parent().visible = show_peasants
+	nobility_stat_labels[0].get_parent().get_parent().get_parent().get_parent().visible = show_nobility
+	clergy_stat_labels[0].get_parent().get_parent().get_parent().get_parent().visible = show_clergy
+##
+
+func show_all():
+	peasant_stat_labels[0].get_parent().get_parent().get_parent().get_parent().visible = true
+	nobility_stat_labels[0].get_parent().get_parent().get_parent().get_parent().visible = true
+	clergy_stat_labels[0].get_parent().get_parent().get_parent().get_parent().visible = true
+##
+
 func _hovered_over_card(effects:Array[BaseEffectResource]):
 	for eff in effects:
 		if eff.Affect == GlobalData.Effects.REPUTATION:

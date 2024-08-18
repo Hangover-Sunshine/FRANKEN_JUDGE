@@ -33,6 +33,18 @@ func load_clergy_rep(rep):
 	bars[2].value = rep
 ##
 
+func change_bar_display(show_peasants:bool, show_nobility:bool, show_clergy:bool):
+	bars[0].get_parent().visible = show_peasants
+	bars[1].get_parent().visible = show_nobility
+	bars[2].get_parent().visible = show_clergy
+##
+
+func show_all_bars():
+	bars[0].get_parent().visible = true
+	bars[1].get_parent().visible = true
+	bars[2].get_parent().visible = true
+##
+
 func _hovered_over_card(effects:Array[BaseEffectResource]):
 	for eff in effects:
 		if eff.Affect != GlobalData.Effects.REPUTATION:

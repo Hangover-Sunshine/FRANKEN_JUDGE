@@ -2,6 +2,8 @@ extends Node2D
 
 signal case_complete(case:BaseCaseResource, faction:GlobalData.Faction, chose_left:bool)
 
+@export var HoldDuration:float = 3
+
 @onready var peasant_cards = [
 	$Scale_Body/Scale_Left/Left_Peasant_Card,
 	$Scale_Body/Scale_Right/Right_Peasant_Card
@@ -18,9 +20,15 @@ signal case_complete(case:BaseCaseResource, faction:GlobalData.Faction, chose_le
 var _case:BaseCaseResource
 var _aPicks
 var _bPicks
+var facACard:Card
+var facBCard:Card
 
 func _ready():
 	for i in range(2):
+		peasant_cards[i].countdown_for_selection = HoldDuration
+		nobility_cards[i].countdown_for_selection = HoldDuration
+		clergy_cards[i].countdown_for_selection = HoldDuration
+		
 		peasant_cards[i].connect("selected", _peasants_selected)
 		nobility_cards[i].connect("selected", _nobility_selected)
 		clergy_cards[i].connect("selected", _clergy_selected)
@@ -52,9 +60,6 @@ func setup_factions(case:BaseCaseResource):
 		_aPicks = 1
 		_bPicks = 0
 	##
-	
-	var facACard
-	var facBCard
 	
 	match factionA:
 		GlobalData.Faction.CLERGY:
@@ -89,12 +94,14 @@ func setup_factions(case:BaseCaseResource):
 
 func _peasants_selected():
 	if _case.PARTY_A == GlobalData.Faction.PEASANTS:
+		facBCard.visible = false
 		if _aPicks == 0:
 			emit_signal("case_complete", _case, GlobalData.Faction.PEASANTS, true)
 		else:
 			emit_signal("case_complete", _case, GlobalData.Faction.PEASANTS, false)
 		##
 	else:
+		facACard.visible = false
 		if _bPicks == 0:
 			emit_signal("case_complete", _case, GlobalData.Faction.PEASANTS, true)
 		else:
@@ -105,12 +112,14 @@ func _peasants_selected():
 
 func _clergy_selected():
 	if _case.PARTY_A == GlobalData.Faction.CLERGY:
+		facBCard.visible = false
 		if _aPicks == 0:
 			emit_signal("case_complete", _case, GlobalData.Faction.CLERGY, true)
 		else:
 			emit_signal("case_complete", _case, GlobalData.Faction.CLERGY, false)
 		##
 	else:
+		facACard.visible = false
 		if _bPicks == 0:
 			emit_signal("case_complete", _case, GlobalData.Faction.CLERGY, true)
 		else:
@@ -121,12 +130,14 @@ func _clergy_selected():
 
 func _nobility_selected():
 	if _case.PARTY_A == GlobalData.Faction.NOBILITY:
+		facBCard.visible = false
 		if _aPicks == 0:
 			emit_signal("case_complete", _case, GlobalData.Faction.NOBILITY, true)
 		else:
 			emit_signal("case_complete", _case, GlobalData.Faction.NOBILITY, false)
 		##
 	else:
+		facACard.visible = false
 		if _bPicks == 0:
 			emit_signal("case_complete", _case, GlobalData.Faction.NOBILITY, true)
 		else:

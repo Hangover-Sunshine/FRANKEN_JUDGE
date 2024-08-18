@@ -1,7 +1,5 @@
 extends Node2D
 
-signal update_stats_done
-
 ## The number of turns the game should last.
 @export var NUMBER_OF_TURNS:int = 25
 
@@ -11,16 +9,16 @@ signal update_stats_done
 ## Initial delay when this scene first loads 
 @export var INITIAL_LOAD_DELAY:float = 1.2
 
-## Current day.
-var _curr_day:int = 1
-
 @onready var _faction_stats = $FactionStats
 @onready var _reputation_stats = $RepuationStats
+
+## Current day.
+var _curr_day:int = 1
 
 ## Called when node is in the tree.
 func _ready():
 	Verho.connect("loaded_scene", _loaded_scene)
-	connect("update_stats_done", _update_stats_done)
+	GlobalSignals.connect("update_stats_done", _update_stats_done)
 	
 	# Shuffle the cases
 	CASES.shuffle()

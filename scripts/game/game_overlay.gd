@@ -35,6 +35,7 @@ func load_society_stats(stats):
 ##
 
 func update_society_stats(changes):
+	#$Society.update_stat_values(changes)
 	pass
 ##
 
@@ -75,6 +76,12 @@ func _case_picked(case_id:int):
 	$CaseBrief.show_brief(_curr_day, _case, _pick_rand_case_id())
 	curr_screen = 2
 	ap_states.play("Part3")
+	
+	var sp:bool = _case.PARTY_A == GlobalData.Faction.PEASANTS or _case.PARTY_B == GlobalData.Faction.PEASANTS
+	var sn:bool = _case.PARTY_A == GlobalData.Faction.NOBILITY or _case.PARTY_B == GlobalData.Faction.NOBILITY
+	var sc:bool = _case.PARTY_A == GlobalData.Faction.CLERGY or _case.PARTY_B == GlobalData.Faction.CLERGY
+	$Reputation.change_bar_display(sp, sn, sc)
+	$Society.change_table_display(sp, sn, sc)
 ##
 
 func _show_sides():
@@ -95,6 +102,8 @@ func _pick_rand_case_id():
 ##
 
 func _case_complete(case:BaseCaseResource, faction:GlobalData.Faction, chose_left:bool):
+	$Reputation.show_all_bars()
+	$Society.show_all()
 	print("seen!")
 	
 	var effects:Array[BaseEffectResource] = []

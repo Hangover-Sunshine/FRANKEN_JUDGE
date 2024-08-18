@@ -1281,6 +1281,7 @@ mouse_filter = 2
 visible = false
 position = Vector2(960, 740)
 script = ExtResource("11_svn5q")
+HoldDuration = 1.5
 
 [node name="Scale_Body" type="Sprite2D" parent="Scale"]
 texture = ExtResource("7_tixm6")
