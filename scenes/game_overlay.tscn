@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://2nl8bwm5pvgk"]
+[gd_scene load_steps=37 format=3 uid="uid://2nl8bwm5pvgk"]
 
 [ext_resource type="Script" path="res://scripts/game/game_overlay.gd" id="1_hcafl"]
 [ext_resource type="FontFile" uid="uid://73eyyuro8nvv" path="res://assets/fonts/PirataOne.ttf" id="1_qps4p"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" path="res://scripts/game/game_overlay/case_brief.gd" id="5_28cn6"]
 [ext_resource type="Script" path="res://scripts/game/game_overlay/case_pick.gd" id="5_e5niu"]
 [ext_resource type="Shader" path="res://scenes/background.gdshader" id="6_7v3db"]
+[ext_resource type="Texture2D" uid="uid://dffc6xevcshxc" path="res://assets/gui/Society_Sheet.png" id="7_ntdta"]
 [ext_resource type="Texture2D" uid="uid://dog8w28lktodb" path="res://assets/gui/Scale_Body.png" id="7_tixm6"]
 [ext_resource type="Texture2D" uid="uid://b65tb5y0dqca8" path="res://assets/gui/Scale_Arm.png" id="8_lnds5"]
 [ext_resource type="Texture2D" uid="uid://cestacg1rkovo" path="res://assets/gui/Scale_Hand.png" id="9_7s0gt"]
@@ -613,10 +614,10 @@ horizontal_alignment = 1
 [node name="Society" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 1192.0
-offset_top = 75.0
-offset_right = 1192.0
-offset_bottom = 75.0
+offset_left = 1194.0
+offset_top = 74.0
+offset_right = 1194.0
+offset_bottom = 74.0
 mouse_filter = 2
 script = ExtResource("5_1hbbm")
 
@@ -631,7 +632,7 @@ theme_override_constants/separation = -5
 [node name="Society_Hbox" type="HBoxContainer" parent="Society/Society_Vbox"]
 layout_mode = 2
 size_flags_horizontal = 0
-theme_override_constants/separation = 20
+theme_override_constants/separation = 10
 alignment = 1
 
 [node name="Society_Header_Hbox" type="VBoxContainer" parent="Society/Society_Vbox/Society_Hbox"]
@@ -672,6 +673,45 @@ theme_override_fonts/font = ExtResource("2_o6xmb")
 theme_override_font_sizes/font_size = 45
 text = "Healthcare"
 horizontal_alignment = 2
+
+[node name="Society_Symbols" type="VBoxContainer" parent="Society/Society_Vbox/Society_Hbox"]
+custom_minimum_size = Vector2(45, 0)
+layout_mode = 2
+alignment = 2
+
+[node name="Tax_Symbol" type="Sprite2D" parent="Society/Society_Vbox/Society_Hbox/Society_Symbols"]
+position = Vector2(26, 82)
+texture = ExtResource("7_ntdta")
+hframes = 5
+vframes = 4
+
+[node name="Lit_Symbol" type="Sprite2D" parent="Society/Society_Vbox/Society_Hbox/Society_Symbols"]
+position = Vector2(26, 133)
+texture = ExtResource("7_ntdta")
+hframes = 5
+vframes = 4
+frame = 2
+
+[node name="Pol_Symbol" type="Sprite2D" parent="Society/Society_Vbox/Society_Hbox/Society_Symbols"]
+position = Vector2(26, 184)
+texture = ExtResource("7_ntdta")
+hframes = 5
+vframes = 4
+frame = 3
+
+[node name="Lab_Symbol" type="Sprite2D" parent="Society/Society_Vbox/Society_Hbox/Society_Symbols"]
+position = Vector2(26, 236)
+texture = ExtResource("7_ntdta")
+hframes = 5
+vframes = 4
+frame = 1
+
+[node name="Hea_Symbol" type="Sprite2D" parent="Society/Society_Vbox/Society_Hbox/Society_Symbols"]
+position = Vector2(26, 287)
+texture = ExtResource("7_ntdta")
+hframes = 5
+vframes = 4
+frame = 4
 
 [node name="Peasantry" type="VBoxContainer" parent="Society/Society_Vbox/Society_Hbox"]
 layout_mode = 2
