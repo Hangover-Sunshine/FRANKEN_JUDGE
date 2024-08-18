@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwgqf6jcgjxn5"
-path="res://.godot/imported/Eye_Left_Open.png-3823b3da29c33fe13fcf0615c72e8b0d.ctex"
+uid="uid://t06ydj2uu8jn"
+path="res://.godot/imported/Eye_Left_Sheet.png-24386a6d9d9f6036e46df63fa61c6387.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/frank/Eye_Left_Open.png"
-dest_files=["res://.godot/imported/Eye_Left_Open.png-3823b3da29c33fe13fcf0615c72e8b0d.ctex"]
+source_file="res://assets/frank/Eye_Left_Sheet.png"
+dest_files=["res://.godot/imported/Eye_Left_Sheet.png-24386a6d9d9f6036e46df63fa61c6387.ctex"]
 
 [params]
 
