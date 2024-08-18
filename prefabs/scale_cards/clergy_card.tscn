@@ -59,7 +59,7 @@ mouse_filter = 2
 theme = SubResource("Theme_0q1lr")
 script = ExtResource("1_6r0xg")
 
-[node name="Clergy_Card_Vbox" type="VBoxContainer" parent="."]
+[node name="Clergy_card" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -67,12 +67,15 @@ anchor_right = 0.5
 offset_left = -137.5
 offset_top = 25.0
 offset_right = 137.5
-offset_bottom = 395.0
+offset_bottom = 383.0
 grow_horizontal = 2
+
+[node name="Clergy_Card_Vbox" type="VBoxContainer" parent="Clergy_card"]
+layout_mode = 2
 theme_override_constants/separation = 2
 alignment = 1
 
-[node name="Clergy_Header" type="Label" parent="Clergy_Card_Vbox"]
+[node name="Clergy_Header" type="Label" parent="Clergy_card/Clergy_Card_Vbox"]
 custom_minimum_size = Vector2(275, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.698039, 0.235294, 0.25098, 1)
@@ -81,12 +84,12 @@ theme_override_font_sizes/font_size = 70
 text = "Clergy"
 horizontal_alignment = 1
 
-[node name="Clergy_TopDivider" type="ColorRect" parent="Clergy_Card_Vbox"]
+[node name="Clergy_TopDivider" type="ColorRect" parent="Clergy_card/Clergy_Card_Vbox"]
 custom_minimum_size = Vector2(0, 5)
 layout_mode = 2
 color = Color(0.698039, 0.235294, 0.25098, 1)
 
-[node name="Clergy_Label1" type="Label" parent="Clergy_Card_Vbox"]
+[node name="Clergy_Label1" type="Label" parent="Clergy_card/Clergy_Card_Vbox"]
 custom_minimum_size = Vector2(275, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.698039, 0.235294, 0.25098, 1)
@@ -96,7 +99,7 @@ text = "line1line1line1line1li"
 horizontal_alignment = 1
 autowrap_mode = 3
 
-[node name="Clergy_Label2" type="Label" parent="Clergy_Card_Vbox"]
+[node name="Clergy_Label2" type="Label" parent="Clergy_card/Clergy_Card_Vbox"]
 custom_minimum_size = Vector2(275, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.698039, 0.235294, 0.25098, 1)
@@ -105,7 +108,7 @@ theme_override_font_sizes/font_size = 50
 text = "line2line2line2line2li"
 horizontal_alignment = 1
 
-[node name="Clergy_Label3" type="Label" parent="Clergy_Card_Vbox"]
+[node name="Clergy_Label3" type="Label" parent="Clergy_card/Clergy_Card_Vbox"]
 custom_minimum_size = Vector2(275, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.698039, 0.235294, 0.25098, 1)
@@ -114,34 +117,34 @@ theme_override_font_sizes/font_size = 50
 text = "line3line3line3line3li"
 horizontal_alignment = 1
 
-[node name="Clergy_BotDivider" type="ColorRect" parent="Clergy_Card_Vbox"]
+[node name="Clergy_BotDivider" type="ColorRect" parent="Clergy_card/Clergy_Card_Vbox"]
 custom_minimum_size = Vector2(0, 5)
 layout_mode = 2
 color = Color(0.698039, 0.235294, 0.25098, 1)
 
-[node name="Clergy_Rows" type="VBoxContainer" parent="Clergy_Card_Vbox"]
+[node name="Clergy_Rows" type="VBoxContainer" parent="Clergy_card/Clergy_Card_Vbox"]
 layout_mode = 2
 
-[node name="Row_Top" type="HBoxContainer" parent="Clergy_Card_Vbox/Clergy_Rows"]
-layout_mode = 2
-alignment = 1
-
-[node name="S1" type="HBoxContainer" parent="Clergy_Card_Vbox/Clergy_Rows/Row_Top"]
+[node name="Row_Top" type="HBoxContainer" parent="Clergy_card/Clergy_Card_Vbox/Clergy_Rows"]
 layout_mode = 2
 alignment = 1
 
-[node name="Symbol_Holder" type="ColorRect" parent="Clergy_Card_Vbox/Clergy_Rows/Row_Top/S1"]
+[node name="S1" type="HBoxContainer" parent="Clergy_card/Clergy_Card_Vbox/Clergy_Rows/Row_Top"]
+layout_mode = 2
+alignment = 1
+
+[node name="Symbol_Holder" type="ColorRect" parent="Clergy_card/Clergy_Card_Vbox/Clergy_Rows/Row_Top/S1"]
 custom_minimum_size = Vector2(45, 0)
 layout_mode = 2
 color = Color(1, 1, 1, 0)
 
-[node name="S1_Symbol" type="Sprite2D" parent="Clergy_Card_Vbox/Clergy_Rows/Row_Top/S1"]
+[node name="S1_Symbol" type="Sprite2D" parent="Clergy_card/Clergy_Card_Vbox/Clergy_Rows/Row_Top/S1"]
 position = Vector2(23, 28)
 texture = ExtResource("3_tbtn4")
 hframes = 5
 vframes = 4
 
-[node name="S1_Modifier" type="Label" parent="Clergy_Card_Vbox/Clergy_Rows/Row_Top/S1"]
+[node name="S1_Modifier" type="Label" parent="Clergy_card/Clergy_Card_Vbox/Clergy_Rows/Row_Top/S1"]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.698039, 0.235294, 0.25098, 1)
@@ -150,22 +153,22 @@ theme_override_font_sizes/font_size = 50
 text = "(+00%)"
 horizontal_alignment = 1
 
-[node name="S2" type="HBoxContainer" parent="Clergy_Card_Vbox/Clergy_Rows/Row_Top"]
+[node name="S2" type="HBoxContainer" parent="Clergy_card/Clergy_Card_Vbox/Clergy_Rows/Row_Top"]
 layout_mode = 2
 alignment = 1
 
-[node name="Symbol_Holder" type="ColorRect" parent="Clergy_Card_Vbox/Clergy_Rows/Row_Top/S2"]
+[node name="Symbol_Holder" type="ColorRect" parent="Clergy_card/Clergy_Card_Vbox/Clergy_Rows/Row_Top/S2"]
 custom_minimum_size = Vector2(45, 0)
 layout_mode = 2
 color = Color(1, 1, 1, 0)
 
-[node name="S2_Symbol" type="Sprite2D" parent="Clergy_Card_Vbox/Clergy_Rows/Row_Top/S2"]
+[node name="S2_Symbol" type="Sprite2D" parent="Clergy_card/Clergy_Card_Vbox/Clergy_Rows/Row_Top/S2"]
 position = Vector2(23, 28)
 texture = ExtResource("3_tbtn4")
 hframes = 5
 vframes = 4
 
-[node name="S2_Modifier" type="Label" parent="Clergy_Card_Vbox/Clergy_Rows/Row_Top/S2"]
+[node name="S2_Modifier" type="Label" parent="Clergy_card/Clergy_Card_Vbox/Clergy_Rows/Row_Top/S2"]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.698039, 0.235294, 0.25098, 1)
@@ -174,26 +177,26 @@ theme_override_font_sizes/font_size = 50
 text = "(+00%)"
 horizontal_alignment = 1
 
-[node name="Row_Bot" type="HBoxContainer" parent="Clergy_Card_Vbox/Clergy_Rows"]
+[node name="Row_Bot" type="HBoxContainer" parent="Clergy_card/Clergy_Card_Vbox/Clergy_Rows"]
 layout_mode = 2
 alignment = 1
 
-[node name="S3" type="HBoxContainer" parent="Clergy_Card_Vbox/Clergy_Rows/Row_Bot"]
+[node name="S3" type="HBoxContainer" parent="Clergy_card/Clergy_Card_Vbox/Clergy_Rows/Row_Bot"]
 layout_mode = 2
 alignment = 1
 
-[node name="Symbol_Holder" type="ColorRect" parent="Clergy_Card_Vbox/Clergy_Rows/Row_Bot/S3"]
+[node name="Symbol_Holder" type="ColorRect" parent="Clergy_card/Clergy_Card_Vbox/Clergy_Rows/Row_Bot/S3"]
 custom_minimum_size = Vector2(45, 0)
 layout_mode = 2
 color = Color(1, 1, 1, 0)
 
-[node name="S3_Symbol" type="Sprite2D" parent="Clergy_Card_Vbox/Clergy_Rows/Row_Bot/S3"]
+[node name="S3_Symbol" type="Sprite2D" parent="Clergy_card/Clergy_Card_Vbox/Clergy_Rows/Row_Bot/S3"]
 position = Vector2(23, 28)
 texture = ExtResource("3_tbtn4")
 hframes = 5
 vframes = 4
 
-[node name="S3_Modifier" type="Label" parent="Clergy_Card_Vbox/Clergy_Rows/Row_Bot/S3"]
+[node name="S3_Modifier" type="Label" parent="Clergy_card/Clergy_Card_Vbox/Clergy_Rows/Row_Bot/S3"]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.698039, 0.235294, 0.25098, 1)
@@ -202,22 +205,22 @@ theme_override_font_sizes/font_size = 50
 text = "(+00%)"
 horizontal_alignment = 1
 
-[node name="S4" type="HBoxContainer" parent="Clergy_Card_Vbox/Clergy_Rows/Row_Bot"]
+[node name="S4" type="HBoxContainer" parent="Clergy_card/Clergy_Card_Vbox/Clergy_Rows/Row_Bot"]
 layout_mode = 2
 alignment = 1
 
-[node name="Symbol_Holder" type="ColorRect" parent="Clergy_Card_Vbox/Clergy_Rows/Row_Bot/S4"]
+[node name="Symbol_Holder" type="ColorRect" parent="Clergy_card/Clergy_Card_Vbox/Clergy_Rows/Row_Bot/S4"]
 custom_minimum_size = Vector2(45, 0)
 layout_mode = 2
 color = Color(1, 1, 1, 0)
 
-[node name="S4_Symbol" type="Sprite2D" parent="Clergy_Card_Vbox/Clergy_Rows/Row_Bot/S4"]
+[node name="S4_Symbol" type="Sprite2D" parent="Clergy_card/Clergy_Card_Vbox/Clergy_Rows/Row_Bot/S4"]
 position = Vector2(23, 28)
 texture = ExtResource("3_tbtn4")
 hframes = 5
 vframes = 4
 
-[node name="S4_Modifier" type="Label" parent="Clergy_Card_Vbox/Clergy_Rows/Row_Bot/S4"]
+[node name="S4_Modifier" type="Label" parent="Clergy_card/Clergy_Card_Vbox/Clergy_Rows/Row_Bot/S4"]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.698039, 0.235294, 0.25098, 1)
