@@ -1,7 +1,5 @@
 extends Control
 
-@onready var reputation_rates_vbox = $Reputation_Vbox/Reputation_Hbox/Reputation_Rates_Vbox
-
 @onready var rep_rates = {
 	GlobalData.Faction.PEASANTS: $Reputation_Vbox/Reputation_Hbox/Reputation_Rates_Vbox/Peasantry_Rep_Rate,
 	GlobalData.Faction.NOBILITY: $Reputation_Vbox/Reputation_Hbox/Reputation_Rates_Vbox/Nobility_Rep_Rate,
@@ -17,6 +15,10 @@ extends Control
 func _ready():
 	GlobalSignals.connect("hovered_over_card", _hovered_over_card)
 	GlobalSignals.connect("not_hovering", _not_hovering)
+	
+	for key in rep_rates.keys():
+		rep_rates[key].visible = false
+	##
 ##
 
 func load_peasant_rep(rep):
@@ -37,12 +39,10 @@ func _hovered_over_card(effects:Array[BaseEffectResource]):
 			continue
 		##
 		
-		print("here ", eff.Group)
-		
 		rep_rates[eff.Group].visible = true
 		
 		if eff.ValueChange < 0:
-			rep_rates[eff.Group].text = GlobalData.TWO_NUM_DISPLAY % eff.ValueChange
+			rep_rates[eff.Group].text = "-" + (GlobalData.TWO_NUM_DISPLAY % -eff.ValueChange)
 		else:
 			rep_rates[eff.Group].text = "+" + (GlobalData.TWO_NUM_DISPLAY % eff.ValueChange)
 		##

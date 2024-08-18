@@ -583,7 +583,6 @@ step = 1.0
 value = 50.0
 
 [node name="Reputation_Rates_Vbox" type="VBoxContainer" parent="Reputation/Reputation_Vbox/Reputation_Hbox"]
-visible = false
 layout_mode = 2
 theme_override_constants/separation = 10
 

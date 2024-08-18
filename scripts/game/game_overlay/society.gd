@@ -88,16 +88,14 @@ func _hovered_over_card(effects:Array[BaseEffectResource]):
 			continue
 		##
 		
-		print("Group:", eff.Group, "; Affects:", eff.Affect)
-		
 		if eff.Group == GlobalData.Faction.PEASANTS:
 			peasant_change_hover[eff.Affect].visible = true
 			
 			if eff.ValueChange < 0:
 				if eff.Affect == GlobalData.Effects.TAX:
-					peasant_change_hover[eff.Affect].text = GlobalData.THREE_NUM_DISPLAY % eff.ValueChange
+					peasant_change_hover[eff.Affect].text = "-" + (GlobalData.THREE_NUM_DISPLAY % -eff.ValueChange)
 				else:
-					peasant_change_hover[eff.Affect].text = GlobalData.TWO_NUM_DISPLAY % eff.ValueChange
+					peasant_change_hover[eff.Affect].text = "-" + (GlobalData.TWO_NUM_DISPLAY % -eff.ValueChange)
 				##
 			else:
 				if eff.Affect == GlobalData.Effects.TAX:
@@ -111,9 +109,9 @@ func _hovered_over_card(effects:Array[BaseEffectResource]):
 			
 			if eff.ValueChange < 0:
 				if eff.Affect == GlobalData.Effects.TAX:
-					nobility_change_hover[eff.Affect].text = GlobalData.THREE_NUM_DISPLAY % eff.ValueChange
+					peasant_change_hover[eff.Affect].text = "-" + (GlobalData.THREE_NUM_DISPLAY % -eff.ValueChange)
 				else:
-					nobility_change_hover[eff.Affect].text = GlobalData.TWO_NUM_DISPLAY % eff.ValueChange
+					peasant_change_hover[eff.Affect].text = "-" + (GlobalData.TWO_NUM_DISPLAY % -eff.ValueChange)
 				##
 			else:
 				if eff.Affect == GlobalData.Effects.TAX:
@@ -127,9 +125,9 @@ func _hovered_over_card(effects:Array[BaseEffectResource]):
 			
 			if eff.ValueChange < 0:
 				if eff.Affect == GlobalData.Effects.TAX:
-					clergy_change_hover[eff.Affect].text = GlobalData.THREE_NUM_DISPLAY % eff.ValueChange
+					peasant_change_hover[eff.Affect].text = "-" + (GlobalData.THREE_NUM_DISPLAY % -eff.ValueChange)
 				else:
-					clergy_change_hover[eff.Affect].text = GlobalData.TWO_NUM_DISPLAY % eff.ValueChange
+					peasant_change_hover[eff.Affect].text = "-" + (GlobalData.TWO_NUM_DISPLAY % -eff.ValueChange)
 				##
 			else:
 				if eff.Affect == GlobalData.Effects.TAX:
