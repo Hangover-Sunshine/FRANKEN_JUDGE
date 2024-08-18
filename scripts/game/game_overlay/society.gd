@@ -50,8 +50,6 @@ extends Control
 
 var internal_stats_rep = {}
 
-var _effects:Array[BaseEffectResource]
-
 func _ready():
 	GlobalSignals.connect("hovered_over_card", _hovered_over_card)
 	GlobalSignals.connect("not_hovering", _not_hovering)
@@ -85,29 +83,58 @@ func load_clergy_stats(cstats):
 ##
 
 func _hovered_over_card(effects:Array[BaseEffectResource]):
-	_effects = effects
-	
-	for eff in _effects:
+	for eff in effects:
+		if eff.Affect == GlobalData.Effects.REPUTATION:
+			continue
+		##
+		
 		if eff.Group == GlobalData.Faction.PEASANTS:
 			peasant_change_hover[eff.Affect].visible = false
-			if eff.Affect == GlobalData.Effects.TAX:
-				peasant_change_hover[eff.Affect].text = GlobalData.THREE_NUM_DISPLAY % eff.ValueChange
+			
+			if eff.ValueChange < 0:
+				if eff.Affect == GlobalData.Effects.TAX:
+					peasant_change_hover[eff.Affect].text = GlobalData.THREE_NUM_DISPLAY % eff.ValueChange
+				else:
+					peasant_change_hover[eff.Affect].text = GlobalData.TWO_NUM_DISPLAY % eff.ValueChange
+				##
 			else:
-				peasant_change_hover[eff.Affect].text = GlobalData.TWO_NUM_DISPLAY % eff.ValueChange
+				if eff.Affect == GlobalData.Effects.TAX:
+					peasant_change_hover[eff.Affect].text = "+" + (GlobalData.THREE_NUM_DISPLAY % eff.ValueChange)
+				else:
+					peasant_change_hover[eff.Affect].text = "+" + (GlobalData.TWO_NUM_DISPLAY % eff.ValueChange)
+				##
 			##
 		elif eff.Group == GlobalData.Faction.NOBILITY:
 			nobility_change_hover[eff.Affect].visible = false
-			if eff.Affect == GlobalData.Effects.TAX:
-				nobility_change_hover[eff.Affect].text = GlobalData.THREE_NUM_DISPLAY % eff.ValueChange
+			
+			if eff.ValueChange < 0:
+				if eff.Affect == GlobalData.Effects.TAX:
+					nobility_change_hover[eff.Affect].text = GlobalData.THREE_NUM_DISPLAY % eff.ValueChange
+				else:
+					nobility_change_hover[eff.Affect].text = GlobalData.TWO_NUM_DISPLAY % eff.ValueChange
+				##
 			else:
-				nobility_change_hover[eff.Affect].text = GlobalData.TWO_NUM_DISPLAY % eff.ValueChange
+				if eff.Affect == GlobalData.Effects.TAX:
+					nobility_change_hover[eff.Affect].text = "+" + (GlobalData.THREE_NUM_DISPLAY % eff.ValueChange)
+				else:
+					nobility_change_hover[eff.Affect].text = "+" + (GlobalData.TWO_NUM_DISPLAY % eff.ValueChange)
+				##
 			##
 		else:
 			clergy_change_hover[eff.Affect].visible = false
-			if eff.Affect == GlobalData.Effects.TAX:
-				clergy_change_hover[eff.Affect].text = GlobalData.THREE_NUM_DISPLAY % eff.ValueChange
+			
+			if eff.ValueChange < 0:
+				if eff.Affect == GlobalData.Effects.TAX:
+					clergy_change_hover[eff.Affect].text = GlobalData.THREE_NUM_DISPLAY % eff.ValueChange
+				else:
+					clergy_change_hover[eff.Affect].text = GlobalData.TWO_NUM_DISPLAY % eff.ValueChange
+				##
 			else:
-				clergy_change_hover[eff.Affect].text = GlobalData.TWO_NUM_DISPLAY % eff.ValueChange
+				if eff.Affect == GlobalData.Effects.TAX:
+					clergy_change_hover[eff.Affect].text = "+" + (GlobalData.THREE_NUM_DISPLAY % eff.ValueChange)
+				else:
+					clergy_change_hover[eff.Affect].text = "+" + (GlobalData.TWO_NUM_DISPLAY % eff.ValueChange)
+				##
 			##
 		##
 	##
@@ -119,5 +146,4 @@ func _not_hovering():
 		nobility_change_hover[key].visible = false
 		clergy_change_hover[key].visible = false
 	##
-	_effects = []
 ##
