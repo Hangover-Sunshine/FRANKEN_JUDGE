@@ -12,7 +12,9 @@ var gameover = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	gameover = PlayerPrefs.game_end
 	show_text()
+##
 
 # shows what the player will see when game ends
 func show_text():
@@ -31,7 +33,10 @@ func show_text():
 
 # goes to different scenes
 func _on_again_button_pressed():
-	pass # Replace with function body.
+	Verho.change_scene("scenes/game_scene", "", "BlackFade")
+##
 
 func _on_leave_button_pressed():
-	pass # Replace with function body.
+	# new_scene:String, library:String, transition:String,
+	Verho.change_scene("scenes/menus/hub_menu", "", "BlackFade")
+##

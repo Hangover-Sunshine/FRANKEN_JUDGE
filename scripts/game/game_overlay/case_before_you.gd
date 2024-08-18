@@ -7,19 +7,6 @@ signal case_complete(case:BaseCaseResource, faction:GlobalData.Faction, chose_le
 @onready var left_mega_card = $Scale_Body/Scale_Left/MegaCard
 @onready var right_mega_card = $Scale_Body/Scale_Right/MegaCard
 
-@onready var peasant_cards = [
-	$Scale_Body/Scale_Left/Left_Peasant_Card,
-	$Scale_Body/Scale_Right/Right_Peasant_Card
-]
-@onready var nobility_cards = [
-	$Scale_Body/Scale_Left/Left_Nobility_Card,
-	$Scale_Body/Scale_Right/Right_Nobility_Card
-]
-@onready var clergy_cards = [
-	$Scale_Body/Scale_Left/Left_Clergy_Card,
-	$Scale_Body/Scale_Right/Right_Clergy_Card
-]
-
 var _case:BaseCaseResource
 var _aPicks
 var _bPicks

@@ -41,8 +41,8 @@ func has_lost() -> GlobalData.END_CONDITION:
 	##
 	
 	# Early check -- if all are 3, you really failed
-	if below_25 == 3:
-		return GlobalData.END_CONDITION.LOSS_ALL
+	#if below_25 == 3:
+		#return GlobalData.END_CONDITION.LOSS_ALL
 	##
 	
 	if below_25 > 0 and below_35 > 1:

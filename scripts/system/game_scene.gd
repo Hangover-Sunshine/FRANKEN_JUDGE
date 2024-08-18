@@ -68,7 +68,6 @@ func _confirm_case(effects:Array[BaseEffectResource]):
 	# TODO: Save the current day -- let player back out without worry
 	
 	# TODO: Send off for animations :)
-	
 ##
 
 ## Called once the animation player is finished playing all the animations --
@@ -78,18 +77,17 @@ func _update_stats_done():
 	var status:GlobalData.END_CONDITION = _reputation_stats.has_lost()
 	
 	if _curr_day == NUMBER_OF_TURNS:
-		if status == GlobalData.END_CONDITION.LOSS_ALL:
-			pass # You just lose
-		elif status == GlobalData.END_CONDITION.LOSS_CLERGY or \
-				status == GlobalData.END_CONDITION.LOSS_NOBILITY or \
-				status == GlobalData.END_CONDITION.LOSS_PEASANT:
-				pass # Win, but barely
-			##
-		##
-		
-		pass # Win
+		PlayerPrefs.game_end = 0
+		Verho.change_scene("scenes/menus/hub_gameover", "", "BlackFade")
 	elif status != GlobalData.END_CONDITION.NONE:
-		pass # Just lost, that's it
+		if status == GlobalData.END_CONDITION.LOSS_CLERGY:
+			PlayerPrefs.game_end = 3
+		elif status == GlobalData.END_CONDITION.LOSS_NOBILITY:
+			PlayerPrefs.game_end = 2
+		elif status == GlobalData.END_CONDITION.LOSS_PEASANT:
+			PlayerPrefs.game_end = 1
+		##
+		Verho.change_scene("scenes/menus/hub_gameover", "", "BlackFade")
 	##
 ##
 
