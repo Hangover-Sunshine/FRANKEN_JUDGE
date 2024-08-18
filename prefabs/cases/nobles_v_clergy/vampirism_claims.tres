@@ -1,20 +1,18 @@
-[gd_resource type="Resource" script_class="BaseCaseResource" load_steps=8 format=3 uid="uid://daw83n2hujgbi"]
+[gd_resource type="Resource" script_class="BaseCaseResource" load_steps=6 format=3 uid="uid://daw83n2hujgbi"]
 
-[ext_resource type="Resource" uid="uid://r2iaysafh721" path="res://prefabs/effects/nobility/add/nobles_p1health.tres" id="1_ib6wo"]
-[ext_resource type="Resource" uid="uid://ds6iqv4r75ik" path="res://prefabs/effects/nobility/add/nobles_p5rep.tres" id="2_1gwmr"]
-[ext_resource type="Resource" uid="uid://whgopb7t34qm" path="res://prefabs/effects/clergy/sub/clergy_m10rep.tres" id="3_0cjag"]
-[ext_resource type="Resource" uid="uid://ds6iqv4r75ik" path="res://prefabs/effects/clergy/add/clergy_p5rep.tres" id="4_7bam4"]
-[ext_resource type="Resource" uid="uid://cte17774o156n" path="res://prefabs/effects/clergy/add/clergy_p1pol.tres" id="5_af33u"]
-[ext_resource type="Resource" uid="uid://whgopb7t34qm" path="res://prefabs/effects/nobility/sub/nobles_m10rep.tres" id="6_ubso1"]
+[ext_resource type="Resource" uid="uid://r2iaysafh721" path="res://prefabs/effects/peasants/add/peasants_p1health.tres" id="1_ib6wo"]
+[ext_resource type="Resource" uid="uid://ds6iqv4r75ik" path="res://prefabs/effects/peasants/add/peasants_p5rep.tres" id="4_7bam4"]
+[ext_resource type="Resource" uid="uid://cte17774o156n" path="res://prefabs/effects/peasants/add/peasants_p1pol.tres" id="5_af33u"]
+[ext_resource type="Resource" uid="uid://whgopb7t34qm" path="res://prefabs/effects/peasants/sub/peasants_m10rep.tres" id="6_ubso1"]
 [ext_resource type="Script" path="res://scripts/resources/base_case_resource.gd" id="7_ibi4q"]
 
 [resource]
 script = ExtResource("7_ibi4q")
 CASE_NAME = "Clergy Claims Vampirism!"
-CASE_DESCRIPTION = "The clergy of the land claim that the nobles are conspiring with vampires of eld to become immortal. They are petitioning you for more control over the police to prevent such heresy. The nobles deny these claims, and want you to invest further into their own healthcare."
+CASE_DESCRIPTION = "The clergy claim that the nobles are conspiring with vampires of eld to become immortal. They are petitioning you for more control over the police to prevent such heresy. The nobles deny these claims, and want you to invest further into their own healthcare."
 PARTY_A = 1
 PARTY_A_ARGUMENT = "We just don't want to die young."
-EFFECTS_A = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("1_ib6wo"), ExtResource("2_1gwmr"), ExtResource("3_0cjag")])
+EFFECTS_A = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("1_ib6wo"), ExtResource("4_7bam4"), ExtResource("6_ubso1")])
 PARTY_B = 2
 PARTY_B_ARGUMENT = "They're all vampires in disguise!"
 EFFECTS_B = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("4_7bam4"), ExtResource("5_af33u"), ExtResource("6_ubso1")])

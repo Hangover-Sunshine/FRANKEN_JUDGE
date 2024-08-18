@@ -1,9 +1,9 @@
 extends Card
 
 @onready var description_labels = [
-	$Peasant_Card_Vbox/Peasant_Label1,
-	$Peasant_Card_Vbox/Peasant_Label2,
-	$Peasant_Card_Vbox/Peasant_Label3
+	$Nobility_Card_Vbox/Nobility_Label1,
+	$Nobility_Card_Vbox/Nobility_Label2,
+	$Nobility_Card_Vbox/Nobility_Label3
 ]
 
 var countdown_for_selection:int = 1.5

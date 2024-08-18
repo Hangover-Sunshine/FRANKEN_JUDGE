@@ -1,9 +1,9 @@
 extends Card
 
 @onready var description_labels = [
-	$Peasant_Card_Vbox/Peasant_Label1,
-	$Peasant_Card_Vbox/Peasant_Label2,
-	$Peasant_Card_Vbox/Peasant_Label3
+	$Clergy_Card_Vbox/Clergy_Label1,
+	$Clergy_Card_Vbox/Clergy_Label2,
+	$Clergy_Card_Vbox/Clergy_Label3
 ]
 
 var countdown_for_selection:int = 1.5
@@ -26,5 +26,5 @@ func _on_button_button_up():
 ##
 
 func _on_timer_timeout():
-	emit_signal("selected")
+	emit_signal("selected_peasant")
 ##

@@ -13,4 +13,4 @@ extends Resource
 @export var ValueChange:int = 1
 
 ## The range to generate between for changing a value. Ignored if RandomAmount is false. 
-@export var ValueRange:Vector2 = Vector2(1, 5)
+@export var ValueRange:Vector2i = Vector2i(1, 5)

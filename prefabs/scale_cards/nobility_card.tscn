@@ -1,0 +1,124 @@
+[gd_scene load_steps=5 format=3 uid="uid://cbwrwwk62i21i"]
+
+[ext_resource type="Script" path="res://scripts/game/cards/nobility_card.gd" id="1_8eduw"]
+[ext_resource type="FontFile" uid="uid://cqxld14ctgocv" path="res://assets/fonts/MedulaOne.ttf" id="2_nfx2a"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n6w1f"]
+bg_color = Color(0.364706, 0.184314, 0.54902, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="Theme" id="Theme_ycdtd"]
+Panel/styles/panel = SubResource("StyleBoxFlat_n6w1f")
+
+[node name="Nobility_Card" type="Panel"]
+custom_minimum_size = Vector2(325, 400)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -960.0
+offset_top = -1080.0
+offset_right = -635.0
+offset_bottom = -680.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+theme = SubResource("Theme_ycdtd")
+script = ExtResource("1_8eduw")
+
+[node name="Nobility_Card_Vbox" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -137.5
+offset_top = -185.0
+offset_right = 137.5
+offset_bottom = 185.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Nobility_Header" type="Label" parent="Nobility_Card_Vbox"]
+custom_minimum_size = Vector2(275, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.87451, 0.8, 0.976471, 1)
+theme_override_fonts/font = ExtResource("2_nfx2a")
+theme_override_font_sizes/font_size = 70
+text = "Nobility"
+horizontal_alignment = 1
+
+[node name="Nobility_TopDivider" type="ColorRect" parent="Nobility_Card_Vbox"]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+color = Color(0.87451, 0.8, 0.976471, 1)
+
+[node name="Nobility_Label1" type="Label" parent="Nobility_Card_Vbox"]
+custom_minimum_size = Vector2(275, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.87451, 0.8, 0.976471, 1)
+theme_override_fonts/font = ExtResource("2_nfx2a")
+theme_override_font_sizes/font_size = 50
+text = "line1line1line1line1li"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Nobility_Label2" type="Label" parent="Nobility_Card_Vbox"]
+custom_minimum_size = Vector2(275, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.87451, 0.8, 0.976471, 1)
+theme_override_fonts/font = ExtResource("2_nfx2a")
+theme_override_font_sizes/font_size = 50
+text = "line2line2line2line2li"
+horizontal_alignment = 1
+
+[node name="Nobility_Label3" type="Label" parent="Nobility_Card_Vbox"]
+custom_minimum_size = Vector2(275, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.87451, 0.8, 0.976471, 1)
+theme_override_fonts/font = ExtResource("2_nfx2a")
+theme_override_font_sizes/font_size = 50
+text = "line3line3line3line3li"
+horizontal_alignment = 1
+
+[node name="Nobility_BotDivider" type="ColorRect" parent="Nobility_Card_Vbox"]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+color = Color(0.87451, 0.8, 0.976471, 1)
+
+[node name="Nobility_FxLabel1" type="Label" parent="Nobility_Card_Vbox"]
+custom_minimum_size = Vector2(275, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.87451, 0.8, 0.976471, 1)
+theme_override_fonts/font = ExtResource("2_nfx2a")
+theme_override_font_sizes/font_size = 50
+text = "effectsEFFECTSeffec"
+horizontal_alignment = 1
+
+[node name="Nobility_FxLabel2" type="Label" parent="Nobility_Card_Vbox"]
+custom_minimum_size = Vector2(275, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.87451, 0.8, 0.976471, 1)
+theme_override_fonts/font = ExtResource("2_nfx2a")
+theme_override_font_sizes/font_size = 50
+text = "effectsEFFECTSeffec"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 328.0
+offset_bottom = 403.0
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -97,15 +97,15 @@ func get_faction_rep_change(group:GlobalData.Faction) -> int:
 		var change_arr = _REP_CHANGE_FOR["favored"] if key in fissues else _REP_CHANGE_FOR["unfavored"]
 		
 		if val <= 2:
-			change_arr -= change_arr[2]
+			rep_change -= change_arr[2]
 		elif val >= 3 and val <= 4:
-			change_arr -= change_arr[1]
+			rep_change -= change_arr[1]
 		elif val >= 5 and val <= 6:
-			change_arr += change_arr[0]
+			rep_change += change_arr[0]
 		elif val >= 7 and val <= 8:
-			change_arr += change_arr[1]
+			rep_change += change_arr[1]
 		else:
-			change_arr += change_arr[2]
+			rep_change += change_arr[2]
 		##
 	##
 	

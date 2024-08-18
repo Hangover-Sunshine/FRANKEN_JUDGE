@@ -1,6 +1,5 @@
 extends Node2D
 
-signal confirm_case(effects:Array[BaseEffectResource])
 signal update_stats_done
 
 ## The number of turns the game should last.
@@ -21,14 +20,16 @@ var _curr_day:int = 1
 ## Called when node is in the tree.
 func _ready():
 	Verho.connect("loaded_scene", _loaded_scene)
-	connect("confirm_case", _confirm_case)
+	#connect("confirm_case", _confirm_case)
 	connect("update_stats_done", _update_stats_done)
 	
 	# Shuffle the cases
 	CASES.shuffle()
 	
 	$Game_Overlay.connect("cases_left", readd_unpicked_cases)
+	$Game_Overlay.connect("case_resolved", _confirm_case)
 	$Game_Overlay.initialize(NUMBER_OF_TURNS)
+	$Game_Overlay.show_day(_curr_day)
 	$DelayTimer.start(INITIAL_LOAD_DELAY)
 ##
 
@@ -36,27 +37,31 @@ func _ready():
 func _confirm_case(effects:Array[BaseEffectResource]):
 	_curr_day += 1
 	
-	# Update stats
-	for eff in effects:
-		# group:GlobalData.Faction, stat:GlobalData.Effects, value:in
-		if eff.RandomAmount:
-			_faction_stats.update_value_for(eff.Group, eff.Affect,
-											randi_range(eff.ValueRange.x, eff.ValueRange.y))
-		else:
-			_faction_stats.update_value_for(eff.Group, eff.Affect, eff.ValueChange)
-		##
-	##
-	
-	# Get the amount changes to reputations
 	var changes:Dictionary = {
 		GlobalData.Faction.CLERGY: 0,
 		GlobalData.Faction.NOBILITY: 0,
 		GlobalData.Faction.PEASANTS: 0
 	}
 	
+	# Update stats
+	for eff in effects:
+		# group:GlobalData.Faction, stat:GlobalData.Effects, value:in
+		if eff.Affect == GlobalData.Effects.REPUTATION:
+			changes[eff.Group] += eff.ValueChange
+		else:
+			if eff.RandomAmount:
+				_faction_stats.update_value_for(eff.Group, eff.Affect,
+												randi_range(eff.ValueRange.x, eff.ValueRange.y))
+			else:
+				_faction_stats.update_value_for(eff.Group, eff.Affect, eff.ValueChange)
+			##
+		##
+	##
+	
+	# Get the amount changes to reputations
 	# ... And Change the reputations - all in one!
 	for key in changes.keys():
-		changes[key] = _faction_stats.get_faction_rep_change(key)
+		changes[key] += _faction_stats.get_faction_rep_change(key)
 		_reputation_stats.set_reputation_for(key, changes[key])
 	##
 	
