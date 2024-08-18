@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://2ccarx7gmy63"]
+
+[ext_resource type="Script" path="res://scripts/game/cards/mega_card.gd" id="1_5kxb2"]
+[ext_resource type="PackedScene" uid="uid://w72v68wkdo4p" path="res://prefabs/scale_cards/clergy_card.tscn" id="1_kowkl"]
+[ext_resource type="PackedScene" uid="uid://cbwrwwk62i21i" path="res://prefabs/scale_cards/nobility_card.tscn" id="2_76t41"]
+[ext_resource type="PackedScene" uid="uid://flui25l5hfkd" path="res://prefabs/scale_cards/peasant_card.tscn" id="3_h06ui"]
+
+[node name="MegaCard" type="Panel"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(345, 420)
+offset_right = 345.0
+offset_bottom = 420.0
+mouse_filter = 2
+script = ExtResource("1_5kxb2")
+
+[node name="Clergy_Card" parent="." instance=ExtResource("1_kowkl")]
+layout_mode = 1
+offset_left = -172.5
+offset_top = -420.0
+offset_right = 172.5
+offset_bottom = 0.0
+
+[node name="Nobility_Card" parent="." instance=ExtResource("2_76t41")]
+layout_mode = 1
+offset_left = -172.5
+offset_top = -420.0
+offset_right = 172.5
+offset_bottom = 0.0
+
+[node name="Peasant_Card" parent="." instance=ExtResource("3_h06ui")]
+layout_mode = 1
+offset_left = -172.5
+offset_top = -420.0
+offset_right = 172.5
+offset_bottom = 0.0
