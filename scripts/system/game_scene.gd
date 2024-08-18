@@ -67,6 +67,8 @@ func _confirm_case(effects:Array[BaseEffectResource]):
 		_reputation_stats.set_reputation_for(key, changes[key])
 	##
 	
+	$Game_Overlay.change_reps_by(changes)
+	
 	# TODO: Save the current day -- let player back out without worry
 	
 	# TODO: call into Game_Overlay to start playing anims

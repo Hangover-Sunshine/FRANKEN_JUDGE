@@ -6,11 +6,13 @@ extends Control
 	GlobalData.Faction.CLERGY: $Reputation_Vbox/Reputation_Hbox/Reputation_Rates_Vbox/Clergy_Rep_Rate
 }
 
-@onready var bars = [
-	$Reputation_Vbox/Reputation_Hbox/Reputation_Vbox/Rep_Peasantry_Hbox/Peasantry_Rep_Bar,
-	$Reputation_Vbox/Reputation_Hbox/Reputation_Vbox/Rep_Nobility_Hbox/Nobility_Rep_Bar,
-	$Reputation_Vbox/Reputation_Hbox/Reputation_Vbox/Rep_Clergy_Hbox/Clergy_Rep_Bar
-]
+@onready var bars = {
+	GlobalData.Faction.PEASANTS: $Reputation_Vbox/Reputation_Hbox/Reputation_Vbox/Rep_Peasantry_Hbox/Peasantry_Rep_Bar,
+	GlobalData.Faction.NOBILITY: $Reputation_Vbox/Reputation_Hbox/Reputation_Vbox/Rep_Nobility_Hbox/Nobility_Rep_Bar,
+	GlobalData.Faction.CLERGY: $Reputation_Vbox/Reputation_Hbox/Reputation_Vbox/Rep_Clergy_Hbox/Clergy_Rep_Bar
+}
+
+var _changed_stats:Dictionary
 
 func _ready():
 	GlobalSignals.connect("hovered_over_card", _hovered_over_card)
@@ -67,6 +69,12 @@ func _not_hovering():
 	##
 ##
 
-func update_reps(affected_reps):
-	pass
+func changes_to_reps(affected_reps):
+	_changed_stats = affected_reps
+##
+
+func update_reputations():
+	for key in _changed_stats.keys():
+		bars[key].value -= _changed_stats[key]
+	##
 ##

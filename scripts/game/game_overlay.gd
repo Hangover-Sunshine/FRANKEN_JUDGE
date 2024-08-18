@@ -45,8 +45,8 @@ func load_reputation_stats(reps):
 	$Reputation.load_clergy_rep(reps[GlobalData.Faction.CLERGY])
 ##
 
-func update_reps_stats(changes):
-	pass
+func change_reps_by(changes):
+	$Reputation.changes_to_reps(changes)
 ##
 
 # ============== UPPER HALF CONTROL ============== #
@@ -139,6 +139,8 @@ func _case_complete(case:BaseCaseResource, faction:GlobalData.Faction, chose_A:b
 
 func _tally_finished():
 	ap_states.play("Part6")
+	
+	$Reputation.update_reputations()
 	
 	await get_tree().create_timer(3).timeout
 	

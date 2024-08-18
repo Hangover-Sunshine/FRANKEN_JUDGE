@@ -110,9 +110,9 @@ func _hovered_over_card(effects:Array[BaseEffectResource]):
 			
 			if eff.ValueChange < 0:
 				if eff.Affect == GlobalData.Effects.TAX:
-					peasant_change_hover[eff.Affect].text = "-" + (GlobalData.THREE_NUM_DISPLAY % -eff.ValueChange) + "%"
+					nobility_change_hover[eff.Affect].text = "-" + (GlobalData.THREE_NUM_DISPLAY % -eff.ValueChange) + "%"
 				else:
-					peasant_change_hover[eff.Affect].text = "-" + (GlobalData.TWO_NUM_DISPLAY % -eff.ValueChange)
+					nobility_change_hover[eff.Affect].text = "-" + (GlobalData.TWO_NUM_DISPLAY % -eff.ValueChange)
 				##
 			else:
 				if eff.Affect == GlobalData.Effects.TAX:
