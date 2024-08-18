@@ -1,27 +1,26 @@
-[gd_scene load_steps=12 format=3 uid="uid://dd1ytb4xypau"]
+[gd_scene load_steps=11 format=3 uid="uid://dd1ytb4xypau"]
 
-[ext_resource type="Texture2D" uid="uid://hd4h13erod2w" path="res://assets/gui/Folder_Blue.png" id="1_ytbhg"]
 [ext_resource type="Texture2D" uid="uid://xlhidlfg2qdh" path="res://assets/gui/Folder_Click.png" id="2_pkkme"]
 [ext_resource type="Texture2D" uid="uid://cpwho6qtefmjc" path="res://assets/gui/Folder_Red.png" id="2_pxc7h"]
 [ext_resource type="Script" path="res://scenes/Folder_Press.gd" id="3_2tusv"]
 [ext_resource type="Texture2D" uid="uid://7tbs218cpwgv" path="res://assets/particle/FJ_Circle.png" id="4_auvkv"]
 [ext_resource type="FontFile" uid="uid://73eyyuro8nvv" path="res://assets/fonts/PirataOne.ttf" id="5_ijw5s"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f1p60"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tqrje"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_otkti"]
-texture = ExtResource("1_ytbhg")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_07t3s"]
+texture = ExtResource("2_pxc7h")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w87u2"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hpqjg"]
 texture = ExtResource("2_pxc7h")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_srlm5"]
 texture = ExtResource("2_pkkme")
 
 [sub_resource type="Theme" id="Theme_nbsde"]
-Button/styles/focus = SubResource("StyleBoxEmpty_f1p60")
-Button/styles/hover = SubResource("StyleBoxTexture_otkti")
-Button/styles/normal = SubResource("StyleBoxTexture_w87u2")
+Button/styles/focus = SubResource("StyleBoxEmpty_tqrje")
+Button/styles/hover = SubResource("StyleBoxTexture_07t3s")
+Button/styles/normal = SubResource("StyleBoxTexture_hpqjg")
 Button/styles/pressed = SubResource("StyleBoxTexture_srlm5")
 
 [node name="Button_Folder_Red" type="Button"]
