@@ -9,6 +9,9 @@ signal update_stats_done
 ## All cases in the game.
 @export var CASES:Array[BaseCaseResource]
 
+## Initial delay when this scene first loads 
+@export var INITIAL_LOAD_DELAY:float = 1.2
+
 ## Current day.
 var _curr_day:int = 1
 
@@ -26,6 +29,7 @@ func _ready():
 	
 	$Game_Overlay.connect("cases_left", readd_unpicked_cases)
 	$Game_Overlay.initialize(NUMBER_OF_TURNS)
+	$DelayTimer.start(INITIAL_LOAD_DELAY)
 ##
 
 ## Fired when the case has been submit.
@@ -90,11 +94,11 @@ func _loaded_scene(scene_name):
 ##
 
 func pick_cases() -> Array[BaseCaseResource]:
-	var cases:Array[BaseCaseResource]
+	var cases:Array[BaseCaseResource] = []
 	
 	while cases.size() < 3:
 		var case = CASES.pick_random()
-		CASES.remove_at(CASES.find(cases))
+		CASES.remove_at(CASES.find(case))
 		cases.append(case)
 	##
 	
@@ -108,4 +112,8 @@ func readd_unpicked_cases(unpicked_cases:Array[BaseCaseResource]):
 	
 	# Shuffle everything
 	CASES.shuffle()
+##
+
+func _on_delay_timer_timeout():
+	$Game_Overlay.show_cases(pick_cases())
 ##

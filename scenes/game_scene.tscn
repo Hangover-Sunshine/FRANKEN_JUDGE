@@ -1,18 +1,20 @@
-[gd_scene load_steps=9 format=3 uid="uid://dhix2dusxj10i"]
+[gd_scene load_steps=11 format=3 uid="uid://dhix2dusxj10i"]
 
 [ext_resource type="Script" path="res://scripts/system/game_scene.gd" id="1_s1yw1"]
 [ext_resource type="Script" path="res://addons/verho/resources/TransitionBank.gd" id="1_uelm6"]
 [ext_resource type="Resource" uid="uid://cokyxyvryfnhm" path="res://prefabs/transitions/black_fade.tres" id="2_hubdk"]
-[ext_resource type="Resource" uid="uid://drfrmac6j2ade" path="res://prefabs/cases/illegal_holy_text_case.tres" id="2_ykisd"]
+[ext_resource type="Resource" uid="uid://drfrmac6j2ade" path="res://prefabs/cases/clergy_v_peasants/illegal_holy_text_case.tres" id="2_ykisd"]
 [ext_resource type="PackedScene" uid="uid://2nl8bwm5pvgk" path="res://scenes/game_overlay.tscn" id="3_6t524"]
+[ext_resource type="Resource" uid="uid://qhxqb7nqucs0" path="res://prefabs/cases/nobles_v_peasants/coal_dumping.tres" id="3_qyhe0"]
 [ext_resource type="Script" path="res://scripts/game/town_stats.gd" id="4_fdghg"]
+[ext_resource type="Resource" uid="uid://daw83n2hujgbi" path="res://prefabs/cases/nobles_v_clergy/vampirism_claims.tres" id="4_qd1l0"]
 [ext_resource type="Script" path="res://scripts/game/reptuation_stats.gd" id="5_4xgmw"]
 [ext_resource type="PackedScene" uid="uid://cvws2phcvy2lr" path="res://scenes/menus/hub_pause.tscn" id="7_3lo3u"]
 
 [node name="GameScene" type="Node2D"]
 process_mode = 3
 script = ExtResource("1_s1yw1")
-CASES = Array[Resource("res://scripts/resources/base_case_resource.gd")]([ExtResource("2_ykisd")])
+CASES = Array[Resource("res://scripts/resources/base_case_resource.gd")]([ExtResource("2_ykisd"), ExtResource("3_qyhe0"), ExtResource("4_qd1l0")])
 
 [node name="Game_Overlay" parent="." instance=ExtResource("3_6t524")]
 
@@ -28,3 +30,8 @@ script = ExtResource("5_4xgmw")
 
 [node name="HubPause" parent="." instance=ExtResource("7_3lo3u")]
 visible = false
+
+[node name="DelayTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="DelayTimer" to="." method="_on_delay_timer_timeout"]

@@ -26,3 +26,5 @@ enum END_CONDITION {
 }
 
 const TWO_NUM_DISPLAY = "%02d"
+const THREE_NUM_DISPLAY = "%3d"
+const CHARACTERS_PER_CARD_LINE:int = 22

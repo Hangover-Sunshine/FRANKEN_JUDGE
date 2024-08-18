@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="BaseCaseResource" load_steps=10 format=3 uid="uid://qhxqb7nqucs0"]
+
+[ext_resource type="Script" path="res://scripts/resources/base_case_resource.gd" id="1_it75a"]
+[ext_resource type="Resource" uid="uid://ds6iqv4r75ik" path="res://prefabs/effects/peasants/add/peasants_p5rep.tres" id="1_w0iqy"]
+[ext_resource type="Resource" uid="uid://r2iaysafh721" path="res://prefabs/effects/peasants/add/peasants_p1health.tres" id="2_u31kc"]
+[ext_resource type="Resource" uid="uid://3up7npafxkl3" path="res://prefabs/effects/nobility/sub/nobles_m1lab.tres" id="3_sfaxa"]
+[ext_resource type="Resource" uid="uid://0hkwgqqyhwg7" path="res://prefabs/effects/nobility/sub/nobles_m5rep.tres" id="4_q1v5e"]
+[ext_resource type="Resource" uid="uid://ds6iqv4r75ik" path="res://prefabs/effects/nobility/add/nobles_p5rep.tres" id="5_5r81t"]
+[ext_resource type="Resource" uid="uid://dyasxce3g4bc8" path="res://prefabs/effects/nobility/add/nobles_p1lab.tres" id="6_ct6vs"]
+[ext_resource type="Resource" uid="uid://c2husuyrsby0n" path="res://prefabs/effects/peasants/sub/peasants_m1health.tres" id="7_lxt5o"]
+[ext_resource type="Resource" uid="uid://0hkwgqqyhwg7" path="res://prefabs/effects/peasants/sub/peasants_m5rep.tres" id="8_w4tga"]
+
+[resource]
+script = ExtResource("1_it75a")
+CASE_NAME = "Coal Mine Waste Dumping"
+CASE_DESCRIPTION = "The peasants are upset the nobility who own the mines are dumping the mine's waste water right into the drinking supply."
+PARTY_A = 0
+PARTY_A_ARGUMENT = "Dude we have to drink that water."
+EFFECTS_A = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("1_w0iqy"), ExtResource("2_u31kc"), ExtResource("3_sfaxa"), ExtResource("4_q1v5e")])
+PARTY_B = 0
+PARTY_B_ARGUMENT = "It's our Gods-given right to ruin the water."
+EFFECTS_B = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("5_5r81t"), ExtResource("6_ct6vs"), ExtResource("7_lxt5o"), ExtResource("8_w4tga")])
