@@ -18,6 +18,7 @@ func initialize(max_num_days:int):
 	$BigDays.set_day_total(max_num_days)
 	$CasePick.connect("case_picked", _case_picked)
 	$Scale.connect("case_complete", _case_complete)
+	$WinningCard.connect("done_loading_society", _tally_finished)
 ##
 
 func _input(event):
@@ -101,28 +102,45 @@ func _pick_rand_case_id():
 	return rand_id
 ##
 
-func _case_complete(case:BaseCaseResource, faction:GlobalData.Faction, chose_left:bool):
+func _case_complete(case:BaseCaseResource, faction:GlobalData.Faction, chose_A:bool):
 	$Reputation.show_all_bars()
 	$Society.show_all()
 	
 	var effects:Array[BaseEffectResource] = []
 	
 	if case.PARTY_A == case.PARTY_B:
-		if chose_left:
+		if chose_A:
 			effects = case.EFFECTS_A
+			$WinningCard.load_data(case.PARTY_A, case.PARTY_A_ARGUMENT, case.EFFECTS_A)
 		else:
 			effects = case.EFFECTS_B
+			$WinningCard.load_data(case.PARTY_B, case.PARTY_B_ARGUMENT, case.EFFECTS_B)
 		##
 	else:
 		if case.PARTY_A == faction:
 			effects = case.EFFECTS_A
+			$WinningCard.load_data(case.PARTY_A, case.PARTY_A_ARGUMENT, case.EFFECTS_A)
 		else:
 			effects = case.EFFECTS_B
+			$WinningCard.load_data(case.PARTY_B, case.PARTY_B_ARGUMENT, case.EFFECTS_B)
 		##
 	##
 	
 	emit_signal("case_resolved", effects)
 	
 	# TODO: Play animation of things going away
+	ap_states.play("Part5")
+	
+	await get_tree().create_timer(3).timeout
+	
+	_tally_finished()
+##
+
+func _tally_finished():
+	ap_states.play("Part6")
+	
+	await get_tree().create_timer(3).timeout
+	
+	GlobalSignals.emit_signal("update_stats_done")
 ##
 # ============== BOTTOM HALF CONTROL ============== #

@@ -1,8 +1,30 @@
 extends Panel
 
+@export var IsWinningCard:bool = false
+
 @onready var clergy_card = $Clergy_Card
 @onready var nobility_card = $Nobility_Card
 @onready var peasant_card = $Peasant_Card
+
+func _ready():
+	if IsWinningCard:
+		disable()
+	##
+##
+
+func enable():
+	mouse_filter = Control.MOUSE_FILTER_PASS
+	clergy_card.enable()
+	nobility_card.enable()
+	peasant_card.enable()
+##
+
+func disable():
+	mouse_filter = Control.MOUSE_FILTER_IGNORE
+	clergy_card.disable()
+	nobility_card.disable()
+	peasant_card.disable()
+##
 
 func set_countdown_time(dur:float):
 	peasant_card.countdown_for_selection = dur

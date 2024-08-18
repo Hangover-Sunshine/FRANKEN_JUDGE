@@ -67,7 +67,7 @@ func _confirm_case(effects:Array[BaseEffectResource]):
 	
 	# TODO: Save the current day -- let player back out without worry
 	
-	# TODO: Send off for animations :)
+	# TODO: call into Game_Overlay to start playing anims
 ##
 
 ## Called once the animation player is finished playing all the animations --
@@ -89,6 +89,10 @@ func _update_stats_done():
 		##
 		Verho.change_scene("scenes/menus/hub_gameover", "", "BlackFade")
 	##
+	
+	# Otherwise, keep going...
+	$Game_Overlay.show_day(_curr_day)
+	$DelayTimer.start(INITIAL_LOAD_DELAY)
 ##
 
 func _loaded_scene(scene_name):

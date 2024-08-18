@@ -4,8 +4,8 @@ signal case_complete(case:BaseCaseResource, faction:GlobalData.Faction, chose_le
 
 @export var HoldDuration:float = 3
 
-@onready var left_mega_card = $Scale_Body/Scale_Left/MegaCard
-@onready var right_mega_card = $Scale_Body/Scale_Right/MegaCard
+@onready var left_mega_card = $Scale_Body/Scale_Left/LeftMegaCard
+@onready var right_mega_card = $Scale_Body/Scale_Right/RightMegaCard
 
 var _case:BaseCaseResource
 var _aPicks
@@ -51,7 +51,9 @@ func setup_factions(case:BaseCaseResource):
 	##
 	
 	left_mega_card.visible = true
+	left_mega_card.enable()
 	right_mega_card.visible = true
+	right_mega_card.enable()
 ##
 
 func _peasants_selected():
