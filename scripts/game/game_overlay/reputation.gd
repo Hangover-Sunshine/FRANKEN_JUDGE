@@ -52,3 +52,7 @@ func _not_hovering():
 		rep_rates[key].visible = false
 	##
 ##
+
+func update_reps(affected_reps):
+	pass
+##

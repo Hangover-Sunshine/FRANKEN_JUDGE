@@ -147,3 +147,7 @@ func _not_hovering():
 		clergy_change_hover[key].visible = false
 	##
 ##
+
+func update_stats(affected_stats):
+	pass
+##
