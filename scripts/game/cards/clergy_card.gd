@@ -6,6 +6,13 @@ extends Card
 	$Clergy_card/Clergy_Card_Vbox/Clergy_Label3
 ]
 
+@onready var effect_labels = [
+	$Clergy_card/Clergy_Card_Vbox/Clergy_Rows/Row_Top/S1,
+	$Clergy_card/Clergy_Card_Vbox/Clergy_Rows/Row_Top/S2,
+	$Clergy_card/Clergy_Card_Vbox/Clergy_Rows/Row_Bot/S3,
+	$Clergy_card/Clergy_Card_Vbox/Clergy_Rows/Row_Bot/S4
+]
+
 var countdown_for_selection:float = 1.5
 var _effects:Array[BaseEffectResource]
 
@@ -14,7 +21,25 @@ func show_labels(card_desc, effects:Array[BaseEffectResource]):
 		dl.visible = false
 	##
 	
+	for el in effect_labels:
+		el.visible = false
+	##
+	
 	_effects = effects
+	
+	var elindex = 0
+	for eff in effects:
+		# skip reputation ones, not necessary
+		if eff.Affect == GlobalData.Effects.REPUTATION:
+			continue
+		##
+		
+		effect_labels[elindex].set_symbol(3, eff.Affect)
+		effect_labels[elindex].set_text(eff.ValueChange)
+		effect_labels[elindex].visible = true
+		
+		elindex += 1
+	##
 	
 	description_labels[0].text = card_desc
 	description_labels[0].visible = true

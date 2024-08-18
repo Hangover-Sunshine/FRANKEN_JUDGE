@@ -104,7 +104,6 @@ func _pick_rand_case_id():
 func _case_complete(case:BaseCaseResource, faction:GlobalData.Faction, chose_left:bool):
 	$Reputation.show_all_bars()
 	$Society.show_all()
-	print("seen!")
 	
 	var effects:Array[BaseEffectResource] = []
 	
