@@ -1,13 +1,9 @@
-[gd_resource type="Resource" script_class="BaseCaseResource" load_steps=10 format=3 uid="uid://qhxqb7nqucs0"]
+[gd_resource type="Resource" script_class="BaseCaseResource" load_steps=6 format=3 uid="uid://qhxqb7nqucs0"]
 
 [ext_resource type="Resource" uid="uid://r2iaysafh721" path="res://prefabs/effects/peasants/add/peasants_p1health.tres" id="1_087yv"]
 [ext_resource type="Resource" uid="uid://c6hviuaovpxxx" path="res://prefabs/effects/nobility/sub/minus1_labor.tres" id="2_jfqqg"]
-[ext_resource type="Resource" uid="uid://bdv7jylnt4cef" path="res://prefabs/effects/nobility/sub/minus5_rep.tres" id="3_be88k"]
-[ext_resource type="Resource" uid="uid://b462l5hjvo42w" path="res://prefabs/effects/nobility/add/plus5_rep.tres" id="3_m8oj5"]
 [ext_resource type="Resource" uid="uid://k8pjjsmsx2u8" path="res://prefabs/effects/nobility/add/plus1_labor.tres" id="3_sjada"]
-[ext_resource type="Resource" uid="uid://ds6iqv4r75ik" path="res://prefabs/effects/peasants/add/peasants_p5rep.tres" id="4_mbj38"]
 [ext_resource type="Resource" uid="uid://c2husuyrsby0n" path="res://prefabs/effects/peasants/sub/peasants_m1health.tres" id="4_w6pan"]
-[ext_resource type="Resource" uid="uid://0hkwgqqyhwg7" path="res://prefabs/effects/peasants/sub/peasants_m5rep.tres" id="8_bufyu"]
 [ext_resource type="Script" path="res://scripts/resources/base_case_resource.gd" id="9_uylld"]
 
 [resource]
@@ -16,7 +12,7 @@ CASE_NAME = "Coal Mine Waste Dumping"
 CASE_DESCRIPTION = "The peasants are upset the nobility who own the mines are dumping the mine's waste water right into the drinking supply."
 PARTY_A = 0
 PARTY_A_ARGUMENT = "Dude we have to drink that water."
-EFFECTS_A = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("1_087yv"), ExtResource("2_jfqqg"), ExtResource("3_be88k"), ExtResource("4_mbj38")])
+EFFECTS_A = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("1_087yv"), ExtResource("2_jfqqg")])
 PARTY_B = 1
 PARTY_B_ARGUMENT = "It's our Gods-given right to ruin the water."
-EFFECTS_B = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("3_sjada"), ExtResource("4_w6pan"), ExtResource("3_m8oj5"), ExtResource("8_bufyu")])
+EFFECTS_B = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("3_sjada"), ExtResource("4_w6pan")])

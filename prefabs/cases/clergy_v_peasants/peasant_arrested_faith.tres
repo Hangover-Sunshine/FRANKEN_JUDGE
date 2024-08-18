@@ -1,12 +1,10 @@
-[gd_resource type="Resource" script_class="BaseCaseResource" load_steps=8 format=3 uid="uid://bj5hw20xtcjnp"]
+[gd_resource type="Resource" script_class="BaseCaseResource" load_steps=6 format=3 uid="uid://bj5hw20xtcjnp"]
 
 [ext_resource type="Resource" uid="uid://bolq6qy671ywe" path="res://prefabs/effects/clergy/sub/minus1_police.tres" id="1_c8uuq"]
 [ext_resource type="Script" path="res://scripts/resources/base_case_resource.gd" id="1_ebxd2"]
 [ext_resource type="Resource" uid="uid://da7gsqabgumjg" path="res://prefabs/effects/peasants/add/peasants_p10rep.tres" id="1_fp1cv"]
-[ext_resource type="Resource" uid="uid://btedw05cdt1m2" path="res://prefabs/effects/clergy/sub/minus5_rep.tres" id="2_xftxm"]
 [ext_resource type="Resource" uid="uid://whgopb7t34qm" path="res://prefabs/effects/peasants/sub/peasants_m10rep.tres" id="4_lt8js"]
 [ext_resource type="Resource" uid="uid://b68tkpqh83hak" path="res://prefabs/effects/clergy/add/plus1_police.tres" id="5_gf81k"]
-[ext_resource type="Resource" uid="uid://bb74lqal4qwyl" path="res://prefabs/effects/clergy/add/plus5_rep.tres" id="6_upxtf"]
 
 [resource]
 script = ExtResource("1_ebxd2")
@@ -14,7 +12,7 @@ CASE_NAME = "Peasant Arrested Over Lapsing Faith"
 CASE_DESCRIPTION = "A cabal of warrior-priests cornered a peasant's husband. They want him freed, while the clergy say it's to preserve the town's morality."
 PARTY_A = 0
 PARTY_A_ARGUMENT = "He paid his tithe for twenty years!"
-EFFECTS_A = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("1_fp1cv"), ExtResource("1_c8uuq"), ExtResource("2_xftxm")])
+EFFECTS_A = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("1_fp1cv"), ExtResource("1_c8uuq")])
 PARTY_B = 2
 PARTY_B_ARGUMENT = "We cannot afford moral degradation."
-EFFECTS_B = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("4_lt8js"), ExtResource("5_gf81k"), ExtResource("6_upxtf")])
+EFFECTS_B = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("4_lt8js"), ExtResource("5_gf81k")])
