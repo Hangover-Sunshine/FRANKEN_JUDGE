@@ -68,19 +68,19 @@ theme_override_constants/separation = 20
 custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
 theme = ExtResource("3_bmako")
-text = "START"
+text = "Start"
 
 [node name="Settings_Button" type="Button" parent="Main_MC/Main_VBox/Button_HBox/Button_VBox"]
 custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
 theme = ExtResource("3_bmako")
-text = "SETTINGS"
+text = "Settings"
 
 [node name="Exit_Button" type="Button" parent="Main_MC/Main_VBox/Button_HBox/Button_VBox"]
 custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
 theme = ExtResource("3_bmako")
-text = "EXIT"
+text = "Exit"
 
 [connection signal="pressed" from="Main_MC/Main_VBox/Button_HBox/Button_VBox/Start_Button" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="Main_MC/Main_VBox/Button_HBox/Button_VBox/Settings_Button" to="." method="_on_settings_button_pressed"]

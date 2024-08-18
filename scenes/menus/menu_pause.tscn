@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://bi14mcu1ni7nu"]
+[gd_scene load_steps=4 format=3 uid="uid://bi14mcu1ni7nu"]
 
 [ext_resource type="Script" path="res://scripts/menus/menu_pause.gd" id="1_euawq"]
+[ext_resource type="FontFile" uid="uid://73eyyuro8nvv" path="res://assets/fonts/PirataOne.ttf" id="2_qkj5r"]
+[ext_resource type="Theme" uid="uid://cra8p8hxk35en" path="res://assets/ui/button_theme.tres" id="3_hvyl2"]
 
 [node name="MenuPause" type="Control"]
 layout_mode = 3
@@ -28,6 +30,8 @@ alignment = 1
 
 [node name="Header1_Label" type="Label" parent="Pause_MC/Pause_VBox"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.839216, 0.905882, 0.972549, 1)
+theme_override_fonts/font = ExtResource("2_qkj5r")
 theme_override_font_sizes/font_size = 150
 text = "PAUSED"
 horizontal_alignment = 1
@@ -43,20 +47,20 @@ theme_override_constants/separation = 20
 [node name="Cont_Button" type="Button" parent="Pause_MC/Pause_VBox/Button_HBox/Button_VBox"]
 custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
-theme_override_font_sizes/font_size = 50
-text = "RESUME"
+theme = ExtResource("3_hvyl2")
+text = "Resume"
 
 [node name="Settings_Button" type="Button" parent="Pause_MC/Pause_VBox/Button_HBox/Button_VBox"]
 custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
-theme_override_font_sizes/font_size = 50
-text = "SETTINGS"
+theme = ExtResource("3_hvyl2")
+text = "Settings"
 
 [node name="Leave_Button" type="Button" parent="Pause_MC/Pause_VBox/Button_HBox/Button_VBox"]
 custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
-theme_override_font_sizes/font_size = 50
-text = "LEAVE"
+theme = ExtResource("3_hvyl2")
+text = "Leave"
 
 [connection signal="pressed" from="Pause_MC/Pause_VBox/Button_HBox/Button_VBox/Cont_Button" to="." method="_on_cont_button_pressed"]
 [connection signal="pressed" from="Pause_MC/Pause_VBox/Button_HBox/Button_VBox/Settings_Button" to="." method="_on_settings_button_pressed"]
