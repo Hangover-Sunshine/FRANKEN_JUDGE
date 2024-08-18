@@ -1,17 +1,20 @@
 extends Card
 
 @onready var description_labels = [
-	$Nobility_Card_Vbox/Nobility_Label1,
-	$Nobility_Card_Vbox/Nobility_Label2,
-	$Nobility_Card_Vbox/Nobility_Label3
+	$Nobility_Card/Nobility_Card_Vbox/Nobility_Label1,
+	$Nobility_Card/Nobility_Card_Vbox/Nobility_Label2,
+	$Nobility_Card/Nobility_Card_Vbox/Nobility_Label3
 ]
 
-var countdown_for_selection:int = 1.5
+var countdown_for_selection:float = 1.5
+var _effects:Array[BaseEffectResource]
 
-func show_labels(card_desc):
+func show_labels(card_desc, effects:Array[BaseEffectResource]):
 	for dl in description_labels:
 		dl.visible = false
 	##
+	
+	_effects = effects
 	
 	description_labels[0].text = card_desc
 	description_labels[0].visible = true
@@ -27,4 +30,12 @@ func _on_button_button_up():
 
 func _on_timer_timeout():
 	emit_signal("selected")
+##
+
+func _on_mouse_entered():
+	GlobalSignals.emit_signal("hovered_over_card", _effects)
+##
+
+func _on_mouse_exited():
+	GlobalSignals.emit_signal("not_hovering")
 ##

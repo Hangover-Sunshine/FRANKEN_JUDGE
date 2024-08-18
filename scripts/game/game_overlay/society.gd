@@ -88,8 +88,10 @@ func _hovered_over_card(effects:Array[BaseEffectResource]):
 			continue
 		##
 		
+		print("Group:", eff.Group, "; Affects:", eff.Affect)
+		
 		if eff.Group == GlobalData.Faction.PEASANTS:
-			peasant_change_hover[eff.Affect].visible = false
+			peasant_change_hover[eff.Affect].visible = true
 			
 			if eff.ValueChange < 0:
 				if eff.Affect == GlobalData.Effects.TAX:
@@ -105,7 +107,7 @@ func _hovered_over_card(effects:Array[BaseEffectResource]):
 				##
 			##
 		elif eff.Group == GlobalData.Faction.NOBILITY:
-			nobility_change_hover[eff.Affect].visible = false
+			nobility_change_hover[eff.Affect].visible = true
 			
 			if eff.ValueChange < 0:
 				if eff.Affect == GlobalData.Effects.TAX:
@@ -121,7 +123,7 @@ func _hovered_over_card(effects:Array[BaseEffectResource]):
 				##
 			##
 		else:
-			clergy_change_hover[eff.Affect].visible = false
+			clergy_change_hover[eff.Affect].visible = true
 			
 			if eff.ValueChange < 0:
 				if eff.Affect == GlobalData.Effects.TAX:

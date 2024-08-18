@@ -37,6 +37,8 @@ func _hovered_over_card(effects:Array[BaseEffectResource]):
 			continue
 		##
 		
+		print("here ", eff.Group)
+		
 		rep_rates[eff.Group].visible = true
 		
 		if eff.ValueChange < 0:

@@ -230,7 +230,6 @@ text = "(+00%)"
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="."]
-visible = false
 custom_minimum_size = Vector2(345, 420)
 layout_mode = 0
 offset_right = 8.0
@@ -242,4 +241,6 @@ one_shot = true
 
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
 [connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
+[connection signal="mouse_entered" from="Button" to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Button" to="." method="_on_mouse_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

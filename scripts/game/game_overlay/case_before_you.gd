@@ -68,7 +68,7 @@ func setup_factions(case:BaseCaseResource):
 		##
 	##
 	
-	facACard.show_labels(case.PARTY_A_ARGUMENT)
+	facACard.show_labels(case.PARTY_A_ARGUMENT, case.EFFECTS_A)
 	facACard.visible = true
 	
 	match factionB:
@@ -83,7 +83,7 @@ func setup_factions(case:BaseCaseResource):
 		##
 	##
 	
-	facBCard.show_labels(case.PARTY_B_ARGUMENT)
+	facBCard.show_labels(case.PARTY_B_ARGUMENT, case.EFFECTS_B)
 	facBCard.visible = true
 ##
 

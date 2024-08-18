@@ -1,8 +1,6 @@
-[gd_resource type="Resource" script_class="BaseCaseResource" load_steps=4 format=3 uid="uid://drfrmac6j2ade"]
+[gd_resource type="Resource" script_class="BaseCaseResource" load_steps=2 format=3 uid="uid://drfrmac6j2ade"]
 
 [ext_resource type="Script" path="res://scripts/resources/base_case_resource.gd" id="1_3jpi7"]
-[ext_resource type="Resource" uid="uid://0hkwgqqyhwg7" path="res://prefabs/effects/peasants/sub/peasants_m5rep.tres" id="3_apyf8"]
-[ext_resource type="Resource" uid="uid://ds6iqv4r75ik" path="res://prefabs/effects/peasants/add/peasants_p5rep.tres" id="4_t7iyo"]
 
 [resource]
 script = ExtResource("1_3jpi7")
@@ -10,7 +8,7 @@ CASE_NAME = "Illegal Holy Texts"
 CASE_DESCRIPTION = "Peasants want holy texts in the common tongue. Clergy think that's dumb. What do you decide?"
 PARTY_A = 0
 PARTY_A_ARGUMENT = "Let us translate."
-EFFECTS_A = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("3_apyf8"), ExtResource("4_t7iyo")])
+EFFECTS_A = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([])
 PARTY_B = 2
 PARTY_B_ARGUMENT = "Burn them all."
-EFFECTS_B = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("3_apyf8"), ExtResource("4_t7iyo")])
+EFFECTS_B = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([])
