@@ -1,0 +1,755 @@
+[gd_scene load_steps=13 format=3 uid="uid://byvw6dcydaya2"]
+
+[ext_resource type="Shader" path="res://scenes/background.gdshader" id="1_12a2h"]
+[ext_resource type="Script" path="res://scenes/menus/hub_gameover.gd" id="1_deqbl"]
+[ext_resource type="FontFile" uid="uid://73eyyuro8nvv" path="res://assets/fonts/PirataOne.ttf" id="2_whjcv"]
+[ext_resource type="FontFile" uid="uid://cqxld14ctgocv" path="res://assets/fonts/MedulaOne.ttf" id="3_e4mm5"]
+[ext_resource type="Theme" uid="uid://cra8p8hxk35en" path="res://assets/ui/button_theme.tres" id="4_o70cn"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_15l81"]
+shader = ExtResource("1_12a2h")
+shader_parameter/OCTAVE = 2
+shader_parameter/mulscale = 5.0
+shader_parameter/height = 0.4
+shader_parameter/tide = 0.1
+shader_parameter/foamthickness = 0.1
+shader_parameter/timescale = 0.5
+shader_parameter/waterdeep = 0.3
+shader_parameter/WATER_COL = Color(0.0745098, 0.0784314, 0.0862745, 1)
+shader_parameter/WATER2_COL = Color(0.0980392, 0.109804, 0.121569, 1)
+shader_parameter/FOAM_COL = Color(0.0862745, 0.0941176, 0.109804, 1)
+
+[sub_resource type="Animation" id="Animation_fryaf"]
+resource_name = "Win"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MC_Gameover/Vbox_Gameover/Vbox_Story/Vbox_Peasantry:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MC_Gameover/Vbox_Gameover/Vbox_Story/Vbox_Nobility:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MC_Gameover/Vbox_Gameover/Vbox_Story/Vbox_Clergy:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MC_Gameover/Vbox_Gameover/Vbox_Story/Vbox_Win:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Background:material:shader_parameter/WATER_COL")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.0745098, 0.0784314, 0.0862745, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Background:material:shader_parameter/WATER2_COL")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.0980392, 0.109804, 0.121569, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Background:material:shader_parameter/FOAM_COL")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.0862745, 0.0941176, 0.109804, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_eaxqb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MC_Gameover/Vbox_Gameover/Vbox_Story/Vbox_Peasantry:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MC_Gameover/Vbox_Gameover/Vbox_Story/Vbox_Nobility:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MC_Gameover/Vbox_Gameover/Vbox_Story/Vbox_Clergy:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MC_Gameover/Vbox_Gameover/Vbox_Story/Vbox_Win:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Background:material:shader_parameter/WATER_COL")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.0745098, 0.0784314, 0.0862745, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Background:material:shader_parameter/WATER2_COL")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.0980392, 0.109804, 0.121569, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Background:material:shader_parameter/FOAM_COL")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.0862745, 0.0941176, 0.109804, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_wyv37"]
+resource_name = "Peasantry"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MC_Gameover/Vbox_Gameover/Vbox_Story/Vbox_Peasantry:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MC_Gameover/Vbox_Gameover/Vbox_Story/Vbox_Nobility:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MC_Gameover/Vbox_Gameover/Vbox_Story/Vbox_Clergy:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MC_Gameover/Vbox_Gameover/Vbox_Story/Vbox_Win:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Background:material:shader_parameter/WATER_COL")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.0106634, 0.12953, 0.112066, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Background:material:shader_parameter/FOAM_COL")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.0627451, 0.196078, 0.133333, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Background:material:shader_parameter/WATER2_COL")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.0313726, 0.156863, 0.0941176, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_fhdr1"]
+resource_name = "Nobility"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MC_Gameover/Vbox_Gameover/Vbox_Story/Vbox_Peasantry:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MC_Gameover/Vbox_Gameover/Vbox_Story/Vbox_Nobility:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MC_Gameover/Vbox_Gameover/Vbox_Story/Vbox_Clergy:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MC_Gameover/Vbox_Gameover/Vbox_Story/Vbox_Win:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Background:material:shader_parameter/WATER_COL")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.152941, 0.0627451, 0.247059, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Background:material:shader_parameter/WATER2_COL")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.184314, 0.0627451, 0.298039, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Background:material:shader_parameter/FOAM_COL")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.207843, 0.0745098, 0.329412, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_l3ioj"]
+resource_name = "Clergy"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MC_Gameover/Vbox_Gameover/Vbox_Story/Vbox_Peasantry:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MC_Gameover/Vbox_Gameover/Vbox_Story/Vbox_Nobility:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MC_Gameover/Vbox_Gameover/Vbox_Story/Vbox_Clergy:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MC_Gameover/Vbox_Gameover/Vbox_Story/Vbox_Win:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Background:material:shader_parameter/WATER_COL")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.172549, 0.054902, 0.0509804, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Background:material:shader_parameter/WATER2_COL")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.2, 0.0901961, 0.00392157, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Background:material:shader_parameter/FOAM_COL")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.235294, 0.109804, 0.00784314, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6qnv7"]
+_data = {
+"Clergy": SubResource("Animation_l3ioj"),
+"Nobility": SubResource("Animation_fhdr1"),
+"Peasantry": SubResource("Animation_wyv37"),
+"RESET": SubResource("Animation_eaxqb"),
+"Win": SubResource("Animation_fryaf")
+}
+
+[node name="HubGameover" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_deqbl")
+
+[node name="Background" type="ColorRect" parent="."]
+show_behind_parent = true
+material = SubResource("ShaderMaterial_15l81")
+custom_minimum_size = Vector2(1920, 1080)
+offset_right = 1920.0
+offset_bottom = 1080.0
+metadata/_edit_lock_ = true
+
+[node name="MC_Gameover" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 60
+theme_override_constants/margin_top = 60
+theme_override_constants/margin_right = 60
+theme_override_constants/margin_bottom = 60
+
+[node name="Vbox_Gameover" type="VBoxContainer" parent="MC_Gameover"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Header" type="Label" parent="MC_Gameover/Vbox_Gameover"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_whjcv")
+theme_override_font_sizes/font_size = 140
+text = "SUCCESS"
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="MC_Gameover/Vbox_Gameover"]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+
+[node name="Vbox_Story" type="VBoxContainer" parent="MC_Gameover/Vbox_Gameover"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="Vbox_Peasantry" type="VBoxContainer" parent="MC_Gameover/Vbox_Gameover/Vbox_Story"]
+visible = false
+layout_mode = 2
+
+[node name="Line1" type="Label" parent="MC_Gameover/Vbox_Gameover/Vbox_Story/Vbox_Peasantry"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_e4mm5")
+theme_override_font_sizes/font_size = 80
+text = "Peasantry"
+horizontal_alignment = 1
+
+[node name="Line2" type="Label" parent="MC_Gameover/Vbox_Gameover/Vbox_Story/Vbox_Peasantry"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_e4mm5")
+theme_override_font_sizes/font_size = 80
+text = "Peasantry"
+horizontal_alignment = 1
+
+[node name="Line3" type="Label" parent="MC_Gameover/Vbox_Gameover/Vbox_Story/Vbox_Peasantry"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_e4mm5")
+theme_override_font_sizes/font_size = 80
+text = "Peasantry"
+horizontal_alignment = 1
+
+[node name="Line4" type="Label" parent="MC_Gameover/Vbox_Gameover/Vbox_Story/Vbox_Peasantry"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_e4mm5")
+theme_override_font_sizes/font_size = 80
+text = "Peasantry"
+horizontal_alignment = 1
+
+[node name="Line5" type="Label" parent="MC_Gameover/Vbox_Gameover/Vbox_Story/Vbox_Peasantry"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_e4mm5")
+theme_override_font_sizes/font_size = 80
+text = "Peasantry"
+horizontal_alignment = 1
+
+[node name="Line6" type="Label" parent="MC_Gameover/Vbox_Gameover/Vbox_Story/Vbox_Peasantry"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_e4mm5")
+theme_override_font_sizes/font_size = 80
+text = "Peasantry"
+horizontal_alignment = 1
+
+[node name="Line7" type="Label" parent="MC_Gameover/Vbox_Gameover/Vbox_Story/Vbox_Peasantry"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_e4mm5")
+theme_override_font_sizes/font_size = 80
+text = "Peasantry"
+horizontal_alignment = 1
+
+[node name="Vbox_Nobility" type="VBoxContainer" parent="MC_Gameover/Vbox_Gameover/Vbox_Story"]
+visible = false
+layout_mode = 2
+
+[node name="Line1" type="Label" parent="MC_Gameover/Vbox_Gameover/Vbox_Story/Vbox_Nobility"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_e4mm5")
+theme_override_font_sizes/font_size = 80
+text = "Nobility"
+horizontal_alignment = 1
+
+[node name="Line2" type="Label" parent="MC_Gameover/Vbox_Gameover/Vbox_Story/Vbox_Nobility"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_e4mm5")
+theme_override_font_sizes/font_size = 80
+text = "Nobility"
+horizontal_alignment = 1
+
+[node name="Line3" type="Label" parent="MC_Gameover/Vbox_Gameover/Vbox_Story/Vbox_Nobility"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_e4mm5")
+theme_override_font_sizes/font_size = 80
+text = "Nobility"
+horizontal_alignment = 1
+
+[node name="Line4" type="Label" parent="MC_Gameover/Vbox_Gameover/Vbox_Story/Vbox_Nobility"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_e4mm5")
+theme_override_font_sizes/font_size = 80
+text = "Nobility"
+horizontal_alignment = 1
+
+[node name="Line5" type="Label" parent="MC_Gameover/Vbox_Gameover/Vbox_Story/Vbox_Nobility"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_e4mm5")
+theme_override_font_sizes/font_size = 80
+text = "Nobility"
+horizontal_alignment = 1
+
+[node name="Line6" type="Label" parent="MC_Gameover/Vbox_Gameover/Vbox_Story/Vbox_Nobility"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_e4mm5")
+theme_override_font_sizes/font_size = 80
+text = "Nobility"
+horizontal_alignment = 1
+
+[node name="Line7" type="Label" parent="MC_Gameover/Vbox_Gameover/Vbox_Story/Vbox_Nobility"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_e4mm5")
+theme_override_font_sizes/font_size = 80
+text = "Nobility"
+horizontal_alignment = 1
+
+[node name="Vbox_Clergy" type="VBoxContainer" parent="MC_Gameover/Vbox_Gameover/Vbox_Story"]
+visible = false
+layout_mode = 2
+
+[node name="Line1" type="Label" parent="MC_Gameover/Vbox_Gameover/Vbox_Story/Vbox_Clergy"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_e4mm5")
+theme_override_font_sizes/font_size = 80
+text = "Clergy"
+horizontal_alignment = 1
+
+[node name="Line2" type="Label" parent="MC_Gameover/Vbox_Gameover/Vbox_Story/Vbox_Clergy"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_e4mm5")
+theme_override_font_sizes/font_size = 80
+text = "Clergy"
+horizontal_alignment = 1
+
+[node name="Line3" type="Label" parent="MC_Gameover/Vbox_Gameover/Vbox_Story/Vbox_Clergy"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_e4mm5")
+theme_override_font_sizes/font_size = 80
+text = "Clergy"
+horizontal_alignment = 1
+
+[node name="Line4" type="Label" parent="MC_Gameover/Vbox_Gameover/Vbox_Story/Vbox_Clergy"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_e4mm5")
+theme_override_font_sizes/font_size = 80
+text = "Clergy"
+horizontal_alignment = 1
+
+[node name="Line5" type="Label" parent="MC_Gameover/Vbox_Gameover/Vbox_Story/Vbox_Clergy"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_e4mm5")
+theme_override_font_sizes/font_size = 80
+text = "Clergy"
+horizontal_alignment = 1
+
+[node name="Line6" type="Label" parent="MC_Gameover/Vbox_Gameover/Vbox_Story/Vbox_Clergy"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_e4mm5")
+theme_override_font_sizes/font_size = 80
+text = "Clergy"
+horizontal_alignment = 1
+
+[node name="Line7" type="Label" parent="MC_Gameover/Vbox_Gameover/Vbox_Story/Vbox_Clergy"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_e4mm5")
+theme_override_font_sizes/font_size = 80
+text = "Clergy"
+horizontal_alignment = 1
+
+[node name="Vbox_Win" type="VBoxContainer" parent="MC_Gameover/Vbox_Gameover/Vbox_Story"]
+visible = false
+layout_mode = 2
+
+[node name="Line1" type="Label" parent="MC_Gameover/Vbox_Gameover/Vbox_Story/Vbox_Win"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_e4mm5")
+theme_override_font_sizes/font_size = 80
+text = "Victory"
+horizontal_alignment = 1
+
+[node name="Line2" type="Label" parent="MC_Gameover/Vbox_Gameover/Vbox_Story/Vbox_Win"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_e4mm5")
+theme_override_font_sizes/font_size = 80
+text = "Victory"
+horizontal_alignment = 1
+
+[node name="Line3" type="Label" parent="MC_Gameover/Vbox_Gameover/Vbox_Story/Vbox_Win"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_e4mm5")
+theme_override_font_sizes/font_size = 80
+text = "Victory"
+horizontal_alignment = 1
+
+[node name="Line4" type="Label" parent="MC_Gameover/Vbox_Gameover/Vbox_Story/Vbox_Win"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_e4mm5")
+theme_override_font_sizes/font_size = 80
+text = "Victory"
+horizontal_alignment = 1
+
+[node name="Line5" type="Label" parent="MC_Gameover/Vbox_Gameover/Vbox_Story/Vbox_Win"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_e4mm5")
+theme_override_font_sizes/font_size = 80
+text = "Victory"
+horizontal_alignment = 1
+
+[node name="Line6" type="Label" parent="MC_Gameover/Vbox_Gameover/Vbox_Story/Vbox_Win"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_e4mm5")
+theme_override_font_sizes/font_size = 80
+text = "Victory"
+horizontal_alignment = 1
+
+[node name="Line7" type="Label" parent="MC_Gameover/Vbox_Gameover/Vbox_Story/Vbox_Win"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_e4mm5")
+theme_override_font_sizes/font_size = 80
+text = "Victory"
+horizontal_alignment = 1
+
+[node name="ColorRect2" type="ColorRect" parent="MC_Gameover/Vbox_Gameover/Vbox_Story"]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+
+[node name="Hbox_Buttons" type="HBoxContainer" parent="MC_Gameover/Vbox_Gameover/Vbox_Story"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Again_Button" type="Button" parent="MC_Gameover/Vbox_Gameover/Vbox_Story/Hbox_Buttons"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+theme = ExtResource("4_o70cn")
+text = "Play Again"
+
+[node name="Leave_Button" type="Button" parent="MC_Gameover/Vbox_Gameover/Vbox_Story/Hbox_Buttons"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+theme = ExtResource("4_o70cn")
+text = "Leave"
+
+[node name="AP_Gameover" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_6qnv7")
+}
+
+[connection signal="pressed" from="MC_Gameover/Vbox_Gameover/Vbox_Story/Hbox_Buttons/Again_Button" to="." method="_on_again_button_pressed"]
+[connection signal="pressed" from="MC_Gameover/Vbox_Gameover/Vbox_Story/Hbox_Buttons/Leave_Button" to="." method="_on_leave_button_pressed"]
