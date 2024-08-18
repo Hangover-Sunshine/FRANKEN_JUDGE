@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://f1j7lxotq4h6"
-path="res://.godot/imported/FrankenStein's hand.png-24881bfdbacb542a730cd1deaee3666c.ctex"
+uid="uid://2kyvmgwi30lo"
+path="res://.godot/imported/Hand.png-34f908e621d7ac6ebd19cf3c6311263d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/frank/FrankenStein's hand.png"
-dest_files=["res://.godot/imported/FrankenStein's hand.png-24881bfdbacb542a730cd1deaee3666c.ctex"]
+source_file="res://assets/frank/Hand.png"
+dest_files=["res://.godot/imported/Hand.png-34f908e621d7ac6ebd19cf3c6311263d.ctex"]
 
 [params]
 
