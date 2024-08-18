@@ -38,16 +38,16 @@ var _town_stats:Dictionary = {
 	GlobalData.Faction.PEASANTS: {
 		GlobalData.Effects.TAX: 70,
 		GlobalData.Effects.LITERACY: 1,
-		GlobalData.Effects.POLICING: 0,
+		GlobalData.Effects.POLICING: 1,
 		GlobalData.Effects.LABOR: 0,
-		GlobalData.Effects.HEALTHCARE: 0
+		GlobalData.Effects.HEALTHCARE: 1
 	},
 	GlobalData.Faction.CLERGY: {
 		GlobalData.Effects.TAX: 0,
-		GlobalData.Effects.LITERACY: 0,
-		GlobalData.Effects.POLICING: 0,
-		GlobalData.Effects.LABOR: 0,
-		GlobalData.Effects.HEALTHCARE: 0
+		GlobalData.Effects.LITERACY: 10,
+		GlobalData.Effects.POLICING: 7,
+		GlobalData.Effects.LABOR: 8,
+		GlobalData.Effects.HEALTHCARE: 8
 	}
 }
 
@@ -63,8 +63,18 @@ func update_value_for(group:GlobalData.Faction, stat:GlobalData.Effects, value:i
 	##
 ##
 
+## Get stats.
+func get_stats():
+	return _town_stats
+##
+
+## Get stats for a group.
+func get_stats_for(group:GlobalData.Faction):
+	return _town_stats[group]
+##
+
 ## Get a specific stat for a group.
-func get_stats_for(group:GlobalData.Faction, stat:GlobalData.Effects):
+func get_stat_for(group:GlobalData.Faction, stat:GlobalData.Effects):
 	return _town_stats[group][stat]
 ##
 

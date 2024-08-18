@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://2nl8bwm5pvgk"]
+[gd_scene load_steps=35 format=3 uid="uid://2nl8bwm5pvgk"]
 
 [ext_resource type="Script" path="res://scripts/game/game_overlay.gd" id="1_hcafl"]
 [ext_resource type="FontFile" uid="uid://73eyyuro8nvv" path="res://assets/fonts/PirataOne.ttf" id="1_qps4p"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dd1ytb4xypau" path="res://prefabs/button_folder_red.tscn" id="3_fwt70"]
 [ext_resource type="PackedScene" uid="uid://bgdpaito5ide6" path="res://prefabs/button_folder_blue.tscn" id="4_4qtwl"]
 [ext_resource type="Script" path="res://scripts/game/game_overlay/day_counter.gd" id="4_lmcgd"]
+[ext_resource type="Script" path="res://scripts/game/game_overlay/society.gd" id="5_1hbbm"]
 [ext_resource type="PackedScene" uid="uid://dx3ikj0a6uvw3" path="res://prefabs/button_folder_yellow.tscn" id="5_6ykol"]
 [ext_resource type="Script" path="res://scripts/game/game_overlay/case_brief.gd" id="5_28cn6"]
 [ext_resource type="Script" path="res://scripts/game/game_overlay/case_pick.gd" id="5_e5niu"]
@@ -614,6 +615,7 @@ offset_top = 75.0
 offset_right = 1192.0
 offset_bottom = 75.0
 mouse_filter = 2
+script = ExtResource("5_1hbbm")
 
 [node name="Society_Vbox" type="VBoxContainer" parent="Society"]
 layout_mode = 0

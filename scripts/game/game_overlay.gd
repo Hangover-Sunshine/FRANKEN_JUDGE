@@ -27,6 +27,19 @@ func _input(event):
 	##
 ##
 
+# ============== UPPER HALF CONTROL ============== #
+func load_society_stats(new_stats):
+	$Society.load_peasant_stats(new_stats[GlobalData.Faction.PEASANTS])
+	$Society.load_nobility_stats(new_stats[GlobalData.Faction.NOBILITY])
+	$Society.load_clergy_stats(new_stats[GlobalData.Faction.CLERGY])
+##
+
+func update_society_stats(changes):
+	pass
+##
+
+# ============== UPPER HALF CONTROL ============== #
+
 # ============== BOTTOM HALF CONTROL ============== #
 func show_day(curr_day):
 	# Set both

@@ -20,7 +20,6 @@ var _curr_day:int = 1
 ## Called when node is in the tree.
 func _ready():
 	Verho.connect("loaded_scene", _loaded_scene)
-	#connect("confirm_case", _confirm_case)
 	connect("update_stats_done", _update_stats_done)
 	
 	# Shuffle the cases
@@ -31,6 +30,8 @@ func _ready():
 	$Game_Overlay.initialize(NUMBER_OF_TURNS)
 	$Game_Overlay.show_day(_curr_day)
 	$DelayTimer.start(INITIAL_LOAD_DELAY)
+	
+	$Game_Overlay.load_society_stats(_faction_stats.get_stats())
 ##
 
 ## Fired when the case has been submit.
@@ -68,6 +69,7 @@ func _confirm_case(effects:Array[BaseEffectResource]):
 	# TODO: Save the current day -- let player back out without worry
 	
 	# TODO: Send off for animations :)
+	
 ##
 
 ## Called once the animation player is finished playing all the animations --
