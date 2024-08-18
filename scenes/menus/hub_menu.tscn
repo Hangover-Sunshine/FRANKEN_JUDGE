@@ -17,8 +17,8 @@ shader_parameter/tide = 0.1
 shader_parameter/foamthickness = 0.1
 shader_parameter/timescale = 0.5
 shader_parameter/waterdeep = 0.3
-shader_parameter/WATER_COL = Color(0.0980392, 0.109804, 0.121569, 1)
-shader_parameter/WATER2_COL = Color(0.0745098, 0.0784314, 0.0862745, 1)
+shader_parameter/WATER_COL = Color(0.0745098, 0.0784314, 0.0862745, 1)
+shader_parameter/WATER2_COL = Color(0.0980392, 0.109804, 0.121569, 1)
 shader_parameter/FOAM_COL = Color(0.0862745, 0.0941176, 0.109804, 1)
 
 [sub_resource type="Animation" id="Animation_xv0je"]

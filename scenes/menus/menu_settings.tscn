@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://bqxt4qvvqx5lj"]
+[gd_scene load_steps=7 format=3 uid="uid://bqxt4qvvqx5lj"]
 
 [ext_resource type="Script" path="res://scripts/menus/menu_settings.gd" id="1_1ptlj"]
-[ext_resource type="Texture2D" uid="uid://c3rkgo18l3esc" path="res://assets/particle/Checkbox_Full.png" id="1_qe0ko"]
-[ext_resource type="Texture2D" uid="uid://b6o6d4lvr77ql" path="res://assets/particle/Checkbox_Empty.png" id="2_62cxx"]
+[ext_resource type="FontFile" uid="uid://73eyyuro8nvv" path="res://assets/fonts/PirataOne.ttf" id="2_dluss"]
+[ext_resource type="FontFile" uid="uid://cqxld14ctgocv" path="res://assets/fonts/MedulaOne.ttf" id="3_ox4q5"]
+[ext_resource type="Texture2D" uid="uid://dtyf8s2ckqnhy" path="res://assets/particle/UI_Checked.png" id="4_wt1tp"]
+[ext_resource type="Texture2D" uid="uid://blq7ieq5770aa" path="res://assets/particle/UI_Checkbox.png" id="5_7g1i2"]
+[ext_resource type="Theme" uid="uid://cra8p8hxk35en" path="res://assets/ui/button_theme.tres" id="6_wlla4"]
 
 [node name="MenuSettings" type="Control"]
 layout_mode = 3
@@ -19,25 +22,27 @@ layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 theme_override_constants/margin_left = 60
+theme_override_constants/margin_top = 60
 theme_override_constants/margin_right = 60
 
 [node name="Settings_VBox" type="VBoxContainer" parent="Settings_MC"]
 layout_mode = 2
 theme_override_constants/separation = 20
-alignment = 1
 
 [node name="Tab_Vbox" type="VBoxContainer" parent="Settings_MC/Settings_VBox"]
 layout_mode = 2
 
 [node name="Header1_Label" type="Label" parent="Settings_MC/Settings_VBox/Tab_Vbox"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 150
+theme_override_colors/font_color = Color(0.839216, 0.905882, 0.972549, 1)
+theme_override_fonts/font = ExtResource("2_dluss")
+theme_override_font_sizes/font_size = 140
 text = "SETTINGS"
 horizontal_alignment = 1
 
 [node name="Settings_Tab_Hbox" type="VBoxContainer" parent="Settings_MC/Settings_VBox/Tab_Vbox"]
 layout_mode = 2
-theme_override_constants/separation = 10
+theme_override_constants/separation = 20
 alignment = 1
 
 [node name="General_HBox" type="HBoxContainer" parent="Settings_MC/Settings_VBox/Tab_Vbox/Settings_Tab_Hbox"]
@@ -46,11 +51,12 @@ alignment = 1
 
 [node name="Display_VBox" type="VBoxContainer" parent="Settings_MC/Settings_VBox/Tab_Vbox/Settings_Tab_Hbox/General_HBox"]
 layout_mode = 2
-theme_override_constants/separation = 20
 
 [node name="Display_Label" type="Label" parent="Settings_MC/Settings_VBox/Tab_Vbox/Settings_Tab_Hbox/General_HBox/Display_VBox"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 50
+theme_override_colors/font_color = Color(0.756863, 0.85098, 0.94902, 1)
+theme_override_fonts/font = ExtResource("3_ox4q5")
+theme_override_font_sizes/font_size = 80
 text = "GENERAL"
 horizontal_alignment = 1
 
@@ -60,37 +66,33 @@ theme_override_constants/separation = 25
 
 [node name="Full_Label" type="Label" parent="Settings_MC/Settings_VBox/Tab_Vbox/Settings_Tab_Hbox/General_HBox/Display_VBox/Full_HBox"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 50
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_ox4q5")
+theme_override_font_sizes/font_size = 80
 text = "Fullscreen Mode"
 
 [node name="Full_Check" type="CheckBox" parent="Settings_MC/Settings_VBox/Tab_Vbox/Settings_Tab_Hbox/General_HBox/Display_VBox/Full_HBox"]
 layout_mode = 2
 size_flags_horizontal = 10
-theme_override_icons/checked = ExtResource("1_qe0ko")
-theme_override_icons/unchecked = ExtResource("2_62cxx")
+theme_override_icons/checked = ExtResource("4_wt1tp")
+theme_override_icons/unchecked = ExtResource("5_7g1i2")
 
-[node name="Rez_HBox" type="HBoxContainer" parent="Settings_MC/Settings_VBox/Tab_Vbox/Settings_Tab_Hbox/General_HBox/Display_VBox"]
+[node name="Full_HBox2" type="HBoxContainer" parent="Settings_MC/Settings_VBox/Tab_Vbox/Settings_Tab_Hbox/General_HBox/Display_VBox"]
 layout_mode = 2
 theme_override_constants/separation = 25
 
-[node name="Rez_Label" type="Label" parent="Settings_MC/Settings_VBox/Tab_Vbox/Settings_Tab_Hbox/General_HBox/Display_VBox/Rez_HBox"]
+[node name="Full_Label" type="Label" parent="Settings_MC/Settings_VBox/Tab_Vbox/Settings_Tab_Hbox/General_HBox/Display_VBox/Full_HBox2"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 50
-text = "Resolution"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_ox4q5")
+theme_override_font_sizes/font_size = 80
+text = "Disable Particles"
 
-[node name="Rez_Drop" type="OptionButton" parent="Settings_MC/Settings_VBox/Tab_Vbox/Settings_Tab_Hbox/General_HBox/Display_VBox/Rez_HBox"]
-custom_minimum_size = Vector2(250, 50)
+[node name="Full_Check" type="CheckBox" parent="Settings_MC/Settings_VBox/Tab_Vbox/Settings_Tab_Hbox/General_HBox/Display_VBox/Full_HBox2"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 50
-alignment = 1
-item_count = 3
-selected = 0
-popup/item_0/text = "1080p"
-popup/item_0/id = 0
-popup/item_1/text = "720p"
-popup/item_1/id = 1
-popup/item_2/text = "480p"
-popup/item_2/id = 2
+size_flags_horizontal = 10
+theme_override_icons/checked = ExtResource("4_wt1tp")
+theme_override_icons/unchecked = ExtResource("5_7g1i2")
 
 [node name="Audio_HBox" type="HBoxContainer" parent="Settings_MC/Settings_VBox/Tab_Vbox/Settings_Tab_Hbox"]
 layout_mode = 2
@@ -98,11 +100,13 @@ alignment = 1
 
 [node name="Audio_VBox" type="VBoxContainer" parent="Settings_MC/Settings_VBox/Tab_Vbox/Settings_Tab_Hbox/Audio_HBox"]
 layout_mode = 2
-theme_override_constants/separation = 20
+theme_override_constants/separation = 0
 
 [node name="Audio_Label" type="Label" parent="Settings_MC/Settings_VBox/Tab_Vbox/Settings_Tab_Hbox/Audio_HBox/Audio_VBox"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 50
+theme_override_colors/font_color = Color(0.756863, 0.85098, 0.94902, 1)
+theme_override_fonts/font = ExtResource("3_ox4q5")
+theme_override_font_sizes/font_size = 80
 text = "AUDIO"
 horizontal_alignment = 1
 
@@ -113,18 +117,21 @@ alignment = 1
 
 [node name="Overall_Label" type="Label" parent="Settings_MC/Settings_VBox/Tab_Vbox/Settings_Tab_Hbox/Audio_HBox/Audio_VBox/Overall_HBox"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 50
+theme_override_fonts/font = ExtResource("3_ox4q5")
+theme_override_font_sizes/font_size = 80
 text = "Overall"
 
 [node name="Overall_Slider" type="HSlider" parent="Settings_MC/Settings_VBox/Tab_Vbox/Settings_Tab_Hbox/Audio_HBox/Audio_VBox/Overall_HBox"]
 custom_minimum_size = Vector2(500, 75)
 layout_mode = 2
 size_flags_vertical = 4
+theme = ExtResource("6_wlla4")
 value = 100.0
 
 [node name="Overall_Percent" type="Label" parent="Settings_MC/Settings_VBox/Tab_Vbox/Settings_Tab_Hbox/Audio_HBox/Audio_VBox/Overall_HBox"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 50
+theme_override_fonts/font = ExtResource("3_ox4q5")
+theme_override_font_sizes/font_size = 80
 text = "100%"
 
 [node name="SFX_HBox" type="HBoxContainer" parent="Settings_MC/Settings_VBox/Tab_Vbox/Settings_Tab_Hbox/Audio_HBox/Audio_VBox"]
@@ -134,18 +141,21 @@ alignment = 1
 
 [node name="SFX_Label" type="Label" parent="Settings_MC/Settings_VBox/Tab_Vbox/Settings_Tab_Hbox/Audio_HBox/Audio_VBox/SFX_HBox"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 50
+theme_override_fonts/font = ExtResource("3_ox4q5")
+theme_override_font_sizes/font_size = 80
 text = "Effects"
 
 [node name="SFX_Slider" type="HSlider" parent="Settings_MC/Settings_VBox/Tab_Vbox/Settings_Tab_Hbox/Audio_HBox/Audio_VBox/SFX_HBox"]
 custom_minimum_size = Vector2(500, 75)
 layout_mode = 2
 size_flags_vertical = 4
+theme = ExtResource("6_wlla4")
 value = 100.0
 
 [node name="SFX_Percent" type="Label" parent="Settings_MC/Settings_VBox/Tab_Vbox/Settings_Tab_Hbox/Audio_HBox/Audio_VBox/SFX_HBox"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 50
+theme_override_fonts/font = ExtResource("3_ox4q5")
+theme_override_font_sizes/font_size = 80
 text = "100%"
 
 [node name="Music_HBox" type="HBoxContainer" parent="Settings_MC/Settings_VBox/Tab_Vbox/Settings_Tab_Hbox/Audio_HBox/Audio_VBox"]
@@ -155,18 +165,21 @@ alignment = 1
 
 [node name="Music_Label" type="Label" parent="Settings_MC/Settings_VBox/Tab_Vbox/Settings_Tab_Hbox/Audio_HBox/Audio_VBox/Music_HBox"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 50
+theme_override_fonts/font = ExtResource("3_ox4q5")
+theme_override_font_sizes/font_size = 80
 text = "Music"
 
 [node name="Music_Slider" type="HSlider" parent="Settings_MC/Settings_VBox/Tab_Vbox/Settings_Tab_Hbox/Audio_HBox/Audio_VBox/Music_HBox"]
 custom_minimum_size = Vector2(500, 75)
 layout_mode = 2
 size_flags_vertical = 4
+theme = ExtResource("6_wlla4")
 value = 100.0
 
 [node name="Music_Percent" type="Label" parent="Settings_MC/Settings_VBox/Tab_Vbox/Settings_Tab_Hbox/Audio_HBox/Audio_VBox/Music_HBox"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 50
+theme_override_fonts/font = ExtResource("3_ox4q5")
+theme_override_font_sizes/font_size = 80
 text = "100%"
 
 [node name="Tab_HBox" type="HBoxContainer" parent="Settings_MC/Settings_VBox/Tab_Vbox/Settings_Tab_Hbox"]
@@ -177,7 +190,7 @@ alignment = 1
 [node name="Back_Button" type="Button" parent="Settings_MC/Settings_VBox/Tab_Vbox/Settings_Tab_Hbox/Tab_HBox"]
 custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
-theme_override_font_sizes/font_size = 50
+theme = ExtResource("6_wlla4")
 text = " Back "
 
 [connection signal="pressed" from="Settings_MC/Settings_VBox/Tab_Vbox/Settings_Tab_Hbox/Tab_HBox/Back_Button" to="." method="_on_back_button_pressed"]
