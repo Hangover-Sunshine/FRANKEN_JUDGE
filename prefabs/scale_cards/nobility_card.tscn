@@ -1,20 +1,49 @@
-[gd_scene load_steps=5 format=3 uid="uid://cbwrwwk62i21i"]
+[gd_scene load_steps=12 format=3 uid="uid://cbwrwwk62i21i"]
 
 [ext_resource type="Script" path="res://scripts/game/cards/nobility_card.gd" id="1_8eduw"]
 [ext_resource type="FontFile" uid="uid://cqxld14ctgocv" path="res://assets/fonts/MedulaOne.ttf" id="2_nfx2a"]
+[ext_resource type="Texture2D" uid="uid://dffc6xevcshxc" path="res://assets/gui/Society_Sheet.png" id="3_7t5wl"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n6w1f"]
-bg_color = Color(0.364706, 0.184314, 0.54902, 1)
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color(0.364706, 0.184314, 0.54902, 1)
 corner_radius_top_left = 50
 corner_radius_top_right = 50
 corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 
-[sub_resource type="Theme" id="Theme_ycdtd"]
+[sub_resource type="Theme" id="Theme_jwnmg"]
 Panel/styles/panel = SubResource("StyleBoxFlat_n6w1f")
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jfwai"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ujim7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u4nd0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yt8rs"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rfs5j"]
+bg_color = Color(0.87451, 0.8, 0.976471, 1)
+border_color = Color(0.8, 0.8, 0.8, 0)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="Theme" id="Theme_jm82n"]
+Button/styles/disabled = SubResource("StyleBoxEmpty_jfwai")
+Button/styles/focus = SubResource("StyleBoxEmpty_ujim7")
+Button/styles/hover = SubResource("StyleBoxEmpty_u4nd0")
+Button/styles/normal = SubResource("StyleBoxEmpty_yt8rs")
+Button/styles/pressed = SubResource("StyleBoxFlat_rfs5j")
+
 [node name="Nobility_Card" type="Panel"]
-custom_minimum_size = Vector2(325, 400)
+custom_minimum_size = Vector2(345, 420)
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -22,99 +51,191 @@ anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -960.0
 offset_top = -1080.0
-offset_right = -635.0
-offset_bottom = -680.0
+offset_right = -615.0
+offset_bottom = -660.0
 grow_horizontal = 2
 grow_vertical = 0
 mouse_filter = 2
-theme = SubResource("Theme_ycdtd")
+theme = SubResource("Theme_jwnmg")
 script = ExtResource("1_8eduw")
 
-[node name="Nobility_Card_Vbox" type="VBoxContainer" parent="."]
+[node name="Nobility_Card" type="VBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
 offset_left = -137.5
-offset_top = -185.0
+offset_top = 25.0
 offset_right = 137.5
-offset_bottom = 185.0
+offset_bottom = 283.0
 grow_horizontal = 2
-grow_vertical = 2
+
+[node name="Nobility_Card_Vbox" type="VBoxContainer" parent="Nobility_Card"]
+layout_mode = 2
+theme_override_constants/separation = 2
 alignment = 1
 
-[node name="Nobility_Header" type="Label" parent="Nobility_Card_Vbox"]
+[node name="Nobility_Header" type="Label" parent="Nobility_Card/Nobility_Card_Vbox"]
 custom_minimum_size = Vector2(275, 0)
 layout_mode = 2
-theme_override_colors/font_color = Color(0.87451, 0.8, 0.976471, 1)
+theme_override_colors/font_color = Color(0.364706, 0.184314, 0.54902, 1)
 theme_override_fonts/font = ExtResource("2_nfx2a")
 theme_override_font_sizes/font_size = 70
 text = "Nobility"
 horizontal_alignment = 1
 
-[node name="Nobility_TopDivider" type="ColorRect" parent="Nobility_Card_Vbox"]
+[node name="Nobility_TopDivider" type="ColorRect" parent="Nobility_Card/Nobility_Card_Vbox"]
 custom_minimum_size = Vector2(0, 5)
 layout_mode = 2
-color = Color(0.87451, 0.8, 0.976471, 1)
+color = Color(0.364706, 0.184314, 0.54902, 1)
 
-[node name="Nobility_Label1" type="Label" parent="Nobility_Card_Vbox"]
+[node name="Nobility_Label1" type="Label" parent="Nobility_Card/Nobility_Card_Vbox"]
 custom_minimum_size = Vector2(275, 0)
 layout_mode = 2
-theme_override_colors/font_color = Color(0.87451, 0.8, 0.976471, 1)
+theme_override_colors/font_color = Color(0.364706, 0.184314, 0.54902, 1)
 theme_override_fonts/font = ExtResource("2_nfx2a")
 theme_override_font_sizes/font_size = 50
 text = "line1line1line1line1li"
 horizontal_alignment = 1
 autowrap_mode = 3
 
-[node name="Nobility_Label2" type="Label" parent="Nobility_Card_Vbox"]
+[node name="Nobility_Label2" type="Label" parent="Nobility_Card/Nobility_Card_Vbox"]
 custom_minimum_size = Vector2(275, 0)
 layout_mode = 2
-theme_override_colors/font_color = Color(0.87451, 0.8, 0.976471, 1)
+theme_override_colors/font_color = Color(0.364706, 0.184314, 0.54902, 1)
 theme_override_fonts/font = ExtResource("2_nfx2a")
 theme_override_font_sizes/font_size = 50
 text = "line2line2line2line2li"
 horizontal_alignment = 1
 
-[node name="Nobility_Label3" type="Label" parent="Nobility_Card_Vbox"]
+[node name="Nobility_Label3" type="Label" parent="Nobility_Card/Nobility_Card_Vbox"]
 custom_minimum_size = Vector2(275, 0)
 layout_mode = 2
-theme_override_colors/font_color = Color(0.87451, 0.8, 0.976471, 1)
+theme_override_colors/font_color = Color(0.364706, 0.184314, 0.54902, 1)
 theme_override_fonts/font = ExtResource("2_nfx2a")
 theme_override_font_sizes/font_size = 50
 text = "line3line3line3line3li"
 horizontal_alignment = 1
 
-[node name="Nobility_BotDivider" type="ColorRect" parent="Nobility_Card_Vbox"]
+[node name="Nobility_BotDivider" type="ColorRect" parent="Nobility_Card/Nobility_Card_Vbox"]
 custom_minimum_size = Vector2(0, 5)
 layout_mode = 2
-color = Color(0.87451, 0.8, 0.976471, 1)
+color = Color(0.364706, 0.184314, 0.54902, 1)
 
-[node name="Nobility_FxLabel1" type="Label" parent="Nobility_Card_Vbox"]
-custom_minimum_size = Vector2(275, 0)
+[node name="Noble_Rows" type="VBoxContainer" parent="Nobility_Card/Nobility_Card_Vbox"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.87451, 0.8, 0.976471, 1)
+
+[node name="Row_Top" type="HBoxContainer" parent="Nobility_Card/Nobility_Card_Vbox/Noble_Rows"]
+layout_mode = 2
+alignment = 1
+
+[node name="S1" type="HBoxContainer" parent="Nobility_Card/Nobility_Card_Vbox/Noble_Rows/Row_Top"]
+layout_mode = 2
+alignment = 1
+
+[node name="Symbol_Holder" type="ColorRect" parent="Nobility_Card/Nobility_Card_Vbox/Noble_Rows/Row_Top/S1"]
+custom_minimum_size = Vector2(45, 0)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="S1_Symbol" type="Sprite2D" parent="Nobility_Card/Nobility_Card_Vbox/Noble_Rows/Row_Top/S1"]
+position = Vector2(23, 28)
+texture = ExtResource("3_7t5wl")
+hframes = 5
+vframes = 4
+
+[node name="S1_Modifier" type="Label" parent="Nobility_Card/Nobility_Card_Vbox/Noble_Rows/Row_Top/S1"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.364706, 0.184314, 0.54902, 1)
 theme_override_fonts/font = ExtResource("2_nfx2a")
 theme_override_font_sizes/font_size = 50
-text = "effectsEFFECTSeffec"
+text = "(+00%)"
 horizontal_alignment = 1
 
-[node name="Nobility_FxLabel2" type="Label" parent="Nobility_Card_Vbox"]
-custom_minimum_size = Vector2(275, 0)
+[node name="S2" type="HBoxContainer" parent="Nobility_Card/Nobility_Card_Vbox/Noble_Rows/Row_Top"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.87451, 0.8, 0.976471, 1)
+alignment = 1
+
+[node name="Symbol_Holder" type="ColorRect" parent="Nobility_Card/Nobility_Card_Vbox/Noble_Rows/Row_Top/S2"]
+custom_minimum_size = Vector2(45, 0)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="S2_Symbol" type="Sprite2D" parent="Nobility_Card/Nobility_Card_Vbox/Noble_Rows/Row_Top/S2"]
+position = Vector2(23, 28)
+texture = ExtResource("3_7t5wl")
+hframes = 5
+vframes = 4
+
+[node name="S2_Modifier" type="Label" parent="Nobility_Card/Nobility_Card_Vbox/Noble_Rows/Row_Top/S2"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.364706, 0.184314, 0.54902, 1)
 theme_override_fonts/font = ExtResource("2_nfx2a")
 theme_override_font_sizes/font_size = 50
-text = "effectsEFFECTSeffec"
+text = "(+00%)"
+horizontal_alignment = 1
+
+[node name="Row_Bot" type="HBoxContainer" parent="Nobility_Card/Nobility_Card_Vbox/Noble_Rows"]
+layout_mode = 2
+alignment = 1
+
+[node name="S3" type="HBoxContainer" parent="Nobility_Card/Nobility_Card_Vbox/Noble_Rows/Row_Bot"]
+layout_mode = 2
+alignment = 1
+
+[node name="Symbol_Holder" type="ColorRect" parent="Nobility_Card/Nobility_Card_Vbox/Noble_Rows/Row_Bot/S3"]
+custom_minimum_size = Vector2(45, 0)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="S3_Symbol" type="Sprite2D" parent="Nobility_Card/Nobility_Card_Vbox/Noble_Rows/Row_Bot/S3"]
+position = Vector2(23, 28)
+texture = ExtResource("3_7t5wl")
+hframes = 5
+vframes = 4
+
+[node name="S3_Modifier" type="Label" parent="Nobility_Card/Nobility_Card_Vbox/Noble_Rows/Row_Bot/S3"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.364706, 0.184314, 0.54902, 1)
+theme_override_fonts/font = ExtResource("2_nfx2a")
+theme_override_font_sizes/font_size = 50
+text = "(+00%)"
+horizontal_alignment = 1
+
+[node name="S4" type="HBoxContainer" parent="Nobility_Card/Nobility_Card_Vbox/Noble_Rows/Row_Bot"]
+layout_mode = 2
+alignment = 1
+
+[node name="Symbol_Holder" type="ColorRect" parent="Nobility_Card/Nobility_Card_Vbox/Noble_Rows/Row_Bot/S4"]
+custom_minimum_size = Vector2(45, 0)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="S4_Symbol" type="Sprite2D" parent="Nobility_Card/Nobility_Card_Vbox/Noble_Rows/Row_Bot/S4"]
+position = Vector2(23, 28)
+texture = ExtResource("3_7t5wl")
+hframes = 5
+vframes = 4
+
+[node name="S4_Modifier" type="Label" parent="Nobility_Card/Nobility_Card_Vbox/Noble_Rows/Row_Bot/S4"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.364706, 0.184314, 0.54902, 1)
+theme_override_fonts/font = ExtResource("2_nfx2a")
+theme_override_font_sizes/font_size = 50
+text = "(+00%)"
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="."]
 visible = false
+custom_minimum_size = Vector2(345, 420)
 layout_mode = 0
-offset_right = 328.0
-offset_bottom = 403.0
+offset_right = 8.0
+offset_bottom = 8.0
+theme = SubResource("Theme_jm82n")
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
