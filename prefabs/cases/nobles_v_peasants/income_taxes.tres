@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="BaseCaseResource" load_steps=8 format=3 uid="uid://bhuqdubf8jk35"]
+
+[ext_resource type="Resource" uid="uid://byjqnopdvbbay" path="res://prefabs/effects/peasants/sub/peasants_m10tax.tres" id="1_7sj0g"]
+[ext_resource type="Script" path="res://scripts/resources/base_case_resource.gd" id="1_46g1s"]
+[ext_resource type="Resource" uid="uid://whgopb7t34qm" path="res://prefabs/effects/peasants/sub/peasants_m10rep.tres" id="1_522f7"]
+[ext_resource type="Resource" uid="uid://dtx2315d5sd7a" path="res://prefabs/effects/nobility/sub/minus10_rep.tres" id="1_obfw1"]
+[ext_resource type="Resource" uid="uid://da7gsqabgumjg" path="res://prefabs/effects/peasants/add/peasants_p10rep.tres" id="2_vsi6m"]
+[ext_resource type="Resource" uid="uid://b3ist7qss52k0" path="res://prefabs/effects/nobility/add/plus10_tax.tres" id="2_yv5x5"]
+[ext_resource type="Resource" uid="uid://d2bbn5tw2eaih" path="res://prefabs/effects/nobility/add/plus10_rep.tres" id="3_kff0v"]
+
+[resource]
+script = ExtResource("1_46g1s")
+CASE_NAME = "An Issue of Taxes"
+CASE_DESCRIPTION = "A peasant has brought up a new tax proposal. The nobility are not happy about paying a \"fair share.\""
+PARTY_A = 0
+PARTY_A_ARGUMENT = "We peasants pay too much in taxes!"
+EFFECTS_A = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("1_7sj0g"), ExtResource("2_yv5x5"), ExtResource("1_obfw1"), ExtResource("2_vsi6m")])
+PARTY_B = 1
+PARTY_B_ARGUMENT = "Pull yourselves up by the bootstraps!"
+EFFECTS_B = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("1_522f7"), ExtResource("2_vsi6m"), ExtResource("3_kff0v")])

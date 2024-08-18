@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dhix2dusxj10i"]
+[gd_scene load_steps=14 format=3 uid="uid://dhix2dusxj10i"]
 
 [ext_resource type="Script" path="res://scripts/system/game_scene.gd" id="1_s1yw1"]
 [ext_resource type="Script" path="res://addons/verho/resources/TransitionBank.gd" id="1_uelm6"]
@@ -9,12 +9,16 @@
 [ext_resource type="Script" path="res://scripts/game/town_stats.gd" id="4_fdghg"]
 [ext_resource type="Resource" uid="uid://daw83n2hujgbi" path="res://prefabs/cases/nobles_v_clergy/vampirism_claims.tres" id="4_qd1l0"]
 [ext_resource type="Script" path="res://scripts/game/reptuation_stats.gd" id="5_4xgmw"]
+[ext_resource type="Resource" uid="uid://bj5hw20xtcjnp" path="res://prefabs/cases/clergy_v_peasants/peasant_arrested_faith.tres" id="5_daqo0"]
+[ext_resource type="Resource" uid="uid://bhuqdubf8jk35" path="res://prefabs/cases/nobles_v_peasants/income_taxes.tres" id="6_xc3hg"]
 [ext_resource type="PackedScene" uid="uid://cvws2phcvy2lr" path="res://scenes/menus/hub_pause.tscn" id="7_3lo3u"]
+[ext_resource type="Resource" uid="uid://2bye3ob15lxh" path="res://prefabs/cases/nobles_v_clergy/fantasy_book_bans.tres" id="7_o1lyi"]
 
 [node name="GameScene" type="Node2D"]
 process_mode = 3
 script = ExtResource("1_s1yw1")
-CASES = Array[Resource("res://scripts/resources/base_case_resource.gd")]([ExtResource("2_ykisd"), ExtResource("3_qyhe0"), ExtResource("4_qd1l0")])
+NUMBER_OF_TURNS = 4
+CASES = Array[Resource("res://scripts/resources/base_case_resource.gd")]([ExtResource("2_ykisd"), ExtResource("3_qyhe0"), ExtResource("4_qd1l0"), ExtResource("5_daqo0"), ExtResource("6_xc3hg"), ExtResource("7_o1lyi")])
 
 [node name="Game_Overlay" parent="." instance=ExtResource("3_6t524")]
 

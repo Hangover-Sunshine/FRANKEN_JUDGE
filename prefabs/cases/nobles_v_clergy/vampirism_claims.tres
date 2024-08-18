@@ -1,5 +1,12 @@
-[gd_resource type="Resource" script_class="BaseCaseResource" load_steps=2 format=3 uid="uid://daw83n2hujgbi"]
+[gd_resource type="Resource" script_class="BaseCaseResource" load_steps=9 format=3 uid="uid://daw83n2hujgbi"]
 
+[ext_resource type="Resource" uid="uid://b68tkpqh83hak" path="res://prefabs/effects/clergy/add/plus1_police.tres" id="1_bl435"]
+[ext_resource type="Resource" uid="uid://b462l5hjvo42w" path="res://prefabs/effects/nobility/add/plus5_rep.tres" id="1_ickrl"]
+[ext_resource type="Resource" uid="uid://bb74lqal4qwyl" path="res://prefabs/effects/clergy/add/plus5_rep.tres" id="2_0bniw"]
+[ext_resource type="Resource" uid="uid://bolq6qy671ywe" path="res://prefabs/effects/clergy/sub/minus1_police.tres" id="2_3kmm1"]
+[ext_resource type="Resource" uid="uid://uaskmp34bx05" path="res://prefabs/effects/nobility/add/plus1_healthcare.tres" id="2_werl4"]
+[ext_resource type="Resource" uid="uid://bdv7jylnt4cef" path="res://prefabs/effects/nobility/sub/minus5_rep.tres" id="3_4atik"]
+[ext_resource type="Resource" uid="uid://btedw05cdt1m2" path="res://prefabs/effects/clergy/sub/minus5_rep.tres" id="3_lw5r3"]
 [ext_resource type="Script" path="res://scripts/resources/base_case_resource.gd" id="7_ibi4q"]
 
 [resource]
@@ -7,8 +14,8 @@ script = ExtResource("7_ibi4q")
 CASE_NAME = "Clergy Claims Vampirism!"
 CASE_DESCRIPTION = "The clergy claim that the nobles are conspiring with vampires of eld to become immortal. They are petitioning you for more control over the police to prevent such heresy. The nobles deny these claims, and want you to invest further into their own healthcare."
 PARTY_A = 1
-PARTY_A_ARGUMENT = "We just don't want to die young."
-EFFECTS_A = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([])
+PARTY_A_ARGUMENT = "We just don't want to die young!"
+EFFECTS_A = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("1_ickrl"), ExtResource("2_werl4"), ExtResource("2_3kmm1"), ExtResource("3_lw5r3")])
 PARTY_B = 2
 PARTY_B_ARGUMENT = "They're all vampires in disguise!"
-EFFECTS_B = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([])
+EFFECTS_B = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("1_bl435"), ExtResource("2_0bniw"), ExtResource("3_4atik")])

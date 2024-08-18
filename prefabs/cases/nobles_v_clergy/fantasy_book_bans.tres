@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="BaseCaseResource" load_steps=6 format=3 uid="uid://2bye3ob15lxh"]
+
+[ext_resource type="Script" path="res://scripts/resources/base_case_resource.gd" id="1_ft0g0"]
+[ext_resource type="Resource" uid="uid://b68tkpqh83hak" path="res://prefabs/effects/clergy/add/plus1_police.tres" id="1_i5rah"]
+[ext_resource type="Resource" uid="uid://bolq6qy671ywe" path="res://prefabs/effects/clergy/sub/minus1_police.tres" id="1_qk3sw"]
+[ext_resource type="Resource" uid="uid://1wqb1r4j8t03" path="res://prefabs/effects/nobility/add/plus1_literacy.tres" id="2_7q6qf"]
+[ext_resource type="Resource" uid="uid://bhowu5jdi2vtr" path="res://prefabs/effects/nobility/sub/minus1_literacy.tres" id="4_t67od"]
+
+[resource]
+script = ExtResource("1_ft0g0")
+CASE_NAME = "Foreign Fantasy Books Banned"
+CASE_DESCRIPTION = "The clergy want books from other regions banned over \"salaciousness\" and \"perverting the peace.\" The nobles want to read these books."
+PARTY_A = 1
+PARTY_A_ARGUMENT = "Greg L. L. Marque has great books!"
+EFFECTS_A = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("1_qk3sw"), ExtResource("2_7q6qf")])
+PARTY_B = 2
+PARTY_B_ARGUMENT = "Foreign books dilute the Words!"
+EFFECTS_B = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("1_i5rah"), ExtResource("4_t67od")])
