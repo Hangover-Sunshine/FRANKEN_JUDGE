@@ -230,7 +230,6 @@ text = "(+00%)"
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="."]
-visible = false
 custom_minimum_size = Vector2(345, 420)
 layout_mode = 0
 offset_right = 328.0
