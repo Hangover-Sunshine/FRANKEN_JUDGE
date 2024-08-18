@@ -24,6 +24,7 @@ CASES = Array[Resource("res://scripts/resources/base_case_resource.gd")]([ExtRes
 
 [node name="REMOVEME" type="Node" parent="."]
 script = ExtResource("1_uelm6")
+BANK_NAME = "no"
 TRANSITIONS = Array[Resource("res://addons/verho/resources/TransitionResource.gd")]([ExtResource("2_hubdk")])
 
 [node name="FactionStats" type="Node" parent="."]
