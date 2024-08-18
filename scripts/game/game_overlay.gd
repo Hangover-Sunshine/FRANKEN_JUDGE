@@ -28,13 +28,23 @@ func _input(event):
 ##
 
 # ============== UPPER HALF CONTROL ============== #
-func load_society_stats(new_stats):
-	$Society.load_peasant_stats(new_stats[GlobalData.Faction.PEASANTS])
-	$Society.load_nobility_stats(new_stats[GlobalData.Faction.NOBILITY])
-	$Society.load_clergy_stats(new_stats[GlobalData.Faction.CLERGY])
+func load_society_stats(stats):
+	$Society.load_peasant_stats(stats[GlobalData.Faction.PEASANTS])
+	$Society.load_nobility_stats(stats[GlobalData.Faction.NOBILITY])
+	$Society.load_clergy_stats(stats[GlobalData.Faction.CLERGY])
 ##
 
 func update_society_stats(changes):
+	pass
+##
+
+func load_reputation_stats(reps):
+	$Reputation.load_peasant_rep(reps[GlobalData.Faction.PEASANTS])
+	$Reputation.load_nobility_rep(reps[GlobalData.Faction.NOBILITY])
+	$Reputation.load_clergy_rep(reps[GlobalData.Faction.CLERGY])
+##
+
+func update_reps_stats(changes):
 	pass
 ##
 

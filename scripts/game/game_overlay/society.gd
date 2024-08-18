@@ -24,11 +24,14 @@ extends Control
 	$Society_Vbox/Society_Hbox/Clergy/Society_Clergy_Ranks_Hbox/Vbox_Clergy/Clergy_Hea_Hbox/Clergy_Hea_Rank
 ]
 
+var internal_stats_rep = {}
+
 func _ready():
 	pass
 ##
 
 func load_peasant_stats(pstats):
+	internal_stats_rep[GlobalData.Faction.PEASANTS] = pstats.duplicate()
 	peasant_stat_labels[0].text = (GlobalData.THREE_NUM_DISPLAY % pstats[GlobalData.Effects.TAX]) + "%"
 	peasant_stat_labels[1].text = (GlobalData.TWO_NUM_DISPLAY % pstats[GlobalData.Effects.LITERACY])
 	peasant_stat_labels[2].text = (GlobalData.TWO_NUM_DISPLAY % pstats[GlobalData.Effects.POLICING])
@@ -37,6 +40,7 @@ func load_peasant_stats(pstats):
 ##
 
 func load_nobility_stats(nstats):
+	internal_stats_rep[GlobalData.Faction.NOBILITY] = nstats.duplicate()
 	nobility_stat_labels[0].text = (GlobalData.THREE_NUM_DISPLAY % nstats[GlobalData.Effects.TAX]) + "%"
 	nobility_stat_labels[1].text = (GlobalData.TWO_NUM_DISPLAY % nstats[GlobalData.Effects.LITERACY])
 	nobility_stat_labels[2].text = (GlobalData.TWO_NUM_DISPLAY % nstats[GlobalData.Effects.POLICING])
@@ -45,6 +49,7 @@ func load_nobility_stats(nstats):
 ##
 
 func load_clergy_stats(cstats):
+	internal_stats_rep[GlobalData.Faction.CLERGY] = cstats.duplicate()
 	clergy_stat_labels[0].text = (GlobalData.THREE_NUM_DISPLAY % cstats[GlobalData.Effects.TAX]) + "%"
 	clergy_stat_labels[1].text = (GlobalData.TWO_NUM_DISPLAY % cstats[GlobalData.Effects.LITERACY])
 	clergy_stat_labels[2].text = (GlobalData.TWO_NUM_DISPLAY % cstats[GlobalData.Effects.POLICING])

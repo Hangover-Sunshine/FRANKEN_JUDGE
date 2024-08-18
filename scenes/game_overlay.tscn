@@ -1,8 +1,9 @@
-[gd_scene load_steps=35 format=3 uid="uid://2nl8bwm5pvgk"]
+[gd_scene load_steps=36 format=3 uid="uid://2nl8bwm5pvgk"]
 
 [ext_resource type="Script" path="res://scripts/game/game_overlay.gd" id="1_hcafl"]
 [ext_resource type="FontFile" uid="uid://73eyyuro8nvv" path="res://assets/fonts/PirataOne.ttf" id="1_qps4p"]
 [ext_resource type="FontFile" uid="uid://cqxld14ctgocv" path="res://assets/fonts/MedulaOne.ttf" id="2_o6xmb"]
+[ext_resource type="Script" path="res://scripts/game/game_overlay/reputation.gd" id="3_4svti"]
 [ext_resource type="PackedScene" uid="uid://dd1ytb4xypau" path="res://prefabs/button_folder_red.tscn" id="3_fwt70"]
 [ext_resource type="PackedScene" uid="uid://bgdpaito5ide6" path="res://prefabs/button_folder_blue.tscn" id="4_4qtwl"]
 [ext_resource type="Script" path="res://scripts/game/game_overlay/day_counter.gd" id="4_lmcgd"]
@@ -481,6 +482,7 @@ offset_top = 51.0
 offset_right = 158.0
 offset_bottom = 91.0
 mouse_filter = 2
+script = ExtResource("3_4svti")
 
 [node name="Reputation_Vbox" type="VBoxContainer" parent="Reputation"]
 custom_minimum_size = Vector2(650, 0)
@@ -580,6 +582,7 @@ step = 1.0
 value = 50.0
 
 [node name="Reputation_Rates_Vbox" type="VBoxContainer" parent="Reputation/Reputation_Vbox/Reputation_Hbox"]
+visible = false
 layout_mode = 2
 theme_override_constants/separation = 10
 

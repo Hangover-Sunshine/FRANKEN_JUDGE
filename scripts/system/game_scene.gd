@@ -32,6 +32,7 @@ func _ready():
 	$DelayTimer.start(INITIAL_LOAD_DELAY)
 	
 	$Game_Overlay.load_society_stats(_faction_stats.get_stats())
+	$Game_Overlay.load_reputation_stats(_reputation_stats.get_reputations())
 ##
 
 ## Fired when the case has been submit.

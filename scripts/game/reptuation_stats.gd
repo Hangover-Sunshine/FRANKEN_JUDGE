@@ -65,6 +65,10 @@ func set_reputation_for(group:GlobalData.Faction, value:int):
 	_reputations[group] = min(100, max(0, _reputations[group]))
 ##
 
+func get_reputations():
+	return _reputations
+##
+
 func get_reputation_for(group:GlobalData.Faction) -> int:
 	return _reputations[group]
 ##
