@@ -19,12 +19,12 @@ process_mode = 3
 script = ExtResource("1_s1yw1")
 NUMBER_OF_TURNS = 4
 CASES = Array[Resource("res://scripts/resources/base_case_resource.gd")]([ExtResource("2_ykisd"), ExtResource("3_qyhe0"), ExtResource("4_qd1l0"), ExtResource("5_daqo0"), ExtResource("6_xc3hg"), ExtResource("7_o1lyi")])
+INITIAL_LOAD_DELAY = 0.4
 
 [node name="Game_Overlay" parent="." instance=ExtResource("3_6t524")]
 
 [node name="REMOVEME" type="Node" parent="."]
 script = ExtResource("1_uelm6")
-BANK_NAME = "no"
 TRANSITIONS = Array[Resource("res://addons/verho/resources/TransitionResource.gd")]([ExtResource("2_hubdk")])
 
 [node name="FactionStats" type="Node" parent="."]

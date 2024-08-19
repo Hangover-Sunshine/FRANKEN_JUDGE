@@ -27,7 +27,7 @@ func _ready():
 	$Game_Overlay.connect("case_resolved", _confirm_case)
 	$Game_Overlay.initialize(NUMBER_OF_TURNS)
 	$Game_Overlay.show_day(_curr_day)
-	$DelayTimer.start(INITIAL_LOAD_DELAY)
+	#$DelayTimer.start(INITIAL_LOAD_DELAY)
 	
 	$Game_Overlay.load_society_stats(_faction_stats.get_stats())
 	$Game_Overlay.load_reputation_stats(_reputation_stats.get_reputations())
@@ -67,9 +67,6 @@ func _confirm_case(effects:Array[BaseEffectResource]):
 		_reputation_stats.set_reputation_for(key, changes[key])
 	##
 	
-	print("Changes:", changes)
-	print("Reps:", _reputation_stats.get_reputations())
-	
 	$Game_Overlay.change_reps_by(changes)
 	
 	# TODO: Save the current day -- let player back out without worry
@@ -86,6 +83,7 @@ func _update_stats_done():
 	if _curr_day == NUMBER_OF_TURNS:
 		PlayerPrefs.game_end = 0
 		Verho.change_scene("scenes/menus/hub_gameover", "", "BlackFade")
+		return
 	elif status != GlobalData.END_CONDITION.NONE:
 		if status == GlobalData.END_CONDITION.LOSS_CLERGY:
 			PlayerPrefs.game_end = 3
@@ -95,11 +93,11 @@ func _update_stats_done():
 			PlayerPrefs.game_end = 1
 		##
 		Verho.change_scene("scenes/menus/hub_gameover", "", "BlackFade")
+		return
 	##
 	
 	# Otherwise, keep going...
 	$Game_Overlay.show_day(_curr_day)
-	$DelayTimer.start(INITIAL_LOAD_DELAY)
 ##
 
 func _loaded_scene(scene_name):

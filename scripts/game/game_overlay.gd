@@ -127,23 +127,32 @@ func _case_complete(case:BaseCaseResource, faction:GlobalData.Faction, chose_A:b
 	
 	emit_signal("case_resolved", effects)
 	
-	# TODO: Play animation of things going away
 	ap_states.play("Part5")
-	
-	$Society.update_stats()
 	
 	await get_tree().create_timer(3).timeout
 	
-	_tally_finished()
+	$Society.update_stats()
 ##
 
 func _tally_finished():
 	ap_states.play("Part6")
 	
-	$Reputation.update_reputations()
-	
 	await get_tree().create_timer(3).timeout
 	
-	GlobalSignals.emit_signal("update_stats_done")
+	$Reputation.update_reputations()
 ##
 # ============== BOTTOM HALF CONTROL ============== #
+
+func _on_ap_states_animation_finished(anim_name):
+	if anim_name == "Part1":
+		show_cases(get_parent().pick_cases())
+	##
+	
+	if anim_name == "Part5":
+		_tally_finished()
+	##
+	
+	if anim_name == "Part6":
+		GlobalSignals.emit_signal("update_stats_done")
+	##
+##
