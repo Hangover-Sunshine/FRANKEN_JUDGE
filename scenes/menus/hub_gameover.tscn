@@ -522,49 +522,49 @@ layout_mode = 2
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_e4mm5")
 theme_override_font_sizes/font_size = 80
-text = "Peasantry"
+text = "After ruling and rulings made against the people, civil unrest ensues."
 horizontal_alignment = 1
 
 [node name="Line2" type="Label" parent="MC_Gameover/Vbox_Gameover/Vbox_Story/Vbox_Peasantry"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_e4mm5")
 theme_override_font_sizes/font_size = 80
-text = "Peasantry"
+text = "Revolts and protest surround your homestead as the public mob"
 horizontal_alignment = 1
 
 [node name="Line3" type="Label" parent="MC_Gameover/Vbox_Gameover/Vbox_Story/Vbox_Peasantry"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_e4mm5")
 theme_override_font_sizes/font_size = 80
-text = "Peasantry"
+text = "calls for your immediate termination. In response, you do resign"
 horizontal_alignment = 1
 
 [node name="Line4" type="Label" parent="MC_Gameover/Vbox_Gameover/Vbox_Story/Vbox_Peasantry"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_e4mm5")
 theme_override_font_sizes/font_size = 80
-text = "Peasantry"
+text = "your duties and put down the barrister wig. However, quitting"
 horizontal_alignment = 1
 
 [node name="Line5" type="Label" parent="MC_Gameover/Vbox_Gameover/Vbox_Story/Vbox_Peasantry"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_e4mm5")
 theme_override_font_sizes/font_size = 80
-text = "Peasantry"
+text = "was never enough to appease the choir, and the peasantry eventually"
 horizontal_alignment = 1
 
 [node name="Line6" type="Label" parent="MC_Gameover/Vbox_Gameover/Vbox_Story/Vbox_Peasantry"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_e4mm5")
 theme_override_font_sizes/font_size = 80
-text = "Peasantry"
+text = " chased you out of the city. Though never seen from or spoken of"
 horizontal_alignment = 1
 
 [node name="Line7" type="Label" parent="MC_Gameover/Vbox_Gameover/Vbox_Story/Vbox_Peasantry"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_e4mm5")
 theme_override_font_sizes/font_size = 80
-text = "Peasantry"
+text = "again, your decisions have forever impacted the public for the worse."
 horizontal_alignment = 1
 
 [node name="Vbox_Nobility" type="VBoxContainer" parent="MC_Gameover/Vbox_Gameover/Vbox_Story"]
@@ -575,49 +575,49 @@ layout_mode = 2
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_e4mm5")
 theme_override_font_sizes/font_size = 80
-text = "Nobility"
+text = "With every win against the nobility, and the priviledged few,"
 horizontal_alignment = 1
 
 [node name="Line2" type="Label" parent="MC_Gameover/Vbox_Gameover/Vbox_Story/Vbox_Nobility"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_e4mm5")
 theme_override_font_sizes/font_size = 80
-text = "Nobility"
+text = "came with it a great disgust for your judge work. To put an end"
 horizontal_alignment = 1
 
 [node name="Line3" type="Label" parent="MC_Gameover/Vbox_Gameover/Vbox_Story/Vbox_Nobility"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_e4mm5")
 theme_override_font_sizes/font_size = 80
-text = "Nobility"
+text = "to your immediate activism, the tycoons banded together. "
 horizontal_alignment = 1
 
 [node name="Line4" type="Label" parent="MC_Gameover/Vbox_Gameover/Vbox_Story/Vbox_Nobility"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_e4mm5")
 theme_override_font_sizes/font_size = 80
-text = "Nobility"
+text = "With this alliance, and their financial backing, the group"
 horizontal_alignment = 1
 
 [node name="Line5" type="Label" parent="MC_Gameover/Vbox_Gameover/Vbox_Story/Vbox_Nobility"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_e4mm5")
 theme_override_font_sizes/font_size = 80
-text = "Nobility"
+text = "transplanted and lobbied for your immediate termination."
 horizontal_alignment = 1
 
 [node name="Line6" type="Label" parent="MC_Gameover/Vbox_Gameover/Vbox_Story/Vbox_Nobility"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_e4mm5")
 theme_override_font_sizes/font_size = 80
-text = "Nobility"
+text = "With success, your license was eventually revoked and your"
 horizontal_alignment = 1
 
 [node name="Line7" type="Label" parent="MC_Gameover/Vbox_Gameover/Vbox_Story/Vbox_Nobility"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_e4mm5")
 theme_override_font_sizes/font_size = 80
-text = "Nobility"
+text = "days of law practice and judging came to sorrowful end."
 horizontal_alignment = 1
 
 [node name="Vbox_Clergy" type="VBoxContainer" parent="MC_Gameover/Vbox_Gameover/Vbox_Story"]
@@ -628,49 +628,49 @@ layout_mode = 2
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_e4mm5")
 theme_override_font_sizes/font_size = 80
-text = "Clergy"
+text = "With every decision you made, came with it negligence of the"
 horizontal_alignment = 1
 
 [node name="Line2" type="Label" parent="MC_Gameover/Vbox_Gameover/Vbox_Story/Vbox_Clergy"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_e4mm5")
 theme_override_font_sizes/font_size = 80
-text = "Clergy"
+text = "clergy. Your rulings have angered all devout leaders and"
 horizontal_alignment = 1
 
 [node name="Line3" type="Label" parent="MC_Gameover/Vbox_Gameover/Vbox_Story/Vbox_Clergy"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_e4mm5")
 theme_override_font_sizes/font_size = 80
-text = "Clergy"
+text = "their gods. Eventually, you were kidnapped by a clergy-led"
 horizontal_alignment = 1
 
 [node name="Line4" type="Label" parent="MC_Gameover/Vbox_Gameover/Vbox_Story/Vbox_Clergy"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_e4mm5")
 theme_override_font_sizes/font_size = 80
-text = "Clergy"
+text = "inquisition syndicate. Your body, tied to a pyre, inevitably lit"
 horizontal_alignment = 1
 
 [node name="Line5" type="Label" parent="MC_Gameover/Vbox_Gameover/Vbox_Story/Vbox_Clergy"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_e4mm5")
 theme_override_font_sizes/font_size = 80
-text = "Clergy"
+text = "and burned to the stake for your crimes against god."
 horizontal_alignment = 1
 
 [node name="Line6" type="Label" parent="MC_Gameover/Vbox_Gameover/Vbox_Story/Vbox_Clergy"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_e4mm5")
 theme_override_font_sizes/font_size = 80
-text = "Clergy"
+text = "The public does question your death. Though whether it be"
 horizontal_alignment = 1
 
 [node name="Line7" type="Label" parent="MC_Gameover/Vbox_Gameover/Vbox_Story/Vbox_Clergy"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_e4mm5")
 theme_override_font_sizes/font_size = 80
-text = "Clergy"
+text = "because of your existence or very work is beyond further question."
 horizontal_alignment = 1
 
 [node name="Vbox_Win" type="VBoxContainer" parent="MC_Gameover/Vbox_Gameover/Vbox_Story"]
@@ -681,49 +681,49 @@ layout_mode = 2
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_e4mm5")
 theme_override_font_sizes/font_size = 80
-text = "Victory"
+text = "After day in and day out of judge work, you succesfully survived"
 horizontal_alignment = 1
 
 [node name="Line2" type="Label" parent="MC_Gameover/Vbox_Gameover/Vbox_Story/Vbox_Win"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_e4mm5")
 theme_override_font_sizes/font_size = 80
-text = "Victory"
+text = "serving your community. Your decision making has appeased each"
 horizontal_alignment = 1
 
 [node name="Line3" type="Label" parent="MC_Gameover/Vbox_Gameover/Vbox_Story/Vbox_Win"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_e4mm5")
 theme_override_font_sizes/font_size = 80
-text = "Victory"
+text = "of the three societal classes. With enough popularity, you aim for"
 horizontal_alignment = 1
 
 [node name="Line4" type="Label" parent="MC_Gameover/Vbox_Gameover/Vbox_Story/Vbox_Win"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_e4mm5")
 theme_override_font_sizes/font_size = 80
-text = "Victory"
+text = "higher pursuits. Thus, your campaign for judge work in higher courts"
 horizontal_alignment = 1
 
 [node name="Line5" type="Label" parent="MC_Gameover/Vbox_Gameover/Vbox_Story/Vbox_Win"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_e4mm5")
 theme_override_font_sizes/font_size = 80
-text = "Victory"
+text = "commence. With aims to leave city-level legislature for work in the"
 horizontal_alignment = 1
 
 [node name="Line6" type="Label" parent="MC_Gameover/Vbox_Gameover/Vbox_Story/Vbox_Win"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_e4mm5")
 theme_override_font_sizes/font_size = 80
-text = "Victory"
+text = " federal court system, no longer are you a petty judge. Rather, you"
 horizontal_alignment = 1
 
 [node name="Line7" type="Label" parent="MC_Gameover/Vbox_Gameover/Vbox_Story/Vbox_Win"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_e4mm5")
 theme_override_font_sizes/font_size = 80
-text = "Victory"
+text = "are the peoples' judge. Made for the people, from the people."
 horizontal_alignment = 1
 
 [node name="ColorRect2" type="ColorRect" parent="MC_Gameover/Vbox_Gameover/Vbox_Story"]

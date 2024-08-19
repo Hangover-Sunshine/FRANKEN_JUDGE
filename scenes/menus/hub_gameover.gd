@@ -22,13 +22,13 @@ func show_text():
 		header.text = "SUCCESS"
 		ap.play("Win")
 	elif gameover == 1:
-		header.text = "FAILURE"
+		header.text = "FAILURE - PEASANTRY"
 		ap.play("Peasantry")
 	elif gameover == 2:
-		header.text = "FAILURE"
+		header.text = "FAILURE - NOBILITY"
 		ap.play("Nobility")
 	elif gameover == 3:
-		header.text = "FAILURE"
+		header.text = "FAILURE - CLERGY"
 		ap.play("Clergy")
 
 # goes to different scenes

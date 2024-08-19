@@ -2247,7 +2247,7 @@ custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_o6xmb")
 theme_override_font_sizes/font_size = 90
-text = "Press BUTTON to CONTINUE
+text = "Press ANY BUTTON to CONTINUE
 "
 horizontal_alignment = 1
 vertical_alignment = 2
