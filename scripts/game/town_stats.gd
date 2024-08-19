@@ -3,7 +3,7 @@ extends Node
 # 0 - 2: -_[2], 3 - 4: -_[1], 5 - 6: _[0], 7 - 8: _[1], 9 - 10: _[2]
 # Convert to %s for tax
 const _REP_CHANGE_FOR = {
-	"favored": [0, 2, 4],
+	"favored": [1, 1, 3],
 	"unfavored": [0, 1, 2]
 }
 
@@ -87,15 +87,15 @@ func get_faction_rep_change(group:GlobalData.Faction) -> int:
 	
 	# everyone cares about taxes -- and they're 0 - 100, not 0 - 10
 	if vals[GlobalData.Effects.TAX] <= 29: # -5
-		rep_change = 4
+		rep_change = 3
 	elif vals[GlobalData.Effects.TAX] >= 30 and vals[GlobalData.Effects.TAX] <= 49: # -2
-		rep_change = 2
+		rep_change = 1
 	elif vals[GlobalData.Effects.TAX] >= 50 and vals[GlobalData.Effects.TAX] < 69: # 0
 		rep_change = 0
 	elif vals[GlobalData.Effects.TAX] >= 70 and vals[GlobalData.Effects.TAX] < 89: # 2
-		rep_change = -2
+		rep_change = -1
 	else: # 5
-		rep_change = -4
+		rep_change = -3
 	##
 	
 	for key in vals.keys():

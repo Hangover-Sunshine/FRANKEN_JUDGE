@@ -30,7 +30,6 @@ func has_lost() -> GlobalData.END_CONDITION:
 	for key in _reputations.keys():
 		if _reputations[key] < 25:
 			below_25 += 1
-			below_35 += 1
 			if _reputations[key] < _reputations[lowest_faction]:
 				lowest_faction = key
 			##
@@ -38,11 +37,6 @@ func has_lost() -> GlobalData.END_CONDITION:
 		if _reputations[key] < 35:
 			below_35 += 1
 		##
-	##
-	
-	# Early check -- if all are 3, you really failed
-	#if below_25 == 3:
-		#return GlobalData.END_CONDITION.LOSS_ALL
 	##
 	
 	if below_25 > 0 and below_35 > 1:

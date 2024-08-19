@@ -103,7 +103,3 @@ func _nobility_selected():
 		##
 	##
 ##
-
-func _game_over_anim(card):
-	pass
-##

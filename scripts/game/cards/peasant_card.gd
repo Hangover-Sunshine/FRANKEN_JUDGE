@@ -31,7 +31,7 @@ func show_labels(card_desc, effects:Array[BaseEffectResource]):
 	var elindex = 0
 	for eff in effects:
 		# skip reputation ones, not necessary
-		if eff.Affect == GlobalData.Effects.REPUTATION:
+		if eff.Affect == GlobalData.Effects.REPUTATION or eff.Group != GlobalData.Faction.PEASANTS:
 			continue
 		##
 		
