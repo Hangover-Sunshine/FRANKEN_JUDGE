@@ -36,10 +36,16 @@ func _ready():
 	left_mega_card.clergy_card.connect("released", _left_released)
 	
 	right_mega_card.peasant_card.connect("selected", _peasants_selected)
+	right_mega_card.peasant_card.connect("pressed_down", _right_selected)
+	right_mega_card.peasant_card.connect("released", _right_released)
 	
 	right_mega_card.nobility_card.connect("selected", _nobility_selected)
+	right_mega_card.nobility_card.connect("pressed_down", _right_selected)
+	right_mega_card.nobility_card.connect("released", _right_released)
 	
 	right_mega_card.clergy_card.connect("selected", _clergy_selected)
+	right_mega_card.clergy_card.connect("pressed_down", _right_selected)
+	right_mega_card.clergy_card.connect("released", _right_released)
 	
 ##
 
@@ -76,6 +82,8 @@ func setup_factions(case:BaseCaseResource):
 ##
 
 func _peasants_selected():
+	_mouse_not_hovering()
+	ap_scale_control.play("RESET")
 	if _case.PARTY_A == GlobalData.Faction.PEASANTS:
 		if _aPicks == 0:
 			emit_signal("case_complete", _case, GlobalData.Faction.PEASANTS, true)
@@ -92,6 +100,8 @@ func _peasants_selected():
 ##
 
 func _clergy_selected():
+	_mouse_not_hovering()
+	ap_scale_control.play("RESET")
 	if _case.PARTY_A == GlobalData.Faction.CLERGY:
 		if _aPicks == 0:
 			emit_signal("case_complete", _case, GlobalData.Faction.CLERGY, true)
@@ -108,6 +118,8 @@ func _clergy_selected():
 ##
 
 func _nobility_selected():
+	_mouse_not_hovering()
+	ap_scale_control.play("RESET")
 	if _case.PARTY_A == GlobalData.Faction.NOBILITY:
 		if _aPicks == 0:
 			emit_signal("case_complete", _case, GlobalData.Faction.NOBILITY, true)
@@ -147,5 +159,13 @@ func _left_selected():
 ##
 
 func _left_released():
+	ap_scale_control.play("RESET")
+##
+
+func _right_selected():
+	ap_scale_control.play("press_right")
+##
+
+func _right_released():
 	ap_scale_control.play("RESET")
 ##

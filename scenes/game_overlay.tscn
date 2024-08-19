@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://2nl8bwm5pvgk"]
+[gd_scene load_steps=48 format=3 uid="uid://2nl8bwm5pvgk"]
 
 [ext_resource type="Script" path="res://scripts/game/game_overlay.gd" id="1_hcafl"]
 [ext_resource type="FontFile" uid="uid://73eyyuro8nvv" path="res://assets/fonts/PirataOne.ttf" id="1_qps4p"]
@@ -1217,10 +1217,10 @@ tracks/2/path = NodePath("Scale_Body/Scale_Left:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 1.5),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 1.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [0.0, 0.0]
+"values": [0.0, 0.0, 0.0698132]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -1233,6 +1233,30 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [0.0, 0.0, -0.139626]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Scale_Body/Scale_Right:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(514, 246), Vector2(514, 246), Vector2(514, 206)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("HandOverLeft:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, -0.0698132]
 }
 
 [sub_resource type="Animation" id="Animation_41t0f"]
@@ -1286,11 +1310,136 @@ tracks/3/keys = {
 "update": 0,
 "values": [0.0]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("HandOverRight:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(779, -280)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Scale_Body/Scale_Right:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(514, 246)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Scale_Body/Scale_Right:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("HandOverLeft:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_7m4iw"]
+resource_name = "press_right"
+length = 3.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HandOverRight:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(779, -280), Vector2(779, 128), Vector2(779, 189)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Scale_Body/Scale_Arm:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 0.139626]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Scale_Body/Scale_Right:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(514, 246), Vector2(514, 246), Vector2(514, 306)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Scale_Body/Scale_Right:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 0.0698132]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("HandOverRight:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, -0.0698132]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Scale_Body/Scale_Left:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-513, 246), Vector2(-513, 246), Vector2(-513, 206)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vgkn6"]
 _data = {
 "RESET": SubResource("Animation_41t0f"),
-"press_left": SubResource("Animation_hxfha")
+"press_left": SubResource("Animation_hxfha"),
+"press_right": SubResource("Animation_7m4iw")
 }
 
 [node name="Game_Overlay" type="Node2D"]
@@ -1928,7 +2077,6 @@ text = "(+00)"
 
 [node name="LilDays" type="Control" parent="."]
 visible = false
-modulate = Color(1, 1, 1, 0)
 layout_mode = 3
 anchors_preset = 0
 offset_left = 431.0
@@ -2113,9 +2261,9 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 289.352
+offset_left = 129.352
 offset_top = 185.0
-offset_right = 989.352
+offset_right = 829.352
 offset_bottom = 985.0
 grow_horizontal = 2
 rotation = 0.20944
@@ -2127,9 +2275,9 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -200.648
+offset_left = -360.648
 offset_top = 100.0
-offset_right = 499.352
+offset_right = 339.352
 offset_bottom = 900.013
 grow_horizontal = 2
 pivot_offset = Vector2(350, 0)
@@ -2140,9 +2288,9 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -708.648
+offset_left = -868.648
 offset_top = 184.0
-offset_right = -8.64801
+offset_right = -168.648
 offset_bottom = 984.0
 grow_horizontal = 2
 rotation = -0.20944
@@ -2180,10 +2328,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 60.5
-offset_top = -328.0
-offset_right = 405.5
-offset_bottom = 92.0206
+offset_left = -400.5
+offset_top = -492.0
+offset_right = -55.5
+offset_bottom = -71.9793
 grow_horizontal = 2
 grow_vertical = 0
 
@@ -2215,15 +2363,13 @@ libraries = {
 
 [node name="WinningCard" type="Control" parent="."]
 visible = false
-modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(345, 420)
 layout_mode = 3
 anchors_preset = 0
-offset_left = 430.0
-offset_top = 500.0
-offset_right = 775.003
-offset_bottom = 920.007
-rotation = 0.174533
+offset_left = 794.0
+offset_top = 1131.0
+offset_right = 1139.0
+offset_bottom = 1551.01
 mouse_filter = 2
 script = ExtResource("19_u43l4")
 
