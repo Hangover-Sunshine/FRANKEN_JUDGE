@@ -153,8 +153,15 @@ func changes_to_stats(affected_stats):
 	_changed_stats = affected_stats
 ##
 
+func show_changes_to_stats(effects:Array[BaseEffectResource]):
+	_hovered_over_card(effects)
+##
+
+func hide_changes_to_stats():
+	_not_hovering()
+##
+
 func update_stats():
-	# TODO: animations -- for now, just update
 	for eff in _changed_stats:
 		if eff.Affect == GlobalData.Effects.REPUTATION:
 			continue

@@ -69,12 +69,74 @@ func _not_hovering():
 	##
 ##
 
+func show_changes():
+	for key in _changed_stats.keys():
+		if _changed_stats[key] < 0:
+			rep_rates[key].text = "-" + (GlobalData.TWO_NUM_DISPLAY % -_changed_stats[key])
+		else:
+			rep_rates[key].text = "+" + (GlobalData.TWO_NUM_DISPLAY % _changed_stats[key])
+		##
+		
+		rep_rates[key].visible = true
+	##
+##
+
+func hide_changes():
+	_not_hovering()
+##
+
 func changes_to_reps(affected_reps):
 	_changed_stats = affected_reps
 ##
 
 func update_reputations():
-	for key in _changed_stats.keys():
-		bars[key].value += _changed_stats[key]
+	var changes_dict = {
+		GlobalData.Faction.NOBILITY: floori(_changed_stats[GlobalData.Faction.NOBILITY] / 5)\
+										if GlobalData.Faction.NOBILITY in _changed_stats else 0,
+		GlobalData.Faction.PEASANTS : floori(_changed_stats[GlobalData.Faction.PEASANTS] / 5)\
+							if GlobalData.Faction.PEASANTS in _changed_stats else 0,
+		GlobalData.Faction.CLERGY : floori(_changed_stats[GlobalData.Faction.CLERGY] / 5)\
+							if GlobalData.Faction.CLERGY in _changed_stats else 0
+	}
+	
+	var times_through = 0
+	
+	while len(_changed_stats) > 0:
+		for key in _changed_stats.keys():
+			var change = 0
+			
+			if times_through < 4:
+				if _changed_stats[key] < 0:
+					change = max(_changed_stats[key], changes_dict[key])
+					_changed_stats[key] -= change
+					rep_rates[key].text = "-" + (GlobalData.TWO_NUM_DISPLAY % -_changed_stats[key])
+				else:
+					change = min(_changed_stats[key], changes_dict[key])
+					_changed_stats[key] -= change
+					rep_rates[key].text = "+" + (GlobalData.TWO_NUM_DISPLAY % _changed_stats[key])
+				##
+			else:
+				if _changed_stats[key] < 0:
+					change = _changed_stats[key]
+					_changed_stats[key] -= change
+					rep_rates[key].text = "-" + (GlobalData.TWO_NUM_DISPLAY % -_changed_stats[key])
+				else:
+					change = _changed_stats[key]
+					_changed_stats[key] -= change
+					rep_rates[key].text = "+" + (GlobalData.TWO_NUM_DISPLAY % _changed_stats[key])
+				##
+			##
+			
+			bars[key].value += change
+			
+			if _changed_stats[key] == 0:
+				_changed_stats.erase(key)
+			##
+		##
+		
+		times_through += 1
+		await get_tree().create_timer(0.2).timeout
 	##
+	
+	hide_changes()
 ##

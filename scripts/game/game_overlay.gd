@@ -9,9 +9,11 @@ var _cases:Array[BaseCaseResource]
 var _case:BaseCaseResource
 var _curr_day:int
 var _case_ids:Array[int]
+var _can_click_to_proceed:bool = false
 
 # 0 = day, 1 = case pick, 2 = case brief, 3 = scales, 4 = results
 var curr_screen:int = 0
+
 
 func initialize(max_num_days:int):
 	$LilDays.set_day_total(max_num_days)
@@ -22,7 +24,8 @@ func initialize(max_num_days:int):
 ##
 
 func _input(event):
-	if (event is InputEventKey or event is InputEventMouseButton) and curr_screen == 2:
+	if (event is InputEventKey or event is InputEventMouseButton) and curr_screen == 2\
+		and _can_click_to_proceed:
 		curr_screen = 3
 		_show_sides()
 	##
@@ -63,6 +66,7 @@ func show_day(curr_day):
 ##
 
 func show_cases(cases:Array[BaseCaseResource]):
+	$CasePick.disable()
 	curr_screen = 1
 	_cases = cases
 	$CasePick.here_the_cases(cases)
@@ -75,6 +79,7 @@ func _case_picked(case_id:int):
 	emit_signal("cases_left", _cases)
 	$CaseBrief.show_brief(_curr_day, _case, _pick_rand_case_id())
 	curr_screen = 2
+	_can_click_to_proceed = false
 	ap_states.play("Part3")
 	
 	var sp:bool = _case.PARTY_A == GlobalData.Faction.PEASANTS or _case.PARTY_B == GlobalData.Faction.PEASANTS
@@ -129,15 +134,29 @@ func _case_complete(case:BaseCaseResource, faction:GlobalData.Faction, chose_A:b
 	
 	ap_states.play("Part5")
 	
-	await get_tree().create_timer(3).timeout
+	await get_tree().create_timer(6.5).timeout
 	
+	# re-add the modifiers
+	$Society.show_changes_to_stats(effects)
+	
+	await get_tree().create_timer(2.3).timeout
+	
+	# hide the mods, update the table
+	$Society.hide_changes_to_stats()
 	$Society.update_stats()
 ##
 
 func _tally_finished():
 	ap_states.play("Part6")
 	
-	await get_tree().create_timer(3).timeout
+	await get_tree().create_timer(1.8).timeout
+	
+	# Show the tallies
+	$Reputation.show_changes()
+	
+	await get_tree().create_timer(2.7).timeout
+	
+	# Iterate, hide tallies once they hit 0
 	
 	$Reputation.update_reputations()
 ##
@@ -146,6 +165,14 @@ func _tally_finished():
 func _on_ap_states_animation_finished(anim_name):
 	if anim_name == "Part1":
 		show_cases(get_parent().pick_cases())
+	##
+	
+	if anim_name == "Part2":
+		$CasePick.enable()
+	##
+	
+	if anim_name == "Part3":
+		_can_click_to_proceed = true
 	##
 	
 	if anim_name == "Part5":

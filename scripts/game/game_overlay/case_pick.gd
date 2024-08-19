@@ -18,6 +18,18 @@ func _ready():
 	$Button_Folder_Yellow.connect("mouse_exited", _folder_exited)
 ##
 
+func enable():
+	$Button_Folder_Blue.mouse_filter = MOUSE_FILTER_STOP
+	$Button_Folder_Red.mouse_filter = MOUSE_FILTER_STOP
+	$Button_Folder_Yellow.mouse_filter = MOUSE_FILTER_STOP
+##
+
+func disable():
+	$Button_Folder_Blue.mouse_filter = MOUSE_FILTER_IGNORE
+	$Button_Folder_Red.mouse_filter = MOUSE_FILTER_IGNORE
+	$Button_Folder_Yellow.mouse_filter = MOUSE_FILTER_IGNORE
+##
+
 func here_the_cases(cases:Array[BaseCaseResource]):
 	_cases = cases
 ##

@@ -70,7 +70,6 @@ func _confirm_case(effects:Array[BaseEffectResource]):
 	
 	# TODO: Save the current day -- let player back out without worry
 	
-	# TODO: call into Game_Overlay to start playing anims
 ##
 
 ## Called once the animation player is finished playing all the animations --
