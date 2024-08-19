@@ -27,7 +27,6 @@ func _ready():
 	$Game_Overlay.connect("case_resolved", _confirm_case)
 	$Game_Overlay.initialize(NUMBER_OF_TURNS)
 	$Game_Overlay.show_day(_curr_day)
-	#$DelayTimer.start(INITIAL_LOAD_DELAY)
 	
 	$Game_Overlay.load_society_stats(_faction_stats.get_stats())
 	$Game_Overlay.load_reputation_stats(_reputation_stats.get_reputations())
@@ -125,8 +124,4 @@ func readd_unpicked_cases(unpicked_cases:Array[BaseCaseResource]):
 	
 	# Shuffle everything
 	CASES.shuffle()
-##
-
-func _on_delay_timer_timeout():
-	$Game_Overlay.show_cases(pick_cases())
 ##

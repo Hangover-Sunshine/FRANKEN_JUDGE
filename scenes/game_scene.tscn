@@ -35,8 +35,3 @@ script = ExtResource("5_4xgmw")
 
 [node name="HubPause" parent="." instance=ExtResource("7_3lo3u")]
 visible = false
-
-[node name="DelayTimer" type="Timer" parent="."]
-one_shot = true
-
-[connection signal="timeout" from="DelayTimer" to="." method="_on_delay_timer_timeout"]
