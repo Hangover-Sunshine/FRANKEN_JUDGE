@@ -81,7 +81,7 @@ func _update_stats_done():
 	# Did we lose? Did we win?
 	var status:GlobalData.END_CONDITION = _reputation_stats.has_lost()
 	
-	if _curr_day == NUMBER_OF_TURNS:
+	if _curr_day > NUMBER_OF_TURNS:
 		PlayerPrefs.game_end = 0
 		Verho.change_scene("scenes/menus/hub_gameover", "", "BlackFade")
 		return

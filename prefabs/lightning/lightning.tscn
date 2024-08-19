@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cbegjnopjlvxl"]
+
+[ext_resource type="Script" path="res://scripts/game/lightning/lightning.gd" id="1_omvq2"]
+
+[sub_resource type="Curve" id="Curve_pmk6b"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.0393701, 0.313665), 0.0, 0.0, 0, 0, Vector2(0.952756, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[node name="Lightning" type="Node2D"]
+script = ExtResource("1_omvq2")
+
+[node name="LightningLine" type="Line2D" parent="."]
+width_curve = SubResource("Curve_pmk6b")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

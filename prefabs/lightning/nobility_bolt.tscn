@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvvshqlh7rhes"]
+
+[ext_resource type="Script" path="res://scripts/game/lightning/lightning_bolt.gd" id="1_i2vai"]
+[ext_resource type="PackedScene" uid="uid://cbegjnopjlvxl" path="res://prefabs/lightning/lightning.tscn" id="2_g72vm"]
+
+[node name="NobilityBolt" type="Node2D"]
+script = ExtResource("1_i2vai")
+
+[node name="Lightning" parent="." instance=ExtResource("2_g72vm")]
+modulate = Color(0.87451, 0.8, 0.976471, 1)
+AngleVar = 50.0
+
+[node name="Lightning2" parent="." instance=ExtResource("2_g72vm")]
+modulate = Color(0.87451, 0.8, 0.976471, 1)
+AngleVar = 50.0
+
+[node name="Lightning3" parent="." instance=ExtResource("2_g72vm")]
+modulate = Color(0.87451, 0.8, 0.976471, 1)
+AngleVar = 50.0
+
+[node name="Lightning4" parent="." instance=ExtResource("2_g72vm")]
+modulate = Color(0.705882, 0.513726, 0.937255, 1)
+AngleVar = 25.0
+
+[node name="Lightning5" parent="." instance=ExtResource("2_g72vm")]
+modulate = Color(0.705882, 0.513726, 0.937255, 1)
+AngleVar = 25.0
+
+[node name="Lightning6" parent="." instance=ExtResource("2_g72vm")]
+AngleVar = 10.0

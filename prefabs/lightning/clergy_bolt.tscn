@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxy4n82notrv7"]
+
+[ext_resource type="Script" path="res://scripts/game/lightning/lightning_bolt.gd" id="1_r3tys"]
+[ext_resource type="PackedScene" uid="uid://cbegjnopjlvxl" path="res://prefabs/lightning/lightning.tscn" id="2_lp4go"]
+
+[node name="ClergyBolt" type="Node2D"]
+script = ExtResource("1_r3tys")
+
+[node name="Lightning" parent="." instance=ExtResource("2_lp4go")]
+modulate = Color(0.996078, 0.827451, 0.709804, 1)
+AngleVar = 50.0
+
+[node name="Lightning2" parent="." instance=ExtResource("2_lp4go")]
+modulate = Color(0.996078, 0.827451, 0.709804, 1)
+AngleVar = 50.0
+
+[node name="Lightning3" parent="." instance=ExtResource("2_lp4go")]
+modulate = Color(0.996078, 0.827451, 0.709804, 1)
+AngleVar = 50.0
+
+[node name="Lightning4" parent="." instance=ExtResource("2_lp4go")]
+modulate = Color(0.976471, 0.607843, 0.317647, 1)
+AngleVar = 25.0
+
+[node name="Lightning5" parent="." instance=ExtResource("2_lp4go")]
+modulate = Color(0.976471, 0.607843, 0.317647, 1)
+AngleVar = 25.0
+
+[node name="Lightning6" parent="." instance=ExtResource("2_lp4go")]
+AngleVar = 10.0

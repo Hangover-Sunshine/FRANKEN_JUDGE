@@ -1183,82 +1183,6 @@ _data = {
 "RESET": SubResource("Animation_1vv4j")
 }
 
-[sub_resource type="Animation" id="Animation_hxfha"]
-resource_name = "press_left"
-length = 3.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("HandOverLeft:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.5, 3),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(-258, -280), Vector2(-258, 128), Vector2(-258, 189)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Scale_Body/Scale_Left:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1.5, 3),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(-513, 246), Vector2(-513, 246), Vector2(-513, 306)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Scale_Body/Scale_Left:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 1.5, 3),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [0.0, 0.0, 0.0698132]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Scale_Body/Scale_Arm:rotation")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 1.5, 3),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [0.0, 0.0, -0.139626]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Scale_Body/Scale_Right:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 1.5, 3),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(514, 246), Vector2(514, 246), Vector2(514, 206)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("HandOverLeft:rotation")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 1.5, 3),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [0.0, 0.0, -0.0698132]
-}
-
 [sub_resource type="Animation" id="Animation_41t0f"]
 resource_name = "RESET"
 length = 0.01
@@ -1357,6 +1281,82 @@ tracks/7/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_hxfha"]
+resource_name = "press_left"
+length = 3.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HandOverLeft:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-258, -280), Vector2(-258, 128), Vector2(-258, 189)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Scale_Body/Scale_Left:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-513, 246), Vector2(-513, 246), Vector2(-513, 306)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Scale_Body/Scale_Left:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 0.0698132]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Scale_Body/Scale_Arm:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, -0.139626]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Scale_Body/Scale_Right:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(514, 246), Vector2(514, 246), Vector2(514, 206)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("HandOverLeft:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, -0.0698132]
 }
 
 [sub_resource type="Animation" id="Animation_7m4iw"]
@@ -2176,6 +2176,7 @@ size_flags_vertical = 4
 alignment = 1
 
 [node name="Case_Header" type="Label" parent="CaseBrief/Casebrief_Vbox/Header_Hbox"]
+visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_qps4p")
 theme_override_font_sizes/font_size = 100
@@ -2183,6 +2184,7 @@ text = "CASE "
 horizontal_alignment = 1
 
 [node name="Case_Number_Letter" type="Label" parent="CaseBrief/Casebrief_Vbox/Header_Hbox"]
+visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_qps4p")
 theme_override_font_sizes/font_size = 100
@@ -2190,6 +2192,7 @@ text = "A"
 horizontal_alignment = 1
 
 [node name="Dash_Header" type="Label" parent="CaseBrief/Casebrief_Vbox/Header_Hbox"]
+visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_qps4p")
 theme_override_font_sizes/font_size = 100
@@ -2197,6 +2200,7 @@ text = " -"
 horizontal_alignment = 1
 
 [node name="CaseName_Header" type="Label" parent="CaseBrief/Casebrief_Vbox/Header_Hbox"]
+visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_qps4p")
 theme_override_font_sizes/font_size = 100
@@ -2204,13 +2208,17 @@ text = " Name of case"
 horizontal_alignment = 1
 
 [node name="Casebrief_Body" type="Label" parent="CaseBrief/Casebrief_Vbox"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(1700, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_o6xmb")
 theme_override_font_sizes/font_size = 90
-text = "Blagh blagh blagh blagh blagh blagh blagh"
+text = "Blagh blagh blagh blagh blagh blagh blagh blagh blagh blagh blagh blagh blagh blagh blagh blagh blagh blagh blagh blagh blagh blagh blagh blagh blagh blagh blagh blagh blagh blagh blagh blagh blagh blagh blagh blagh blagh blagh blagh blagh blagh blagh blagh blagh blagh blagh blagh blagh"
 horizontal_alignment = 1
+autowrap_mode = 3
 
 [node name="Casebrief_Instructions" type="VBoxContainer" parent="CaseBrief/Casebrief_Vbox"]
+visible = false
 layout_mode = 2
 
 [node name="Casebrief_Instruction" type="Label" parent="CaseBrief/Casebrief_Vbox/Casebrief_Instructions"]
@@ -2264,9 +2272,9 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 189.352
+offset_left = 249.352
 offset_top = 185.0
-offset_right = 889.352
+offset_right = 949.352
 offset_bottom = 985.0
 grow_horizontal = 2
 rotation = 0.20944
@@ -2278,9 +2286,9 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -300.648
+offset_left = -240.648
 offset_top = 100.0
-offset_right = 399.352
+offset_right = 459.352
 offset_bottom = 900.013
 grow_horizontal = 2
 pivot_offset = Vector2(350, 0)
@@ -2291,9 +2299,9 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -808.648
+offset_left = -748.648
 offset_top = 184.0
-offset_right = -108.648
+offset_right = -48.648
 offset_bottom = 984.0
 grow_horizontal = 2
 rotation = -0.20944
@@ -2332,10 +2340,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -400.5
-offset_top = -1532.0
-offset_right = -55.5
-offset_bottom = -1111.98
+offset_left = 60.5
+offset_top = -1368.0
+offset_right = 405.5
+offset_bottom = -947.98
 grow_horizontal = 2
 grow_vertical = 0
 

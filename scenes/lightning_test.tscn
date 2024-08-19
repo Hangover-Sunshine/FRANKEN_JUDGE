@@ -1,0 +1,22 @@
+[gd_scene load_steps=7 format=3 uid="uid://b6qxw7nctyo74"]
+
+[ext_resource type="Script" path="res://scripts/tests/lightning_test.gd" id="1_aiujr"]
+[ext_resource type="PackedScene" uid="uid://6as7rwo2hrsa" path="res://prefabs/lightning/peasant_bolt.tscn" id="1_pg1np"]
+[ext_resource type="PackedScene" uid="uid://cvvshqlh7rhes" path="res://prefabs/lightning/nobility_bolt.tscn" id="3_ldi35"]
+[ext_resource type="Script" path="res://addons/verho/resources/TransitionBank.gd" id="3_udrt2"]
+[ext_resource type="PackedScene" uid="uid://dxy4n82notrv7" path="res://prefabs/lightning/clergy_bolt.tscn" id="4_0bnb1"]
+[ext_resource type="Resource" uid="uid://cokyxyvryfnhm" path="res://prefabs/transitions/black_fade.tres" id="4_gvhm1"]
+
+[node name="LightningTest" type="Node2D"]
+script = ExtResource("1_aiujr")
+
+[node name="PeasantBolt" parent="." instance=ExtResource("1_pg1np")]
+MaxSegmentSize = 6.0
+
+[node name="NobilityBolt" parent="." instance=ExtResource("3_ldi35")]
+
+[node name="ClergyBolt" parent="." instance=ExtResource("4_0bnb1")]
+
+[node name="TransitionBank" type="Node" parent="."]
+script = ExtResource("3_udrt2")
+TRANSITIONS = Array[Resource("res://addons/verho/resources/TransitionResource.gd")]([ExtResource("4_gvhm1")])
