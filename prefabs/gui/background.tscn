@@ -1,0 +1,565 @@
+[gd_scene load_steps=18 format=3 uid="uid://ntpnt0u7qah3"]
+
+[ext_resource type="Script" path="res://prefabs/gui/background.gd" id="1_8yxrh"]
+[ext_resource type="Shader" path="res://scenes/background.gdshader" id="1_ihxuc"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sxpe3"]
+shader = ExtResource("1_ihxuc")
+shader_parameter/OCTAVE = 2
+shader_parameter/mulscale = 5.0
+shader_parameter/height = 0.4
+shader_parameter/tide = 0.1
+shader_parameter/foamthickness = 0.1
+shader_parameter/timescale = 0.5
+shader_parameter/waterdeep = 0.3
+shader_parameter/WATER_COL = Color(0.0745098, 0.0784314, 0.0862745, 1)
+shader_parameter/WATER2_COL = Color(0.0980392, 0.109804, 0.121569, 1)
+shader_parameter/FOAM_COL = Color(0.0862745, 0.0941176, 0.109804, 1)
+
+[sub_resource type="Animation" id="Animation_cirs2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:material:shader_parameter/WATER_COL")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.0745098, 0.0784314, 0.0862745, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Background:material:shader_parameter/WATER2_COL")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.0980392, 0.109804, 0.121569, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Background:material:shader_parameter/FOAM_COL")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.0862745, 0.0941176, 0.109804, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_5vn32"]
+resource_name = "Neutral_To_Clergy"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:material:shader_parameter/WATER_COL")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.0745098, 0.0784314, 0.0862745, 1), Color(0.172549, 0.054902, 0.0509804, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Background:material:shader_parameter/WATER2_COL")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.0980392, 0.109804, 0.121569, 1), Color(0.2, 0.0901961, 0.00392157, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Background:material:shader_parameter/FOAM_COL")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.0862745, 0.0941176, 0.109804, 1), Color(0.235294, 0.109804, 0.00784314, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_h4rfw"]
+resource_name = "Neutral_To_Nobility"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:material:shader_parameter/WATER_COL")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.0745098, 0.0784314, 0.0862745, 1), Color(0.152941, 0.0627451, 0.247059, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Background:material:shader_parameter/WATER2_COL")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.0980392, 0.109804, 0.121569, 1), Color(0.184314, 0.0627451, 0.298039, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Background:material:shader_parameter/FOAM_COL")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.0862745, 0.0941176, 0.109804, 1), Color(0.207843, 0.0745098, 0.329412, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_y1nxg"]
+resource_name = "Neutral_To_Peasantry"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:material:shader_parameter/WATER_COL")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.0745098, 0.0784314, 0.0862745, 1), Color(0.0117647, 0.129412, 0.113725, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Background:material:shader_parameter/WATER2_COL")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.0980392, 0.109804, 0.121569, 1), Color(0.0627451, 0.196078, 0.133333, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Background:material:shader_parameter/FOAM_COL")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.0862745, 0.0941176, 0.109804, 1), Color(0.0313726, 0.156863, 0.0941176, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_kc57g"]
+resource_name = "Peasantry_To_Nobility"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:material:shader_parameter/WATER_COL")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.0117647, 0.129412, 0.113725, 1), Color(0.0745098, 0.0784314, 0.0862745, 1), Color(0.152941, 0.0627451, 0.247059, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Background:material:shader_parameter/WATER2_COL")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.0627451, 0.196078, 0.133333, 1), Color(0.0980392, 0.109804, 0.121569, 1), Color(0.184314, 0.0627451, 0.298039, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Background:material:shader_parameter/FOAM_COL")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.0313726, 0.156863, 0.0941176, 1), Color(0.0862745, 0.0941176, 0.109804, 1), Color(0.207843, 0.0745098, 0.329412, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_3npm7"]
+resource_name = "Peasantry_To_Clergy"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:material:shader_parameter/WATER_COL")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.0117647, 0.129412, 0.113725, 1), Color(0.0745098, 0.0784314, 0.0862745, 1), Color(0.172549, 0.054902, 0.0509804, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Background:material:shader_parameter/WATER2_COL")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.0627451, 0.196078, 0.133333, 1), Color(0.0980392, 0.109804, 0.121569, 1), Color(0.2, 0.0901961, 0.00392157, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Background:material:shader_parameter/FOAM_COL")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.0313726, 0.156863, 0.0941176, 1), Color(0.0862745, 0.0941176, 0.109804, 1), Color(0.235294, 0.109804, 0.00784314, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_6uj72"]
+resource_name = "Nobility_To_Peasantry"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:material:shader_parameter/WATER_COL")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.152941, 0.0627451, 0.247059, 1), Color(0.0745098, 0.0784314, 0.0862745, 1), Color(0.0117647, 0.129412, 0.113725, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Background:material:shader_parameter/WATER2_COL")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.184314, 0.0627451, 0.298039, 1), Color(0.0980392, 0.109804, 0.121569, 1), Color(0.0627451, 0.196078, 0.133333, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Background:material:shader_parameter/FOAM_COL")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.207843, 0.0745098, 0.329412, 1), Color(0.0862745, 0.0941176, 0.109804, 1), Color(0.0313726, 0.156863, 0.0941176, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_cou5v"]
+resource_name = "Clergy_To_Peasantry"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:material:shader_parameter/WATER_COL")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.172549, 0.054902, 0.0509804, 1), Color(0.0745098, 0.0784314, 0.0862745, 1), Color(0.0117647, 0.129412, 0.113725, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Background:material:shader_parameter/WATER2_COL")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.2, 0.0901961, 0.00392157, 1), Color(0.0980392, 0.109804, 0.121569, 1), Color(0.0627451, 0.196078, 0.133333, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Background:material:shader_parameter/FOAM_COL")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.235294, 0.109804, 0.00784314, 1), Color(0.0862745, 0.0941176, 0.109804, 1), Color(0.0313726, 0.156863, 0.0941176, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_aoemt"]
+resource_name = "Nobility_To_Clergy"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:material:shader_parameter/WATER_COL")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.152941, 0.0627451, 0.247059, 1), Color(0.0745098, 0.0784314, 0.0862745, 1), Color(0.172549, 0.054902, 0.0509804, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Background:material:shader_parameter/WATER2_COL")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.184314, 0.0627451, 0.298039, 1), Color(0.0980392, 0.109804, 0.121569, 1), Color(0.2, 0.0901961, 0.00392157, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Background:material:shader_parameter/FOAM_COL")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.207843, 0.0745098, 0.329412, 1), Color(0.0862745, 0.0941176, 0.109804, 1), Color(0.235294, 0.109804, 0.00784314, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_nfnr0"]
+resource_name = "Clergy_To_Nobility"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:material:shader_parameter/WATER_COL")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.172549, 0.054902, 0.0509804, 1), Color(0.0745098, 0.0784314, 0.0862745, 1), Color(0.152941, 0.0627451, 0.247059, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Background:material:shader_parameter/WATER2_COL")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.2, 0.0901961, 0.00392157, 1), Color(0.0980392, 0.109804, 0.121569, 1), Color(0.184314, 0.0627451, 0.298039, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Background:material:shader_parameter/FOAM_COL")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.235294, 0.109804, 0.00784314, 1), Color(0.0862745, 0.0941176, 0.109804, 1), Color(0.207843, 0.0745098, 0.329412, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_3b24j"]
+resource_name = "Clergy_To_Neutral"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:material:shader_parameter/WATER_COL")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.172549, 0.054902, 0.0509804, 1), Color(0.0745098, 0.0784314, 0.0862745, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Background:material:shader_parameter/WATER2_COL")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.2, 0.0901961, 0.00392157, 1), Color(0.0980392, 0.109804, 0.121569, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Background:material:shader_parameter/FOAM_COL")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.235294, 0.109804, 0.00784314, 1), Color(0.0862745, 0.0941176, 0.109804, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_eh64q"]
+resource_name = "Nobility_To_Neutral"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:material:shader_parameter/WATER_COL")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.152941, 0.0627451, 0.247059, 1), Color(0.0745098, 0.0784314, 0.0862745, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Background:material:shader_parameter/WATER2_COL")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.184314, 0.0627451, 0.298039, 1), Color(0.0980392, 0.109804, 0.121569, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Background:material:shader_parameter/FOAM_COL")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.207843, 0.0745098, 0.329412, 1), Color(0.0862745, 0.0941176, 0.109804, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_4noqk"]
+resource_name = "Peasantry_To_Neutral"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:material:shader_parameter/WATER_COL")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.0117647, 0.129412, 0.113725, 1), Color(0.0745098, 0.0784314, 0.0862745, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Background:material:shader_parameter/WATER2_COL")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.0627451, 0.196078, 0.133333, 1), Color(0.0980392, 0.109804, 0.121569, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Background:material:shader_parameter/FOAM_COL")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.0313726, 0.156863, 0.0941176, 1), Color(0.0862745, 0.0941176, 0.109804, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s88wq"]
+_data = {
+"Clergy_To_Neutral": SubResource("Animation_3b24j"),
+"Clergy_To_Nobility": SubResource("Animation_nfnr0"),
+"Clergy_To_Peasantry": SubResource("Animation_cou5v"),
+"Neutral_To_Clergy": SubResource("Animation_5vn32"),
+"Neutral_To_Nobility": SubResource("Animation_h4rfw"),
+"Neutral_To_Peasantry": SubResource("Animation_y1nxg"),
+"Nobility_To_Clergy": SubResource("Animation_aoemt"),
+"Nobility_To_Neutral": SubResource("Animation_eh64q"),
+"Nobility_To_Peasantry": SubResource("Animation_6uj72"),
+"Peasantry_To_Clergy": SubResource("Animation_3npm7"),
+"Peasantry_To_Neutral": SubResource("Animation_4noqk"),
+"Peasantry_To_Nobility": SubResource("Animation_kc57g"),
+"RESET": SubResource("Animation_cirs2")
+}
+
+[node name="Background" type="Node2D"]
+script = ExtResource("1_8yxrh")
+
+[node name="Background" type="ColorRect" parent="."]
+show_behind_parent = true
+material = SubResource("ShaderMaterial_sxpe3")
+custom_minimum_size = Vector2(1920, 1080)
+offset_right = 1920.0
+offset_bottom = 1080.0
+metadata/_edit_lock_ = true
+
+[node name="AP_Hate" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_s88wq")
+}
+
+[connection signal="animation_finished" from="AP_Hate" to="." method="_on_ap_hate_animation_finished"]
