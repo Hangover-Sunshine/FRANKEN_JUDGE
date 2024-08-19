@@ -6,10 +6,10 @@ extends Button
 @onready var folder_label = $Folder_Labels_Vbox/Folder_Label
 
 func _on_button_down():
-	folder_labels_vbox.visible = false
+	pass
 
 func _on_button_up():
-	folder_labels_vbox.visible = true
+	pass
 
 func set_case_title(case_name:String):
 	folder_label.text = case_name

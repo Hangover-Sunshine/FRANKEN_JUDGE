@@ -72,20 +72,12 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0.839216, 0.905882, 0.972549, 1)
 theme_override_fonts/font = ExtResource("1_4h85h")
 theme_override_font_sizes/font_size = 250
-text = "FRANKEN-"
-horizontal_alignment = 1
-
-[node name="Header1_Label2" type="Label" parent="Splash_MC/Splash_VBox/Header_VBox"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.756863, 0.85098, 0.94902, 1)
-theme_override_fonts/font = ExtResource("1_4h85h")
-theme_override_font_sizes/font_size = 250
-text = "STEIN'S"
+text = "FRANKEN"
 horizontal_alignment = 1
 
 [node name="Header2_Label" type="Label" parent="Splash_MC/Splash_VBox/Header_VBox"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.611765, 0.705882, 0.8, 1)
+theme_override_colors/font_color = Color(0.756863, 0.85098, 0.94902, 1)
 theme_override_fonts/font = ExtResource("1_4h85h")
 theme_override_font_sizes/font_size = 250
 text = "JUDGE"
