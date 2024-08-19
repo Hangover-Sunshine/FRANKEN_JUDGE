@@ -1,11 +1,13 @@
-[gd_scene load_steps=40 format=3 uid="uid://2nl8bwm5pvgk"]
+[gd_scene load_steps=43 format=3 uid="uid://2nl8bwm5pvgk"]
 
 [ext_resource type="Script" path="res://scripts/game/game_overlay.gd" id="1_hcafl"]
 [ext_resource type="FontFile" uid="uid://73eyyuro8nvv" path="res://assets/fonts/PirataOne.ttf" id="1_qps4p"]
 [ext_resource type="FontFile" uid="uid://cqxld14ctgocv" path="res://assets/fonts/MedulaOne.ttf" id="2_o6xmb"]
 [ext_resource type="PackedScene" uid="uid://ntpnt0u7qah3" path="res://prefabs/gui/background.tscn" id="2_yuue2"]
 [ext_resource type="Script" path="res://scripts/game/game_overlay/reputation.gd" id="3_4svti"]
+[ext_resource type="Texture2D" uid="uid://dvg5oc3axuiqe" path="res://assets/particle/Circle1.png" id="3_bg1du"]
 [ext_resource type="PackedScene" uid="uid://dd1ytb4xypau" path="res://prefabs/button_folder_red.tscn" id="3_fwt70"]
+[ext_resource type="PackedScene" uid="uid://c2r6cr8gkoe70" path="res://prefabs/gui/frank.tscn" id="3_pgma6"]
 [ext_resource type="PackedScene" uid="uid://bgdpaito5ide6" path="res://prefabs/button_folder_blue.tscn" id="4_4qtwl"]
 [ext_resource type="Script" path="res://scripts/game/game_overlay/day_counter.gd" id="4_lmcgd"]
 [ext_resource type="Script" path="res://scripts/game/game_overlay/society.gd" id="5_1hbbm"]
@@ -1018,6 +1020,10 @@ _data = {
 "RESET": SubResource("Animation_glr1j")
 }
 
+[sub_resource type="Curve" id="Curve_ehmbv"]
+_data = [Vector2(0.831461, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -7.82419, 0.0, 0, 0]
+point_count = 2
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_63sq7"]
 bg_color = Color(0.0784314, 0.4, 0.356863, 1)
 corner_radius_top_left = 50
@@ -1137,34 +1143,32 @@ offset_right = 959.0
 offset_bottom = 8.0
 mouse_filter = 2
 
-[node name="ColorRect" type="ColorRect" parent="Portrait"]
-visible = false
-modulate = Color(0.756863, 0.85098, 0.94902, 1)
-show_behind_parent = true
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -175.0
-offset_top = 42.0
-offset_right = 175.0
-offset_bottom = 392.0
-grow_horizontal = 2
-pivot_offset = Vector2(175, 0)
+[node name="Frank_Frame" type="CPUParticles2D" parent="Portrait"]
+modulate = Color(0.117647, 0.117647, 0.164706, 1)
+z_index = -1
+position = Vector2(0, 281)
+amount = 50
+preprocess = 25.0
+speed_scale = 0.25
+texture = ExtResource("3_bg1du")
+emission_shape = 3
+emission_rect_extents = Vector2(75, 75)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 150.0
+initial_velocity_max = 150.0
+angular_velocity_min = -5.0
+angular_velocity_max = 5.0
+radial_accel_min = 5.0
+radial_accel_max = 5.0
+angle_min = -180.0
+angle_max = 180.0
+scale_amount_min = 1.5
+scale_amount_max = 1.5
+scale_amount_curve = SubResource("Curve_ehmbv")
 
-[node name="ColorRect2" type="ColorRect" parent="Portrait/ColorRect"]
-layout_mode = 0
-offset_left = 26.0
-offset_top = 21.0
-offset_right = 306.0
-offset_bottom = 301.0
-scale = Vector2(1.0512, 1.06836)
-color = Color(0.815686, 0.815686, 0.815686, 1)
-
-[node name="TextureRect" type="TextureRect" parent="Portrait"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Frank" parent="Portrait" instance=ExtResource("3_pgma6")]
+position = Vector2(7, 294)
 
 [node name="Reputation" type="Control" parent="."]
 layout_mode = 3
@@ -1851,7 +1855,6 @@ size_flags_vertical = 4
 alignment = 1
 
 [node name="Case_Header" type="Label" parent="CaseBrief/Casebrief_Vbox/Header_Hbox"]
-visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_qps4p")
 theme_override_font_sizes/font_size = 100
@@ -1859,7 +1862,6 @@ text = "CASE "
 horizontal_alignment = 1
 
 [node name="Case_Number_Letter" type="Label" parent="CaseBrief/Casebrief_Vbox/Header_Hbox"]
-visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_qps4p")
 theme_override_font_sizes/font_size = 100
@@ -1867,7 +1869,6 @@ text = "A"
 horizontal_alignment = 1
 
 [node name="Dash_Header" type="Label" parent="CaseBrief/Casebrief_Vbox/Header_Hbox"]
-visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_qps4p")
 theme_override_font_sizes/font_size = 100
@@ -1875,7 +1876,6 @@ text = " -"
 horizontal_alignment = 1
 
 [node name="CaseName_Header" type="Label" parent="CaseBrief/Casebrief_Vbox/Header_Hbox"]
-visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_qps4p")
 theme_override_font_sizes/font_size = 100
@@ -1883,7 +1883,6 @@ text = " Name of case"
 horizontal_alignment = 1
 
 [node name="Casebrief_Body" type="Label" parent="CaseBrief/Casebrief_Vbox"]
-modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_o6xmb")
 theme_override_font_sizes/font_size = 90
@@ -1891,7 +1890,6 @@ text = "Blagh blagh blagh blagh blagh blagh blagh"
 horizontal_alignment = 1
 
 [node name="Casebrief_Instructions" type="VBoxContainer" parent="CaseBrief/Casebrief_Vbox"]
-visible = false
 layout_mode = 2
 
 [node name="Casebrief_Instruction" type="Label" parent="CaseBrief/Casebrief_Vbox/Casebrief_Instructions"]
@@ -1962,7 +1960,7 @@ anchor_right = 0.5
 offset_left = -360.648
 offset_top = 100.0
 offset_right = 339.352
-offset_bottom = 900.011
+offset_bottom = 900.012
 grow_horizontal = 2
 pivot_offset = Vector2(350, 0)
 CaseID = 1
@@ -1990,7 +1988,7 @@ mouse_filter = 2
 
 [node name="Scale" type="Node2D" parent="."]
 visible = false
-position = Vector2(960, 1508)
+position = Vector2(960, 740)
 script = ExtResource("11_svn5q")
 HoldDuration = 1.5
 
@@ -2015,7 +2013,7 @@ anchor_bottom = 1.0
 offset_left = -400.5
 offset_top = -492.0
 offset_right = -55.5
-offset_bottom = -71.9798
+offset_bottom = -71.9796
 grow_horizontal = 2
 grow_vertical = 0
 
@@ -2038,7 +2036,7 @@ anchors_preset = 0
 offset_left = 430.0
 offset_top = 500.0
 offset_right = 775.003
-offset_bottom = 920.005
+offset_bottom = 920.006
 rotation = 0.174533
 mouse_filter = 2
 script = ExtResource("19_u43l4")
