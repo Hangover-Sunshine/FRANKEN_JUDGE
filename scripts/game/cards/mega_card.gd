@@ -1,6 +1,5 @@
 extends Panel
 
-@export var IsWinningCard:bool = false
 @export var IsRight:bool = false
 
 @onready var clergy_card = $Clergy_Card
@@ -8,9 +7,7 @@ extends Panel
 @onready var peasant_card = $Peasant_Card
 
 func _ready():
-	if IsWinningCard:
-		disable()
-	##
+	disable()
 ##
 
 func enable():
