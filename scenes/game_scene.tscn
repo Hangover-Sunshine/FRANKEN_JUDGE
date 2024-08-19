@@ -32,6 +32,9 @@ script = ExtResource("4_fdghg")
 
 [node name="RepuationStats" type="Node" parent="."]
 script = ExtResource("5_4xgmw")
+StartingClergyRep = 70
+StartingNobilityRep = 70
+StartingPeasantRep = 70
 
 [node name="HubPause" parent="." instance=ExtResource("7_3lo3u")]
 visible = false
