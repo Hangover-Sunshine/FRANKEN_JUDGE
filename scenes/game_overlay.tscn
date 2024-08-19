@@ -675,6 +675,7 @@ tracks/15/keys = {
 
 [sub_resource type="Animation" id="Animation_8ymef"]
 resource_name = "Part5"
+length = 10.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -721,7 +722,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [true]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -742,10 +743,10 @@ tracks/5/path = NodePath("Society:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(4, 5),
+"transitions": PackedFloat32Array(-2, 1),
 "update": 0,
-"values": [Vector2(1054, 562)]
+"values": [Vector2(1194, 74), Vector2(1092, 550)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -757,7 +758,79 @@ tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Society:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(4, 4.5, 4.7, 5, 5.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 0.5),
+"update": 0,
+"values": [0.0, -0.174533, -0.174533, 0.0698132, 0.0]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("LilDays:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.6, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("WinningCard:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 1.5, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(794, 1131), Vector2(794, 1131), Vector2(430, 500)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Scale:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 1, 1.5),
+"transitions": PackedFloat32Array(-0.5, 2, 1),
+"update": 0,
+"values": [Vector2(960, 740), Vector2(960, 696), Vector2(960, 1508)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("WinningCard:rotation")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(1.3, 1.5, 2.4, 2.6, 2.8, 3.1, 3.5, 5.5, 5.8, 6.1, 6.4, 6.7, 7, 7.3, 7.6, 7.9, 8.2, 8.5, 8.8, 9.1),
+"transitions": PackedFloat32Array(1, 1, 0.5, -0.5, -2, 0.5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.0872665, -0.0872665, 0.0872665, -0.0349066, 0.0174533, 0.0, 0.0, -0.174533, 0.174533, -0.174533, 0.174533, -0.174533, 0.174533, -0.174533, 0.174533, -0.174533, 0.174533, -0.174533, 0.174533]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("WinningCard:modulate")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 8.2, 9.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_no2no"]
@@ -781,10 +854,10 @@ tracks/1/path = NodePath("Reputation:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(267, 562)]
+"values": [Vector2(118, 51), Vector2(267, 562)]
 }
 
 [sub_resource type="Animation" id="Animation_glr1j"]
@@ -1597,6 +1670,7 @@ text = "(+00)"
 
 [node name="LilDays" type="Control" parent="."]
 visible = false
+modulate = Color(1, 1, 1, 0)
 layout_mode = 3
 anchors_preset = 0
 offset_left = 431.0
@@ -1629,7 +1703,6 @@ text = "00 / 30"
 horizontal_alignment = 1
 
 [node name="BigDays" type="Control" parent="."]
-modulate = Color(1, 1, 1, 0.9)
 layout_mode = 3
 anchors_preset = 0
 offset_left = 943.0
@@ -1640,6 +1713,7 @@ mouse_filter = 2
 script = ExtResource("4_lmcgd")
 
 [node name="Day_Header" type="Label" parent="BigDays"]
+visible = false
 layout_mode = 0
 offset_left = -366.0
 offset_top = -95.0
@@ -1651,6 +1725,7 @@ text = "DAY"
 horizontal_alignment = 1
 
 [node name="Day_Number_Header" type="Label" parent="BigDays"]
+visible = false
 layout_mode = 0
 offset_left = -66.0
 offset_top = -95.0
@@ -1815,7 +1890,7 @@ mouse_filter = 2
 
 [node name="Scale" type="Node2D" parent="."]
 visible = false
-position = Vector2(960, 740)
+position = Vector2(960, 1508)
 script = ExtResource("11_svn5q")
 HoldDuration = 1.5
 
@@ -1832,15 +1907,16 @@ position = Vector2(-513, 246)
 texture = ExtResource("9_7s0gt")
 
 [node name="LeftMegaCard" parent="Scale/Scale_Body/Scale_Left" instance=ExtResource("18_4l78d")]
+visible = false
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -400.5
-offset_top = -492.0
+offset_top = -1532.0
 offset_right = -55.5
-offset_bottom = -71.9843
+offset_bottom = -1111.98
 grow_horizontal = 2
 grow_vertical = 0
 
@@ -1849,20 +1925,23 @@ position = Vector2(514, 246)
 texture = ExtResource("9_7s0gt")
 
 [node name="RightMegaCard" parent="Scale/Scale_Body/Scale_Right" instance=ExtResource("18_4l78d")]
+visible = false
 offset_left = -170.0
-offset_top = -410.0
+offset_top = -1450.0
 offset_right = 175.0
-offset_bottom = 10.0
+offset_bottom = -1030.0
 
 [node name="WinningCard" type="Control" parent="."]
 visible = false
+modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(345, 420)
 layout_mode = 3
 anchors_preset = 0
-offset_left = 434.0
-offset_top = 507.0
-offset_right = 779.0
-offset_bottom = 927.0
+offset_left = 430.0
+offset_top = 500.0
+offset_right = 775.002
+offset_bottom = 920.003
+rotation = 0.174533
 mouse_filter = 2
 script = ExtResource("19_u43l4")
 
