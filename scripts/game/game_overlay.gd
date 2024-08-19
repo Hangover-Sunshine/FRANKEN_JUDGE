@@ -4,6 +4,9 @@ signal cases_left(cases:Array[BaseCaseResource])
 signal case_resolved(effects:Array[BaseEffectResource])
 
 @onready var ap_states = $AP_States
+@onready var clergy_bolt = $ClergyBolt
+@onready var nobility_bolt = $NobilityBolt
+@onready var peasant_bolt = $PeasantBolt
 
 var _cases:Array[BaseCaseResource]
 var _case:BaseCaseResource
@@ -13,7 +16,6 @@ var _can_click_to_proceed:bool = false
 
 # 0 = day, 1 = case pick, 2 = case brief, 3 = scales, 4 = results
 var curr_screen:int = 0
-
 
 func initialize(max_num_days:int):
 	$LilDays.set_day_total(max_num_days)
@@ -112,6 +114,8 @@ func _case_complete(case:BaseCaseResource, faction:GlobalData.Faction, chose_A:b
 	
 	var effects:Array[BaseEffectResource] = []
 	
+	var affected_parties:Array[GlobalData.Faction]
+	
 	if case.PARTY_A == case.PARTY_B:
 		if chose_A:
 			effects = case.EFFECTS_A
@@ -130,16 +134,52 @@ func _case_complete(case:BaseCaseResource, faction:GlobalData.Faction, chose_A:b
 		##
 	##
 	
+	for eff in effects:
+		if not (eff.Group in affected_parties):
+			affected_parties.append(eff.Group)
+		##
+	##
+	
+	var starts = [Vector2(600, 570), Vector2(600, 700), Vector2(600, 830)]
+	var ends = Vector2(1110, 730)
+	
 	emit_signal("case_resolved", effects)
 	
 	ap_states.play("Part5")
 	
-	await get_tree().create_timer(6.5).timeout
+	await get_tree().create_timer(5.6).timeout
+	
+	# fire off the lightnings
+	for group in affected_parties:
+		if group == GlobalData.Faction.PEASANTS:
+			peasant_bolt.set_start_position(starts[0])
+			peasant_bolt.set_target_position(ends)
+			peasant_bolt.Emit = true
+			starts.pop_front()
+		elif group == GlobalData.Faction.NOBILITY:
+			nobility_bolt.set_start_position(starts[0])
+			nobility_bolt.set_target_position(ends)
+			nobility_bolt.Emit = true
+			starts.pop_front()
+		else:
+			clergy_bolt.set_start_position(starts[0])
+			clergy_bolt.set_target_position(ends)
+			clergy_bolt.Emit = true
+			starts.pop_front()
+		##
+	##
+	
+	await get_tree().create_timer(0.9).timeout
 	
 	# re-add the modifiers
 	$Society.show_changes_to_stats(effects)
 	
 	await get_tree().create_timer(2.3).timeout
+	
+	# stop
+	peasant_bolt.Emit = false
+	nobility_bolt.Emit = false
+	clergy_bolt.Emit = false
 	
 	# hide the mods, update the table
 	$Society.hide_changes_to_stats()

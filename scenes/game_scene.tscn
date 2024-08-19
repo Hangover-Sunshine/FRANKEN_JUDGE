@@ -25,7 +25,6 @@ INITIAL_LOAD_DELAY = 0.4
 
 [node name="REMOVEME" type="Node" parent="."]
 script = ExtResource("1_uelm6")
-BANK_NAME = "no"
 TRANSITIONS = Array[Resource("res://addons/verho/resources/TransitionResource.gd")]([ExtResource("2_hubdk")])
 
 [node name="FactionStats" type="Node" parent="."]
