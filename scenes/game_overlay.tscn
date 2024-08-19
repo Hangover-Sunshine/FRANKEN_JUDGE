@@ -1,8 +1,9 @@
-[gd_scene load_steps=38 format=3 uid="uid://2nl8bwm5pvgk"]
+[gd_scene load_steps=40 format=3 uid="uid://2nl8bwm5pvgk"]
 
 [ext_resource type="Script" path="res://scripts/game/game_overlay.gd" id="1_hcafl"]
 [ext_resource type="FontFile" uid="uid://73eyyuro8nvv" path="res://assets/fonts/PirataOne.ttf" id="1_qps4p"]
 [ext_resource type="FontFile" uid="uid://cqxld14ctgocv" path="res://assets/fonts/MedulaOne.ttf" id="2_o6xmb"]
+[ext_resource type="PackedScene" uid="uid://ntpnt0u7qah3" path="res://prefabs/gui/background.tscn" id="2_yuue2"]
 [ext_resource type="Script" path="res://scripts/game/game_overlay/reputation.gd" id="3_4svti"]
 [ext_resource type="PackedScene" uid="uid://dd1ytb4xypau" path="res://prefabs/button_folder_red.tscn" id="3_fwt70"]
 [ext_resource type="PackedScene" uid="uid://bgdpaito5ide6" path="res://prefabs/button_folder_blue.tscn" id="4_4qtwl"]
@@ -11,7 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://dx3ikj0a6uvw3" path="res://prefabs/button_folder_yellow.tscn" id="5_6ykol"]
 [ext_resource type="Script" path="res://scripts/game/game_overlay/case_brief.gd" id="5_28cn6"]
 [ext_resource type="Script" path="res://scripts/game/game_overlay/case_pick.gd" id="5_e5niu"]
-[ext_resource type="Shader" path="res://scenes/background.gdshader" id="6_7v3db"]
 [ext_resource type="Texture2D" uid="uid://dffc6xevcshxc" path="res://assets/gui/Society_Sheet.png" id="7_ntdta"]
 [ext_resource type="Texture2D" uid="uid://dog8w28lktodb" path="res://assets/gui/Scale_Body.png" id="7_tixm6"]
 [ext_resource type="Texture2D" uid="uid://b65tb5y0dqca8" path="res://assets/gui/Scale_Arm.png" id="8_lnds5"]
@@ -19,19 +19,6 @@
 [ext_resource type="Script" path="res://scripts/game/game_overlay/case_before_you.gd" id="11_svn5q"]
 [ext_resource type="PackedScene" uid="uid://2ccarx7gmy63" path="res://prefabs/scale_cards/mega_card.tscn" id="18_4l78d"]
 [ext_resource type="Script" path="res://scripts/game/game_overlay/winning_card_display.gd" id="19_u43l4"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_3xfqu"]
-shader = ExtResource("6_7v3db")
-shader_parameter/OCTAVE = 2
-shader_parameter/mulscale = 5.0
-shader_parameter/height = 0.4
-shader_parameter/tide = 0.1
-shader_parameter/foamthickness = 0.1
-shader_parameter/timescale = 0.5
-shader_parameter/waterdeep = 0.3
-shader_parameter/WATER_COL = Color(0.0980392, 0.109804, 0.121569, 1)
-shader_parameter/WATER2_COL = Color(0.0745098, 0.0784314, 0.0862745, 1)
-shader_parameter/FOAM_COL = Color(0.0862745, 0.0941176, 0.109804, 1)
 
 [sub_resource type="Animation" id="Animation_fi0l2"]
 resource_name = "Part1"
@@ -467,14 +454,26 @@ tracks/10/keys = {
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("CaseBrief/Casebrief_Vbox/Casebrief_Instruction:modulate")
+tracks/11/path = NodePath("CaseBrief/Casebrief_Vbox/Casebrief_Instructions:visible")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
-"times": PackedFloat32Array(3.5, 4.5),
+"times": PackedFloat32Array(0, 3.5),
 "transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("CaseBrief/Casebrief_Vbox/Casebrief_Instructions:modulate")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 3.5, 4.5),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_xffcq"]
@@ -995,6 +994,18 @@ tracks/7/keys = {
 "update": 0,
 "values": [Vector2(118, 51)]
 }
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("CaseBrief/Casebrief_Vbox/Casebrief_Instructions:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rkl8t"]
 _data = {
@@ -1067,16 +1078,50 @@ ProgressBar/fonts/font = ExtResource("2_o6xmb")
 ProgressBar/styles/background = SubResource("StyleBoxFlat_6ovd8")
 ProgressBar/styles/fill = SubResource("StyleBoxFlat_qb33q")
 
+[sub_resource type="Animation" id="Animation_a7bw6"]
+resource_name = "Flash"
+length = 2.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.392157), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_1vv4j"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_so7fa"]
+_data = {
+"Flash": SubResource("Animation_a7bw6"),
+"RESET": SubResource("Animation_1vv4j")
+}
+
 [node name="Game_Overlay" type="Node2D"]
 script = ExtResource("1_hcafl")
 
-[node name="Background" type="ColorRect" parent="."]
+[node name="Background" parent="." instance=ExtResource("2_yuue2")]
 show_behind_parent = true
-material = SubResource("ShaderMaterial_3xfqu")
-custom_minimum_size = Vector2(1920, 1080)
-offset_right = 1920.0
-offset_bottom = 1080.0
-metadata/_edit_lock_ = true
+z_index = -1
 
 [node name="AP_States" type="AnimationPlayer" parent="."]
 libraries = {
@@ -1093,6 +1138,7 @@ offset_bottom = 8.0
 mouse_filter = 2
 
 [node name="ColorRect" type="ColorRect" parent="Portrait"]
+visible = false
 modulate = Color(0.756863, 0.85098, 0.94902, 1)
 show_behind_parent = true
 layout_mode = 1
@@ -1126,7 +1172,7 @@ anchors_preset = 0
 offset_left = 118.0
 offset_top = 51.0
 offset_right = 158.0
-offset_bottom = 90.9999
+offset_bottom = 90.9998
 mouse_filter = 2
 script = ExtResource("3_4svti")
 
@@ -1805,6 +1851,7 @@ size_flags_vertical = 4
 alignment = 1
 
 [node name="Case_Header" type="Label" parent="CaseBrief/Casebrief_Vbox/Header_Hbox"]
+visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_qps4p")
 theme_override_font_sizes/font_size = 100
@@ -1812,6 +1859,7 @@ text = "CASE "
 horizontal_alignment = 1
 
 [node name="Case_Number_Letter" type="Label" parent="CaseBrief/Casebrief_Vbox/Header_Hbox"]
+visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_qps4p")
 theme_override_font_sizes/font_size = 100
@@ -1819,6 +1867,7 @@ text = "A"
 horizontal_alignment = 1
 
 [node name="Dash_Header" type="Label" parent="CaseBrief/Casebrief_Vbox/Header_Hbox"]
+visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_qps4p")
 theme_override_font_sizes/font_size = 100
@@ -1826,6 +1875,7 @@ text = " -"
 horizontal_alignment = 1
 
 [node name="CaseName_Header" type="Label" parent="CaseBrief/Casebrief_Vbox/Header_Hbox"]
+visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_qps4p")
 theme_override_font_sizes/font_size = 100
@@ -1833,19 +1883,32 @@ text = " Name of case"
 horizontal_alignment = 1
 
 [node name="Casebrief_Body" type="Label" parent="CaseBrief/Casebrief_Vbox"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_o6xmb")
 theme_override_font_sizes/font_size = 90
 text = "Blagh blagh blagh blagh blagh blagh blagh"
 horizontal_alignment = 1
 
-[node name="Casebrief_Instruction" type="Label" parent="CaseBrief/Casebrief_Vbox"]
+[node name="Casebrief_Instructions" type="VBoxContainer" parent="CaseBrief/Casebrief_Vbox"]
+visible = false
+layout_mode = 2
+
+[node name="Casebrief_Instruction" type="Label" parent="CaseBrief/Casebrief_Vbox/Casebrief_Instructions"]
+custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_o6xmb")
 theme_override_font_sizes/font_size = 90
 text = "Press BUTTON to CONTINUE
 "
 horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="AP_CB_I_Flash" type="AnimationPlayer" parent="CaseBrief/Casebrief_Vbox/Casebrief_Instructions/Casebrief_Instruction"]
+libraries = {
+"": SubResource("AnimationLibrary_so7fa")
+}
+autoplay = "Flash"
 
 [node name="CasePick" type="Control" parent="."]
 visible = false
@@ -1899,7 +1962,7 @@ anchor_right = 0.5
 offset_left = -360.648
 offset_top = 100.0
 offset_right = 339.352
-offset_bottom = 900.009
+offset_bottom = 900.011
 grow_horizontal = 2
 pivot_offset = Vector2(350, 0)
 CaseID = 1
@@ -1944,16 +2007,15 @@ position = Vector2(-513, 246)
 texture = ExtResource("9_7s0gt")
 
 [node name="LeftMegaCard" parent="Scale/Scale_Body/Scale_Left" instance=ExtResource("18_4l78d")]
-visible = false
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -400.5
-offset_top = -1532.0
+offset_top = -492.0
 offset_right = -55.5
-offset_bottom = -1111.98
+offset_bottom = -71.9798
 grow_horizontal = 2
 grow_vertical = 0
 
@@ -1962,11 +2024,10 @@ position = Vector2(514, 246)
 texture = ExtResource("9_7s0gt")
 
 [node name="RightMegaCard" parent="Scale/Scale_Body/Scale_Right" instance=ExtResource("18_4l78d")]
-visible = false
 offset_left = -170.0
-offset_top = -1450.0
+offset_top = -410.0
 offset_right = 175.0
-offset_bottom = -1030.0
+offset_bottom = 10.0
 
 [node name="WinningCard" type="Control" parent="."]
 visible = false
@@ -1976,8 +2037,8 @@ layout_mode = 3
 anchors_preset = 0
 offset_left = 430.0
 offset_top = 500.0
-offset_right = 775.002
-offset_bottom = 920.003
+offset_right = 775.003
+offset_bottom = 920.005
 rotation = 0.174533
 mouse_filter = 2
 script = ExtResource("19_u43l4")

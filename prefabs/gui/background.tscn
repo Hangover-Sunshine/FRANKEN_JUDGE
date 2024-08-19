@@ -561,5 +561,3 @@ metadata/_edit_lock_ = true
 libraries = {
 "": SubResource("AnimationLibrary_s88wq")
 }
-
-[connection signal="animation_finished" from="AP_Hate" to="." method="_on_ap_hate_animation_finished"]
