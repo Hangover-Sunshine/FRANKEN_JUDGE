@@ -54,7 +54,7 @@ func _on_button_button_up():
 ##
 
 func _on_timer_timeout():
-	emit_signal("selected_peasant")
+	emit_signal("selected")
 ##
 
 func _on_mouse_entered():
