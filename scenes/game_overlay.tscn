@@ -908,10 +908,10 @@ tracks/2/path = NodePath("Reputation:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.7, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.2, 0.7, 1, 1.5, 1.7, 2, 2.3, 2.6, 2.9, 3.2, 3.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [0.0, 0.0872665, 0.0872665, 0.0]
+"values": [0.0, 0.0872665, 0.0872665, 0.0, 0.0, 0.10472, -0.261799, -0.10472, 0.139626, -0.174533, 0.15708, 0.0]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -920,10 +920,10 @@ tracks/3/path = NodePath("Society:scale")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 1.2, 1.5, 1.9, 2.3, 2.6, 2.9),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 1.2, 1.5, 1.9, 2.3, 2.6, 2.9, 3.2, 3.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1.05, 0.95), Vector2(0.95, 1.05), Vector2(1.05, 0.95), Vector2(1.05, 1.05), Vector2(1, 1)]
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1.05, 0.95), Vector2(0.95, 1.05), Vector2(1.05, 0.95), Vector2(1.05, 1.05), Vector2(0.95, 0.9), Vector2(0.9, 1.05), Vector2(1, 1)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -932,10 +932,10 @@ tracks/4/path = NodePath("Society:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 3.1, 4.2, 4.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 1.2, 1.9, 3.1, 4.2, 4.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(1092, 550), Vector2(1092, 550), Vector2(1092, 550), Vector2(1194, 74)]
+"values": [Vector2(1092, 550), Vector2(1092, 550), Vector2(1092, 450), Vector2(1092, 450), Vector2(1092, 550), Vector2(1194, 74)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -960,6 +960,18 @@ tracks/6/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Society:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 1.2, 1.5, 4.3, 4.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, -0.261799, -0.261799, 0.0]
 }
 
 [sub_resource type="Animation" id="Animation_glr1j"]
@@ -1500,12 +1512,13 @@ scale_amount_curve = SubResource("Curve_ehmbv")
 position = Vector2(7, 294)
 
 [node name="Reputation" type="Control" parent="."]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 3
 anchors_preset = 0
 offset_left = 118.0
 offset_top = 51.0
 offset_right = 158.0
-offset_bottom = 90.9999
+offset_bottom = 90.9998
 mouse_filter = 2
 script = ExtResource("3_4svti")
 
@@ -1635,6 +1648,7 @@ text = "(+00)"
 horizontal_alignment = 1
 
 [node name="Society" type="Control" parent="."]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 3
 anchors_preset = 0
 offset_left = 1194.0
@@ -2279,9 +2293,9 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 269.352
+offset_left = 289.352
 offset_top = 185.0
-offset_right = 969.352
+offset_right = 989.352
 offset_bottom = 985.0
 grow_horizontal = 2
 rotation = 0.20944
@@ -2293,9 +2307,9 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -220.648
+offset_left = -200.648
 offset_top = 100.0
-offset_right = 479.352
+offset_right = 499.352
 offset_bottom = 900.013
 grow_horizontal = 2
 pivot_offset = Vector2(350, 0)
@@ -2306,9 +2320,9 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -728.648
+offset_left = -708.648
 offset_top = 184.0
-offset_right = -28.648
+offset_right = -8.64801
 offset_bottom = 984.0
 grow_horizontal = 2
 rotation = -0.20944
@@ -2347,10 +2361,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 291.0
-offset_top = -1286.0
-offset_right = 636.0
-offset_bottom = -865.98
+offset_left = 521.5
+offset_top = -1204.0
+offset_right = 866.5
+offset_bottom = -783.98
 grow_horizontal = 2
 grow_vertical = 0
 
@@ -2383,6 +2397,7 @@ libraries = {
 
 [node name="WinningCard" type="Control" parent="."]
 visible = false
+modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(345, 420)
 layout_mode = 3
 anchors_preset = 0
@@ -2390,6 +2405,7 @@ offset_left = 430.0
 offset_top = 500.0
 offset_right = 775.0
 offset_bottom = 920.01
+rotation = 0.174533
 mouse_filter = 2
 script = ExtResource("19_u43l4")
 
@@ -2406,9 +2422,5 @@ offset_right = 172.5
 offset_bottom = 0.000366211
 grow_horizontal = 2
 grow_vertical = 0
-
-[node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(1110, 730)
-gizmo_extents = 214.0
 
 [connection signal="animation_finished" from="AP_States" to="." method="_on_ap_states_animation_finished"]

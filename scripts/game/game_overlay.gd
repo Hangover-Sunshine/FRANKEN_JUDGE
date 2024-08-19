@@ -189,15 +189,34 @@ func _case_complete(case:BaseCaseResource, faction:GlobalData.Faction, chose_A:b
 func _tally_finished():
 	ap_states.play("Part6")
 	
-	await get_tree().create_timer(1.8).timeout
+	await get_tree().create_timer(1.5).timeout
+	
+	peasant_bolt.set_start_position(Vector2(1450, 630))
+	peasant_bolt.set_target_position(Vector2(860, 680))
+	peasant_bolt.Emit = true
+	
+	nobility_bolt.set_start_position(Vector2(1450, 630))
+	nobility_bolt.set_target_position(Vector2(860, 740))
+	nobility_bolt.Emit = true
+	
+	clergy_bolt.set_start_position(Vector2(1450, 630))
+	clergy_bolt.set_target_position(Vector2(860, 800))
+	clergy_bolt.Emit = true
+	
+	await get_tree().create_timer(0.3).timeout
 	
 	# Show the tallies
 	$Reputation.show_changes()
 	
-	await get_tree().create_timer(2.7).timeout
+	await get_tree().create_timer(1.7).timeout
+	
+	peasant_bolt.Emit = false
+	nobility_bolt.Emit = false
+	clergy_bolt.Emit = false
+	
+	await get_tree().create_timer(1.0).timeout
 	
 	# Iterate, hide tallies once they hit 0
-	
 	$Reputation.update_reputations()
 ##
 # ============== BOTTOM HALF CONTROL ============== #
