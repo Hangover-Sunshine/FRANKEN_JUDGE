@@ -48,10 +48,12 @@ func show_labels(card_desc, effects:Array[BaseEffectResource]):
 
 func _on_button_button_down():
 	$Timer.start(countdown_for_selection)
+	emit_signal("pressed_down")
 ##
 
 func _on_button_button_up():
 	$Timer.stop()
+	emit_signal("released")
 ##
 
 func _on_timer_timeout():

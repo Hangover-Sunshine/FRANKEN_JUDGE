@@ -1,6 +1,7 @@
 extends Panel
 
 @export var IsWinningCard:bool = false
+@export var IsRight:bool = false
 
 @onready var clergy_card = $Clergy_Card
 @onready var nobility_card = $Nobility_Card

@@ -1,27 +1,46 @@
 extends Node2D
 
 signal case_complete(case:BaseCaseResource, faction:GlobalData.Faction, chose_left:bool)
+signal left_pressed
+signal left_released
+signal right_pressed
+signal right_released
 
 @export var HoldDuration:float = 3
 
 @onready var left_mega_card = $Scale_Body/Scale_Left/LeftMegaCard
 @onready var right_mega_card = $Scale_Body/Scale_Right/RightMegaCard
+@onready var ap_scale_control = $AP_ScaleControl
+@onready var hand_over_left = $HandOverLeft
+@onready var hand_over_right = $HandOverRight
 
 var _case:BaseCaseResource
 var _aPicks
 var _bPicks
 
 func _ready():
+	GlobalSignals.connect("hovered_over_card", _mouse_hovering)
+	GlobalSignals.connect("not_hovering", _mouse_not_hovering)
+	
 	left_mega_card.set_countdown_time(HoldDuration)
 	right_mega_card.set_countdown_time(HoldDuration)
 	
 	left_mega_card.peasant_card.connect("selected", _peasants_selected)
+	left_mega_card.peasant_card.connect("pressed_down", _left_selected)
+	left_mega_card.peasant_card.connect("released", _left_released)
 	left_mega_card.nobility_card.connect("selected", _nobility_selected)
+	left_mega_card.nobility_card.connect("pressed_down", _left_selected)
+	left_mega_card.nobility_card.connect("released", _left_released)
 	left_mega_card.clergy_card.connect("selected", _clergy_selected)
+	left_mega_card.clergy_card.connect("pressed_down", _left_selected)
+	left_mega_card.clergy_card.connect("released", _left_released)
 	
 	right_mega_card.peasant_card.connect("selected", _peasants_selected)
+	
 	right_mega_card.nobility_card.connect("selected", _nobility_selected)
+	
 	right_mega_card.clergy_card.connect("selected", _clergy_selected)
+	
 ##
 
 func setup_factions(case:BaseCaseResource):
@@ -102,4 +121,31 @@ func _nobility_selected():
 			emit_signal("case_complete", _case, GlobalData.Faction.NOBILITY, false)
 		##
 	##
+##
+
+func _mouse_hovering(effects):
+	if effects == _case.EFFECTS_A:
+		if _aPicks == 0:
+			hand_over_left.visible = true
+		else:
+			hand_over_right.visible = true
+	else:
+		if _bPicks == 0:
+			hand_over_left.visible = true
+		else:
+			hand_over_right.visible = true
+	##
+##
+
+func _mouse_not_hovering():
+	hand_over_left.visible = false
+	hand_over_right.visible = false
+##
+
+func _left_selected():
+	ap_scale_control.play("press_left")
+##
+
+func _left_released():
+	ap_scale_control.play("RESET")
 ##
