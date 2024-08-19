@@ -49,6 +49,13 @@ func _ready():
 	
 ##
 
+func enable_cards():
+	left_mega_card.visible = true
+	left_mega_card.enable()
+	right_mega_card.visible = true
+	right_mega_card.enable()
+##
+
 func setup_factions(case:BaseCaseResource):
 	left_mega_card.hide_all()
 	right_mega_card.hide_all()
@@ -74,16 +81,13 @@ func setup_factions(case:BaseCaseResource):
 		_bPicks = 0
 		left_mega_card.show_labels(case.PARTY_B, case.PARTY_B_ARGUMENT, case.EFFECTS_B)
 	##
-	
-	left_mega_card.visible = true
-	left_mega_card.enable()
-	right_mega_card.visible = true
-	right_mega_card.enable()
 ##
 
 func _peasants_selected():
 	_mouse_not_hovering()
 	ap_scale_control.play("RESET")
+	left_mega_card.disable()
+	right_mega_card.disable()
 	if _case.PARTY_A == GlobalData.Faction.PEASANTS:
 		if _aPicks == 0:
 			emit_signal("case_complete", _case, GlobalData.Faction.PEASANTS, true)
@@ -101,6 +105,8 @@ func _peasants_selected():
 
 func _clergy_selected():
 	_mouse_not_hovering()
+	left_mega_card.disable()
+	right_mega_card.disable()
 	ap_scale_control.play("RESET")
 	if _case.PARTY_A == GlobalData.Faction.CLERGY:
 		if _aPicks == 0:
@@ -120,6 +126,9 @@ func _clergy_selected():
 func _nobility_selected():
 	_mouse_not_hovering()
 	ap_scale_control.play("RESET")
+	left_mega_card.disable()
+	right_mega_card.disable()
+	
 	if _case.PARTY_A == GlobalData.Faction.NOBILITY:
 		if _aPicks == 0:
 			emit_signal("case_complete", _case, GlobalData.Faction.NOBILITY, true)

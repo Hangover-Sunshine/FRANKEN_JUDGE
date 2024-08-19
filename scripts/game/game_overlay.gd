@@ -175,6 +175,10 @@ func _on_ap_states_animation_finished(anim_name):
 		_can_click_to_proceed = true
 	##
 	
+	if anim_name == "Part4":
+		$Scale.enable_cards()
+	##
+	
 	if anim_name == "Part5":
 		_tally_finished()
 	##
