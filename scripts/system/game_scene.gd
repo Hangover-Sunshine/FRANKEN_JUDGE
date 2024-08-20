@@ -89,6 +89,7 @@ func _update_stats_done():
 	var status:GlobalData.END_CONDITION = _reputation_stats.has_lost()
 	
 	if _curr_day > NUMBER_OF_TURNS:
+		MusicManager.set_volume(linear_to_db(0.4))
 		PlayerPrefs.game_end = 0
 		Verho.change_scene("scenes/menus/hub_gameover", "", "BlackFade")
 		return
@@ -100,6 +101,7 @@ func _update_stats_done():
 		elif status == GlobalData.END_CONDITION.LOSS_PEASANT:
 			PlayerPrefs.game_end = 1
 		##
+		MusicManager.set_volume(linear_to_db(0.4))
 		Verho.change_scene("scenes/menus/hub_gameover", "", "BlackFade")
 		return
 	##

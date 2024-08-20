@@ -13,16 +13,21 @@ extends Node2D
 @export var time_splash = 2
 
 @onready var ready_to_click = false
-var was_disclaimed = false
 
 # called when the node enters the scene tree for the first time. #
 func _ready():
-	if was_disclaimed == false:
+	print(PlayerPrefs.was_disclaimed)
+	if PlayerPrefs.was_disclaimed == false:
 		animplayer.play("ToDisclaimer")
 		menu_timer.wait_time = time_disclaim
 		menu_timer.start()
-	elif was_disclaimed == true:
-		MusicManager.play("ost", "music")
+	else:
+		if MusicManager.is_playing("ost", "music") == false:
+			MusicManager.play("ost", "music")
+		else:
+			MusicManager.set_volume(linear_to_db(1))
+		##
+		animplayer.play("ToSplash")
 		menu_timer.wait_time = time_splash
 		menu_timer.start()
 	
@@ -53,7 +58,7 @@ func handle_signals():
 	Verho.connect("loaded_scene", to_free)
 
 func disclaimed():
-	was_disclaimed = true
+	PlayerPrefs.was_disclaimed = true
 
 func to_splash():
 	MusicManager.play("ost", "music")

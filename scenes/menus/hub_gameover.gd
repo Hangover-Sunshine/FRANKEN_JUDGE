@@ -10,6 +10,8 @@ extends Control
 # 0 = win | 1 = peasantry game over | 2 = nobility game over | 3 = clergy game over
 var gameover = 0
 
+var curr_sound
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	gameover = PlayerPrefs.game_end
@@ -21,32 +23,36 @@ func show_text():
 	if gameover == 0:
 		header.text = "SUCCESS"
 		ap.play("Win")
-		SoundManager.play("game_over", "good")
+		curr_sound = SoundManager.instance_poly("game_over", "good")
 	elif gameover == 1:
 		header.text = "FAILURE - PEASANTRY"
 		ap.play("Peasantry")
-		SoundManager.play("game_over", "mob")
+		curr_sound = SoundManager.instance_poly("game_over", "mob")
 	elif gameover == 2:
 		header.text = "FAILURE - NOBILITY"
 		ap.play("Nobility")
-		SoundManager.play("game_over", "beheaded")
+		curr_sound = SoundManager.instance_poly("game_over", "beheaded")
 	elif gameover == 3:
 		header.text = "FAILURE - CLERGY"
 		ap.play("Clergy")
-		SoundManager.play("game_over", "god")
+		curr_sound = SoundManager.instance_poly("game_over", "god")
 	##
+	
+	curr_sound.trigger()
 ##
 
 # goes to different scenes
 func _on_again_button_pressed():
 	Verho.change_scene("scenes/game_scene", "", "BlackFade")
 	SoundManager.play_varied("ui", "Pressed", randf_range(0.7, 1.2))
+	curr_sound.release()
 ##
 
 func _on_leave_button_pressed():
 	# new_scene:String, library:String, transition:String,
 	Verho.change_scene("scenes/menus/hub_menu", "", "BlackFade")
 	SoundManager.play_varied("ui", "Pressed", randf_range(0.7, 1.2))
+	curr_sound.release()
 ##
 
 func _on_mouse_entered():

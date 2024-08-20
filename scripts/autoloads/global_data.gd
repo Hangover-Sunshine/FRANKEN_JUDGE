@@ -29,5 +29,3 @@ const TWO_NUM_DISPLAY = "%02d"
 const THREE_NUM_DISPLAY = "%3d"
 const CHARACTERS_PER_CARD_LINE:int = 22
 const CHARACTERS_PER_EFFECT_LINE:int = 19
-
-var music_ref
