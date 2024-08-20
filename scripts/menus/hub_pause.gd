@@ -1,5 +1,7 @@
 extends Node2D
 
+signal unpause_by_button
+
 @onready var menu_pause = $MenuPause
 @onready var menu_settings = $MenuSettings
 @onready var animplayer = $HubPause_AnimPlayer
@@ -14,7 +16,8 @@ func handle_signals():
 	menu_pause.pause_to_main.connect(to_load)
 
 func to_game():
-	print("The game is unpaused.")
+	emit_signal("unpause_by_button")
+##
 
 func to_pause():
 	animplayer.play("ToPause")
@@ -23,4 +26,8 @@ func to_settings():
 	animplayer.play("ToSettings")
 
 func to_load():
-	Verho.change_scene("menus/hub_menu", "", "BlackFade")
+	Verho.change_scene("scenes/menus/hub_menu", "", "BlackFade")
+	$MenuPause.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	get_tree().paused = false
+	get_parent().visible = false
+##

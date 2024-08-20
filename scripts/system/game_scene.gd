@@ -19,6 +19,7 @@ var _curr_day:int = 1
 func _ready():
 	Verho.connect("loaded_scene", _loaded_scene)
 	GlobalSignals.connect("update_stats_done", _update_stats_done)
+	$PauseLayer/HubPause.connect("unpause_by_button", _unpaused_by_button)
 	
 	# Shuffle the cases
 	CASES.shuffle()
@@ -37,6 +38,11 @@ func _input(event):
 		get_tree().paused = !get_tree().paused
 		$PauseLayer.visible = get_tree().paused
 	##
+##
+
+func _unpaused_by_button():
+	get_tree().paused = false
+	$PauseLayer.visible = false
 ##
 
 ## Fired when the case has been submit.

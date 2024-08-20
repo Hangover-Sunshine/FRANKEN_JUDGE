@@ -1,8 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://dhix2dusxj10i"]
+[gd_scene load_steps=12 format=3 uid="uid://dhix2dusxj10i"]
 
 [ext_resource type="Script" path="res://scripts/system/game_scene.gd" id="1_s1yw1"]
-[ext_resource type="Script" path="res://addons/verho/resources/TransitionBank.gd" id="1_uelm6"]
-[ext_resource type="Resource" uid="uid://cokyxyvryfnhm" path="res://prefabs/transitions/black_fade.tres" id="2_hubdk"]
 [ext_resource type="Resource" uid="uid://drfrmac6j2ade" path="res://prefabs/cases/clergy_v_peasants/illegal_holy_text_case.tres" id="2_ykisd"]
 [ext_resource type="PackedScene" uid="uid://2nl8bwm5pvgk" path="res://scenes/game_overlay.tscn" id="3_6t524"]
 [ext_resource type="Resource" uid="uid://qhxqb7nqucs0" path="res://prefabs/cases/nobles_v_peasants/coal_dumping.tres" id="3_qyhe0"]
@@ -22,11 +20,6 @@ CASES = Array[Resource("res://scripts/resources/base_case_resource.gd")]([ExtRes
 INITIAL_LOAD_DELAY = 0.4
 
 [node name="Game_Overlay" parent="." instance=ExtResource("3_6t524")]
-
-[node name="REMOVEME" type="Node" parent="."]
-script = ExtResource("1_uelm6")
-BANK_NAME = "no"
-TRANSITIONS = Array[Resource("res://addons/verho/resources/TransitionResource.gd")]([ExtResource("2_hubdk")])
 
 [node name="FactionStats" type="Node" parent="."]
 script = ExtResource("4_fdghg")
