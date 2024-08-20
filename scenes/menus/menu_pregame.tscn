@@ -1,9 +1,73 @@
-[gd_scene load_steps=5 format=3 uid="uid://cdx15nqmqr1cu"]
+[gd_scene load_steps=20 format=3 uid="uid://cdx15nqmqr1cu"]
 
 [ext_resource type="Script" path="res://scripts/menus/menu_pregame.gd" id="1_3jfox"]
 [ext_resource type="FontFile" uid="uid://73eyyuro8nvv" path="res://assets/fonts/PirataOne.ttf" id="2_mimgg"]
 [ext_resource type="Theme" uid="uid://cra8p8hxk35en" path="res://assets/ui/button_theme.tres" id="3_kwj7m"]
 [ext_resource type="FontFile" uid="uid://cqxld14ctgocv" path="res://assets/fonts/MedulaOne.ttf" id="3_xghww"]
+[ext_resource type="Texture2D" uid="uid://dtq34d1ogodyn" path="res://assets/pregame/Pregame2.png" id="5_xuafh"]
+[ext_resource type="Texture2D" uid="uid://dj75lec1iduh5" path="res://assets/pregame/Pregame1.png" id="6_dwn7y"]
+[ext_resource type="Texture2D" uid="uid://b413opln7ktx7" path="res://assets/pregame/Pregame3.png" id="7_o0jnk"]
+[ext_resource type="Texture2D" uid="uid://dqv1avmp2qhyl" path="res://assets/pregame/Pregame4.png" id="8_88ias"]
+[ext_resource type="Texture2D" uid="uid://cbw6yyak4eu4g" path="res://assets/pregame/Pregame5.png" id="9_i6jym"]
+[ext_resource type="Texture2D" uid="uid://cqibirulyh3j2" path="res://assets/pregame/Pregame6.png" id="10_osh57"]
+[ext_resource type="Texture2D" uid="uid://dnhvj3rt18pap" path="res://assets/pregame/Pregame7.png" id="11_dnvj7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q47eg"]
+atlas = ExtResource("6_dwn7y")
+region = Rect2(0, 0, 1800, 650)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nj8gs"]
+atlas = ExtResource("5_xuafh")
+region = Rect2(0, 0, 1800, 650)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8dxbv"]
+atlas = ExtResource("7_o0jnk")
+region = Rect2(0, 0, 1800, 650)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oyjni"]
+atlas = ExtResource("8_88ias")
+region = Rect2(0, 0, 1800, 650)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sci3c"]
+atlas = ExtResource("9_i6jym")
+region = Rect2(0, 0, 1800, 650)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bx3d5"]
+atlas = ExtResource("10_osh57")
+region = Rect2(0, 0, 1800, 650)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w3qef"]
+atlas = ExtResource("11_dnvj7")
+region = Rect2(0, 0, 1800, 650)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u2bfj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q47eg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nj8gs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8dxbv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oyjni")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sci3c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bx3d5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w3qef")
+}],
+"loop": false,
+"name": &"default",
+"speed": 0.0
+}]
 
 [node name="MenuPregame" type="Control"]
 layout_mode = 3
@@ -20,12 +84,13 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 theme_override_constants/margin_left = 60
-theme_override_constants/margin_top = 60
+theme_override_constants/margin_top = 0
 theme_override_constants/margin_right = 60
 theme_override_constants/margin_bottom = 60
 
 [node name="Pregame_VBox" type="VBoxContainer" parent="Pregame_MC"]
 layout_mode = 2
+size_flags_vertical = 0
 theme_override_constants/separation = 50
 alignment = 1
 
@@ -36,12 +101,12 @@ layout_mode = 2
 layout_mode = 2
 theme_override_colors/font_color = Color(0.839216, 0.905882, 0.972549, 1)
 theme_override_fonts/font = ExtResource("2_mimgg")
-theme_override_font_sizes/font_size = 150
+theme_override_font_sizes/font_size = 140
 text = "INSTRUCTIONS"
 horizontal_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Pregame_MC/Pregame_VBox/Header_VBox"]
-custom_minimum_size = Vector2(0, 550)
+custom_minimum_size = Vector2(0, 620)
 layout_mode = 2
 
 [node name="Header2" type="Label" parent="Pregame_MC/Pregame_VBox/Header_VBox"]
@@ -78,6 +143,7 @@ size_flags_horizontal = 3
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Pregame_MC/Pregame_VBox/Button_HBox/VBoxContainer"]
 layout_mode = 2
+theme_override_constants/separation = 15
 alignment = 2
 
 [node name="Skip_Button" type="Button" parent="Pregame_MC/Pregame_VBox/Button_HBox/VBoxContainer/HBoxContainer"]
@@ -98,5 +164,12 @@ layout_mode = 2
 theme = ExtResource("3_kwj7m")
 text = ">"
 
+[node name="Pregame" type="AnimatedSprite2D" parent="."]
+position = Vector2(965, 509)
+sprite_frames = SubResource("SpriteFrames_u2bfj")
+
 [connection signal="pressed" from="Pregame_MC/Pregame_VBox/Button_HBox/Button_VBox/Tutorial_Button" to="." method="_on_tutorial_button_pressed"]
 [connection signal="pressed" from="Pregame_MC/Pregame_VBox/Button_HBox/Button_VBox/Back_Button" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="Pregame_MC/Pregame_VBox/Button_HBox/VBoxContainer/HBoxContainer/Skip_Button" to="." method="_on_skip_button_pressed"]
+[connection signal="pressed" from="Pregame_MC/Pregame_VBox/Button_HBox/VBoxContainer/HBoxContainer/Decrease_Button" to="." method="_on_decrease_button_pressed"]
+[connection signal="pressed" from="Pregame_MC/Pregame_VBox/Button_HBox/VBoxContainer/HBoxContainer/Increase_Button" to="." method="_on_increase_button_pressed"]
