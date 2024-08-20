@@ -188,7 +188,6 @@ func _left_released():
 ##
 
 func _right_selected():
-	clicking_sound.release()
 	play_sound = true
 	ap_scale_control.play("press_right")
 	clicking_sound = SoundManager.instance("scale", "clicking")
@@ -204,6 +203,7 @@ func _right_selected():
 ##
 
 func _right_released():
+	clicking_sound.release()
 	play_sound = false
 	ap_scale_control.play("RESET")
 ##

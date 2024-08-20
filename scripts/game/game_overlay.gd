@@ -32,6 +32,7 @@ func _input(event):
 	if (event is InputEventKey or event is InputEventMouseButton) and curr_screen == 2\
 		and _can_click_to_proceed:
 		curr_screen = 3
+		SoundManager.play("ui", "gavel_smack")
 		_show_sides()
 	##
 ##
