@@ -681,7 +681,7 @@ layout_mode = 2
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_e4mm5")
 theme_override_font_sizes/font_size = 80
-text = "After day in and day out of judge work, you succesfully survived"
+text = "After day in and day out of judge work, you successfully survived"
 horizontal_alignment = 1
 
 [node name="Line2" type="Label" parent="MC_Gameover/Vbox_Gameover/Vbox_Story/Vbox_Win"]
