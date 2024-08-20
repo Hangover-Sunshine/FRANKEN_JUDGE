@@ -37,5 +37,8 @@ StartingClergyRep = 70
 StartingNobilityRep = 70
 StartingPeasantRep = 70
 
-[node name="HubPause" parent="." instance=ExtResource("7_3lo3u")]
+[node name="PauseLayer" type="CanvasLayer" parent="."]
+process_mode = 2
 visible = false
+
+[node name="HubPause" parent="PauseLayer" instance=ExtResource("7_3lo3u")]

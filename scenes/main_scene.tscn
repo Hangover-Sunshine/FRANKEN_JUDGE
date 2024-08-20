@@ -72,4 +72,5 @@ color = Color(0, 0, 0, 1)
 script = ExtResource("5_bnjbv")
 label = "ui"
 bus = "SFX"
+mode = 1
 events = Array[ExtResource("6_316bv")]([SubResource("Resource_ueswg"), SubResource("Resource_k8ner"), SubResource("Resource_vb7f6"), SubResource("Resource_sbij5")])

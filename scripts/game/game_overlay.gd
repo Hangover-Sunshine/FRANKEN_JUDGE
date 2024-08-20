@@ -70,11 +70,11 @@ func show_day(curr_day):
 	# Play big day
 	ap_states.play("Part1")
 	
-	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(1, false).timeout
 	SoundManager.play("env", "bell1")
-	await get_tree().create_timer(2).timeout
+	await get_tree().create_timer(2, false).timeout
 	SoundManager.play("env", "bell2")
-	await get_tree().create_timer(2.5).timeout
+	await get_tree().create_timer(2.5, false).timeout
 	SoundManager.play("env", "bell3")
 ##
 
@@ -86,22 +86,22 @@ func show_cases(cases:Array[BaseCaseResource]):
 	ap_states.play("Part2")
 	bg_chatter = SoundManager.instance("env", "BGChatter")
 	
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(0.5, false).timeout
 	SoundManager.play("env", "swoosh")
 	
-	await get_tree().create_timer(0.8).timeout
+	await get_tree().create_timer(0.8, false).timeout
 	SoundManager.play("env", "swoosh")
 	
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(0.5, false).timeout
 	SoundManager.play_varied("folder", "in_place", randf_range(0.9, 1.1))
 	
-	await get_tree().create_timer(0.3).timeout
+	await get_tree().create_timer(0.3, false).timeout
 	SoundManager.play("env", "swoosh")
 	
-	await get_tree().create_timer(0.6).timeout
+	await get_tree().create_timer(0.6, false).timeout
 	SoundManager.play_varied("folder", "in_place", randf_range(0.9, 1.1))
 	
-	await get_tree().create_timer(0.9).timeout
+	await get_tree().create_timer(0.9, false).timeout
 	SoundManager.play_varied("folder", "in_place", randf_range(0.9, 1.1))
 ##
 
@@ -131,15 +131,15 @@ func _show_sides():
 	
 	ap_states.play("Part4")
 	
-	await get_tree().create_timer(2).timeout
+	await get_tree().create_timer(2, false).timeout
 	
 	SoundManager.play_varied("scale", "scale_on_table", randf_range(0.9, 1.1))
 	
-	await get_tree().create_timer(2.5).timeout
+	await get_tree().create_timer(2.5, false).timeout
 	SoundManager.play_varied("scale", "card_bounce", randf_range(0.8, 1.1))
 	SoundManager.play_varied("scale", "card_bounce", randf_range(0.8, 1.1))
 	
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(0.5, false).timeout
 	SoundManager.play_varied("scale", "card_bounce", 1, linear_to_db(0.2))
 	SoundManager.play_varied("scale", "card_bounce", 1, linear_to_db(0.2))
 ##
@@ -197,16 +197,16 @@ func _case_complete(case:BaseCaseResource, faction:GlobalData.Faction, chose_A:b
 	
 	ap_states.play("Part5")
 	
-	await get_tree().create_timer(1.7).timeout
+	await get_tree().create_timer(1.7, false).timeout
 	
 	SoundManager.play_varied("ui", "swoosh", randf_range(0.8, 1.2))
 	
-	await get_tree().create_timer(2.8).timeout
+	await get_tree().create_timer(2.8, false).timeout
 	
 	SoundManager.play_varied("ui", "swoosh", randf_range(0.6, 0.8))
 	
 	#await get_tree().create_timer(5.6).timeout
-	await get_tree().create_timer(1.1).timeout
+	await get_tree().create_timer(1.1, false).timeout
 	
 	# fire off the lightnings
 	for group in affected_parties:
@@ -229,12 +229,12 @@ func _case_complete(case:BaseCaseResource, faction:GlobalData.Faction, chose_A:b
 	##
 	zapping.trigger_varied(randf_range(0.7, 1))
 	
-	await get_tree().create_timer(0.9).timeout
+	await get_tree().create_timer(0.9, false).timeout
 	
 	# re-add the modifiers
 	$Society.show_changes_to_stats(effects)
 	
-	await get_tree().create_timer(2.3).timeout
+	await get_tree().create_timer(2.3, false).timeout
 	
 	# stop
 	zapping.release()
@@ -251,11 +251,11 @@ func _case_complete(case:BaseCaseResource, faction:GlobalData.Faction, chose_A:b
 func _tally_finished():
 	ap_states.play("Part6")
 	
-	await get_tree().create_timer(0.2).timeout
+	await get_tree().create_timer(0.2, false).timeout
 	
 	SoundManager.play_varied("ui", "swoosh", randf_range(0.6, 0.8))
 	
-	await get_tree().create_timer(1.3).timeout
+	await get_tree().create_timer(1.3, false).timeout
 	
 	zapping.trigger_varied(randf_range(1, 1.4))
 	
@@ -271,19 +271,19 @@ func _tally_finished():
 	clergy_bolt.set_target_position(Vector2(860, 800))
 	clergy_bolt.Emit = true
 	
-	await get_tree().create_timer(0.3).timeout
+	await get_tree().create_timer(0.3, false).timeout
 	
 	# Show the tallies
 	$Reputation.show_changes()
 	
-	await get_tree().create_timer(1.7).timeout
+	await get_tree().create_timer(1.7, false).timeout
 	
 	zapping.release()
 	peasant_bolt.Emit = false
 	nobility_bolt.Emit = false
 	clergy_bolt.Emit = false
 	
-	await get_tree().create_timer(1.0).timeout
+	await get_tree().create_timer(1.0, false).timeout
 	
 	# Iterate, hide tallies once they hit 0
 	$Reputation.update_reputations()

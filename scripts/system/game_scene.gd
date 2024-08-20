@@ -32,6 +32,13 @@ func _ready():
 	$Game_Overlay.load_reputation_stats(_reputation_stats.get_reputations())
 ##
 
+func _input(event):
+	if event is InputEventKey and event.is_action_pressed("pause"):
+		get_tree().paused = !get_tree().paused
+		$PauseLayer.visible = get_tree().paused
+	##
+##
+
 ## Fired when the case has been submit.
 func _confirm_case(effects:Array[BaseEffectResource]):
 	_curr_day += 1

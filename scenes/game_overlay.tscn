@@ -1595,6 +1595,7 @@ pitch = 1.0
 streams = Array[AudioStream]([ExtResource("42_0xwp1")])
 
 [node name="Game_Overlay" type="Node2D"]
+process_mode = 1
 script = ExtResource("1_hcafl")
 
 [node name="Background" parent="." instance=ExtResource("2_yuue2")]
@@ -2421,9 +2422,9 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 169.352
+offset_left = 209.352
 offset_top = 185.0
-offset_right = 869.352
+offset_right = 909.352
 offset_bottom = 985.0
 grow_horizontal = 2
 rotation = 0.20944
@@ -2435,9 +2436,9 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -320.648
+offset_left = -280.648
 offset_top = 100.0
-offset_right = 379.352
+offset_right = 419.352
 offset_bottom = 900.013
 grow_horizontal = 2
 pivot_offset = Vector2(350, 0)
@@ -2448,9 +2449,9 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -828.648
+offset_left = -788.648
 offset_top = 184.0
-offset_right = -128.648
+offset_right = -88.648
 offset_bottom = 984.0
 grow_horizontal = 2
 rotation = -0.20944
@@ -2489,10 +2490,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 60.5
-offset_top = -1368.0
-offset_right = 405.5
-offset_bottom = -947.98
+offset_left = 521.5
+offset_top = -1204.0
+offset_right = 866.5
+offset_bottom = -783.98
 grow_horizontal = 2
 grow_vertical = 0
 
@@ -2555,18 +2556,21 @@ grow_vertical = 0
 script = ExtResource("26_6akmt")
 label = "env"
 bus = "SFX"
+mode = 1
 events = Array[ExtResource("27_7p6v0")]([SubResource("Resource_r6oet"), SubResource("Resource_p5kd4"), SubResource("Resource_eduoc"), SubResource("Resource_ncu43"), SubResource("Resource_ph5al"), SubResource("Resource_firn7"), SubResource("Resource_jrkpe")])
 
 [node name="ScaleSoundBank" type="Node" parent="."]
 script = ExtResource("26_6akmt")
 label = "scale"
 bus = "sfx"
+mode = 1
 events = Array[ExtResource("27_7p6v0")]([SubResource("Resource_1x1og"), SubResource("Resource_1wfp1"), SubResource("Resource_5iwat"), SubResource("Resource_u6mew"), SubResource("Resource_e1tws")])
 
 [node name="FolderSoundBank" type="Node" parent="."]
 script = ExtResource("26_6akmt")
 label = "folder"
 bus = "SFX"
+mode = 1
 events = Array[ExtResource("27_7p6v0")]([SubResource("Resource_qcqwv"), SubResource("Resource_ox6u6"), SubResource("Resource_8nype")])
 
 [connection signal="animation_finished" from="AP_States" to="." method="_on_ap_states_animation_finished"]

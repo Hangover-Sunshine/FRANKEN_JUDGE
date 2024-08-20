@@ -171,7 +171,7 @@ func _left_selected():
 	ap_scale_control.play("press_left")
 	clicking_sound = SoundManager.instance("scale", "clicking")
 	
-	await get_tree().create_timer(1.4).timeout
+	await get_tree().create_timer(1.4, false).timeout
 	
 	if play_sound == false:
 		return
@@ -192,7 +192,7 @@ func _right_selected():
 	ap_scale_control.play("press_right")
 	clicking_sound = SoundManager.instance("scale", "clicking")
 	
-	await get_tree().create_timer(1.4).timeout
+	await get_tree().create_timer(1.4, false).timeout
 	
 	if play_sound == false:
 		return
