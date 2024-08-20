@@ -1,9 +1,29 @@
-[gd_scene load_steps=5 format=3 uid="uid://5mpw8kapddme"]
+[gd_scene load_steps=11 format=3 uid="uid://5mpw8kapddme"]
 
 [ext_resource type="Script" path="res://scripts/system/main_scene.gd" id="1_8uaxr"]
 [ext_resource type="Script" path="res://addons/verho/resources/TransitionBank.gd" id="1_aeq3o"]
 [ext_resource type="Resource" uid="uid://cokyxyvryfnhm" path="res://prefabs/transitions/black_fade.tres" id="2_wd62i"]
 [ext_resource type="Script" path="res://scripts/system/dummy_start.gd" id="4_wtvdh"]
+[ext_resource type="Script" path="res://addons/resonate/sound_manager/sound_bank.gd" id="5_bnjbv"]
+[ext_resource type="Script" path="res://addons/resonate/sound_manager/sound_event_resource.gd" id="6_316bv"]
+[ext_resource type="AudioStream" uid="uid://bdgqcq6kgk2lg" path="res://assets/sound/sfx/ui/UIClick.ogg" id="7_lc6tn"]
+[ext_resource type="AudioStream" uid="uid://miwl05aleq7p" path="res://assets/sound/sfx/ui/UIHover.ogg" id="8_qm7hx"]
+
+[sub_resource type="Resource" id="Resource_ueswg"]
+script = ExtResource("6_316bv")
+name = "Pressed"
+bus = ""
+volume = 0.0
+pitch = 1.0
+streams = Array[AudioStream]([ExtResource("7_lc6tn"), ExtResource("7_lc6tn")])
+
+[sub_resource type="Resource" id="Resource_k8ner"]
+script = ExtResource("6_316bv")
+name = "MouseOver"
+bus = ""
+volume = 0.0
+pitch = 1.0
+streams = Array[AudioStream]([ExtResource("8_qm7hx"), ExtResource("8_qm7hx"), ExtResource("8_qm7hx"), ExtResource("8_qm7hx"), ExtResource("8_qm7hx")])
 
 [node name="MainScene" type="Node"]
 script = ExtResource("1_8uaxr")
@@ -29,3 +49,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
+
+[node name="UIBank" type="Node" parent="."]
+script = ExtResource("5_bnjbv")
+label = "ui"
+bus = "SFX"
+events = Array[ExtResource("6_316bv")]([SubResource("Resource_ueswg"), SubResource("Resource_k8ner")])
