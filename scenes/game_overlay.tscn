@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://2nl8bwm5pvgk"]
+[gd_scene load_steps=67 format=3 uid="uid://2nl8bwm5pvgk"]
 
 [ext_resource type="Script" path="res://scripts/game/game_overlay.gd" id="1_hcafl"]
 [ext_resource type="FontFile" uid="uid://73eyyuro8nvv" path="res://assets/fonts/PirataOne.ttf" id="1_qps4p"]
@@ -33,6 +33,7 @@
 [ext_resource type="AudioStream" uid="uid://is0mya4fgdq" path="res://assets/sound/sfx/environment/BGChatter.ogg" id="31_urilp"]
 [ext_resource type="AudioStream" uid="uid://b6yn5shb1b8dd" path="res://assets/sound/sfx/scale/ScaleClicking.ogg" id="32_o6twq"]
 [ext_resource type="AudioStream" uid="uid://8ildbgmj5ssu" path="res://assets/sound/sfx/scale/ThumbOnScale.ogg" id="33_5k40j"]
+[ext_resource type="AudioStream" uid="uid://o5p2f52qcv7n" path="res://assets/sound/sfx/scale/CardBounce.ogg" id="34_7nalx"]
 
 [sub_resource type="Animation" id="Animation_fi0l2"]
 resource_name = "Part1"
@@ -1513,6 +1514,14 @@ volume = 0.0
 pitch = 1.0
 streams = Array[AudioStream]([ExtResource("33_5k40j")])
 
+[sub_resource type="Resource" id="Resource_5iwat"]
+script = ExtResource("27_7p6v0")
+name = "card_bounce"
+bus = ""
+volume = 0.0
+pitch = 1.0
+streams = Array[AudioStream]([ExtResource("34_7nalx"), ExtResource("34_7nalx")])
+
 [node name="Game_Overlay" type="Node2D"]
 script = ExtResource("1_hcafl")
 
@@ -2154,7 +2163,6 @@ text = "(+00)"
 
 [node name="LilDays" type="Control" parent="."]
 visible = false
-modulate = Color(1, 1, 1, 0)
 layout_mode = 3
 anchors_preset = 0
 offset_left = 431.0
@@ -2187,6 +2195,7 @@ text = "00 / 30"
 horizontal_alignment = 1
 
 [node name="BigDays" type="Control" parent="."]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 3
 anchors_preset = 0
 offset_left = 943.0
@@ -2250,7 +2259,6 @@ size_flags_vertical = 4
 alignment = 1
 
 [node name="Case_Header" type="Label" parent="CaseBrief/Casebrief_Vbox/Header_Hbox"]
-visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_qps4p")
 theme_override_font_sizes/font_size = 100
@@ -2258,7 +2266,6 @@ text = "CASE "
 horizontal_alignment = 1
 
 [node name="Case_Number_Letter" type="Label" parent="CaseBrief/Casebrief_Vbox/Header_Hbox"]
-visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_qps4p")
 theme_override_font_sizes/font_size = 100
@@ -2266,7 +2273,6 @@ text = "A"
 horizontal_alignment = 1
 
 [node name="Dash_Header" type="Label" parent="CaseBrief/Casebrief_Vbox/Header_Hbox"]
-visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_qps4p")
 theme_override_font_sizes/font_size = 100
@@ -2274,7 +2280,6 @@ text = " -"
 horizontal_alignment = 1
 
 [node name="CaseName_Header" type="Label" parent="CaseBrief/Casebrief_Vbox/Header_Hbox"]
-visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_qps4p")
 theme_override_font_sizes/font_size = 100
@@ -2282,7 +2287,6 @@ text = " Name of case"
 horizontal_alignment = 1
 
 [node name="Casebrief_Body" type="Label" parent="CaseBrief/Casebrief_Vbox"]
-modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(1700, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_o6xmb")
@@ -2292,7 +2296,6 @@ horizontal_alignment = 1
 autowrap_mode = 3
 
 [node name="Casebrief_Instructions" type="VBoxContainer" parent="CaseBrief/Casebrief_Vbox"]
-visible = false
 layout_mode = 2
 
 [node name="Casebrief_Instruction" type="Label" parent="CaseBrief/Casebrief_Vbox/Casebrief_Instructions"]
@@ -2325,7 +2328,6 @@ mouse_filter = 1
 script = ExtResource("5_e5niu")
 
 [node name="Case_Header" type="Label" parent="CasePick"]
-modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -2347,10 +2349,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 261.0
-offset_top = -1300.0
-offset_right = 961.0
-offset_bottom = -500.0
+offset_left = 129.352
+offset_top = 185.0
+offset_right = 829.352
+offset_bottom = 985.0
 grow_horizontal = 2
 rotation = 0.20944
 pivot_offset = Vector2(350, 0)
@@ -2361,10 +2363,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -340.648
-offset_top = 612.0
-offset_right = 359.352
-offset_bottom = 1412.01
+offset_left = -360.648
+offset_top = 100.0
+offset_right = 339.352
+offset_bottom = 900.013
 grow_horizontal = 2
 pivot_offset = Vector2(350, 0)
 CaseID = 1
@@ -2374,11 +2376,12 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -658.0
-offset_top = 612.0
-offset_right = 42.0
-offset_bottom = 1412.0
+offset_left = -868.648
+offset_top = 184.0
+offset_right = -168.648
+offset_bottom = 984.0
 grow_horizontal = 2
+rotation = -0.20944
 pivot_offset = Vector2(350, 0)
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -2391,7 +2394,7 @@ mouse_filter = 2
 
 [node name="Scale" type="Node2D" parent="."]
 visible = false
-position = Vector2(960, 1508)
+position = Vector2(960, 740)
 script = ExtResource("11_svn5q")
 HoldDuration = 3.5
 
@@ -2408,16 +2411,15 @@ position = Vector2(-513, 246)
 texture = ExtResource("9_7s0gt")
 
 [node name="LeftMegaCard" parent="Scale/Scale_Body/Scale_Left" instance=ExtResource("18_4l78d")]
-visible = false
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 752.0
-offset_top = -1122.0
-offset_right = 1097.0
-offset_bottom = -701.98
+offset_left = -400.5
+offset_top = -492.0
+offset_right = -55.5
+offset_bottom = -71.9799
 grow_horizontal = 2
 grow_vertical = 0
 
@@ -2426,11 +2428,10 @@ position = Vector2(514, 246)
 texture = ExtResource("9_7s0gt")
 
 [node name="RightMegaCard" parent="Scale/Scale_Body/Scale_Right" instance=ExtResource("18_4l78d")]
-visible = false
 offset_left = -170.0
-offset_top = -1450.0
+offset_top = -410.0
 offset_right = 175.0
-offset_bottom = -1030.0
+offset_bottom = 10.0
 IsRight = true
 
 [node name="HandOverLeft" type="Sprite2D" parent="Scale"]
@@ -2486,6 +2487,6 @@ events = Array[ExtResource("27_7p6v0")]([SubResource("Resource_r6oet"), SubResou
 script = ExtResource("26_6akmt")
 label = "scale"
 bus = "sfx"
-events = Array[ExtResource("27_7p6v0")]([SubResource("Resource_1x1og"), SubResource("Resource_1wfp1")])
+events = Array[ExtResource("27_7p6v0")]([SubResource("Resource_1x1og"), SubResource("Resource_1wfp1"), SubResource("Resource_5iwat")])
 
 [connection signal="animation_finished" from="AP_States" to="." method="_on_ap_states_animation_finished"]

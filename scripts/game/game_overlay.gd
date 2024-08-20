@@ -101,6 +101,14 @@ func _case_picked(case_id:int):
 func _show_sides():
 	$Scale.setup_factions(_case)
 	ap_states.play("Part4")
+	
+	await get_tree().create_timer(4.5).timeout
+	SoundManager.play_varied("scale", "card_bounce", randf_range(0.8, 1.1))
+	SoundManager.play_varied("scale", "card_bounce", randf_range(0.8, 1.1))
+	
+	await get_tree().create_timer(0.5).timeout
+	SoundManager.play_varied("scale", "card_bounce", 1, linear_to_db(-1))
+	SoundManager.play_varied("scale", "card_bounce", 1, linear_to_db(-1))
 ##
 
 func _pick_rand_case_id():
