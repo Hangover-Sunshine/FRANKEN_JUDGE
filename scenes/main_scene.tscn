@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://5mpw8kapddme"]
+[gd_scene load_steps=21 format=3 uid="uid://5mpw8kapddme"]
 
 [ext_resource type="Script" path="res://scripts/system/main_scene.gd" id="1_8uaxr"]
 [ext_resource type="Script" path="res://addons/verho/resources/TransitionBank.gd" id="1_aeq3o"]
@@ -10,6 +10,10 @@
 [ext_resource type="AudioStream" uid="uid://miwl05aleq7p" path="res://assets/sound/sfx/ui/UIHover.ogg" id="8_qm7hx"]
 [ext_resource type="AudioStream" uid="uid://cd2n4kpc1x3km" path="res://assets/sound/sfx/ui/GavelSmack.ogg" id="9_ri4a3"]
 [ext_resource type="AudioStream" uid="uid://cyqoou644cjgi" path="res://assets/sound/sfx/ui/UIMovement.ogg" id="10_hivjw"]
+[ext_resource type="Script" path="res://addons/resonate/music_manager/music_bank.gd" id="11_xcdmn"]
+[ext_resource type="Script" path="res://addons/resonate/music_manager/music_track_resource.gd" id="12_s7x2s"]
+[ext_resource type="Script" path="res://addons/resonate/music_manager/music_stem_resource.gd" id="13_8w2uh"]
+[ext_resource type="AudioStream" uid="uid://blu58ks4wpwl2" path="res://assets/sound/ost/Hypnothis.mp3" id="14_dabag"]
 
 [sub_resource type="Resource" id="Resource_ueswg"]
 script = ExtResource("6_316bv")
@@ -43,6 +47,19 @@ volume = 0.0
 pitch = 1.0
 streams = Array[AudioStream]([ExtResource("10_hivjw"), ExtResource("10_hivjw")])
 
+[sub_resource type="Resource" id="Resource_geyvc"]
+script = ExtResource("13_8w2uh")
+name = "main"
+enabled = true
+volume = 0.0
+stream = ExtResource("14_dabag")
+
+[sub_resource type="Resource" id="Resource_7mfby"]
+script = ExtResource("12_s7x2s")
+name = "music"
+bus = ""
+stems = Array[ExtResource("13_8w2uh")]([SubResource("Resource_geyvc")])
+
 [node name="MainScene" type="Node"]
 script = ExtResource("1_8uaxr")
 
@@ -74,3 +91,10 @@ label = "ui"
 bus = "SFX"
 mode = 1
 events = Array[ExtResource("6_316bv")]([SubResource("Resource_ueswg"), SubResource("Resource_k8ner"), SubResource("Resource_vb7f6"), SubResource("Resource_sbij5")])
+
+[node name="MusicBank" type="Node" parent="."]
+script = ExtResource("11_xcdmn")
+label = "ost"
+bus = "Music"
+mode = 3
+tracks = Array[ExtResource("12_s7x2s")]([SubResource("Resource_7mfby")])

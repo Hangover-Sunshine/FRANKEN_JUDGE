@@ -22,7 +22,7 @@ func _ready():
 		menu_timer.wait_time = time_disclaim
 		menu_timer.start()
 	elif was_disclaimed == true:
-		animplayer.play("ToSplash")
+		MusicManager.play("ost", "music")
 		menu_timer.wait_time = time_splash
 		menu_timer.start()
 	
@@ -56,6 +56,7 @@ func disclaimed():
 	was_disclaimed = true
 
 func to_splash():
+	MusicManager.play("ost", "music")
 	animplayer.play("ToSplash")
 
 func to_main():

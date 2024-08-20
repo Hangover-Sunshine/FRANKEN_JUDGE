@@ -25,7 +25,6 @@ shape = SubResource("RectangleShape2D_r8yd5")
 position = Vector2(0, -260)
 node_a = NodePath("../Top")
 node_b = NodePath("../RopeSegment")
-disable_collision = false
 
 [node name="RopeSegment" parent="." instance=ExtResource("2_e8yr0")]
 position = Vector2(0, -240)
