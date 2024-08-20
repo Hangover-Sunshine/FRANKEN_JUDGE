@@ -52,7 +52,7 @@
 [node name="GameScene" type="Node2D"]
 process_mode = 3
 script = ExtResource("1_s1yw1")
-NUMBER_OF_TURNS = 1
+NUMBER_OF_TURNS = 20
 CASES = Array[Resource("res://scripts/resources/base_case_resource.gd")]([ExtResource("2_vimsk"), ExtResource("3_h00xr"), ExtResource("4_a3c7x"), ExtResource("5_hr4j5"), ExtResource("6_m5tga"), ExtResource("7_ptrvw"), ExtResource("8_i2yyk"), ExtResource("9_j4fwx"), ExtResource("10_3w301"), ExtResource("11_fr3kt"), ExtResource("12_x4g6f"), ExtResource("13_nhtc3"), ExtResource("14_h4g8m"), ExtResource("15_onr7c"), ExtResource("16_ta7g1"), ExtResource("17_gnkal"), ExtResource("3_qyhe0"), ExtResource("19_rq0xh"), ExtResource("6_xc3hg"), ExtResource("21_pueds"), ExtResource("22_qu1v2"), ExtResource("23_we3xb"), ExtResource("24_he77p"), ExtResource("25_uibhh"), ExtResource("7_o1lyi"), ExtResource("27_4slun"), ExtResource("28_dlqu0"), ExtResource("29_lmkp4"), ExtResource("4_qd1l0"), ExtResource("31_ik2qv"), ExtResource("2_ykisd"), ExtResource("33_tolgs"), ExtResource("34_aoxin"), ExtResource("35_h6ik4"), ExtResource("5_daqo0"), ExtResource("37_6dhtn"), ExtResource("38_avbdn"), ExtResource("39_gwcsb"), ExtResource("40_ucksi"), ExtResource("41_s83mv"), ExtResource("42_7beu2"), ExtResource("43_60oir"), ExtResource("44_3qov7")])
 
 [node name="Game_Overlay" parent="." instance=ExtResource("3_6t524")]
