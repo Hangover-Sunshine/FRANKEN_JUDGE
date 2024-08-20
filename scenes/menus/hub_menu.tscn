@@ -391,6 +391,7 @@ _data = {
 
 [node name="HubMenu" type="Node2D"]
 script = ExtResource("1_eqpse")
+time_splash = 1
 
 [node name="Background" type="ColorRect" parent="."]
 show_behind_parent = true
