@@ -106,9 +106,16 @@ func _case_picked(case_id:int):
 
 func _show_sides():
 	$Scale.setup_factions(_case)
+	
+	SoundManager.play("scale", "chain_pull")
+	
 	ap_states.play("Part4")
 	
-	await get_tree().create_timer(4.5).timeout
+	await get_tree().create_timer(2).timeout
+	
+	SoundManager.play_varied("scale", "scale_on_table", randf_range(0.9, 1.1))
+	
+	await get_tree().create_timer(2.5).timeout
 	SoundManager.play_varied("scale", "card_bounce", randf_range(0.8, 1.1))
 	SoundManager.play_varied("scale", "card_bounce", randf_range(0.8, 1.1))
 	

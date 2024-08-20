@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=3 uid="uid://2nl8bwm5pvgk"]
+[gd_scene load_steps=75 format=3 uid="uid://2nl8bwm5pvgk"]
 
 [ext_resource type="Script" path="res://scripts/game/game_overlay.gd" id="1_hcafl"]
 [ext_resource type="FontFile" uid="uid://73eyyuro8nvv" path="res://assets/fonts/PirataOne.ttf" id="1_qps4p"]
@@ -36,6 +36,8 @@
 [ext_resource type="AudioStream" uid="uid://8ildbgmj5ssu" path="res://assets/sound/sfx/scale/ThumbOnScale.ogg" id="33_5k40j"]
 [ext_resource type="AudioStream" uid="uid://cl4blj3nndj5d" path="res://assets/sound/sfx/ui/Zapping.ogg" id="33_ilf5f"]
 [ext_resource type="AudioStream" uid="uid://o5p2f52qcv7n" path="res://assets/sound/sfx/scale/CardBounce.ogg" id="34_7nalx"]
+[ext_resource type="AudioStream" uid="uid://b3j4fgrxxeh2a" path="res://assets/sound/sfx/scale/ChainPull.ogg" id="37_ddplf"]
+[ext_resource type="AudioStream" uid="uid://dt5vrxncjcee0" path="res://assets/sound/sfx/scale/ScaleHitsTable.ogg" id="38_vohd7"]
 
 [sub_resource type="Animation" id="Animation_fi0l2"]
 resource_name = "Part1"
@@ -1540,6 +1542,22 @@ volume = 0.0
 pitch = 1.0
 streams = Array[AudioStream]([ExtResource("34_7nalx"), ExtResource("34_7nalx")])
 
+[sub_resource type="Resource" id="Resource_u6mew"]
+script = ExtResource("27_7p6v0")
+name = "chain_pull"
+bus = ""
+volume = 0.0
+pitch = 1.0
+streams = Array[AudioStream]([ExtResource("37_ddplf")])
+
+[sub_resource type="Resource" id="Resource_e1tws"]
+script = ExtResource("27_7p6v0")
+name = "scale_on_table"
+bus = ""
+volume = 0.0
+pitch = 1.0
+streams = Array[AudioStream]([ExtResource("38_vohd7")])
+
 [node name="Game_Overlay" type="Node2D"]
 script = ExtResource("1_hcafl")
 
@@ -2412,7 +2430,7 @@ mouse_filter = 2
 
 [node name="Scale" type="Node2D" parent="."]
 visible = false
-position = Vector2(960, 740)
+position = Vector2(960, 1506)
 script = ExtResource("11_svn5q")
 HoldDuration = 3.5
 
@@ -2429,15 +2447,16 @@ position = Vector2(-513, 246)
 texture = ExtResource("9_7s0gt")
 
 [node name="LeftMegaCard" parent="Scale/Scale_Body/Scale_Left" instance=ExtResource("18_4l78d")]
+visible = false
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -400.5
-offset_top = -492.0
+offset_top = -1532.0
 offset_right = -55.5
-offset_bottom = -71.9799
+offset_bottom = -1111.98
 grow_horizontal = 2
 grow_vertical = 0
 
@@ -2446,10 +2465,11 @@ position = Vector2(514, 246)
 texture = ExtResource("9_7s0gt")
 
 [node name="RightMegaCard" parent="Scale/Scale_Body/Scale_Right" instance=ExtResource("18_4l78d")]
+visible = false
 offset_left = -170.0
-offset_top = -410.0
+offset_top = -1450.0
 offset_right = 175.0
-offset_bottom = 10.0
+offset_bottom = -1030.0
 IsRight = true
 
 [node name="HandOverLeft" type="Sprite2D" parent="Scale"]
@@ -2505,6 +2525,6 @@ events = Array[ExtResource("27_7p6v0")]([SubResource("Resource_r6oet"), SubResou
 script = ExtResource("26_6akmt")
 label = "scale"
 bus = "sfx"
-events = Array[ExtResource("27_7p6v0")]([SubResource("Resource_1x1og"), SubResource("Resource_1wfp1"), SubResource("Resource_5iwat")])
+events = Array[ExtResource("27_7p6v0")]([SubResource("Resource_1x1og"), SubResource("Resource_1wfp1"), SubResource("Resource_5iwat"), SubResource("Resource_u6mew"), SubResource("Resource_e1tws")])
 
 [connection signal="animation_finished" from="AP_States" to="." method="_on_ap_states_animation_finished"]
