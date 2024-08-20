@@ -1,10 +1,16 @@
-[gd_scene load_steps=13 format=3 uid="uid://cc5u33s31nhrg"]
+[gd_scene load_steps=23 format=3 uid="uid://cc5u33s31nhrg"]
 
 [ext_resource type="Shader" path="res://scenes/background.gdshader" id="1_12a2h"]
 [ext_resource type="Script" path="res://scenes/menus/hub_gameover.gd" id="1_deqbl"]
 [ext_resource type="FontFile" uid="uid://73eyyuro8nvv" path="res://assets/fonts/PirataOne.ttf" id="2_whjcv"]
 [ext_resource type="FontFile" uid="uid://cqxld14ctgocv" path="res://assets/fonts/MedulaOne.ttf" id="3_e4mm5"]
 [ext_resource type="Theme" uid="uid://cra8p8hxk35en" path="res://assets/ui/button_theme.tres" id="4_o70cn"]
+[ext_resource type="Script" path="res://addons/resonate/sound_manager/sound_bank.gd" id="6_ek4m6"]
+[ext_resource type="Script" path="res://addons/resonate/sound_manager/sound_event_resource.gd" id="7_ugb4v"]
+[ext_resource type="AudioStream" uid="uid://dgx5sa053nis3" path="res://assets/sound/sfx/game_over/CrowdCheer.ogg" id="8_rcikj"]
+[ext_resource type="AudioStream" uid="uid://c4p84cuneaxuw" path="res://assets/sound/sfx/game_over/TheLightOfGod_Frank.ogg" id="9_tjr44"]
+[ext_resource type="AudioStream" uid="uid://bd38vfnjj12ym" path="res://assets/sound/sfx/game_over/HeadGoneEnd.ogg" id="10_d506p"]
+[ext_resource type="AudioStream" uid="uid://baewtgw8oomkk" path="res://assets/sound/sfx/game_over/AngryCrowd.ogg" id="11_bcpgs"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_15l81"]
 shader = ExtResource("1_12a2h")
@@ -467,6 +473,38 @@ _data = {
 "Win": SubResource("Animation_fryaf")
 }
 
+[sub_resource type="Resource" id="Resource_tj362"]
+script = ExtResource("7_ugb4v")
+name = "good"
+bus = ""
+volume = 0.0
+pitch = 1.0
+streams = Array[AudioStream]([ExtResource("8_rcikj")])
+
+[sub_resource type="Resource" id="Resource_v0k3t"]
+script = ExtResource("7_ugb4v")
+name = "god"
+bus = ""
+volume = 0.0
+pitch = 1.0
+streams = Array[AudioStream]([ExtResource("9_tjr44")])
+
+[sub_resource type="Resource" id="Resource_o321y"]
+script = ExtResource("7_ugb4v")
+name = "beheaded"
+bus = ""
+volume = 0.0
+pitch = 1.0
+streams = Array[AudioStream]([ExtResource("10_d506p")])
+
+[sub_resource type="Resource" id="Resource_8x6lj"]
+script = ExtResource("7_ugb4v")
+name = "mob"
+bus = ""
+volume = 0.0
+pitch = 1.0
+streams = Array[AudioStream]([ExtResource("11_bcpgs")])
+
 [node name="HubGameover" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -522,7 +560,7 @@ layout_mode = 2
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_e4mm5")
 theme_override_font_sizes/font_size = 80
-text = "After ruling and rulings made against the people, civil unrest ensues."
+text = "With ruling after ruling made against the people, civil unrest ensues."
 horizontal_alignment = 1
 
 [node name="Line2" type="Label" parent="MC_Gameover/Vbox_Gameover/Vbox_Story/Vbox_Peasantry"]
@@ -656,7 +694,7 @@ horizontal_alignment = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_e4mm5")
 theme_override_font_sizes/font_size = 80
-text = "and burned to the stake for your crimes against god."
+text = "and burned at the stake for your crimes against god."
 horizontal_alignment = 1
 
 [node name="Line6" type="Label" parent="MC_Gameover/Vbox_Gameover/Vbox_Story/Vbox_Clergy"]
@@ -752,5 +790,13 @@ libraries = {
 "": SubResource("AnimationLibrary_6qnv7")
 }
 
+[node name="GameOverSoundBank" type="Node" parent="."]
+script = ExtResource("6_ek4m6")
+label = "game_over"
+bus = "SFX"
+events = Array[ExtResource("7_ugb4v")]([SubResource("Resource_tj362"), SubResource("Resource_v0k3t"), SubResource("Resource_o321y"), SubResource("Resource_8x6lj")])
+
+[connection signal="mouse_entered" from="MC_Gameover/Vbox_Gameover/Vbox_Story/Hbox_Buttons/Again_Button" to="." method="_on_mouse_entered"]
 [connection signal="pressed" from="MC_Gameover/Vbox_Gameover/Vbox_Story/Hbox_Buttons/Again_Button" to="." method="_on_again_button_pressed"]
+[connection signal="mouse_entered" from="MC_Gameover/Vbox_Gameover/Vbox_Story/Hbox_Buttons/Leave_Button" to="." method="_on_mouse_entered"]
 [connection signal="pressed" from="MC_Gameover/Vbox_Gameover/Vbox_Story/Hbox_Buttons/Leave_Button" to="." method="_on_leave_button_pressed"]

@@ -14,17 +14,6 @@ func show_brief(curr_day, case:BaseCaseResource, case_id:int):
 	
 	casebrief_body.visible = false
 	
-	var desc = ""
-	
-	# Go through and break up the string
-	for i in range(case.CASE_DESCRIPTION.length()):
-		if i > 0 and i % CaseCharactersPerLine == 0:
-			desc += "\n"
-		##
-		
-		desc += case.CASE_DESCRIPTION[i]
-	##
-	
-	casebrief_body.text = desc
+	casebrief_body.text = case.CASE_DESCRIPTION
 	casebrief_body.visible = true
 ##

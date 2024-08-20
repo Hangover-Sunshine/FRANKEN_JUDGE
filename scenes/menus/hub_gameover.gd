@@ -21,22 +21,34 @@ func show_text():
 	if gameover == 0:
 		header.text = "SUCCESS"
 		ap.play("Win")
+		SoundManager.play("game_over", "good")
 	elif gameover == 1:
 		header.text = "FAILURE - PEASANTRY"
 		ap.play("Peasantry")
+		SoundManager.play("game_over", "mob")
 	elif gameover == 2:
 		header.text = "FAILURE - NOBILITY"
 		ap.play("Nobility")
+		SoundManager.play("game_over", "beheaded")
 	elif gameover == 3:
 		header.text = "FAILURE - CLERGY"
 		ap.play("Clergy")
+		SoundManager.play("game_over", "god")
+	##
+##
 
 # goes to different scenes
 func _on_again_button_pressed():
 	Verho.change_scene("scenes/game_scene", "", "BlackFade")
+	SoundManager.play_varied("ui", "Pressed", randf_range(0.7, 1.2))
 ##
 
 func _on_leave_button_pressed():
 	# new_scene:String, library:String, transition:String,
 	Verho.change_scene("scenes/menus/hub_menu", "", "BlackFade")
+	SoundManager.play_varied("ui", "Pressed", randf_range(0.7, 1.2))
+##
+
+func _on_mouse_entered():
+	SoundManager.play_varied("ui", "MouseOver", randf_range(0.7, 1.2))
 ##
