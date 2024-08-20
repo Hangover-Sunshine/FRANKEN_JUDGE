@@ -31,6 +31,7 @@ func _ready():
 # manages page flipping for any button press. Keeps MenuTimer in mind to delay instant flipping #
 func _input(event):
 	if event.is_pressed() and menu_splash.visible == true and menu_disclaimer.visible == false and ready_to_click == true:
+		SoundManager.play("ui", "gavel_smack")
 		to_main()
 		ready_to_click = false
 	elif event.is_pressed() and menu_splash.visible == false and menu_disclaimer.visible == true and ready_to_click == true:
@@ -38,6 +39,8 @@ func _input(event):
 		menu_timer.wait_time = time_splash
 		menu_timer.start()
 		ready_to_click = false
+	##
+##
 
 func handle_signals():
 	menu_disclaimer.was_disclaimed.connect(disclaimed)
