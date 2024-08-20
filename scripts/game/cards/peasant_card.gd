@@ -36,7 +36,7 @@ func show_labels(card_desc, effects:Array[BaseEffectResource]):
 		##
 		
 		effect_labels[elindex].set_symbol(1, eff.Affect)
-		effect_labels[elindex].set_text(eff.ValueChange)
+		effect_labels[elindex].set_text(eff.ValueChange, eff.Affect == GlobalData.Effects.TAX)
 		effect_labels[elindex].visible = true
 		
 		elindex += 1

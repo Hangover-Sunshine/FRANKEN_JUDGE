@@ -21,7 +21,7 @@ func set_symbol(row:int, effect:GlobalData.Effects):
 	##
 ##
 
-func set_text(amnt:int):
+func set_text(amnt:int, is_tax:bool):
 	if symbol.frame % 5 == 0:
 		if amnt < 0:
 			modifier.text = "-" + (GlobalData.THREE_NUM_DISPLAY % -amnt)
@@ -34,5 +34,9 @@ func set_text(amnt:int):
 		else:
 			modifier.text = "+" + (GlobalData.TWO_NUM_DISPLAY % amnt)
 		##
+	##
+	
+	if is_tax:
+		modifier.text += "%"
 	##
 ##
