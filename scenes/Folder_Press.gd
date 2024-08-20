@@ -18,3 +18,7 @@ func set_case_title(case_name:String):
 func _on_pressed():
 	get_parent().emit_signal("case_picked", CaseID)
 ##
+
+func _on_mouse_entered():
+	SoundManager.play_varied("folder", "hover", randf_range(0.9, 1.1))
+##

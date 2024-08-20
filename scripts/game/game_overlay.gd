@@ -85,9 +85,28 @@ func show_cases(cases:Array[BaseCaseResource]):
 	$CasePick.here_the_cases(cases)
 	ap_states.play("Part2")
 	bg_chatter = SoundManager.instance("env", "BGChatter")
+	
+	await get_tree().create_timer(0.5).timeout
+	SoundManager.play("env", "swoosh")
+	
+	await get_tree().create_timer(0.8).timeout
+	SoundManager.play("env", "swoosh")
+	
+	await get_tree().create_timer(0.5).timeout
+	SoundManager.play_varied("folder", "in_place", randf_range(0.9, 1.1))
+	
+	await get_tree().create_timer(0.3).timeout
+	SoundManager.play("env", "swoosh")
+	
+	await get_tree().create_timer(0.6).timeout
+	SoundManager.play_varied("folder", "in_place", randf_range(0.9, 1.1))
+	
+	await get_tree().create_timer(0.9).timeout
+	SoundManager.play_varied("folder", "in_place", randf_range(0.9, 1.1))
 ##
 
 func _case_picked(case_id:int):
+	SoundManager.play_varied("folder", "selected")
 	zapping = SoundManager.instance("env", "zapping")
 	bg_chatter.trigger()
 	_case = _cases[case_id]

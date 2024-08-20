@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=3 uid="uid://2nl8bwm5pvgk"]
+[gd_scene load_steps=83 format=3 uid="uid://2nl8bwm5pvgk"]
 
 [ext_resource type="Script" path="res://scripts/game/game_overlay.gd" id="1_hcafl"]
 [ext_resource type="FontFile" uid="uid://73eyyuro8nvv" path="res://assets/fonts/PirataOne.ttf" id="1_qps4p"]
@@ -39,6 +39,9 @@
 [ext_resource type="AudioStream" uid="uid://cyqoou644cjgi" path="res://assets/sound/sfx/ui/UIMovement.ogg" id="34_n8v2y"]
 [ext_resource type="AudioStream" uid="uid://b3j4fgrxxeh2a" path="res://assets/sound/sfx/scale/ChainPull.ogg" id="37_ddplf"]
 [ext_resource type="AudioStream" uid="uid://dt5vrxncjcee0" path="res://assets/sound/sfx/scale/ScaleHitsTable.ogg" id="38_vohd7"]
+[ext_resource type="AudioStream" uid="uid://h73u2x5q5l1k" path="res://assets/sound/sfx/folder/FolderHover.ogg" id="40_oiv1w"]
+[ext_resource type="AudioStream" uid="uid://5s3rd41nipe3" path="res://assets/sound/sfx/folder/FolderInPlace.ogg" id="41_k4a00"]
+[ext_resource type="AudioStream" uid="uid://7mu60ld3is7x" path="res://assets/sound/sfx/folder/FolderSelected.ogg" id="42_0xwp1"]
 
 [sub_resource type="Animation" id="Animation_fi0l2"]
 resource_name = "Part1"
@@ -1567,6 +1570,30 @@ volume = 0.0
 pitch = 1.0
 streams = Array[AudioStream]([ExtResource("38_vohd7")])
 
+[sub_resource type="Resource" id="Resource_qcqwv"]
+script = ExtResource("27_7p6v0")
+name = "hover"
+bus = ""
+volume = 0.0
+pitch = 1.0
+streams = Array[AudioStream]([ExtResource("40_oiv1w"), ExtResource("40_oiv1w"), ExtResource("40_oiv1w")])
+
+[sub_resource type="Resource" id="Resource_ox6u6"]
+script = ExtResource("27_7p6v0")
+name = "in_place"
+bus = ""
+volume = 0.0
+pitch = 1.0
+streams = Array[AudioStream]([ExtResource("41_k4a00"), ExtResource("41_k4a00")])
+
+[sub_resource type="Resource" id="Resource_8nype"]
+script = ExtResource("27_7p6v0")
+name = "selected"
+bus = ""
+volume = 0.0
+pitch = 1.0
+streams = Array[AudioStream]([ExtResource("42_0xwp1")])
+
 [node name="Game_Overlay" type="Node2D"]
 script = ExtResource("1_hcafl")
 
@@ -2535,5 +2562,11 @@ script = ExtResource("26_6akmt")
 label = "scale"
 bus = "sfx"
 events = Array[ExtResource("27_7p6v0")]([SubResource("Resource_1x1og"), SubResource("Resource_1wfp1"), SubResource("Resource_5iwat"), SubResource("Resource_u6mew"), SubResource("Resource_e1tws")])
+
+[node name="FolderSoundBank" type="Node" parent="."]
+script = ExtResource("26_6akmt")
+label = "folder"
+bus = "SFX"
+events = Array[ExtResource("27_7p6v0")]([SubResource("Resource_qcqwv"), SubResource("Resource_ox6u6"), SubResource("Resource_8nype")])
 
 [connection signal="animation_finished" from="AP_States" to="." method="_on_ap_states_animation_finished"]
