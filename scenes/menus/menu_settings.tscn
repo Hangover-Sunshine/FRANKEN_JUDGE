@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bqxt4qvvqx5lj"]
+[gd_scene load_steps=13 format=3 uid="uid://bqxt4qvvqx5lj"]
 
 [ext_resource type="Script" path="res://scripts/menus/menu_settings.gd" id="1_1ptlj"]
 [ext_resource type="FontFile" uid="uid://73eyyuro8nvv" path="res://assets/fonts/PirataOne.ttf" id="2_dluss"]
@@ -6,6 +6,18 @@
 [ext_resource type="Texture2D" uid="uid://dtyf8s2ckqnhy" path="res://assets/particle/UI_Checked.png" id="4_wt1tp"]
 [ext_resource type="Texture2D" uid="uid://blq7ieq5770aa" path="res://assets/particle/UI_Checkbox.png" id="5_7g1i2"]
 [ext_resource type="Theme" uid="uid://cra8p8hxk35en" path="res://assets/ui/button_theme.tres" id="6_wlla4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6pq3q"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7gt4i"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2l1xx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_to0mj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8btkv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d3r12"]
 
 [node name="MenuSettings" type="Control"]
 layout_mode = 3
@@ -76,6 +88,12 @@ layout_mode = 2
 size_flags_horizontal = 10
 theme_override_icons/checked = ExtResource("4_wt1tp")
 theme_override_icons/unchecked = ExtResource("5_7g1i2")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_6pq3q")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_7gt4i")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_2l1xx")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_to0mj")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_8btkv")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_d3r12")
 
 [node name="Audio_HBox" type="HBoxContainer" parent="Settings_MC/Settings_VBox/Tab_Vbox/Settings_Tab_Hbox"]
 layout_mode = 2
