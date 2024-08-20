@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://2nl8bwm5pvgk"]
+[gd_scene load_steps=65 format=3 uid="uid://2nl8bwm5pvgk"]
 
 [ext_resource type="Script" path="res://scripts/game/game_overlay.gd" id="1_hcafl"]
 [ext_resource type="FontFile" uid="uid://73eyyuro8nvv" path="res://assets/fonts/PirataOne.ttf" id="1_qps4p"]
@@ -25,6 +25,14 @@
 [ext_resource type="PackedScene" uid="uid://2ccarx7gmy63" path="res://prefabs/scale_cards/mega_card.tscn" id="18_4l78d"]
 [ext_resource type="Script" path="res://scripts/game/game_overlay/winning_card_display.gd" id="19_u43l4"]
 [ext_resource type="Texture2D" uid="uid://2kyvmgwi30lo" path="res://assets/frank/Hand.png" id="21_44ht1"]
+[ext_resource type="Script" path="res://addons/resonate/sound_manager/sound_bank.gd" id="26_6akmt"]
+[ext_resource type="Script" path="res://addons/resonate/sound_manager/sound_event_resource.gd" id="27_7p6v0"]
+[ext_resource type="AudioStream" uid="uid://7i7ler7xmgvn" path="res://assets/sound/sfx/environment/Bell1.ogg" id="28_pmhtf"]
+[ext_resource type="AudioStream" uid="uid://brutpkuwn3bgk" path="res://assets/sound/sfx/environment/Bell2.ogg" id="29_w66qr"]
+[ext_resource type="AudioStream" uid="uid://uvjwi8vsq1qq" path="res://assets/sound/sfx/environment/Bell3.ogg" id="30_3iy14"]
+[ext_resource type="AudioStream" uid="uid://is0mya4fgdq" path="res://assets/sound/sfx/environment/BGChatter.ogg" id="31_urilp"]
+[ext_resource type="AudioStream" uid="uid://b6yn5shb1b8dd" path="res://assets/sound/sfx/scale/ScaleClicking.ogg" id="32_o6twq"]
+[ext_resource type="AudioStream" uid="uid://8ildbgmj5ssu" path="res://assets/sound/sfx/scale/ThumbOnScale.ogg" id="33_5k40j"]
 
 [sub_resource type="Animation" id="Animation_fi0l2"]
 resource_name = "Part1"
@@ -1457,6 +1465,54 @@ _data = {
 "press_right": SubResource("Animation_7m4iw")
 }
 
+[sub_resource type="Resource" id="Resource_r6oet"]
+script = ExtResource("27_7p6v0")
+name = "bell1"
+bus = ""
+volume = 0.0
+pitch = 1.0
+streams = Array[AudioStream]([ExtResource("28_pmhtf")])
+
+[sub_resource type="Resource" id="Resource_p5kd4"]
+script = ExtResource("27_7p6v0")
+name = "bell2"
+bus = ""
+volume = 0.0
+pitch = 1.0
+streams = Array[AudioStream]([ExtResource("29_w66qr")])
+
+[sub_resource type="Resource" id="Resource_eduoc"]
+script = ExtResource("27_7p6v0")
+name = "bell3"
+bus = ""
+volume = 0.0
+pitch = 1.0
+streams = Array[AudioStream]([ExtResource("30_3iy14")])
+
+[sub_resource type="Resource" id="Resource_ncu43"]
+script = ExtResource("27_7p6v0")
+name = "BGChatter"
+bus = ""
+volume = 0.0
+pitch = 1.0
+streams = Array[AudioStream]([ExtResource("31_urilp")])
+
+[sub_resource type="Resource" id="Resource_1x1og"]
+script = ExtResource("27_7p6v0")
+name = "clicking"
+bus = ""
+volume = 0.0
+pitch = 1.0
+streams = Array[AudioStream]([ExtResource("32_o6twq")])
+
+[sub_resource type="Resource" id="Resource_1wfp1"]
+script = ExtResource("27_7p6v0")
+name = "thumb_scale"
+bus = ""
+volume = 0.0
+pitch = 1.0
+streams = Array[AudioStream]([ExtResource("33_5k40j")])
+
 [node name="Game_Overlay" type="Node2D"]
 script = ExtResource("1_hcafl")
 
@@ -2133,7 +2189,6 @@ text = "00 / 30"
 horizontal_alignment = 1
 
 [node name="BigDays" type="Control" parent="."]
-modulate = Color(1, 1, 1, 0)
 layout_mode = 3
 anchors_preset = 0
 offset_left = 943.0
@@ -2144,6 +2199,7 @@ mouse_filter = 2
 script = ExtResource("4_lmcgd")
 
 [node name="Day_Header" type="Label" parent="BigDays"]
+visible = false
 layout_mode = 0
 offset_left = -366.0
 offset_top = -95.0
@@ -2155,6 +2211,7 @@ text = "DAY"
 horizontal_alignment = 1
 
 [node name="Day_Number_Header" type="Label" parent="BigDays"]
+visible = false
 layout_mode = 0
 offset_left = -66.0
 offset_top = -95.0
@@ -2272,6 +2329,7 @@ mouse_filter = 1
 script = ExtResource("5_e5niu")
 
 [node name="Case_Header" type="Label" parent="CasePick"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -2293,10 +2351,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 289.352
-offset_top = 185.0
-offset_right = 989.352
-offset_bottom = 985.0
+offset_left = 241.0
+offset_top = -1300.0
+offset_right = 941.0
+offset_bottom = -500.0
 grow_horizontal = 2
 rotation = 0.20944
 pivot_offset = Vector2(350, 0)
@@ -2307,10 +2365,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -200.648
-offset_top = 100.0
-offset_right = 499.352
-offset_bottom = 900.013
+offset_left = -360.648
+offset_top = 612.0
+offset_right = 339.352
+offset_bottom = 1412.01
 grow_horizontal = 2
 pivot_offset = Vector2(350, 0)
 CaseID = 1
@@ -2320,12 +2378,11 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -708.648
-offset_top = 184.0
-offset_right = -8.64801
-offset_bottom = 984.0
+offset_left = -678.0
+offset_top = 612.0
+offset_right = 22.0
+offset_bottom = 1412.0
 grow_horizontal = 2
-rotation = -0.20944
 pivot_offset = Vector2(350, 0)
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -2422,5 +2479,17 @@ offset_right = 172.5
 offset_bottom = 0.000366211
 grow_horizontal = 2
 grow_vertical = 0
+
+[node name="EnvSoundBank" type="Node" parent="."]
+script = ExtResource("26_6akmt")
+label = "env"
+bus = "SFX"
+events = Array[ExtResource("27_7p6v0")]([SubResource("Resource_r6oet"), SubResource("Resource_p5kd4"), SubResource("Resource_eduoc"), SubResource("Resource_ncu43")])
+
+[node name="ScaleSoundBank" type="Node" parent="."]
+script = ExtResource("26_6akmt")
+label = "scale"
+bus = "sfx"
+events = Array[ExtResource("27_7p6v0")]([SubResource("Resource_1x1og"), SubResource("Resource_1wfp1")])
 
 [connection signal="animation_finished" from="AP_States" to="." method="_on_ap_states_animation_finished"]
