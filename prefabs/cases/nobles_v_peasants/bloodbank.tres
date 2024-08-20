@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="BaseCaseResource" load_steps=6 format=3 uid="uid://dnkjxr50ej2v4"]
+
+[ext_resource type="Script" path="res://scripts/resources/base_case_resource.gd" id="1_kqjby"]
+[ext_resource type="Resource" uid="uid://c17d06qhkpdxn" path="res://prefabs/effects/peasants/add/peasants_p2health.tres" id="1_w74q4"]
+[ext_resource type="Resource" uid="uid://c2husuyrsby0n" path="res://prefabs/effects/peasants/sub/peasants_m1health.tres" id="2_ti716"]
+[ext_resource type="Resource" uid="uid://uaskmp34bx05" path="res://prefabs/effects/nobility/add/plus1_healthcare.tres" id="3_irqfr"]
+[ext_resource type="Resource" uid="uid://k8pjjsmsx2u8" path="res://prefabs/effects/nobility/add/plus1_labor.tres" id="4_5kuvq"]
+
+[resource]
+script = ExtResource("1_kqjby")
+CASE_NAME = "Blood Bank Stops Bloodlet"
+CASE_DESCRIPTION = "Vampire sues local blood bank for discrimination. While the blood bank argues that blood must come from consenting owners, the count argues otherwise."
+PARTY_A = 0
+PARTY_A_ARGUMENT = "The blood bank isn't an actual bank."
+EFFECTS_A = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("1_w74q4")])
+PARTY_B = 1
+PARTY_B_ARGUMENT = "Let the vampire donate their blood supply."
+EFFECTS_B = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("2_ti716"), ExtResource("3_irqfr"), ExtResource("4_5kuvq")])

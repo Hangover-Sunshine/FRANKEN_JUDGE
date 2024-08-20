@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="BaseCaseResource" load_steps=8 format=3 uid="uid://8wcwdxceyykm"]
+
+[ext_resource type="Resource" uid="uid://cadrtm7473raq" path="res://prefabs/effects/clergy/sub/m2-labor.tres" id="1_aftdw"]
+[ext_resource type="Script" path="res://scripts/resources/base_case_resource.gd" id="1_y371k"]
+[ext_resource type="Resource" uid="uid://c6hviuaovpxxx" path="res://prefabs/effects/nobility/sub/minus1_labor.tres" id="2_3nki2"]
+[ext_resource type="Resource" uid="uid://r2iaysafh721" path="res://prefabs/effects/peasants/add/peasants_p1health.tres" id="3_0y5bp"]
+[ext_resource type="Resource" uid="uid://dyasxce3g4bc8" path="res://prefabs/effects/peasants/add/peasants_p1lab.tres" id="4_jq5vm"]
+[ext_resource type="Resource" uid="uid://cj65mxpgeumpb" path="res://prefabs/effects/peasants/sub/peasants_m2lab.tres" id="5_hntf3"]
+[ext_resource type="Resource" uid="uid://cnits3t32qf0h" path="res://prefabs/effects/clergy/add/p2-labor.tres" id="6_eu7lt"]
+
+[resource]
+script = ExtResource("1_y371k")
+CASE_NAME = "Lich Versus Labor Laws"
+CASE_DESCRIPTION = "A newly risen undead army sues lich for labor law violations. The lich argues the undead soldiers are not considered living and thus not protected."
+PARTY_A = 0
+PARTY_A_ARGUMENT = "All workers are entitled to benefits."
+EFFECTS_A = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("1_aftdw"), ExtResource("2_3nki2"), ExtResource("3_0y5bp"), ExtResource("4_jq5vm")])
+PARTY_B = 2
+PARTY_B_ARGUMENT = "The dead are not protected workers."
+EFFECTS_B = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("5_hntf3"), ExtResource("6_eu7lt")])

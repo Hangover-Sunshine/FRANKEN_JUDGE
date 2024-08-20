@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="BaseCaseResource" load_steps=7 format=3 uid="uid://d0hjl7sipniq7"]
+
+[ext_resource type="Resource" uid="uid://bolq6qy671ywe" path="res://prefabs/effects/clergy/sub/minus1_police.tres" id="1_2dps3"]
+[ext_resource type="Resource" uid="uid://bauo6g5gkp5jc" path="res://prefabs/effects/clergy/add/p3-police.tres" id="1_kydd4"]
+[ext_resource type="Script" path="res://scripts/resources/base_case_resource.gd" id="1_tpxdy"]
+[ext_resource type="Resource" uid="uid://sgapd18eukjw" path="res://prefabs/effects/clergy/sub/m1-healthcare.tres" id="2_n8lfk"]
+[ext_resource type="Resource" uid="uid://dc288ltxh5y5u" path="res://prefabs/effects/nobility/sub/m1-healthcare.tres" id="3_hyte3"]
+[ext_resource type="Resource" uid="uid://c2husuyrsby0n" path="res://prefabs/effects/peasants/sub/peasants_m1health.tres" id="4_fikjq"]
+
+[resource]
+script = ExtResource("1_tpxdy")
+CASE_NAME = "Excorcism Trespass Dispute"
+CASE_DESCRIPTION = "A poltergeist possessing a mortal sues clergy performing an exorcism for trespassing. The cloister argues the possessed isn't property, while the spirit seeks compensation for damages."
+PARTY_A = 0
+PARTY_A_ARGUMENT = "The poltergeist owns the flesh property."
+EFFECTS_A = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("1_kydd4"), ExtResource("2_n8lfk"), ExtResource("3_hyte3"), ExtResource("4_fikjq")])
+PARTY_B = 0
+PARTY_B_ARGUMENT = "People aren't homes."
+EFFECTS_B = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("1_2dps3")])

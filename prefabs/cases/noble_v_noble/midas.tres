@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="BaseCaseResource" load_steps=6 format=3 uid="uid://cki2s2365mokw"]
+
+[ext_resource type="Script" path="res://scripts/resources/base_case_resource.gd" id="1_0se1j"]
+[ext_resource type="Resource" uid="uid://c2husuyrsby0n" path="res://prefabs/effects/peasants/sub/peasants_m1health.tres" id="1_lrabw"]
+[ext_resource type="Resource" uid="uid://byjqnopdvbbay" path="res://prefabs/effects/peasants/sub/peasants_m10tax.tres" id="1_qixa5"]
+[ext_resource type="Resource" uid="uid://dc288ltxh5y5u" path="res://prefabs/effects/nobility/sub/m1-healthcare.tres" id="2_dbmca"]
+[ext_resource type="Resource" uid="uid://sgapd18eukjw" path="res://prefabs/effects/clergy/sub/m1-healthcare.tres" id="3_i1jwt"]
+
+[resource]
+script = ExtResource("1_0se1j")
+CASE_NAME = "Golden Touch Turns Grievance"
+CASE_DESCRIPTION = "A faraway noble was cursed to turn all he touches to gold. A local servant’s family sues for the golden remains of their loved one, while the noble argues the man is now a sculpture."
+PARTY_A = 1
+PARTY_A_ARGUMENT = "The statue belongs to the \"sculptor.\""
+EFFECTS_A = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("1_lrabw"), ExtResource("2_dbmca"), ExtResource("3_i1jwt")])
+PARTY_B = 1
+PARTY_B_ARGUMENT = "The victim is to be returned to family."
+EFFECTS_B = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("1_qixa5")])

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="BaseCaseResource" load_steps=6 format=3 uid="uid://d2x3k38bbk53p"]
+
+[ext_resource type="Script" path="res://scripts/resources/base_case_resource.gd" id="1_t05li"]
+[ext_resource type="Resource" uid="uid://cwgurcitg6y6" path="res://prefabs/effects/nobility/add/p1-police.tres" id="1_xelj5"]
+[ext_resource type="Resource" uid="uid://cbttmtgsmk2bu" path="res://prefabs/effects/clergy/sub/m2-education.tres" id="2_8mmb5"]
+[ext_resource type="Resource" uid="uid://bcsav2jcqp6cv" path="res://prefabs/effects/nobility/sub/m1-police.tres" id="3_x41vb"]
+[ext_resource type="Resource" uid="uid://d2eus0xvcb6ij" path="res://prefabs/effects/clergy/add/p1_edu.tres" id="4_fxkva"]
+
+[resource]
+script = ExtResource("1_t05li")
+CASE_NAME = "Cursed Dolly Dilemma"
+CASE_DESCRIPTION = "A well-off family acquired a sentient doll. The nearby clergy took it, claiming it cursed and needing of study. The family argues it's their property, while the clergy cites \"the greater good.\""
+PARTY_A = 1
+PARTY_A_ARGUMENT = "The cute doll stays with the child."
+EFFECTS_A = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("1_xelj5"), ExtResource("2_8mmb5")])
+PARTY_B = 2
+PARTY_B_ARGUMENT = "The creepy wooden man must be studied."
+EFFECTS_B = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("3_x41vb"), ExtResource("4_fxkva")])

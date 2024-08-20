@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="BaseCaseResource" load_steps=5 format=3 uid="uid://ndnr5m8vb511"]
+
+[ext_resource type="Script" path="res://scripts/resources/base_case_resource.gd" id="1_ngbki"]
+[ext_resource type="Resource" uid="uid://3up7npafxkl3" path="res://prefabs/effects/peasants/sub/peasants_m1lab.tres" id="1_oropb"]
+[ext_resource type="Resource" uid="uid://byjqnopdvbbay" path="res://prefabs/effects/peasants/sub/peasants_m10tax.tres" id="2_twh8h"]
+[ext_resource type="Resource" uid="uid://bgkh6ktytrimy" path="res://prefabs/effects/peasants/add/p3-labor.tres" id="3_r4yqc"]
+
+[resource]
+script = ExtResource("1_ngbki")
+CASE_NAME = "Corny Kids Yearn For Fields"
+CASE_DESCRIPTION = "A farming village of kids asks for the right to work as farmers. They claim \"all corn\" as their legal guardian, while the city legislature argues all child labor is immoral."
+PARTY_A = 0
+PARTY_A_ARGUMENT = "The children yearn for the corn."
+EFFECTS_A = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("1_oropb"), ExtResource("2_twh8h")])
+PARTY_B = 0
+PARTY_B_ARGUMENT = "Child labor is problematic."
+EFFECTS_B = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("3_r4yqc")])

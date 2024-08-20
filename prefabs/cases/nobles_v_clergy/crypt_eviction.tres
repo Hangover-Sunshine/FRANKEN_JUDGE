@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="BaseCaseResource" load_steps=7 format=3 uid="uid://fhvqo1advpwj"]
+
+[ext_resource type="Script" path="res://scripts/resources/base_case_resource.gd" id="1_3gjch"]
+[ext_resource type="Resource" uid="uid://uaskmp34bx05" path="res://prefabs/effects/nobility/add/plus1_healthcare.tres" id="1_4ldk4"]
+[ext_resource type="Resource" uid="uid://ox24hwhjvkoe" path="res://prefabs/effects/clergy/add/p3-labor.tres" id="1_mjfe6"]
+[ext_resource type="Resource" uid="uid://r2iaysafh721" path="res://prefabs/effects/peasants/add/peasants_p1health.tres" id="2_1a34b"]
+[ext_resource type="Resource" uid="uid://c8otkcjpaew2u" path="res://prefabs/effects/clergy/add/p1_healthcare.tres" id="3_dkjj2"]
+[ext_resource type="Resource" uid="uid://bwyoqoe4edsgd" path="res://prefabs/effects/clergy/sub/m1-labor.tres" id="4_yigd2"]
+
+[resource]
+script = ExtResource("1_3gjch")
+CASE_NAME = "Crypt Eviction Clash"
+CASE_DESCRIPTION = "Local cryptkeepers order the eviction of living zombies from burial grounds. The zombies argue housing law applies only to living mortals, while the cryptkeepers claim trespassing."
+PARTY_A = 1
+PARTY_A_ARGUMENT = "The zombies are still technically dead."
+EFFECTS_A = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("1_4ldk4"), ExtResource("2_1a34b"), ExtResource("3_dkjj2"), ExtResource("4_yigd2")])
+PARTY_B = 2
+PARTY_B_ARGUMENT = "You're being evicted from your crypt."
+EFFECTS_B = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("1_mjfe6")])

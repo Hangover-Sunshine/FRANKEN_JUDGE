@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="BaseCaseResource" load_steps=6 format=3 uid="uid://dixde1lath220"]
+
+[ext_resource type="Script" path="res://scripts/resources/base_case_resource.gd" id="1_7kh7b"]
+[ext_resource type="Resource" uid="uid://d2eus0xvcb6ij" path="res://prefabs/effects/clergy/add/p1_edu.tres" id="1_h66dp"]
+[ext_resource type="Resource" uid="uid://dgr7j7lm5rfx5" path="res://prefabs/effects/nobility/add/p2-education.tres" id="2_i8r32"]
+[ext_resource type="Resource" uid="uid://bgpur2tbqmpqj" path="res://prefabs/effects/clergy/sub/m1-edu.tres" id="3_b13c8"]
+[ext_resource type="Resource" uid="uid://sgapd18eukjw" path="res://prefabs/effects/clergy/sub/m1-healthcare.tres" id="4_4xfga"]
+
+[resource]
+script = ExtResource("1_7kh7b")
+CASE_NAME = "Pharaoh Piñatas"
+CASE_DESCRIPTION = "Monks are enraged by a \"unwrapping party\" that opened sacred coffins. They claim the remains were desecrated, while party-goers argue the coffins were found on public land."
+PARTY_A = 2
+PARTY_A_ARGUMENT = "The mummies must be preserved."
+EFFECTS_A = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("1_h66dp")])
+PARTY_B = 1
+PARTY_B_ARGUMENT = "Open the coffins!"
+EFFECTS_B = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("2_i8r32"), ExtResource("3_b13c8"), ExtResource("4_4xfga")])

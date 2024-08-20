@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="BaseCaseResource" load_steps=6 format=3 uid="uid://byy1gxn0okuke"]
+
+[ext_resource type="Resource" uid="uid://cb3urf26fu4qd" path="res://prefabs/effects/peasants/sub/peasants_m2health.tres" id="1_rbl73"]
+[ext_resource type="Script" path="res://scripts/resources/base_case_resource.gd" id="1_u3c0b"]
+[ext_resource type="Resource" uid="uid://dc288ltxh5y5u" path="res://prefabs/effects/nobility/sub/m1-healthcare.tres" id="2_ey62o"]
+[ext_resource type="Resource" uid="uid://sgapd18eukjw" path="res://prefabs/effects/clergy/sub/m1-healthcare.tres" id="3_p67p1"]
+[ext_resource type="Resource" uid="uid://r2iaysafh721" path="res://prefabs/effects/peasants/add/peasants_p1health.tres" id="4_6ryvk"]
+
+[resource]
+script = ExtResource("1_u3c0b")
+CASE_NAME = "Expired Rotten Rights"
+CASE_DESCRIPTION = "A group of zombie activists sues a nearby restaurant for not selling rotten meat. Restaurant staff cite health concerns, while the undead claim it violates their right to participate in society."
+PARTY_A = 0
+PARTY_A_ARGUMENT = "An expiration date is more of a suggestion."
+EFFECTS_A = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("1_rbl73"), ExtResource("2_ey62o"), ExtResource("3_p67p1")])
+PARTY_B = 0
+PARTY_B_ARGUMENT = "You can't serve rotten food and produce."
+EFFECTS_B = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("4_6ryvk")])

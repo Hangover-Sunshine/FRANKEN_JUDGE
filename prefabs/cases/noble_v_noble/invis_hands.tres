@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="BaseCaseResource" load_steps=5 format=3 uid="uid://tt8nwbb4ivx6"]
+
+[ext_resource type="Script" path="res://scripts/resources/base_case_resource.gd" id="1_a8kau"]
+[ext_resource type="Resource" uid="uid://b3ist7qss52k0" path="res://prefabs/effects/nobility/add/plus10_tax.tres" id="1_vkwg6"]
+[ext_resource type="Resource" uid="uid://k8pjjsmsx2u8" path="res://prefabs/effects/nobility/add/plus1_labor.tres" id="2_mkeat"]
+[ext_resource type="Resource" uid="uid://bptwij3d7hpix" path="res://prefabs/effects/nobility/sub/m2-police.tres" id="3_7s48u"]
+
+[resource]
+script = ExtResource("1_a8kau")
+CASE_NAME = "Dispute Over Invisible Hands"
+CASE_DESCRIPTION = "A group of ghostly investors wants to own and trade stock. Mortal investors argue ghosts can't physically handle assets, but the ghosts sue for their right to buy and sell."
+PARTY_A = 1
+PARTY_A_ARGUMENT = "Ghosts have \"invisible hands\"."
+EFFECTS_A = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("1_vkwg6"), ExtResource("2_mkeat")])
+PARTY_B = 1
+PARTY_B_ARGUMENT = "Ghosts cannot hold assets."
+EFFECTS_B = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("3_7s48u")])

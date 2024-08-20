@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="BaseCaseResource" load_steps=7 format=3 uid="uid://b1hciquswkdjk"]
+
+[ext_resource type="Script" path="res://scripts/resources/base_case_resource.gd" id="1_1ehfk"]
+[ext_resource type="Resource" uid="uid://r2iaysafh721" path="res://prefabs/effects/peasants/add/peasants_p1health.tres" id="1_pfuj5"]
+[ext_resource type="Resource" uid="uid://cte17774o156n" path="res://prefabs/effects/peasants/add/peasants_p1pol.tres" id="2_k0ny0"]
+[ext_resource type="Resource" uid="uid://5vodme12j30d" path="res://prefabs/effects/peasants/sub/peasants_m1pol.tres" id="3_qubwe"]
+[ext_resource type="Resource" uid="uid://c2husuyrsby0n" path="res://prefabs/effects/peasants/sub/peasants_m1health.tres" id="4_i7nvl"]
+[ext_resource type="Resource" uid="uid://birs3asmofvfv" path="res://prefabs/effects/peasants/sub/peasants_m1lit.tres" id="5_x0dd1"]
+
+[resource]
+script = ExtResource("1_1ehfk")
+CASE_NAME = "Right To Bear Arms"
+CASE_DESCRIPTION = "A chapel sues a man for his \"literal bear arms\" and the danger they pose. The man argues for his right to \"bear arms,\" while the clergy claim the modifications endanger greater society."
+PARTY_A = 0
+PARTY_A_ARGUMENT = "The man can bear bear arms."
+EFFECTS_A = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("1_pfuj5"), ExtResource("2_k0ny0")])
+PARTY_B = 2
+PARTY_B_ARGUMENT = "Why do you want bear arms?"
+EFFECTS_B = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("3_qubwe"), ExtResource("4_i7nvl"), ExtResource("5_x0dd1")])

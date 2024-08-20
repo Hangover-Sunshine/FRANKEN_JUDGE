@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="BaseCaseResource" load_steps=6 format=3 uid="uid://bxl8sbmgrbv2m"]
+
+[ext_resource type="Resource" uid="uid://djihisftxcc7o" path="res://prefabs/effects/peasants/sub/peasants_m2lit.tres" id="1_6suda"]
+[ext_resource type="Script" path="res://scripts/resources/base_case_resource.gd" id="1_uc1gi"]
+[ext_resource type="Resource" uid="uid://ybo4v3grckie" path="res://prefabs/effects/peasants/add/p3-education.tres" id="1_ykcfp"]
+[ext_resource type="Resource" uid="uid://cte17774o156n" path="res://prefabs/effects/peasants/add/peasants_p1pol.tres" id="2_kuh1j"]
+[ext_resource type="Resource" uid="uid://b68tkpqh83hak" path="res://prefabs/effects/clergy/add/plus1_police.tres" id="3_guec3"]
+
+[resource]
+script = ExtResource("1_uc1gi")
+CASE_NAME = "Public Use For Lightning"
+CASE_DESCRIPTION = "Nearby chapel sues scientist for using lightning for resurrection. The scientist argues lightning is a public commodity, while the church claims it as property owned by god."
+PARTY_A = 0
+PARTY_A_ARGUMENT = "Lightning is a public commidity."
+EFFECTS_A = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("1_ykcfp")])
+PARTY_B = 2
+PARTY_B_ARGUMENT = "The lord owns the right to smite!"
+EFFECTS_B = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("1_6suda"), ExtResource("2_kuh1j"), ExtResource("3_guec3")])

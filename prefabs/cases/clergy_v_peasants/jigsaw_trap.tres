@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="BaseCaseResource" load_steps=4 format=3 uid="uid://bwgi5d0uq10m1"]
+
+[ext_resource type="Script" path="res://scripts/resources/base_case_resource.gd" id="1_4b34g"]
+[ext_resource type="Resource" uid="uid://d2eus0xvcb6ij" path="res://prefabs/effects/clergy/add/p1_edu.tres" id="1_cl8mi"]
+[ext_resource type="Resource" uid="uid://cmso4ghxan54h" path="res://prefabs/effects/peasants/add/peasants_p1lit.tres" id="2_nul48"]
+
+[resource]
+script = ExtResource("1_4b34g")
+CASE_NAME = "Jigsaw Trap Turned Solvable"
+CASE_DESCRIPTION = "The nearby town sues a cloister for kidnapping townsfolk trapped in a magical jigsaw puzzle. The cloister claims it is a \"holy relic\" needed for religious ceremonies."
+PARTY_A = 2
+PARTY_A_ARGUMENT = "Church is to solve and free imprisoned."
+EFFECTS_A = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("1_cl8mi")])
+PARTY_B = 0
+PARTY_B_ARGUMENT = "Town is to relinquish holy artifact."
+EFFECTS_B = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("2_nul48")])

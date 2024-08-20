@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="BaseCaseResource" load_steps=5 format=3 uid="uid://xgwkha0g1itn"]
+
+[ext_resource type="Script" path="res://scripts/resources/base_case_resource.gd" id="1_i1bkl"]
+[ext_resource type="Resource" uid="uid://c17d06qhkpdxn" path="res://prefabs/effects/peasants/add/peasants_p2health.tres" id="1_kusxl"]
+[ext_resource type="Resource" uid="uid://gvw7sqdml1qv" path="res://prefabs/effects/peasants/add/peasants_p2lit.tres" id="2_5srfu"]
+[ext_resource type="Resource" uid="uid://c2husuyrsby0n" path="res://prefabs/effects/peasants/sub/peasants_m1health.tres" id="3_uxy07"]
+
+[resource]
+script = ExtResource("1_i1bkl")
+CASE_NAME = "Broom Scam"
+CASE_DESCRIPTION = "Village hag demands compensation for false advertising in a broom sale. The store claims no responsibility for injury, while the hag seeks compensation for failing to disclose non-flyable brooms."
+PARTY_A = 0
+PARTY_A_ARGUMENT = "Not all brooms can fly."
+EFFECTS_A = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("1_kusxl")])
+PARTY_B = 0
+PARTY_B_ARGUMENT = "Better stock up on magical brooms."
+EFFECTS_B = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("2_5srfu"), ExtResource("3_uxy07")])

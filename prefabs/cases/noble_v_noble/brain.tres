@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="BaseCaseResource" load_steps=6 format=3 uid="uid://bp8yojnaj626t"]
+
+[ext_resource type="Script" path="res://scripts/resources/base_case_resource.gd" id="1_pct5t"]
+[ext_resource type="Resource" uid="uid://bhwtg7v0opbqs" path="res://prefabs/effects/nobility/add/p2-labor.tres" id="1_tikqs"]
+[ext_resource type="Resource" uid="uid://uaskmp34bx05" path="res://prefabs/effects/nobility/add/plus1_healthcare.tres" id="2_7b5jw"]
+[ext_resource type="Resource" uid="uid://dgr7j7lm5rfx5" path="res://prefabs/effects/nobility/add/p2-education.tres" id="3_af2xl"]
+[ext_resource type="Resource" uid="uid://drcp6nsquq658" path="res://prefabs/effects/nobility/sub/m2-healthcare.tres" id="4_3wqxr"]
+
+[resource]
+script = ExtResource("1_pct5t")
+CASE_NAME = "Unfair Brain Banquet"
+CASE_DESCRIPTION = "Competing fine dining restaurants argue over the right to sell human brains. One side claims it violates health laws, while the other argues it's a delicacy."
+PARTY_A = 1
+PARTY_A_ARGUMENT = "All dining must comply with health law."
+EFFECTS_A = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("1_tikqs"), ExtResource("2_7b5jw")])
+PARTY_B = 1
+PARTY_B_ARGUMENT = "Yummy! Brains! Me want!"
+EFFECTS_B = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("3_af2xl"), ExtResource("4_3wqxr")])

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="BaseCaseResource" load_steps=5 format=3 uid="uid://cw0eibs6pmbxd"]
+
+[ext_resource type="Script" path="res://scripts/resources/base_case_resource.gd" id="1_bgxdx"]
+[ext_resource type="Resource" uid="uid://bcsav2jcqp6cv" path="res://prefabs/effects/nobility/sub/m1-police.tres" id="1_xcgtw"]
+[ext_resource type="Resource" uid="uid://bhowu5jdi2vtr" path="res://prefabs/effects/nobility/sub/minus1_literacy.tres" id="2_54lh0"]
+[ext_resource type="Resource" uid="uid://dgr7j7lm5rfx5" path="res://prefabs/effects/nobility/add/p2-education.tres" id="3_pevtp"]
+
+[resource]
+script = ExtResource("1_bgxdx")
+CASE_NAME = "Headless Investment Advice"
+CASE_DESCRIPTION = "An investor sues officials for a wrongful restraining order on trading. The city claims he unfairly uses an all-knowing headless horseman, while the investor denies this."
+PARTY_A = 1
+PARTY_A_ARGUMENT = "The horsemen gave you \"a head\" in the market."
+EFFECTS_A = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("1_xcgtw"), ExtResource("2_54lh0")])
+PARTY_B = 1
+PARTY_B_ARGUMENT = "The headless horsemen is a fiduciary adviser."
+EFFECTS_B = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("3_pevtp")])

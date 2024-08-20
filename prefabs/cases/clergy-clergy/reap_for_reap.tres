@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="BaseCaseResource" load_steps=8 format=3 uid="uid://c6h1im53detbr"]
+
+[ext_resource type="Script" path="res://scripts/resources/base_case_resource.gd" id="1_a1r7w"]
+[ext_resource type="Resource" uid="uid://ckxesvp6x7qv0" path="res://prefabs/effects/peasants/add/peasants_p2lab.tres" id="1_imyk7"]
+[ext_resource type="Resource" uid="uid://bp66jvgict4qm" path="res://prefabs/effects/peasants/add/peasants_p2pol.tres" id="2_tal1l"]
+[ext_resource type="Resource" uid="uid://b68tkpqh83hak" path="res://prefabs/effects/clergy/add/plus1_police.tres" id="3_bf2f1"]
+[ext_resource type="Resource" uid="uid://0lhk5wa2dr63" path="res://prefabs/effects/clergy/add/p1_labor.tres" id="4_s0cjx"]
+[ext_resource type="Resource" uid="uid://cwgurcitg6y6" path="res://prefabs/effects/nobility/add/p1-police.tres" id="5_a51c2"]
+[ext_resource type="Resource" uid="uid://k8pjjsmsx2u8" path="res://prefabs/effects/nobility/add/plus1_labor.tres" id="6_q7mxd"]
+
+[resource]
+script = ExtResource("1_a1r7w")
+CASE_NAME = "Reap For Reap"
+CASE_DESCRIPTION = "Local grim reapers dispute ownership of wandering spirits. One argues souls can be reaped anywhere, while the other claims ownership of any spirit on their property."
+PARTY_A = 2
+PARTY_A_ARGUMENT = "You can't own a wandering soul."
+EFFECTS_A = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("1_imyk7"), ExtResource("2_tal1l")])
+PARTY_B = 2
+PARTY_B_ARGUMENT = "Souls can be claimed and owned by individuals."
+EFFECTS_B = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("3_bf2f1"), ExtResource("4_s0cjx"), ExtResource("5_a51c2"), ExtResource("6_q7mxd")])

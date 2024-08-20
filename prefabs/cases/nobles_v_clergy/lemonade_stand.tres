@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="BaseCaseResource" load_steps=5 format=3 uid="uid://d1nsn4580rone"]
+
+[ext_resource type="Resource" uid="uid://btkdy36tin2bk" path="res://prefabs/effects/clergy/add/p30_tax.tres" id="1_3e00f"]
+[ext_resource type="Script" path="res://scripts/resources/base_case_resource.gd" id="1_4aas3"]
+[ext_resource type="Resource" uid="uid://cpewahrpmq6h3" path="res://prefabs/effects/clergy/add/p2-police.tres" id="1_xysgc"]
+[ext_resource type="Resource" uid="uid://bs74ohjv5yu8e" path="res://prefabs/effects/nobility/sub/m2-labor.tres" id="2_f4j3c"]
+
+[resource]
+script = ExtResource("1_4aas3")
+CASE_NAME = "Holy Lemonade Stand"
+CASE_DESCRIPTION = "A church kid fundraising group fights for right to sell lemonade for charity. Competing lemonade corporations demand taxation, arguing untaxed lemonade gives unfair market advantages."
+PARTY_A = 1
+PARTY_A_ARGUMENT = "Selling \"holy\" lemonade is a business venture."
+EFFECTS_A = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("1_3e00f")])
+PARTY_B = 2
+PARTY_B_ARGUMENT = "Let the kids squeeze lemons!"
+EFFECTS_B = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("1_xysgc"), ExtResource("2_f4j3c")])

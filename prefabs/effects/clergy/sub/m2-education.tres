@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="BaseEffectResource" load_steps=2 format=3 uid="uid://cbttmtgsmk2bu"]
+
+[ext_resource type="Script" path="res://scripts/resources/base_effect_resource.gd" id="1_dh5fw"]
+
+[resource]
+script = ExtResource("1_dh5fw")
+Group = 2
+Affect = 1
+RandomAmount = false
+ValueChange = -2
+ValueRange = Vector2i(1, 5)

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="BaseCaseResource" load_steps=6 format=3 uid="uid://x6surexsrjau"]
+
+[ext_resource type="Resource" uid="uid://dihdpipp7fkqa" path="res://prefabs/effects/peasants/sub/m3-healthcare.tres" id="1_bf7c6"]
+[ext_resource type="Script" path="res://scripts/resources/base_case_resource.gd" id="1_mp7c8"]
+[ext_resource type="Resource" uid="uid://3up7npafxkl3" path="res://prefabs/effects/peasants/sub/peasants_m1lab.tres" id="2_mygco"]
+[ext_resource type="Resource" uid="uid://croivu0q7n8o0" path="res://prefabs/effects/nobility/sub/m1-labor.tres" id="3_qb66k"]
+[ext_resource type="Resource" uid="uid://bwyoqoe4edsgd" path="res://prefabs/effects/clergy/sub/m1-labor.tres" id="4_pwp3y"]
+
+[resource]
+script = ExtResource("1_mp7c8")
+CASE_NAME = "Seven Day Letter"
+CASE_DESCRIPTION = "Murder letters killing readers in seven days causes citywide chaos. Officials call for a postal halt to stop the murders, while the postmen argue it harms rights to information."
+PARTY_A = 0
+PARTY_A_ARGUMENT = "Anonymous letter? Don't open it!"
+EFFECTS_A = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("1_bf7c6")])
+PARTY_B = 0
+PARTY_B_ARGUMENT = "Halt the postal service!"
+EFFECTS_B = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("2_mygco"), ExtResource("3_qb66k"), ExtResource("4_pwp3y")])

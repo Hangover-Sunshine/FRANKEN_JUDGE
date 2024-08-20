@@ -1,21 +1,22 @@
-[gd_resource type="Resource" script_class="BaseCaseResource" load_steps=9 format=3 uid="uid://daw83n2hujgbi"]
+[gd_resource type="Resource" script_class="BaseCaseResource" load_steps=10 format=3 uid="uid://daw83n2hujgbi"]
 
 [ext_resource type="Resource" uid="uid://b68tkpqh83hak" path="res://prefabs/effects/clergy/add/plus1_police.tres" id="1_bl435"]
-[ext_resource type="Resource" uid="uid://b462l5hjvo42w" path="res://prefabs/effects/nobility/add/plus5_rep.tres" id="1_ickrl"]
-[ext_resource type="Resource" uid="uid://bb74lqal4qwyl" path="res://prefabs/effects/clergy/add/plus5_rep.tres" id="2_0bniw"]
-[ext_resource type="Resource" uid="uid://bolq6qy671ywe" path="res://prefabs/effects/clergy/sub/minus1_police.tres" id="2_3kmm1"]
+[ext_resource type="Resource" uid="uid://bwyoqoe4edsgd" path="res://prefabs/effects/clergy/sub/m1-labor.tres" id="1_w840g"]
+[ext_resource type="Resource" uid="uid://3up7npafxkl3" path="res://prefabs/effects/peasants/sub/peasants_m1lab.tres" id="2_1ud60"]
 [ext_resource type="Resource" uid="uid://uaskmp34bx05" path="res://prefabs/effects/nobility/add/plus1_healthcare.tres" id="2_werl4"]
-[ext_resource type="Resource" uid="uid://bdv7jylnt4cef" path="res://prefabs/effects/nobility/sub/minus5_rep.tres" id="3_4atik"]
-[ext_resource type="Resource" uid="uid://btedw05cdt1m2" path="res://prefabs/effects/clergy/sub/minus5_rep.tres" id="3_lw5r3"]
+[ext_resource type="Resource" uid="uid://bhwtg7v0opbqs" path="res://prefabs/effects/nobility/add/p2-labor.tres" id="4_78y2g"]
+[ext_resource type="Resource" uid="uid://cnits3t32qf0h" path="res://prefabs/effects/clergy/add/p2-labor.tres" id="5_umk0n"]
 [ext_resource type="Script" path="res://scripts/resources/base_case_resource.gd" id="7_ibi4q"]
+[ext_resource type="Resource" uid="uid://c6hviuaovpxxx" path="res://prefabs/effects/nobility/sub/minus1_labor.tres" id="7_mkoeb"]
+[ext_resource type="Resource" uid="uid://bcsav2jcqp6cv" path="res://prefabs/effects/nobility/sub/m1-police.tres" id="8_o12tn"]
 
 [resource]
 script = ExtResource("7_ibi4q")
-CASE_NAME = "Clergy Claims Vampirism!"
-CASE_DESCRIPTION = "The clergy claim that the nobles are conspiring with vampires of eld to become immortal. They are petitioning you for more control over the police to prevent such heresy. The nobles deny these claims, and want you to invest further into their own healthcare."
+CASE_NAME = "Fangs Over Labor Dispute"
+CASE_DESCRIPTION = "The clergy calls for an end to vampiric conversion, claiming that spawns of vampires lose their rights once undergoing the ritual of vampiric immortality. Eternal servitude may violate labor laws."
 PARTY_A = 1
-PARTY_A_ARGUMENT = "We just don't want to die young!"
-EFFECTS_A = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("1_ickrl"), ExtResource("2_werl4"), ExtResource("2_3kmm1"), ExtResource("3_lw5r3")])
+PARTY_A_ARGUMENT = "Vampire spawns consent into their serfdom."
+EFFECTS_A = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("1_w840g"), ExtResource("2_1ud60"), ExtResource("2_werl4"), ExtResource("4_78y2g")])
 PARTY_B = 2
-PARTY_B_ARGUMENT = "They're all vampires in disguise!"
-EFFECTS_B = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("1_bl435"), ExtResource("2_0bniw"), ExtResource("3_4atik")])
+PARTY_B_ARGUMENT = "New vampire spawns are still a protected class."
+EFFECTS_B = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("5_umk0n"), ExtResource("1_bl435"), ExtResource("7_mkoeb"), ExtResource("8_o12tn")])

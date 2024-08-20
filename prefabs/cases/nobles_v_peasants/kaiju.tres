@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="BaseCaseResource" load_steps=6 format=3 uid="uid://cs7ny2jmskgu5"]
+
+[ext_resource type="Script" path="res://scripts/resources/base_case_resource.gd" id="1_dt41t"]
+[ext_resource type="Resource" uid="uid://bs74ohjv5yu8e" path="res://prefabs/effects/nobility/sub/m2-labor.tres" id="1_oxnsy"]
+[ext_resource type="Resource" uid="uid://b3ist7qss52k0" path="res://prefabs/effects/nobility/add/plus10_tax.tres" id="2_y515w"]
+[ext_resource type="Resource" uid="uid://3up7npafxkl3" path="res://prefabs/effects/peasants/sub/peasants_m1lab.tres" id="3_1g7gi"]
+[ext_resource type="Resource" uid="uid://dwpur8uyg1007" path="res://prefabs/effects/peasants/add/peasants_p10tax.tres" id="4_j7g6u"]
+
+[resource]
+script = ExtResource("1_dt41t")
+CASE_NAME = "Enraged Kaiju Destroys City"
+CASE_DESCRIPTION = "Rampant pollution has angered a kaiju from the ocean's depths. In response, the monster destroyed half the city. Citizens argue the polluters are responsible for the damage."
+PARTY_A = 0
+PARTY_A_ARGUMENT = "The polluters must clean up the city."
+EFFECTS_A = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("1_oxnsy"), ExtResource("2_y515w")])
+PARTY_B = 1
+PARTY_B_ARGUMENT = "Kaiju's are unpredictable creatures."
+EFFECTS_B = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("3_1g7gi"), ExtResource("4_j7g6u")])

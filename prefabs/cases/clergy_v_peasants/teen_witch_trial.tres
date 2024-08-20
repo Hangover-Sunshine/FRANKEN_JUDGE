@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="BaseCaseResource" load_steps=8 format=3 uid="uid://8xlb5vt8lg43"]
+
+[ext_resource type="Script" path="res://scripts/resources/base_case_resource.gd" id="1_1fnm7"]
+[ext_resource type="Resource" uid="uid://bcctwt772pta3" path="res://prefabs/effects/peasants/add/p2-police.tres" id="1_vt1ug"]
+[ext_resource type="Resource" uid="uid://cmso4ghxan54h" path="res://prefabs/effects/peasants/add/peasants_p1lit.tres" id="2_r1ps2"]
+[ext_resource type="Resource" uid="uid://d4ga0w6m3qc2g" path="res://prefabs/effects/clergy/sub/m2-police.tres" id="3_3bcxc"]
+[ext_resource type="Resource" uid="uid://b68tkpqh83hak" path="res://prefabs/effects/clergy/add/plus1_police.tres" id="4_6rupf"]
+[ext_resource type="Resource" uid="uid://5vodme12j30d" path="res://prefabs/effects/peasants/sub/peasants_m1pol.tres" id="5_pb5l4"]
+[ext_resource type="Resource" uid="uid://birs3asmofvfv" path="res://prefabs/effects/peasants/sub/peasants_m1lit.tres" id="6_rnbxv"]
+
+[resource]
+script = ExtResource("1_1fnm7")
+CASE_NAME = "Preteen Witch Trials"
+CASE_DESCRIPTION = "Young preteens are exhibiting bizarre behavior as they reach adolescence. The clergy claims they are dealing in corrupt magics and calls for a witch trial."
+PARTY_A = 0
+PARTY_A_ARGUMENT = "Not all teens are witches."
+EFFECTS_A = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("1_vt1ug"), ExtResource("2_r1ps2"), ExtResource("3_3bcxc")])
+PARTY_B = 2
+PARTY_B_ARGUMENT = "Burn them at the stake!"
+EFFECTS_B = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("4_6rupf"), ExtResource("5_pb5l4"), ExtResource("6_rnbxv")])

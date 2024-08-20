@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="BaseCaseResource" load_steps=6 format=3 uid="uid://cpfahg3u0orkw"]
+
+[ext_resource type="Resource" uid="uid://croivu0q7n8o0" path="res://prefabs/effects/nobility/sub/m1-labor.tres" id="1_q66b6"]
+[ext_resource type="Script" path="res://scripts/resources/base_case_resource.gd" id="1_ytfaj"]
+[ext_resource type="Resource" uid="uid://bcsav2jcqp6cv" path="res://prefabs/effects/nobility/sub/m1-police.tres" id="2_lp030"]
+[ext_resource type="Resource" uid="uid://3up7npafxkl3" path="res://prefabs/effects/peasants/sub/peasants_m1lab.tres" id="3_505se"]
+[ext_resource type="Resource" uid="uid://5vodme12j30d" path="res://prefabs/effects/peasants/sub/peasants_m1pol.tres" id="4_r34nb"]
+
+[resource]
+script = ExtResource("1_ytfaj")
+CASE_NAME = "Paying The Troll Toll"
+CASE_DESCRIPTION = "A troll living under a bridge is sued for unlawful seizure of public land. Townies claim the path is public property, while the troll claims ownership of the pond and the right to toll."
+PARTY_A = 0
+PARTY_A_ARGUMENT = "Public bridges can't convert to toll bridges."
+EFFECTS_A = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("1_q66b6"), ExtResource("2_lp030")])
+PARTY_B = 1
+PARTY_B_ARGUMENT = "You gotta pay the troll toll!"
+EFFECTS_B = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("3_505se"), ExtResource("4_r34nb")])

@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="BaseCaseResource" load_steps=7 format=3 uid="uid://ficy0q2uxumg"]
+
+[ext_resource type="Script" path="res://scripts/resources/base_case_resource.gd" id="1_kswuq"]
+[ext_resource type="Resource" uid="uid://cb3urf26fu4qd" path="res://prefabs/effects/peasants/sub/peasants_m2health.tres" id="1_psqf8"]
+[ext_resource type="Resource" uid="uid://cte17774o156n" path="res://prefabs/effects/peasants/add/peasants_p1pol.tres" id="2_kusxu"]
+[ext_resource type="Resource" uid="uid://5vodme12j30d" path="res://prefabs/effects/peasants/sub/peasants_m1pol.tres" id="3_gu8wi"]
+[ext_resource type="Resource" uid="uid://bcsav2jcqp6cv" path="res://prefabs/effects/nobility/sub/m1-police.tres" id="4_l1xdg"]
+[ext_resource type="Resource" uid="uid://bolq6qy671ywe" path="res://prefabs/effects/clergy/sub/minus1_police.tres" id="5_md583"]
+
+[resource]
+script = ExtResource("1_kswuq")
+CASE_NAME = "Clowning Around"
+CASE_DESCRIPTION = "Locals sue a gaggle of clowns for inciting public disorder. The clowns argue that \"following people\" is legal in public spaces, while the townsfolk argue otherwise."
+PARTY_A = 0
+PARTY_A_ARGUMENT = "Will somebody match my squeek?"
+EFFECTS_A = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("1_psqf8"), ExtResource("2_kusxu")])
+PARTY_B = 0
+PARTY_B_ARGUMENT = "Stop clowning around!"
+EFFECTS_B = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("3_gu8wi"), ExtResource("4_l1xdg"), ExtResource("5_md583")])

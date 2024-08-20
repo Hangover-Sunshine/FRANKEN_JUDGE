@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="BaseCaseResource" load_steps=9 format=3 uid="uid://b30aj5nc4f8fv"]
+
+[ext_resource type="Script" path="res://scripts/resources/base_case_resource.gd" id="1_f5da8"]
+[ext_resource type="Resource" uid="uid://8hw4p0oi688o" path="res://prefabs/effects/nobility/add/p2-police.tres" id="1_mygdv"]
+[ext_resource type="Resource" uid="uid://5vodme12j30d" path="res://prefabs/effects/peasants/sub/peasants_m1pol.tres" id="2_725po"]
+[ext_resource type="Resource" uid="uid://bolq6qy671ywe" path="res://prefabs/effects/clergy/sub/minus1_police.tres" id="3_sdhxl"]
+[ext_resource type="Resource" uid="uid://bcsav2jcqp6cv" path="res://prefabs/effects/nobility/sub/m1-police.tres" id="4_apwpf"]
+[ext_resource type="Resource" uid="uid://1wqb1r4j8t03" path="res://prefabs/effects/nobility/add/plus1_literacy.tres" id="5_6pmph"]
+[ext_resource type="Resource" uid="uid://cmso4ghxan54h" path="res://prefabs/effects/peasants/add/peasants_p1lit.tres" id="6_t2n58"]
+[ext_resource type="Resource" uid="uid://d2eus0xvcb6ij" path="res://prefabs/effects/clergy/add/p1_edu.tres" id="7_iap4r"]
+
+[resource]
+script = ExtResource("1_f5da8")
+CASE_NAME = "Dreams of Money"
+CASE_DESCRIPTION = "A tycoon sues a competitor for invading personal dreams for market advantages. One claims dreams are private property, while the other disputes this claim."
+PARTY_A = 1
+PARTY_A_ARGUMENT = "Invading dreams is considered trespassing."
+EFFECTS_A = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("1_mygdv"), ExtResource("2_725po"), ExtResource("3_sdhxl")])
+PARTY_B = 1
+PARTY_B_ARGUMENT = "Dreams are considered public property."
+EFFECTS_B = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("4_apwpf"), ExtResource("5_6pmph"), ExtResource("6_t2n58"), ExtResource("7_iap4r")])

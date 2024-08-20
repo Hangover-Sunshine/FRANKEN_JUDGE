@@ -1,16 +1,20 @@
-[gd_resource type="Resource" script_class="BaseCaseResource" load_steps=4 format=3 uid="uid://drfrmac6j2ade"]
+[gd_resource type="Resource" script_class="BaseCaseResource" load_steps=8 format=3 uid="uid://drfrmac6j2ade"]
 
 [ext_resource type="Script" path="res://scripts/resources/base_case_resource.gd" id="1_3jpi7"]
 [ext_resource type="Resource" uid="uid://cmso4ghxan54h" path="res://prefabs/effects/peasants/add/peasants_p1lit.tres" id="2_0buor"]
+[ext_resource type="Resource" uid="uid://bgpur2tbqmpqj" path="res://prefabs/effects/clergy/sub/m1-edu.tres" id="2_wni6p"]
+[ext_resource type="Resource" uid="uid://dyasxce3g4bc8" path="res://prefabs/effects/peasants/add/peasants_p1lab.tres" id="3_he54l"]
+[ext_resource type="Resource" uid="uid://cte17774o156n" path="res://prefabs/effects/peasants/add/peasants_p1pol.tres" id="4_lnwub"]
 [ext_resource type="Resource" uid="uid://b68tkpqh83hak" path="res://prefabs/effects/clergy/add/plus1_police.tres" id="5_4fc00"]
+[ext_resource type="Resource" uid="uid://d2eus0xvcb6ij" path="res://prefabs/effects/clergy/add/p1_edu.tres" id="6_xy8dh"]
 
 [resource]
 script = ExtResource("1_3jpi7")
 CASE_NAME = "Illegal Holy Texts"
 CASE_DESCRIPTION = "The peasants want holy texts in the common tongue. The clergy think this is heresy, and want an injuntion to burn all translations."
 PARTY_A = 0
-PARTY_A_ARGUMENT = "Let us translate!"
-EFFECTS_A = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("2_0buor")])
+PARTY_A_ARGUMENT = "Religious teachings fall under creative commons."
+EFFECTS_A = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("2_0buor"), ExtResource("2_wni6p"), ExtResource("3_he54l"), ExtResource("4_lnwub")])
 PARTY_B = 2
-PARTY_B_ARGUMENT = "Burn the heresy!"
-EFFECTS_B = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("5_4fc00")])
+PARTY_B_ARGUMENT = "Devote writing is copyrighted material."
+EFFECTS_B = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("5_4fc00"), ExtResource("6_xy8dh")])

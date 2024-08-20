@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="BaseCaseResource" load_steps=8 format=3 uid="uid://dlkd2fbeaxem1"]
+
+[ext_resource type="Script" path="res://scripts/resources/base_case_resource.gd" id="1_h1ey2"]
+[ext_resource type="Resource" uid="uid://dq3tay8n0jmkk" path="res://prefabs/effects/clergy/add/p2_edu.tres" id="1_k267e"]
+[ext_resource type="Resource" uid="uid://sgapd18eukjw" path="res://prefabs/effects/clergy/sub/m1-healthcare.tres" id="2_cjt3k"]
+[ext_resource type="Resource" uid="uid://c2husuyrsby0n" path="res://prefabs/effects/peasants/sub/peasants_m1health.tres" id="3_5luh8"]
+[ext_resource type="Resource" uid="uid://cbttmtgsmk2bu" path="res://prefabs/effects/clergy/sub/m2-education.tres" id="4_ea377"]
+[ext_resource type="Resource" uid="uid://c8otkcjpaew2u" path="res://prefabs/effects/clergy/add/p1_healthcare.tres" id="5_u6sxv"]
+[ext_resource type="Resource" uid="uid://0lhk5wa2dr63" path="res://prefabs/effects/clergy/add/p1_labor.tres" id="6_mfcrk"]
+
+[resource]
+script = ExtResource("1_h1ey2")
+CASE_NAME = "Flytrap For Fellows"
+CASE_DESCRIPTION = "Monks in a faraway town dispute the right to grow carnivorous plants. One side claims flytraps are part of worship and religious freedoms, while the other cites safety concerns."
+PARTY_A = 2
+PARTY_A_ARGUMENT = "The monk's meat garden is protected."
+EFFECTS_A = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("1_k267e"), ExtResource("2_cjt3k"), ExtResource("3_5luh8")])
+PARTY_B = 2
+PARTY_B_ARGUMENT = "Mow the lawn of all murder plants!"
+EFFECTS_B = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("4_ea377"), ExtResource("5_u6sxv"), ExtResource("6_mfcrk")])

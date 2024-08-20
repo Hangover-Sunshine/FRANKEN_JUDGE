@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="BaseCaseResource" load_steps=6 format=3 uid="uid://rnaguft06y4n"]
+
+[ext_resource type="Script" path="res://scripts/resources/base_case_resource.gd" id="1_jbb5q"]
+[ext_resource type="Resource" uid="uid://dr2mlifevb6p4" path="res://prefabs/effects/clergy/add/p3-healthcare.tres" id="1_v0mg1"]
+[ext_resource type="Resource" uid="uid://cbttmtgsmk2bu" path="res://prefabs/effects/clergy/sub/m2-education.tres" id="2_pkyht"]
+[ext_resource type="Resource" uid="uid://ctl0rx7ittdpi" path="res://prefabs/effects/clergy/add/p10_tax.tres" id="3_mrvgo"]
+[ext_resource type="Resource" uid="uid://c5r3g80t2wkof" path="res://prefabs/effects/clergy/sub/m3-healthcare.tres" id="4_avqaj"]
+
+[resource]
+script = ExtResource("1_jbb5q")
+CASE_NAME = "Doings In The Swamp"
+CASE_DESCRIPTION = "A swamp monster sues a church for tampering with public waters. The church claims public land can be used for worship, while the monster argues the blessed water prevents her from swimming freely."
+PARTY_A = 2
+PARTY_A_ARGUMENT = "Public land cannot be places of worship."
+EFFECTS_A = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("1_v0mg1"), ExtResource("2_pkyht")])
+PARTY_B = 2
+PARTY_B_ARGUMENT = "Bayou baptism are permitted."
+EFFECTS_B = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("3_mrvgo"), ExtResource("4_avqaj")])

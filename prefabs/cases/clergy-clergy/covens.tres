@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="BaseCaseResource" load_steps=8 format=3 uid="uid://uwdckkflcdnq"]
+
+[ext_resource type="Resource" uid="uid://d2eus0xvcb6ij" path="res://prefabs/effects/clergy/add/p1_edu.tres" id="1_35omu"]
+[ext_resource type="Script" path="res://scripts/resources/base_case_resource.gd" id="1_77mpl"]
+[ext_resource type="Resource" uid="uid://sgapd18eukjw" path="res://prefabs/effects/clergy/sub/m1-healthcare.tres" id="2_ix2dw"]
+[ext_resource type="Resource" uid="uid://cmso4ghxan54h" path="res://prefabs/effects/peasants/add/peasants_p1lit.tres" id="3_3pgq1"]
+[ext_resource type="Resource" uid="uid://b68tkpqh83hak" path="res://prefabs/effects/clergy/add/plus1_police.tres" id="4_xobmd"]
+[ext_resource type="Resource" uid="uid://c8otkcjpaew2u" path="res://prefabs/effects/clergy/add/p1_healthcare.tres" id="5_83ndk"]
+[ext_resource type="Resource" uid="uid://5vodme12j30d" path="res://prefabs/effects/peasants/sub/peasants_m1pol.tres" id="6_u053m"]
+
+[resource]
+script = ExtResource("1_77mpl")
+CASE_NAME = "Witches For Public Covens"
+CASE_DESCRIPTION = "A nearby witch coven argues that recent park closures violates religious freedoms. The city claims it's public land, while the coven insists the parks are ritual sites used for worship."
+PARTY_A = 2
+PARTY_A_ARGUMENT = "The parks stay open for the coven."
+EFFECTS_A = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("1_35omu"), ExtResource("2_ix2dw"), ExtResource("3_3pgq1")])
+PARTY_B = 2
+PARTY_B_ARGUMENT = "The city owns the parks and can close them."
+EFFECTS_B = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("4_xobmd"), ExtResource("5_83ndk"), ExtResource("6_u053m")])

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="BaseCaseResource" load_steps=5 format=3 uid="uid://dxuy5ts5svk50"]
+
+[ext_resource type="Resource" uid="uid://uaskmp34bx05" path="res://prefabs/effects/nobility/add/plus1_healthcare.tres" id="1_l61vo"]
+[ext_resource type="Script" path="res://scripts/resources/base_case_resource.gd" id="1_m2tgr"]
+[ext_resource type="Resource" uid="uid://1wqb1r4j8t03" path="res://prefabs/effects/nobility/add/plus1_literacy.tres" id="2_j0tay"]
+[ext_resource type="Resource" uid="uid://bcsav2jcqp6cv" path="res://prefabs/effects/nobility/sub/m1-police.tres" id="3_7fbx6"]
+
+[resource]
+script = ExtResource("1_m2tgr")
+CASE_NAME = "Sewn Cadaver Claims"
+CASE_DESCRIPTION = "A resurrected mortal sewn from many dead claims ownership of properties from parts of his form. Victim families related to his flesh also claim ownership of these properties."
+PARTY_A = 1
+PARTY_A_ARGUMENT = "The sewn cadiver is multiple people."
+EFFECTS_A = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("1_l61vo"), ExtResource("2_j0tay")])
+PARTY_B = 1
+PARTY_B_ARGUMENT = "The monstrosity is not many men."
+EFFECTS_B = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("3_7fbx6")])

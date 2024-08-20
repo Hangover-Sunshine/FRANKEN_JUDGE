@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="BaseCaseResource" load_steps=6 format=3 uid="uid://heyy8v4cjk2s"]
+
+[ext_resource type="Script" path="res://scripts/resources/base_case_resource.gd" id="1_f2uy1"]
+[ext_resource type="Resource" uid="uid://croivu0q7n8o0" path="res://prefabs/effects/nobility/sub/m1-labor.tres" id="1_nss4w"]
+[ext_resource type="Resource" uid="uid://bhowu5jdi2vtr" path="res://prefabs/effects/nobility/sub/minus1_literacy.tres" id="2_spi5o"]
+[ext_resource type="Resource" uid="uid://bcsav2jcqp6cv" path="res://prefabs/effects/nobility/sub/m1-police.tres" id="3_klg2j"]
+[ext_resource type="Resource" uid="uid://dihdpipp7fkqa" path="res://prefabs/effects/peasants/sub/m3-healthcare.tres" id="4_8mpmk"]
+
+[resource]
+script = ExtResource("1_f2uy1")
+CASE_NAME = "Rotter Rat Race"
+CASE_DESCRIPTION = "Nobles in a faraway city sue to end a restraining order on rat races. Citizens cite health concerns with plague rats, while nobles argue the order violates personal freedoms."
+PARTY_A = 0
+PARTY_A_ARGUMENT = "The rats have the plague?"
+EFFECTS_A = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("1_nss4w"), ExtResource("2_spi5o"), ExtResource("3_klg2j")])
+PARTY_B = 1
+PARTY_B_ARGUMENT = "Let the rat race commence!"
+EFFECTS_B = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("4_8mpmk")])

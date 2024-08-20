@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="BaseCaseResource" load_steps=5 format=3 uid="uid://cyoxv16rxy2bx"]
+
+[ext_resource type="Script" path="res://scripts/resources/base_case_resource.gd" id="1_5wur4"]
+[ext_resource type="Resource" uid="uid://ctl0rx7ittdpi" path="res://prefabs/effects/clergy/add/p10_tax.tres" id="1_svf0g"]
+[ext_resource type="Resource" uid="uid://5vodme12j30d" path="res://prefabs/effects/peasants/sub/peasants_m1pol.tres" id="2_pny7a"]
+[ext_resource type="Resource" uid="uid://dyasxce3g4bc8" path="res://prefabs/effects/peasants/add/peasants_p1lab.tres" id="3_oaopm"]
+
+[resource]
+script = ExtResource("1_5wur4")
+CASE_NAME = "Chapel Fresco Fervor"
+CASE_DESCRIPTION = "A local art guild sues for royalties from a successful church. The church argues it was a one-time contract, while the artists claim their frescoes increased tithing rates."
+PARTY_A = 2
+PARTY_A_ARGUMENT = "Can god wire them some cash?"
+EFFECTS_A = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("1_svf0g")])
+PARTY_B = 2
+PARTY_B_ARGUMENT = "Angels are open to artistic interpretation."
+EFFECTS_B = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("2_pny7a"), ExtResource("3_oaopm")])

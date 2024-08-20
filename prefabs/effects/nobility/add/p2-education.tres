@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="BaseEffectResource" load_steps=2 format=3 uid="uid://dgr7j7lm5rfx5"]
+
+[ext_resource type="Script" path="res://scripts/resources/base_effect_resource.gd" id="1_le77o"]
+
+[resource]
+script = ExtResource("1_le77o")
+Group = 1
+Affect = 1
+RandomAmount = false
+ValueChange = 2
+ValueRange = Vector2i(1, 5)

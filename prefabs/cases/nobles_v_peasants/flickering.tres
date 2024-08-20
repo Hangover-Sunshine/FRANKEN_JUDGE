@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="BaseCaseResource" load_steps=8 format=3 uid="uid://dxjcojkawkccl"]
+
+[ext_resource type="Script" path="res://scripts/resources/base_case_resource.gd" id="1_4sj6x"]
+[ext_resource type="Resource" uid="uid://r2iaysafh721" path="res://prefabs/effects/peasants/add/peasants_p1health.tres" id="1_cnj0n"]
+[ext_resource type="Resource" uid="uid://dyasxce3g4bc8" path="res://prefabs/effects/peasants/add/peasants_p1lab.tres" id="2_wlwma"]
+[ext_resource type="Resource" uid="uid://bcsav2jcqp6cv" path="res://prefabs/effects/nobility/sub/m1-police.tres" id="3_dqgab"]
+[ext_resource type="Resource" uid="uid://cb3urf26fu4qd" path="res://prefabs/effects/peasants/sub/peasants_m2health.tres" id="4_jsqbm"]
+[ext_resource type="Resource" uid="uid://3up7npafxkl3" path="res://prefabs/effects/peasants/sub/peasants_m1lab.tres" id="5_hbm8s"]
+[ext_resource type="Resource" uid="uid://cwgurcitg6y6" path="res://prefabs/effects/nobility/add/p1-police.tres" id="6_v4ego"]
+
+[resource]
+script = ExtResource("1_4sj6x")
+CASE_NAME = "Flickering Lights"
+CASE_DESCRIPTION = "A vampire keeps turning off the lights for a nearby town. The townies claim the utility is publicly owned, while the vampire argues the switch is on their property and thus their own."
+PARTY_A = 0
+PARTY_A_ARGUMENT = "The lights are a public utility."
+EFFECTS_A = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("1_cnj0n"), ExtResource("2_wlwma"), ExtResource("3_dqgab")])
+PARTY_B = 1
+PARTY_B_ARGUMENT = "The vampire owns the lights."
+EFFECTS_B = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("4_jsqbm"), ExtResource("5_hbm8s"), ExtResource("6_v4ego")])

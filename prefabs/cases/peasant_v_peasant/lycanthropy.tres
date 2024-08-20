@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="BaseCaseResource" load_steps=5 format=3 uid="uid://ibvtrk0xdgmj"]
+
+[ext_resource type="Script" path="res://scripts/resources/base_case_resource.gd" id="1_8u5j0"]
+[ext_resource type="Resource" uid="uid://5vodme12j30d" path="res://prefabs/effects/peasants/sub/peasants_m1pol.tres" id="1_sfcgb"]
+[ext_resource type="Resource" uid="uid://dwpur8uyg1007" path="res://prefabs/effects/peasants/add/peasants_p10tax.tres" id="2_gppff"]
+[ext_resource type="Resource" uid="uid://cte17774o156n" path="res://prefabs/effects/peasants/add/peasants_p1pol.tres" id="3_ngih6"]
+
+[resource]
+script = ExtResource("1_8u5j0")
+CASE_NAME = "Annual Lycanthropy Inspection"
+CASE_DESCRIPTION = "Peasants in the nearby hamlet noticed the butcher looks a bit \"hairy.\" The town calls for routine inspections for canine-like behavior."
+PARTY_A = 0
+PARTY_A_ARGUMENT = "Let the dog shows begin!"
+EFFECTS_A = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("1_sfcgb"), ExtResource("2_gppff")])
+PARTY_B = 0
+PARTY_B_ARGUMENT = "Buy the butcher a razor."
+EFFECTS_B = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("3_ngih6")])

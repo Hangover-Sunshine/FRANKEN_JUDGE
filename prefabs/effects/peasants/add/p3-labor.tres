@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="BaseEffectResource" load_steps=2 format=3 uid="uid://bgkh6ktytrimy"]
+
+[ext_resource type="Script" path="res://scripts/resources/base_effect_resource.gd" id="1_wayaf"]
+
+[resource]
+script = ExtResource("1_wayaf")
+Group = 0
+Affect = 3
+RandomAmount = false
+ValueChange = 3
+ValueRange = Vector2i(1, 5)

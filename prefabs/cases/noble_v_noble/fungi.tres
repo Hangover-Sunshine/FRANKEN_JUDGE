@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="BaseCaseResource" load_steps=6 format=3 uid="uid://1i5v3pt2ijug"]
+
+[ext_resource type="Script" path="res://scripts/resources/base_case_resource.gd" id="1_1ybhe"]
+[ext_resource type="Resource" uid="uid://b3ist7qss52k0" path="res://prefabs/effects/nobility/add/plus10_tax.tres" id="1_pycmn"]
+[ext_resource type="Resource" uid="uid://sgapd18eukjw" path="res://prefabs/effects/clergy/sub/m1-healthcare.tres" id="2_0evlu"]
+[ext_resource type="Resource" uid="uid://dc288ltxh5y5u" path="res://prefabs/effects/nobility/sub/m1-healthcare.tres" id="3_ysurt"]
+[ext_resource type="Resource" uid="uid://c2husuyrsby0n" path="res://prefabs/effects/peasants/sub/peasants_m1health.tres" id="4_wggi3"]
+
+[resource]
+script = ExtResource("1_1ybhe")
+CASE_NAME = "Fungi Fracas Over Taxes"
+CASE_DESCRIPTION = "A surge in parasitic fungal infections plagues nearby noble communities. The city insists the fungi zombies must keep paying taxes, arguing they are the same person, while the fungi argue otherwise."
+PARTY_A = 1
+PARTY_A_ARGUMENT = "The fungi must pay taxes."
+EFFECTS_A = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("1_pycmn")])
+PARTY_B = 1
+PARTY_B_ARGUMENT = "Mushrooms are not people."
+EFFECTS_B = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("2_0evlu"), ExtResource("3_ysurt"), ExtResource("4_wggi3")])

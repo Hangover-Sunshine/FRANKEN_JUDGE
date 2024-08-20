@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="BaseCaseResource" load_steps=6 format=3 uid="uid://cvee17hng6f8l"]
+
+[ext_resource type="Script" path="res://scripts/resources/base_case_resource.gd" id="1_ci6fp"]
+[ext_resource type="Resource" uid="uid://b3ist7qss52k0" path="res://prefabs/effects/nobility/add/plus10_tax.tres" id="1_j3djd"]
+[ext_resource type="Resource" uid="uid://becsfcd84423o" path="res://prefabs/effects/nobility/add/p3_labor.tres" id="2_teptx"]
+[ext_resource type="Resource" uid="uid://bcsav2jcqp6cv" path="res://prefabs/effects/nobility/sub/m1-police.tres" id="3_h01wo"]
+[ext_resource type="Resource" uid="uid://c6hviuaovpxxx" path="res://prefabs/effects/nobility/sub/minus1_labor.tres" id="4_5g8xg"]
+
+[resource]
+script = ExtResource("1_ci6fp")
+CASE_NAME = "Home is the Homeowner"
+CASE_DESCRIPTION = "A nearby countess sues a now-living home claiming ownership of the property. The haunted house argues the woman must pay rent, while she claims otherwise."
+PARTY_A = 1
+PARTY_A_ARGUMENT = "The count must pay rent to her house."
+EFFECTS_A = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("1_j3djd"), ExtResource("2_teptx")])
+PARTY_B = 1
+PARTY_B_ARGUMENT = "Houses can't own themselves."
+EFFECTS_B = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("3_h01wo"), ExtResource("4_5g8xg")])

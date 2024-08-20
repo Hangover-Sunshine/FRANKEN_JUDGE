@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="BaseEffectResource" load_steps=2 format=3 uid="uid://sgapd18eukjw"]
+
+[ext_resource type="Script" path="res://scripts/resources/base_effect_resource.gd" id="1_1nsgi"]
+
+[resource]
+script = ExtResource("1_1nsgi")
+Group = 2
+Affect = 2
+RandomAmount = false
+ValueChange = -1
+ValueRange = Vector2i(1, 5)

@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="BaseCaseResource" load_steps=7 format=3 uid="uid://cmoxkfkfxg6mm"]
+
+[ext_resource type="Script" path="res://scripts/resources/base_case_resource.gd" id="1_52ucr"]
+[ext_resource type="Resource" uid="uid://cmso4ghxan54h" path="res://prefabs/effects/peasants/add/peasants_p1lit.tres" id="1_c5ptx"]
+[ext_resource type="Resource" uid="uid://1wqb1r4j8t03" path="res://prefabs/effects/nobility/add/plus1_literacy.tres" id="2_4i1do"]
+[ext_resource type="Resource" uid="uid://d2eus0xvcb6ij" path="res://prefabs/effects/clergy/add/p1_edu.tres" id="3_u84us"]
+[ext_resource type="Resource" uid="uid://bjdx71rk467n2" path="res://prefabs/effects/clergy/sub/m3-labor.tres" id="4_cicwv"]
+[ext_resource type="Resource" uid="uid://cbttmtgsmk2bu" path="res://prefabs/effects/clergy/sub/m2-education.tres" id="5_mnqii"]
+
+[resource]
+script = ExtResource("1_52ucr")
+CASE_NAME = "Take Me To Your Leader"
+CASE_DESCRIPTION = "Newly immigrated aliens sue to establish orbital space churches. Religious institutions reject this, arguing places of worship must be on physical land for religious exemptions."
+PARTY_A = 2
+PARTY_A_ARGUMENT = "All are welcome to the cloth!"
+EFFECTS_A = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("1_c5ptx"), ExtResource("2_4i1do"), ExtResource("3_u84us"), ExtResource("4_cicwv")])
+PARTY_B = 2
+PARTY_B_ARGUMENT = "Aliens cannot be bishops."
+EFFECTS_B = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("5_mnqii")])
