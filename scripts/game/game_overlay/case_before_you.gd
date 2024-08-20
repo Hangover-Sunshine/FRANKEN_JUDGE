@@ -18,6 +18,9 @@ var _case:BaseCaseResource
 var _aPicks
 var _bPicks
 
+var play_sound:bool = false
+var clicking_sound
+
 func _ready():
 	GlobalSignals.connect("hovered_over_card", _mouse_hovering)
 	GlobalSignals.connect("not_hovering", _mouse_not_hovering)
@@ -164,17 +167,43 @@ func _mouse_not_hovering():
 ##
 
 func _left_selected():
+	play_sound = true
 	ap_scale_control.play("press_left")
+	clicking_sound = SoundManager.instance("scale", "clicking")
+	
+	await get_tree().create_timer(1.4).timeout
+	
+	if play_sound == false:
+		return
+	##
+	
+	SoundManager.play("scale", "thumb_scale")
+	clicking_sound.trigger()
 ##
 
 func _left_released():
+	clicking_sound.release()
+	play_sound = false
 	ap_scale_control.play("RESET")
 ##
 
 func _right_selected():
+	clicking_sound.release()
+	play_sound = true
 	ap_scale_control.play("press_right")
+	clicking_sound = SoundManager.instance("scale", "clicking")
+	
+	await get_tree().create_timer(1.4).timeout
+	
+	if play_sound == false:
+		return
+	##
+	
+	SoundManager.play("scale", "thumb_scale")
+	clicking_sound.trigger()
 ##
 
 func _right_released():
+	play_sound = false
 	ap_scale_control.play("RESET")
 ##
