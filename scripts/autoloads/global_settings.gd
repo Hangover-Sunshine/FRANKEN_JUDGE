@@ -6,10 +6,10 @@ var config:ConfigFile
 
 var MasterVolume:float = 1
 
-var MusicVolume:float = 1.0
+var MusicVolume:float = 0.2
 
 var MasterSFXVolume:float = 1.0
-var UiSFXVolume:float = 1.0
+var UiSFXVolume:float = 0.5
 var GameSFXVolume:float = 1.0
 
 var FullScreen:bool = false
@@ -20,14 +20,6 @@ func _ready():
 	# get all native data
 	os_type = OS.get_name()
 	# get all native data
-	
-	# NOTE: Remove this if you don't plan on making a web build...
-	if os_type == "Web":
-		var p = InputEventKey.new()
-		p.physical_keycode = KEY_P
-		InputMap.action_erase_events("pause")
-		InputMap.action_add_event("pause", p)
-	##
 	
 	config = ConfigFile.new()
 	

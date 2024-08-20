@@ -6,9 +6,6 @@ extends Node2D
 ## All cases in the game.
 @export var CASES:Array[BaseCaseResource]
 
-## Initial delay when this scene first loads 
-@export var INITIAL_LOAD_DELAY:float = 1.2
-
 @onready var _faction_stats = $FactionStats
 @onready var _reputation_stats = $RepuationStats
 
