@@ -889,7 +889,7 @@ tracks/13/keys = {
 
 [sub_resource type="Animation" id="Animation_no2no"]
 resource_name = "Part6"
-length = 7.5
+length = 8.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -909,7 +909,7 @@ tracks/1/path = NodePath("Reputation:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 1, 3.6, 4, 6.5, 6.7),
+"times": PackedFloat32Array(0, 1, 3.6, 4, 8, 8.2),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(118, 51), Vector2(267, 562), Vector2(267, 562), Vector2(629, 562), Vector2(629, 562), Vector2(118, 51)]
@@ -969,7 +969,7 @@ tracks/6/path = NodePath("Reputation:modulate")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(6.3, 6.6),
+"times": PackedFloat32Array(7.7, 8),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -1613,6 +1613,7 @@ scale_amount_curve = SubResource("Curve_ehmbv")
 position = Vector2(7, 294)
 
 [node name="Reputation" type="Control" parent="."]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 3
 anchors_preset = 0
 offset_left = 118.0
@@ -1748,6 +1749,7 @@ text = "(+00)"
 horizontal_alignment = 1
 
 [node name="Society" type="Control" parent="."]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 3
 anchors_preset = 0
 offset_left = 1194.0
@@ -2199,6 +2201,7 @@ text = "(+00)"
 
 [node name="LilDays" type="Control" parent="."]
 visible = false
+modulate = Color(1, 1, 1, 0)
 layout_mode = 3
 anchors_preset = 0
 offset_left = 431.0
@@ -2430,7 +2433,7 @@ mouse_filter = 2
 
 [node name="Scale" type="Node2D" parent="."]
 visible = false
-position = Vector2(960, 1506)
+position = Vector2(960, 1508)
 script = ExtResource("11_svn5q")
 HoldDuration = 3.5
 
@@ -2453,10 +2456,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -170.0
-offset_top = -1450.0
-offset_right = 175.0
-offset_bottom = -1029.98
+offset_left = -400.5
+offset_top = -1532.0
+offset_right = -55.5
+offset_bottom = -1111.98
 grow_horizontal = 2
 grow_vertical = 0
 

@@ -121,8 +121,8 @@ func _show_sides():
 	SoundManager.play_varied("scale", "card_bounce", randf_range(0.8, 1.1))
 	
 	await get_tree().create_timer(0.5).timeout
-	SoundManager.play_varied("scale", "card_bounce", 1, linear_to_db(-1))
-	SoundManager.play_varied("scale", "card_bounce", 1, linear_to_db(-1))
+	SoundManager.play_varied("scale", "card_bounce", 1, linear_to_db(0.2))
+	SoundManager.play_varied("scale", "card_bounce", 1, linear_to_db(0.2))
 ##
 
 func _pick_rand_case_id():
@@ -178,7 +178,16 @@ func _case_complete(case:BaseCaseResource, faction:GlobalData.Faction, chose_A:b
 	
 	ap_states.play("Part5")
 	
-	await get_tree().create_timer(5.6).timeout
+	await get_tree().create_timer(1.7).timeout
+	
+	SoundManager.play_varied("ui", "swoosh", randf_range(0.8, 1.2))
+	
+	await get_tree().create_timer(2.8).timeout
+	
+	SoundManager.play_varied("ui", "swoosh", randf_range(0.6, 0.8))
+	
+	#await get_tree().create_timer(5.6).timeout
+	await get_tree().create_timer(1.1).timeout
 	
 	# fire off the lightnings
 	for group in affected_parties:
@@ -223,7 +232,11 @@ func _case_complete(case:BaseCaseResource, faction:GlobalData.Faction, chose_A:b
 func _tally_finished():
 	ap_states.play("Part6")
 	
-	await get_tree().create_timer(1.5).timeout
+	await get_tree().create_timer(0.2).timeout
+	
+	SoundManager.play_varied("ui", "swoosh", randf_range(0.6, 0.8))
+	
+	await get_tree().create_timer(1.3).timeout
 	
 	zapping.trigger_varied(randf_range(1, 1.4))
 	

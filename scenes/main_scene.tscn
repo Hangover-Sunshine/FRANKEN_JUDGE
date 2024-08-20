@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://5mpw8kapddme"]
+[gd_scene load_steps=15 format=3 uid="uid://5mpw8kapddme"]
 
 [ext_resource type="Script" path="res://scripts/system/main_scene.gd" id="1_8uaxr"]
 [ext_resource type="Script" path="res://addons/verho/resources/TransitionBank.gd" id="1_aeq3o"]
@@ -9,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://bdgqcq6kgk2lg" path="res://assets/sound/sfx/ui/UIClick.ogg" id="7_lc6tn"]
 [ext_resource type="AudioStream" uid="uid://miwl05aleq7p" path="res://assets/sound/sfx/ui/UIHover.ogg" id="8_qm7hx"]
 [ext_resource type="AudioStream" uid="uid://cd2n4kpc1x3km" path="res://assets/sound/sfx/ui/GavelSmack.ogg" id="9_ri4a3"]
+[ext_resource type="AudioStream" uid="uid://cyqoou644cjgi" path="res://assets/sound/sfx/ui/UIMovement.ogg" id="10_hivjw"]
 
 [sub_resource type="Resource" id="Resource_ueswg"]
 script = ExtResource("6_316bv")
@@ -33,6 +34,14 @@ bus = ""
 volume = 0.0
 pitch = 1.0
 streams = Array[AudioStream]([ExtResource("9_ri4a3")])
+
+[sub_resource type="Resource" id="Resource_sbij5"]
+script = ExtResource("6_316bv")
+name = "swoosh"
+bus = ""
+volume = 0.0
+pitch = 1.0
+streams = Array[AudioStream]([ExtResource("10_hivjw"), ExtResource("10_hivjw")])
 
 [node name="MainScene" type="Node"]
 script = ExtResource("1_8uaxr")
@@ -63,4 +72,4 @@ color = Color(0, 0, 0, 1)
 script = ExtResource("5_bnjbv")
 label = "ui"
 bus = "SFX"
-events = Array[ExtResource("6_316bv")]([SubResource("Resource_ueswg"), SubResource("Resource_k8ner"), SubResource("Resource_vb7f6")])
+events = Array[ExtResource("6_316bv")]([SubResource("Resource_ueswg"), SubResource("Resource_k8ner"), SubResource("Resource_vb7f6"), SubResource("Resource_sbij5")])
