@@ -17,12 +17,15 @@ var _can_click_to_proceed:bool = false
 # 0 = day, 1 = case pick, 2 = case brief, 3 = scales, 4 = results
 var curr_screen:int = 0
 
+var bg_chatter
+
 func initialize(max_num_days:int):
 	$LilDays.set_day_total(max_num_days)
 	$BigDays.set_day_total(max_num_days)
 	$CasePick.connect("case_picked", _case_picked)
 	$Scale.connect("case_complete", _case_complete)
 	$WinningCard.connect("done_loading_society", _tally_finished)
+	bg_chatter = SoundManager.instance("env", "BGChatter")
 ##
 
 func _input(event):
@@ -83,6 +86,7 @@ func show_cases(cases:Array[BaseCaseResource]):
 ##
 
 func _case_picked(case_id:int):
+	bg_chatter.trigger()
 	_case = _cases[case_id]
 	_cases.remove_at(case_id)
 	emit_signal("cases_left", _cases)
@@ -126,6 +130,8 @@ func _pick_rand_case_id():
 func _case_complete(case:BaseCaseResource, faction:GlobalData.Faction, chose_A:bool):
 	$Reputation.show_all_bars()
 	$Society.show_all()
+	bg_chatter.release()
+	SoundManager.play("env", "CrowdGasp")
 	
 	var effects:Array[BaseEffectResource] = []
 	
