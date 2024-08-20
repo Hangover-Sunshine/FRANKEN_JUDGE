@@ -394,6 +394,7 @@ script = ExtResource("1_eqpse")
 
 [node name="Background" type="ColorRect" parent="."]
 show_behind_parent = true
+z_index = -1
 material = SubResource("ShaderMaterial_n1d6g")
 custom_minimum_size = Vector2(1920, 1080)
 offset_right = 1920.0

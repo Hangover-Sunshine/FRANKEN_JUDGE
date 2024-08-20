@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://88fivnqio2ad"]
+[gd_scene load_steps=7 format=3 uid="uid://88fivnqio2ad"]
 
-[ext_resource type="FontFile" uid="uid://73eyyuro8nvv" path="res://assets/fonts/PirataOne.ttf" id="1_4h85h"]
+[ext_resource type="PackedScene" uid="uid://c2r6cr8gkoe70" path="res://prefabs/gui/frank.tscn" id="2_68mfi"]
+[ext_resource type="Texture2D" uid="uid://by7uok0reoy6y" path="res://prefabs/gui/Splash_Title.png" id="2_ebxna"]
 [ext_resource type="FontFile" uid="uid://cqxld14ctgocv" path="res://assets/fonts/MedulaOne.ttf" id="2_npmtf"]
 
 [sub_resource type="Animation" id="Animation_ps85c"]
@@ -64,24 +65,8 @@ layout_mode = 2
 alignment = 1
 
 [node name="Header_VBox" type="VBoxContainer" parent="Splash_MC/Splash_VBox"]
+custom_minimum_size = Vector2(0, 634)
 layout_mode = 2
-theme_override_constants/separation = -110
-
-[node name="Header1_Label" type="Label" parent="Splash_MC/Splash_VBox/Header_VBox"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.839216, 0.905882, 0.972549, 1)
-theme_override_fonts/font = ExtResource("1_4h85h")
-theme_override_font_sizes/font_size = 250
-text = "FRANKEN"
-horizontal_alignment = 1
-
-[node name="Header2_Label" type="Label" parent="Splash_MC/Splash_VBox/Header_VBox"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.756863, 0.85098, 0.94902, 1)
-theme_override_fonts/font = ExtResource("1_4h85h")
-theme_override_font_sizes/font_size = 250
-text = "JUDGE"
-horizontal_alignment = 1
 
 [node name="Press_Label" type="Label" parent="Splash_MC/Splash_VBox"]
 layout_mode = 2
@@ -97,3 +82,11 @@ libraries = {
 "": SubResource("AnimationLibrary_2c7oi")
 }
 autoplay = "Flash"
+
+[node name="Frank" parent="." instance=ExtResource("2_68mfi")]
+position = Vector2(960, 465)
+scale = Vector2(1.25, 1.25)
+
+[node name="SplashTitle" type="Sprite2D" parent="."]
+position = Vector2(960, 682)
+texture = ExtResource("2_ebxna")
