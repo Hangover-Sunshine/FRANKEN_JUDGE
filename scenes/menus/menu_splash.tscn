@@ -84,7 +84,7 @@ libraries = {
 autoplay = "Flash"
 
 [node name="Frank" parent="." instance=ExtResource("2_68mfi")]
-position = Vector2(960, 465)
+position = Vector2(960, 459)
 scale = Vector2(1.25, 1.25)
 
 [node name="SplashTitle" type="Sprite2D" parent="."]
