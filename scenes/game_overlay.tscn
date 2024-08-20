@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://2nl8bwm5pvgk"]
+[gd_scene load_steps=57 format=3 uid="uid://2nl8bwm5pvgk"]
 
 [ext_resource type="Script" path="res://scripts/game/game_overlay.gd" id="1_hcafl"]
 [ext_resource type="FontFile" uid="uid://73eyyuro8nvv" path="res://assets/fonts/PirataOne.ttf" id="1_qps4p"]
@@ -1198,6 +1198,130 @@ _data = {
 "RESET": SubResource("Animation_1vv4j")
 }
 
+[sub_resource type="Animation" id="Animation_vfame"]
+resource_name = "Throb"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.015, 1.015), Vector2(1, 1), Vector2(1.015, 1.015), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:skew")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.00872665, 0.0, -0.00872665, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_dbfdb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:skew")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q6x68"]
+_data = {
+"RESET": SubResource("Animation_dbfdb"),
+"Throb": SubResource("Animation_vfame")
+}
+
+[sub_resource type="Animation" id="Animation_7yxel"]
+resource_name = "Throb"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.015, 1.015), Vector2(1, 1), Vector2(1.015, 1.015), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:skew")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.00872665, 0.0, -0.00872665, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_7gtsr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:skew")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_msidk"]
+_data = {
+"RESET": SubResource("Animation_7gtsr"),
+"Throb": SubResource("Animation_7yxel")
+}
+
 [sub_resource type="Animation" id="Animation_41t0f"]
 resource_name = "RESET"
 length = 0.01
@@ -1512,7 +1636,6 @@ scale_amount_curve = SubResource("Curve_ehmbv")
 position = Vector2(7, 294)
 
 [node name="Reputation" type="Control" parent="."]
-modulate = Color(1, 1, 1, 0)
 layout_mode = 3
 anchors_preset = 0
 offset_left = 118.0
@@ -1648,7 +1771,6 @@ text = "(+00)"
 horizontal_alignment = 1
 
 [node name="Society" type="Control" parent="."]
-modulate = Color(1, 1, 1, 0)
 layout_mode = 3
 anchors_preset = 0
 offset_left = 1194.0
@@ -2100,7 +2222,6 @@ text = "(+00)"
 
 [node name="LilDays" type="Control" parent="."]
 visible = false
-modulate = Color(1, 1, 1, 0)
 layout_mode = 3
 anchors_preset = 0
 offset_left = 431.0
@@ -2133,7 +2254,6 @@ text = "00 / 30"
 horizontal_alignment = 1
 
 [node name="BigDays" type="Control" parent="."]
-modulate = Color(1, 1, 1, 0)
 layout_mode = 3
 anchors_preset = 0
 offset_left = 943.0
@@ -2144,6 +2264,7 @@ mouse_filter = 2
 script = ExtResource("4_lmcgd")
 
 [node name="Day_Header" type="Label" parent="BigDays"]
+visible = false
 layout_mode = 0
 offset_left = -366.0
 offset_top = -95.0
@@ -2155,6 +2276,7 @@ text = "DAY"
 horizontal_alignment = 1
 
 [node name="Day_Number_Header" type="Label" parent="BigDays"]
+visible = false
 layout_mode = 0
 offset_left = -66.0
 offset_top = -95.0
@@ -2338,7 +2460,7 @@ mouse_filter = 2
 
 [node name="Scale" type="Node2D" parent="."]
 visible = false
-position = Vector2(960, 1508)
+position = Vector2(960, 740)
 script = ExtResource("11_svn5q")
 HoldDuration = 3.5
 
@@ -2355,16 +2477,15 @@ position = Vector2(-513, 246)
 texture = ExtResource("9_7s0gt")
 
 [node name="LeftMegaCard" parent="Scale/Scale_Body/Scale_Left" instance=ExtResource("18_4l78d")]
-visible = false
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 521.5
-offset_top = -1204.0
-offset_right = 866.5
-offset_bottom = -783.98
+offset_left = -400.5
+offset_top = -492.0
+offset_right = -55.5
+offset_bottom = -71.9799
 grow_horizontal = 2
 grow_vertical = 0
 
@@ -2373,11 +2494,10 @@ position = Vector2(514, 246)
 texture = ExtResource("9_7s0gt")
 
 [node name="RightMegaCard" parent="Scale/Scale_Body/Scale_Right" instance=ExtResource("18_4l78d")]
-visible = false
 offset_left = -170.0
-offset_top = -1450.0
+offset_top = -410.0
 offset_right = 175.0
-offset_bottom = -1030.0
+offset_bottom = 10.0
 IsRight = true
 
 [node name="HandOverLeft" type="Sprite2D" parent="Scale"]
@@ -2385,10 +2505,22 @@ visible = false
 position = Vector2(-258, -280)
 texture = ExtResource("21_44ht1")
 
+[node name="AP_HandLeft" type="AnimationPlayer" parent="Scale/HandOverLeft"]
+libraries = {
+"": SubResource("AnimationLibrary_q6x68")
+}
+autoplay = "Throb"
+
 [node name="HandOverRight" type="Sprite2D" parent="Scale"]
 visible = false
 position = Vector2(779, -280)
 texture = ExtResource("21_44ht1")
+
+[node name="AP_HandRight" type="AnimationPlayer" parent="Scale/HandOverRight"]
+libraries = {
+"": SubResource("AnimationLibrary_msidk")
+}
+autoplay = "Throb"
 
 [node name="AP_ScaleControl" type="AnimationPlayer" parent="Scale"]
 libraries = {
@@ -2397,15 +2529,13 @@ libraries = {
 
 [node name="WinningCard" type="Control" parent="."]
 visible = false
-modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(345, 420)
 layout_mode = 3
 anchors_preset = 0
-offset_left = 430.0
-offset_top = 500.0
-offset_right = 775.0
-offset_bottom = 920.01
-rotation = 0.174533
+offset_left = 794.0
+offset_top = 1131.0
+offset_right = 1139.0
+offset_bottom = 1551.01
 mouse_filter = 2
 script = ExtResource("19_u43l4")
 
