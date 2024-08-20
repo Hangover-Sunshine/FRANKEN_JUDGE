@@ -18,6 +18,7 @@ var _can_click_to_proceed:bool = false
 var curr_screen:int = 0
 
 var bg_chatter
+var zapping
 
 func initialize(max_num_days:int):
 	$LilDays.set_day_total(max_num_days)
@@ -25,7 +26,6 @@ func initialize(max_num_days:int):
 	$CasePick.connect("case_picked", _case_picked)
 	$Scale.connect("case_complete", _case_complete)
 	$WinningCard.connect("done_loading_society", _tally_finished)
-	bg_chatter = SoundManager.instance("env", "BGChatter")
 ##
 
 func _input(event):
@@ -83,9 +83,11 @@ func show_cases(cases:Array[BaseCaseResource]):
 	_cases = cases
 	$CasePick.here_the_cases(cases)
 	ap_states.play("Part2")
+	bg_chatter = SoundManager.instance("env", "BGChatter")
 ##
 
 func _case_picked(case_id:int):
+	zapping = SoundManager.instance("env", "zapping")
 	bg_chatter.trigger()
 	_case = _cases[case_id]
 	_cases.remove_at(case_id)
@@ -189,6 +191,7 @@ func _case_complete(case:BaseCaseResource, faction:GlobalData.Faction, chose_A:b
 			starts.pop_front()
 		##
 	##
+	zapping.trigger_varied(randf_range(0.7, 1))
 	
 	await get_tree().create_timer(0.9).timeout
 	
@@ -198,6 +201,8 @@ func _case_complete(case:BaseCaseResource, faction:GlobalData.Faction, chose_A:b
 	await get_tree().create_timer(2.3).timeout
 	
 	# stop
+	zapping.release()
+	zapping = SoundManager.instance("env", "zapping")
 	peasant_bolt.Emit = false
 	nobility_bolt.Emit = false
 	clergy_bolt.Emit = false
@@ -211,6 +216,8 @@ func _tally_finished():
 	ap_states.play("Part6")
 	
 	await get_tree().create_timer(1.5).timeout
+	
+	zapping.trigger_varied(randf_range(1, 1.4))
 	
 	peasant_bolt.set_start_position(Vector2(1450, 630))
 	peasant_bolt.set_target_position(Vector2(860, 680))
@@ -231,6 +238,7 @@ func _tally_finished():
 	
 	await get_tree().create_timer(1.7).timeout
 	
+	zapping.release()
 	peasant_bolt.Emit = false
 	nobility_bolt.Emit = false
 	clergy_bolt.Emit = false

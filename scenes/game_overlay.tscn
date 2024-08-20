@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=3 uid="uid://2nl8bwm5pvgk"]
+[gd_scene load_steps=71 format=3 uid="uid://2nl8bwm5pvgk"]
 
 [ext_resource type="Script" path="res://scripts/game/game_overlay.gd" id="1_hcafl"]
 [ext_resource type="FontFile" uid="uid://73eyyuro8nvv" path="res://assets/fonts/PirataOne.ttf" id="1_qps4p"]
@@ -34,6 +34,7 @@
 [ext_resource type="AudioStream" uid="uid://navbp4wff2vi" path="res://assets/sound/sfx/environment/CrowdGasp.ogg" id="32_dpirn"]
 [ext_resource type="AudioStream" uid="uid://b6yn5shb1b8dd" path="res://assets/sound/sfx/scale/ScaleClicking.ogg" id="32_o6twq"]
 [ext_resource type="AudioStream" uid="uid://8ildbgmj5ssu" path="res://assets/sound/sfx/scale/ThumbOnScale.ogg" id="33_5k40j"]
+[ext_resource type="AudioStream" uid="uid://cl4blj3nndj5d" path="res://assets/sound/sfx/ui/Zapping.ogg" id="33_ilf5f"]
 [ext_resource type="AudioStream" uid="uid://o5p2f52qcv7n" path="res://assets/sound/sfx/scale/CardBounce.ogg" id="34_7nalx"]
 
 [sub_resource type="Animation" id="Animation_fi0l2"]
@@ -1507,6 +1508,14 @@ volume = 0.0
 pitch = 1.0
 streams = Array[AudioStream]([ExtResource("32_dpirn")])
 
+[sub_resource type="Resource" id="Resource_firn7"]
+script = ExtResource("27_7p6v0")
+name = "zapping"
+bus = ""
+volume = 0.0
+pitch = 1.0
+streams = Array[AudioStream]([ExtResource("33_ilf5f"), ExtResource("33_ilf5f")])
+
 [sub_resource type="Resource" id="Resource_1x1og"]
 script = ExtResource("27_7p6v0")
 name = "clicking"
@@ -2490,7 +2499,7 @@ grow_vertical = 0
 script = ExtResource("26_6akmt")
 label = "env"
 bus = "SFX"
-events = Array[ExtResource("27_7p6v0")]([SubResource("Resource_r6oet"), SubResource("Resource_p5kd4"), SubResource("Resource_eduoc"), SubResource("Resource_ncu43"), SubResource("Resource_ph5al")])
+events = Array[ExtResource("27_7p6v0")]([SubResource("Resource_r6oet"), SubResource("Resource_p5kd4"), SubResource("Resource_eduoc"), SubResource("Resource_ncu43"), SubResource("Resource_ph5al"), SubResource("Resource_firn7")])
 
 [node name="ScaleSoundBank" type="Node" parent="."]
 script = ExtResource("26_6akmt")
