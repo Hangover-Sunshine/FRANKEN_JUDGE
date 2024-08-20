@@ -2,9 +2,11 @@ extends Control
 
 signal settings_to_main
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
 func _on_back_button_pressed():
 	settings_to_main.emit()
+	SoundManager.play_varied("ui", "Pressed", randf_range(0.7, 1.2))
+##
+
+func _on_mouse_entered():
+	SoundManager.play_varied("ui", "MouseOver", randf_range(0.7, 1.2))
+##

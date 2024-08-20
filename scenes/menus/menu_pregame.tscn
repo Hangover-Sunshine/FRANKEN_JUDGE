@@ -168,8 +168,13 @@ text = ">"
 position = Vector2(965, 509)
 sprite_frames = SubResource("SpriteFrames_u2bfj")
 
+[connection signal="mouse_entered" from="Pregame_MC/Pregame_VBox/Button_HBox/Button_VBox/Tutorial_Button" to="." method="_on_mouse_entered"]
 [connection signal="pressed" from="Pregame_MC/Pregame_VBox/Button_HBox/Button_VBox/Tutorial_Button" to="." method="_on_tutorial_button_pressed"]
+[connection signal="mouse_entered" from="Pregame_MC/Pregame_VBox/Button_HBox/Button_VBox/Back_Button" to="." method="_on_mouse_entered"]
 [connection signal="pressed" from="Pregame_MC/Pregame_VBox/Button_HBox/Button_VBox/Back_Button" to="." method="_on_back_button_pressed"]
+[connection signal="mouse_entered" from="Pregame_MC/Pregame_VBox/Button_HBox/VBoxContainer/HBoxContainer/Skip_Button" to="." method="_on_mouse_entered"]
 [connection signal="pressed" from="Pregame_MC/Pregame_VBox/Button_HBox/VBoxContainer/HBoxContainer/Skip_Button" to="." method="_on_skip_button_pressed"]
+[connection signal="mouse_entered" from="Pregame_MC/Pregame_VBox/Button_HBox/VBoxContainer/HBoxContainer/Decrease_Button" to="." method="_on_mouse_entered"]
 [connection signal="pressed" from="Pregame_MC/Pregame_VBox/Button_HBox/VBoxContainer/HBoxContainer/Decrease_Button" to="." method="_on_decrease_button_pressed"]
+[connection signal="mouse_entered" from="Pregame_MC/Pregame_VBox/Button_HBox/VBoxContainer/HBoxContainer/Increase_Button" to="." method="_on_mouse_entered"]
 [connection signal="pressed" from="Pregame_MC/Pregame_VBox/Button_HBox/VBoxContainer/HBoxContainer/Increase_Button" to="." method="_on_increase_button_pressed"]

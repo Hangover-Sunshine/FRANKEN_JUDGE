@@ -194,4 +194,5 @@ layout_mode = 2
 theme = ExtResource("6_wlla4")
 text = " Back "
 
+[connection signal="mouse_entered" from="Settings_MC/Settings_VBox/Tab_Vbox/Settings_Tab_Hbox/Tab_HBox/Back_Button" to="." method="_on_mouse_entered"]
 [connection signal="pressed" from="Settings_MC/Settings_VBox/Tab_Vbox/Settings_Tab_Hbox/Tab_HBox/Back_Button" to="." method="_on_back_button_pressed"]
