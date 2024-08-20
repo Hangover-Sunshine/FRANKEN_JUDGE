@@ -1,34 +1,141 @@
-[gd_scene load_steps=3 format=3 uid="uid://nus08878po0f"]
+[gd_scene load_steps=5 format=3 uid="uid://nus08878po0f"]
 
 [ext_resource type="Texture2D" uid="uid://de261qbm4owx6" path="res://assets/gui/sqiare.png" id="1_ymuqc"]
 [ext_resource type="PackedScene" uid="uid://b21qxgcc1ev3d" path="res://prefabs/rope/rope_segment.tscn" id="2_e8yr0"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r8yd5"]
+size = Vector2(100, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ujill"]
+size = Vector2(100, 100)
+
 [node name="Rope" type="Node2D"]
 
-[node name="Top" type="Sprite2D" parent="."]
+[node name="Top" type="StaticBody2D" parent="."]
+position = Vector2(0, -310)
+
+[node name="Top" type="Sprite2D" parent="Top"]
 modulate = Color(0, 0, 0, 1)
-position = Vector2(0, -600)
 texture = ExtResource("1_ymuqc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Top"]
+shape = SubResource("RectangleShape2D_r8yd5")
+
+[node name="Joint1" type="PinJoint2D" parent="."]
+position = Vector2(0, -260)
+node_a = NodePath("../Top")
+node_b = NodePath("../RopeSegment")
+disable_collision = false
 
 [node name="RopeSegment" parent="." instance=ExtResource("2_e8yr0")]
-position = Vector2(0, -450)
+position = Vector2(0, -240)
+
+[node name="Joint2" type="PinJoint2D" parent="."]
+position = Vector2(0, -220)
+node_a = NodePath("../RopeSegment")
+node_b = NodePath("../RopeSegment2")
 
 [node name="RopeSegment2" parent="." instance=ExtResource("2_e8yr0")]
-position = Vector2(0, -250)
+position = Vector2(0, -200)
+
+[node name="Joint3" type="PinJoint2D" parent="."]
+position = Vector2(0, -180)
+node_a = NodePath("../RopeSegment2")
+node_b = NodePath("../RopeSegment3")
 
 [node name="RopeSegment3" parent="." instance=ExtResource("2_e8yr0")]
-position = Vector2(0, -50)
+position = Vector2(0, -160)
+
+[node name="Joint4" type="PinJoint2D" parent="."]
+position = Vector2(0, -140)
+node_a = NodePath("../RopeSegment3")
+node_b = NodePath("../RopeSegment4")
 
 [node name="RopeSegment4" parent="." instance=ExtResource("2_e8yr0")]
-position = Vector2(0, 150)
+position = Vector2(0, -120)
+
+[node name="Joint5" type="PinJoint2D" parent="."]
+position = Vector2(0, -100)
+node_a = NodePath("../RopeSegment4")
+node_b = NodePath("../RopeSegment5")
 
 [node name="RopeSegment5" parent="." instance=ExtResource("2_e8yr0")]
-position = Vector2(0, 350)
+position = Vector2(0, -80)
+
+[node name="Joint6" type="PinJoint2D" parent="."]
+position = Vector2(0, -60)
+node_a = NodePath("../RopeSegment5")
+node_b = NodePath("../RopeSegment6")
 
 [node name="RopeSegment6" parent="." instance=ExtResource("2_e8yr0")]
-position = Vector2(0, 550)
+position = Vector2(0, -40)
 
-[node name="Bottom" type="Sprite2D" parent="."]
+[node name="Joint7" type="PinJoint2D" parent="."]
+position = Vector2(0, -20)
+node_a = NodePath("../RopeSegment6")
+node_b = NodePath("../RopeSegment7")
+
+[node name="RopeSegment7" parent="." instance=ExtResource("2_e8yr0")]
+
+[node name="Joint8" type="PinJoint2D" parent="."]
+position = Vector2(0, 20)
+node_a = NodePath("../RopeSegment7")
+node_b = NodePath("../RopeSegment8")
+
+[node name="RopeSegment8" parent="." instance=ExtResource("2_e8yr0")]
+position = Vector2(0, 40)
+
+[node name="Joint9" type="PinJoint2D" parent="."]
+position = Vector2(0, 60)
+node_a = NodePath("../RopeSegment8")
+node_b = NodePath("../RopeSegment9")
+
+[node name="RopeSegment9" parent="." instance=ExtResource("2_e8yr0")]
+position = Vector2(0, 80)
+
+[node name="Joint10" type="PinJoint2D" parent="."]
+position = Vector2(0, 100)
+node_a = NodePath("../RopeSegment9")
+node_b = NodePath("../RopeSegment10")
+
+[node name="RopeSegment10" parent="." instance=ExtResource("2_e8yr0")]
+position = Vector2(0, 120)
+
+[node name="Joint11" type="PinJoint2D" parent="."]
+position = Vector2(0, 140)
+node_a = NodePath("../RopeSegment10")
+node_b = NodePath("../RopeSegment11")
+
+[node name="RopeSegment11" parent="." instance=ExtResource("2_e8yr0")]
+position = Vector2(0, 160)
+
+[node name="Joint12" type="PinJoint2D" parent="."]
+position = Vector2(0, 180)
+node_a = NodePath("../RopeSegment11")
+node_b = NodePath("../RopeSegment12")
+
+[node name="RopeSegment12" parent="." instance=ExtResource("2_e8yr0")]
+position = Vector2(0, 200)
+
+[node name="Joint13" type="PinJoint2D" parent="."]
+position = Vector2(0, 220)
+node_a = NodePath("../RopeSegment12")
+node_b = NodePath("../RopeSegment13")
+
+[node name="RopeSegment13" parent="." instance=ExtResource("2_e8yr0")]
+position = Vector2(0, 240)
+
+[node name="Joint14" type="PinJoint2D" parent="."]
+position = Vector2(0, 260)
+node_a = NodePath("../RopeSegment13")
+node_b = NodePath("../Bottom")
+
+[node name="Bottom" type="StaticBody2D" parent="."]
+position = Vector2(0, 310)
+
+[node name="Bottom" type="Sprite2D" parent="Bottom"]
 modulate = Color(0, 0, 0, 1)
-position = Vector2(0, 700)
 texture = ExtResource("1_ymuqc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom"]
+shape = SubResource("RectangleShape2D_ujill")

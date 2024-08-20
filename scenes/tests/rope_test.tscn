@@ -1,0 +1,312 @@
+[gd_scene load_steps=10 format=3 uid="uid://detkow8dupnim"]
+
+[ext_resource type="Texture2D" uid="uid://dog8w28lktodb" path="res://assets/gui/Scale_Body.png" id="2_26pwt"]
+[ext_resource type="Texture2D" uid="uid://b65tb5y0dqca8" path="res://assets/gui/Scale_Arm.png" id="3_dpy6p"]
+[ext_resource type="Texture2D" uid="uid://cestacg1rkovo" path="res://assets/gui/Scale_Hand.png" id="4_6rpbh"]
+[ext_resource type="PackedScene" uid="uid://nus08878po0f" path="res://prefabs/rope/rope.tscn" id="5_ih3e6"]
+[ext_resource type="Texture2D" uid="uid://2kyvmgwi30lo" path="res://assets/frank/Hand.png" id="6_5lpht"]
+
+[sub_resource type="Animation" id="Animation_41t0f"]
+resource_name = "RESET"
+length = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HandOverLeft:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-258, -280)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Scale_Body/Scale_Arm:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Scale_Body/Scale_Left:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-513, 246)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Scale_Body/Scale_Left:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("HandOverRight:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(779, -280)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Scale_Body/Scale_Right:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(514, 246)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Scale_Body/Scale_Right:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("HandOverLeft:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_hxfha"]
+resource_name = "press_left"
+length = 3.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HandOverLeft:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-258, -280), Vector2(-258, 128), Vector2(-258, 189)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Scale_Body/Scale_Left:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-513, 246), Vector2(-513, 246), Vector2(-513, 306)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Scale_Body/Scale_Left:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 0.0698132]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Scale_Body/Scale_Arm:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, -0.139626]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Scale_Body/Scale_Right:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(514, 246), Vector2(514, 246), Vector2(514, 206)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("HandOverLeft:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, -0.0698132]
+}
+
+[sub_resource type="Animation" id="Animation_7m4iw"]
+resource_name = "press_right"
+length = 3.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HandOverRight:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(779, -280), Vector2(779, 128), Vector2(779, 189)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Scale_Body/Scale_Arm:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 0.139626]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Scale_Body/Scale_Right:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(514, 246), Vector2(514, 246), Vector2(514, 306)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Scale_Body/Scale_Right:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 0.0698132]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("HandOverRight:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, -0.0698132]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Scale_Body/Scale_Left:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-513, 246), Vector2(-513, 246), Vector2(-513, 206)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vgkn6"]
+_data = {
+"RESET": SubResource("Animation_41t0f"),
+"press_left": SubResource("Animation_hxfha"),
+"press_right": SubResource("Animation_7m4iw")
+}
+
+[node name="RopeTest" type="Node2D"]
+
+[node name="Scale" type="Node2D" parent="."]
+position = Vector2(941, 625)
+
+[node name="Scale_Body" type="Sprite2D" parent="Scale"]
+texture = ExtResource("2_26pwt")
+
+[node name="Scale_Arm" type="Sprite2D" parent="Scale/Scale_Body"]
+show_behind_parent = true
+position = Vector2(0, -244)
+texture = ExtResource("3_dpy6p")
+
+[node name="Scale_Left" type="Sprite2D" parent="Scale/Scale_Body"]
+position = Vector2(-513, 246)
+texture = ExtResource("4_6rpbh")
+
+[node name="Scale_Right" type="Sprite2D" parent="Scale/Scale_Body"]
+position = Vector2(514, 246)
+texture = ExtResource("4_6rpbh")
+
+[node name="HandOverLeft" type="Sprite2D" parent="Scale"]
+visible = false
+position = Vector2(-258, -280)
+texture = ExtResource("6_5lpht")
+
+[node name="HandOverRight" type="Sprite2D" parent="Scale"]
+visible = false
+position = Vector2(779, -280)
+texture = ExtResource("6_5lpht")
+
+[node name="AP_ScaleControl" type="AnimationPlayer" parent="Scale"]
+libraries = {
+"": SubResource("AnimationLibrary_vgkn6")
+}
+
+[node name="Rope" parent="." instance=ExtResource("5_ih3e6")]
+position = Vector2(321, 637)
+rotation = 0.436332
+scale = Vector2(1, 0.95)
+
+[node name="Rope2" parent="." instance=ExtResource("5_ih3e6")]
+position = Vector2(532, 636)
+rotation = -0.436332
+scale = Vector2(1, 0.95)

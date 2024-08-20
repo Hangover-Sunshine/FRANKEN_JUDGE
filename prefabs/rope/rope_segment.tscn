@@ -3,12 +3,12 @@
 [ext_resource type="Texture2D" uid="uid://de261qbm4owx6" path="res://assets/gui/sqiare.png" id="1_to4ol"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h842h"]
-size = Vector2(80, 200)
+size = Vector2(10, 40)
 
 [node name="RopeSegment" type="RigidBody2D"]
 
 [node name="Sqiare" type="Sprite2D" parent="."]
-scale = Vector2(0.8, 2)
+scale = Vector2(0.1, 0.4)
 texture = ExtResource("1_to4ol")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
