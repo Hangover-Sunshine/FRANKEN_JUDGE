@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://5mpw8kapddme"]
+[gd_scene load_steps=13 format=3 uid="uid://5mpw8kapddme"]
 
 [ext_resource type="Script" path="res://scripts/system/main_scene.gd" id="1_8uaxr"]
 [ext_resource type="Script" path="res://addons/verho/resources/TransitionBank.gd" id="1_aeq3o"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://addons/resonate/sound_manager/sound_event_resource.gd" id="6_316bv"]
 [ext_resource type="AudioStream" uid="uid://bdgqcq6kgk2lg" path="res://assets/sound/sfx/ui/UIClick.ogg" id="7_lc6tn"]
 [ext_resource type="AudioStream" uid="uid://miwl05aleq7p" path="res://assets/sound/sfx/ui/UIHover.ogg" id="8_qm7hx"]
+[ext_resource type="AudioStream" uid="uid://cd2n4kpc1x3km" path="res://assets/sound/sfx/ui/GavelSmack.ogg" id="9_ri4a3"]
 
 [sub_resource type="Resource" id="Resource_ueswg"]
 script = ExtResource("6_316bv")
@@ -24,6 +25,14 @@ bus = ""
 volume = 0.0
 pitch = 1.0
 streams = Array[AudioStream]([ExtResource("8_qm7hx"), ExtResource("8_qm7hx"), ExtResource("8_qm7hx"), ExtResource("8_qm7hx"), ExtResource("8_qm7hx")])
+
+[sub_resource type="Resource" id="Resource_vb7f6"]
+script = ExtResource("6_316bv")
+name = "gavel_smack"
+bus = ""
+volume = 0.0
+pitch = 1.0
+streams = Array[AudioStream]([ExtResource("9_ri4a3")])
 
 [node name="MainScene" type="Node"]
 script = ExtResource("1_8uaxr")
@@ -54,4 +63,4 @@ color = Color(0, 0, 0, 1)
 script = ExtResource("5_bnjbv")
 label = "ui"
 bus = "SFX"
-events = Array[ExtResource("6_316bv")]([SubResource("Resource_ueswg"), SubResource("Resource_k8ner")])
+events = Array[ExtResource("6_316bv")]([SubResource("Resource_ueswg"), SubResource("Resource_k8ner"), SubResource("Resource_vb7f6")])
