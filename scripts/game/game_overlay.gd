@@ -65,6 +65,13 @@ func show_day(curr_day):
 	
 	# Play big day
 	ap_states.play("Part1")
+	
+	await get_tree().create_timer(1).timeout
+	SoundManager.play("env", "bell1")
+	await get_tree().create_timer(2).timeout
+	SoundManager.play("env", "bell2")
+	await get_tree().create_timer(2.5).timeout
+	SoundManager.play("env", "bell3")
 ##
 
 func show_cases(cases:Array[BaseCaseResource]):
