@@ -1215,6 +1215,33 @@ _data = {
 "RESET": SubResource("Animation_1vv4j")
 }
 
+[sub_resource type="Animation" id="Animation_lilwk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:skew")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0174533]
+}
+
 [sub_resource type="Animation" id="Animation_gq3y4"]
 resource_name = "Throb"
 length = 4.0
@@ -1244,7 +1271,13 @@ tracks/1/keys = {
 "values": [0.0174533, 0.0261799, 0.0174533, -0.0174533, 0.0174533]
 }
 
-[sub_resource type="Animation" id="Animation_lilwk"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ny14l"]
+_data = {
+"RESET": SubResource("Animation_lilwk"),
+"Throb": SubResource("Animation_gq3y4")
+}
+
+[sub_resource type="Animation" id="Animation_yvt4y"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -1268,13 +1301,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.0174533]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_ny14l"]
-_data = {
-"RESET": SubResource("Animation_lilwk"),
-"Throb": SubResource("Animation_gq3y4")
+"values": [0.0]
 }
 
 [sub_resource type="Animation" id="Animation_qjkbe"]
@@ -1304,33 +1331,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [0.0, 0.0261799, 0.0, -0.0174533, 0.0]
-}
-
-[sub_resource type="Animation" id="Animation_yvt4y"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:skew")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tqkin"]
@@ -2555,9 +2555,9 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 269.352
+offset_left = 129.352
 offset_top = 185.0
-offset_right = 969.352
+offset_right = 829.352
 offset_bottom = 985.0
 grow_horizontal = 2
 rotation = 0.20944
@@ -2569,9 +2569,9 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -220.648
+offset_left = -360.648
 offset_top = 100.0
-offset_right = 479.352
+offset_right = 339.352
 offset_bottom = 900.013
 grow_horizontal = 2
 pivot_offset = Vector2(350, 0)
@@ -2582,9 +2582,9 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -728.648
+offset_left = -868.648
 offset_top = 184.0
-offset_right = -28.648
+offset_right = -168.648
 offset_bottom = 984.0
 grow_horizontal = 2
 rotation = -0.20944

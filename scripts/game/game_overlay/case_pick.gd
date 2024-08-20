@@ -32,6 +32,9 @@ func disable():
 
 func here_the_cases(cases:Array[BaseCaseResource]):
 	_cases = cases
+	$Button_Folder_Yellow.show_groups(cases[0].PARTY_A, cases[0].PARTY_B)
+	$Button_Folder_Blue.show_groups(cases[1].PARTY_A, cases[1].PARTY_B)
+	$Button_Folder_Red.show_groups(cases[2].PARTY_A, cases[2].PARTY_B)
 ##
 
 func _red_entered():
