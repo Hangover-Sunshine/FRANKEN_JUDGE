@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=3 uid="uid://2nl8bwm5pvgk"]
+[gd_scene load_steps=77 format=3 uid="uid://2nl8bwm5pvgk"]
 
 [ext_resource type="Script" path="res://scripts/game/game_overlay.gd" id="1_hcafl"]
 [ext_resource type="FontFile" uid="uid://73eyyuro8nvv" path="res://assets/fonts/PirataOne.ttf" id="1_qps4p"]
@@ -36,6 +36,7 @@
 [ext_resource type="AudioStream" uid="uid://8ildbgmj5ssu" path="res://assets/sound/sfx/scale/ThumbOnScale.ogg" id="33_5k40j"]
 [ext_resource type="AudioStream" uid="uid://cl4blj3nndj5d" path="res://assets/sound/sfx/ui/Zapping.ogg" id="33_ilf5f"]
 [ext_resource type="AudioStream" uid="uid://o5p2f52qcv7n" path="res://assets/sound/sfx/scale/CardBounce.ogg" id="34_7nalx"]
+[ext_resource type="AudioStream" uid="uid://cyqoou644cjgi" path="res://assets/sound/sfx/ui/UIMovement.ogg" id="34_n8v2y"]
 [ext_resource type="AudioStream" uid="uid://b3j4fgrxxeh2a" path="res://assets/sound/sfx/scale/ChainPull.ogg" id="37_ddplf"]
 [ext_resource type="AudioStream" uid="uid://dt5vrxncjcee0" path="res://assets/sound/sfx/scale/ScaleHitsTable.ogg" id="38_vohd7"]
 
@@ -1518,6 +1519,14 @@ volume = 0.0
 pitch = 1.0
 streams = Array[AudioStream]([ExtResource("33_ilf5f"), ExtResource("33_ilf5f")])
 
+[sub_resource type="Resource" id="Resource_jrkpe"]
+script = ExtResource("27_7p6v0")
+name = "swoosh"
+bus = ""
+volume = 0.0
+pitch = 1.0
+streams = Array[AudioStream]([ExtResource("34_n8v2y"), ExtResource("34_n8v2y"), ExtResource("34_n8v2y")])
+
 [sub_resource type="Resource" id="Resource_1x1og"]
 script = ExtResource("27_7p6v0")
 name = "clicking"
@@ -1613,7 +1622,6 @@ scale_amount_curve = SubResource("Curve_ehmbv")
 position = Vector2(7, 294)
 
 [node name="Reputation" type="Control" parent="."]
-modulate = Color(1, 1, 1, 0)
 layout_mode = 3
 anchors_preset = 0
 offset_left = 118.0
@@ -1749,7 +1757,6 @@ text = "(+00)"
 horizontal_alignment = 1
 
 [node name="Society" type="Control" parent="."]
-modulate = Color(1, 1, 1, 0)
 layout_mode = 3
 anchors_preset = 0
 offset_left = 1194.0
@@ -2201,7 +2208,6 @@ text = "(+00)"
 
 [node name="LilDays" type="Control" parent="."]
 visible = false
-modulate = Color(1, 1, 1, 0)
 layout_mode = 3
 anchors_preset = 0
 offset_left = 431.0
@@ -2388,9 +2394,9 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 149.352
+offset_left = 129.352
 offset_top = 185.0
-offset_right = 849.352
+offset_right = 829.352
 offset_bottom = 985.0
 grow_horizontal = 2
 rotation = 0.20944
@@ -2402,9 +2408,9 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -340.648
+offset_left = -360.648
 offset_top = 100.0
-offset_right = 359.352
+offset_right = 339.352
 offset_bottom = 900.013
 grow_horizontal = 2
 pivot_offset = Vector2(350, 0)
@@ -2415,9 +2421,9 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -848.648
+offset_left = -868.648
 offset_top = 184.0
-offset_right = -148.648
+offset_right = -168.648
 offset_bottom = 984.0
 grow_horizontal = 2
 rotation = -0.20944
@@ -2522,7 +2528,7 @@ grow_vertical = 0
 script = ExtResource("26_6akmt")
 label = "env"
 bus = "SFX"
-events = Array[ExtResource("27_7p6v0")]([SubResource("Resource_r6oet"), SubResource("Resource_p5kd4"), SubResource("Resource_eduoc"), SubResource("Resource_ncu43"), SubResource("Resource_ph5al"), SubResource("Resource_firn7")])
+events = Array[ExtResource("27_7p6v0")]([SubResource("Resource_r6oet"), SubResource("Resource_p5kd4"), SubResource("Resource_eduoc"), SubResource("Resource_ncu43"), SubResource("Resource_ph5al"), SubResource("Resource_firn7"), SubResource("Resource_jrkpe")])
 
 [node name="ScaleSoundBank" type="Node" parent="."]
 script = ExtResource("26_6akmt")
