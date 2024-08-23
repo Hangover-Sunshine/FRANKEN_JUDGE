@@ -168,6 +168,13 @@ func update_stats():
 		##
 		
 		internal_stats_rep[eff.Group][eff.Affect] += eff.ValueChange
+		
+		var max_limit = 10
+		if eff.Affect == GlobalData.Effects.TAX:
+			max_limit = 100
+		##
+		internal_stats_rep[eff.Group][eff.Affect] = \
+				min(max_limit, max(0, internal_stats_rep[eff.Group][eff.Affect]))
 	##
 	
 	# update display

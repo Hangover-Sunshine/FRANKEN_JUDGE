@@ -8,9 +8,9 @@
 script = ExtResource("1_wmeqr")
 CASE_NAME = "Hellish Tax Dispute"
 CASE_DESCRIPTION = "Religious institutions sue corporations for unlawful work in hell. Nobility claim hell pacts as non-taxable, while the church argues they are business ventures."
-PARTY_A = 0
+PARTY_A = 1
 PARTY_A_ARGUMENT = "Companies in hell aren't liable to taxation."
 EFFECTS_A = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("1_trgot")])
-PARTY_B = 0
+PARTY_B = 2
 PARTY_B_ARGUMENT = "Satan shall fill out Schedule C (Form 1040-SR)."
 EFFECTS_B = Array[Resource("res://scripts/resources/base_effect_resource.gd")]([ExtResource("2_3yjw8")])

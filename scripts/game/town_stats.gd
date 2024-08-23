@@ -36,7 +36,7 @@ var _town_stats:Dictionary = {
 		GlobalData.Effects.HEALTHCARE: 5
 	},
 	GlobalData.Faction.PEASANTS: {
-		GlobalData.Effects.TAX: 50,
+		GlobalData.Effects.TAX: 100,
 		GlobalData.Effects.LITERACY: 5,
 		GlobalData.Effects.POLICING: 5,
 		GlobalData.Effects.LABOR: 5,
