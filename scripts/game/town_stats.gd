@@ -30,26 +30,34 @@ const FAVORED_ISSUES = {
 var _town_stats:Dictionary = {
 	GlobalData.Faction.NOBILITY: {
 		GlobalData.Effects.TAX: 30,
-		GlobalData.Effects.LITERACY: 9,
-		GlobalData.Effects.POLICING: 6,
+		GlobalData.Effects.LITERACY: 5,
+		GlobalData.Effects.POLICING: 5,
 		GlobalData.Effects.LABOR: 5,
-		GlobalData.Effects.HEALTHCARE: 8
+		GlobalData.Effects.HEALTHCARE: 5
 	},
 	GlobalData.Faction.PEASANTS: {
-		GlobalData.Effects.TAX: 70,
-		GlobalData.Effects.LITERACY: 3,
-		GlobalData.Effects.POLICING: 1,
-		GlobalData.Effects.LABOR: 1,
-		GlobalData.Effects.HEALTHCARE: 3
+		GlobalData.Effects.TAX: 50,
+		GlobalData.Effects.LITERACY: 5,
+		GlobalData.Effects.POLICING: 5,
+		GlobalData.Effects.LABOR: 5,
+		GlobalData.Effects.HEALTHCARE: 5
 	},
 	GlobalData.Faction.CLERGY: {
-		GlobalData.Effects.TAX: 0,
-		GlobalData.Effects.LITERACY: 10,
-		GlobalData.Effects.POLICING: 7,
-		GlobalData.Effects.LABOR: 8,
-		GlobalData.Effects.HEALTHCARE: 8
+		GlobalData.Effects.TAX: 20,
+		GlobalData.Effects.LITERACY: 5,
+		GlobalData.Effects.POLICING: 5,
+		GlobalData.Effects.LABOR: 5,
+		GlobalData.Effects.HEALTHCARE: 5
 	}
 }
+
+func _ready():
+	for fac in range(3):
+		for stat in range(1, 4):
+			_town_stats[fac][stat] += (1 + randi_range(0, 1) * -2) * randi_range(0, 2)
+		##
+	##
+##
 
 func update_value_for(group:GlobalData.Faction, stat:GlobalData.Effects, value:int):
 	var val = _town_stats[group][stat] + value

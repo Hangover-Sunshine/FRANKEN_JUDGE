@@ -34,7 +34,7 @@ size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0.839216, 0.905882, 0.972549, 1)
 theme_override_fonts/font = ExtResource("4_r2uih")
 theme_override_font_sizes/font_size = 50
-text = "HANGOVER SUNSHINE - Version 1.0 - GMTK24 Game Jam"
+text = "HANGOVER SUNSHINE - Version 1.1 - GMTK24 Game Jam"
 horizontal_alignment = 1
 vertical_alignment = 1
 
