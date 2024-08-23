@@ -29,14 +29,14 @@ const FAVORED_ISSUES = {
 ## Various town stats to keep track of.
 var _town_stats:Dictionary = {
 	GlobalData.Faction.NOBILITY: {
-		GlobalData.Effects.TAX: 30,
+		GlobalData.Effects.TAX: 20,
 		GlobalData.Effects.LITERACY: 5,
 		GlobalData.Effects.POLICING: 5,
 		GlobalData.Effects.LABOR: 5,
 		GlobalData.Effects.HEALTHCARE: 5
 	},
 	GlobalData.Faction.PEASANTS: {
-		GlobalData.Effects.TAX: 100,
+		GlobalData.Effects.TAX: 60,
 		GlobalData.Effects.LITERACY: 5,
 		GlobalData.Effects.POLICING: 5,
 		GlobalData.Effects.LABOR: 5,
