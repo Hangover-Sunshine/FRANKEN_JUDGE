@@ -39,13 +39,13 @@ func hide_all():
 func show_labels(group:GlobalData.Faction, card_desc, effects:Array[BaseEffectResource]):
 	match group:
 		GlobalData.Faction.PEASANTS:
-			peasant_card.show_labels(card_desc, group, effects)
+			peasant_card.show_labels(card_desc, effects)
 			peasant_card.visible = true
 		GlobalData.Faction.NOBILITY:
-			nobility_card.show_labels(card_desc, group, effects)
+			nobility_card.show_labels(card_desc, effects)
 			nobility_card.visible = true
 		GlobalData.Faction.CLERGY:
-			clergy_card.show_labels(card_desc, group, effects)
+			clergy_card.show_labels(card_desc, effects)
 			clergy_card.visible = true
 		##
 	##

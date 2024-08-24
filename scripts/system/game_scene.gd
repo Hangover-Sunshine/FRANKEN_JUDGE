@@ -43,7 +43,7 @@ func _unpaused_by_button():
 ##
 
 ## Fired when the case has been submit.
-func _confirm_case(effects:Array[BaseEffectResource]):
+func _confirm_case(effects:Array[BaseEffectResource], faction:GlobalData.Faction):
 	_curr_day += 1
 	
 	var changes:Dictionary = {
@@ -52,18 +52,11 @@ func _confirm_case(effects:Array[BaseEffectResource]):
 		GlobalData.Faction.PEASANTS: 0
 	}
 	
+	changes[faction] += 10
+	
 	# Update stats
 	for eff in effects:
-		# group:GlobalData.Faction, stat:GlobalData.Effects, value:in
-		if eff.Affect == GlobalData.Effects.REPUTATION:
-			changes[eff.Group] += eff.ValueChange
-		else:
-			if eff.RandomAmount:
-				_faction_stats.update_value_for(eff.Group, eff.Affect,
-												randi_range(eff.ValueRange.x, eff.ValueRange.y))
-			else:
-				_faction_stats.update_value_for(eff.Group, eff.Affect, eff.ValueChange)
-			##
+		_faction_stats.update_value_for(eff.Group, eff.Affect, eff.ValueChange)
 		##
 	##
 	

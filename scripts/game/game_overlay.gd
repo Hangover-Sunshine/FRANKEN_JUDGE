@@ -1,7 +1,7 @@
 extends Node2D
 
 signal cases_left(cases:Array[BaseCaseResource])
-signal case_resolved(effects:Array[BaseEffectResource])
+signal case_resolved(effects:Array[BaseEffectResource], faction:GlobalData.Faction)
 
 @onready var ap_states = $AP_States
 @onready var clergy_bolt = $ClergyBolt
@@ -164,6 +164,7 @@ func _case_complete(case, faction:GlobalData.Faction, case_desc, effects:Array[B
 	
 	var affected_parties:Array[GlobalData.Faction]
 	
+	print("Winner:", faction)
 	$WinningCard.load_data(faction, case_desc, effects)
 	
 	for eff in effects:
@@ -175,7 +176,7 @@ func _case_complete(case, faction:GlobalData.Faction, case_desc, effects:Array[B
 	var starts = [Vector2(600, 570), Vector2(600, 700), Vector2(600, 830)]
 	var ends = Vector2(1110, 730)
 	
-	emit_signal("case_resolved", effects)
+	emit_signal("case_resolved", effects, faction)
 	
 	ap_states.play("Part5")
 	

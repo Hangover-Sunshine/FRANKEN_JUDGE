@@ -16,7 +16,6 @@ extends Node2D
 
 # called when the node enters the scene tree for the first time. #
 func _ready():
-	print(PlayerPrefs.was_disclaimed)
 	if PlayerPrefs.was_disclaimed == false:
 		animplayer.play("ToDisclaimer")
 		menu_timer.wait_time = time_disclaim

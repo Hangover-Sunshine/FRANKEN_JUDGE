@@ -15,9 +15,8 @@ extends Card
 
 var countdown_for_selection:float = 1.5
 var _effects:Array[BaseEffectResource]
-var _faction:GlobalData.Faction
 
-func show_labels(card_desc, faction:GlobalData.Faction, effects:Array[BaseEffectResource]):
+func show_labels(card_desc, effects:Array[BaseEffectResource]):
 	for dl in description_labels:
 		dl.visible = false
 	##
@@ -64,7 +63,7 @@ func _on_button_button_up():
 ##
 
 func _on_timer_timeout():
-	emit_signal("selected", _faction, _effects)
+	emit_signal("selected", GlobalData.Faction.CLERGY, _effects)
 ##
 
 func _on_mouse_entered():
