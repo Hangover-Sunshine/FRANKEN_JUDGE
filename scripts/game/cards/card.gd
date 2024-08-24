@@ -1,7 +1,7 @@
 class_name Card
 extends Panel
 
-signal selected
+signal selected(faction:GlobalData.Faction, effects:Array[BaseEffectResource])
 signal pressed_down
 signal released
 

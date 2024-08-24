@@ -1,6 +1,7 @@
 extends Node2D
 
-signal case_complete(case:BaseCaseResource, faction:GlobalData.Faction, chose_left:bool)
+signal case_complete(case:BaseCaseResource, faction:GlobalData.Faction, case_description,
+						effects:Array[BaseEffectResource])
 signal left_pressed
 signal left_released
 signal right_pressed
@@ -28,25 +29,27 @@ func _ready():
 	left_mega_card.set_countdown_time(HoldDuration)
 	right_mega_card.set_countdown_time(HoldDuration)
 	
-	left_mega_card.peasant_card.connect("selected", _peasants_selected)
+	left_mega_card.peasant_card.connect("selected", _card_selected)
 	left_mega_card.peasant_card.connect("pressed_down", _left_selected)
 	left_mega_card.peasant_card.connect("released", _left_released)
-	left_mega_card.nobility_card.connect("selected", _nobility_selected)
+	
+	left_mega_card.nobility_card.connect("selected", _card_selected)
 	left_mega_card.nobility_card.connect("pressed_down", _left_selected)
 	left_mega_card.nobility_card.connect("released", _left_released)
-	left_mega_card.clergy_card.connect("selected", _clergy_selected)
+	
+	left_mega_card.clergy_card.connect("selected", _card_selected)
 	left_mega_card.clergy_card.connect("pressed_down", _left_selected)
 	left_mega_card.clergy_card.connect("released", _left_released)
 	
-	right_mega_card.peasant_card.connect("selected", _peasants_selected)
+	right_mega_card.peasant_card.connect("selected", _card_selected)
 	right_mega_card.peasant_card.connect("pressed_down", _right_selected)
 	right_mega_card.peasant_card.connect("released", _right_released)
 	
-	right_mega_card.nobility_card.connect("selected", _nobility_selected)
+	right_mega_card.nobility_card.connect("selected", _card_selected)
 	right_mega_card.nobility_card.connect("pressed_down", _right_selected)
 	right_mega_card.nobility_card.connect("released", _right_released)
 	
-	right_mega_card.clergy_card.connect("selected", _clergy_selected)
+	right_mega_card.clergy_card.connect("selected", _card_selected)
 	right_mega_card.clergy_card.connect("pressed_down", _right_selected)
 	right_mega_card.clergy_card.connect("released", _right_released)
 	
@@ -86,64 +89,16 @@ func setup_factions(case:BaseCaseResource):
 	##
 ##
 
-func _peasants_selected():
-	_mouse_not_hovering()
-	ap_scale_control.play("RESET")
-	left_mega_card.disable()
-	right_mega_card.disable()
-	if _case.PARTY_A == GlobalData.Faction.PEASANTS:
-		if _aPicks == 0:
-			emit_signal("case_complete", _case, GlobalData.Faction.PEASANTS, true)
-		else:
-			emit_signal("case_complete", _case, GlobalData.Faction.PEASANTS, false)
-		##
-	else:
-		if _bPicks == 0:
-			emit_signal("case_complete", _case, GlobalData.Faction.PEASANTS, true)
-		else:
-			emit_signal("case_complete", _case, GlobalData.Faction.PEASANTS, false)
-		##
-	##
-##
-
-func _clergy_selected():
-	_mouse_not_hovering()
-	left_mega_card.disable()
-	right_mega_card.disable()
-	ap_scale_control.play("RESET")
-	if _case.PARTY_A == GlobalData.Faction.CLERGY:
-		if _aPicks == 0:
-			emit_signal("case_complete", _case, GlobalData.Faction.CLERGY, true)
-		else:
-			emit_signal("case_complete", _case, GlobalData.Faction.CLERGY, false)
-		##
-	else:
-		if _bPicks == 0:
-			emit_signal("case_complete", _case, GlobalData.Faction.CLERGY, true)
-		else:
-			emit_signal("case_complete", _case, GlobalData.Faction.CLERGY, false)
-		##
-	##
-##
-
-func _nobility_selected():
+func _card_selected(faction:GlobalData.Faction, effects:Array[BaseEffectResource]):
 	_mouse_not_hovering()
 	ap_scale_control.play("RESET")
 	left_mega_card.disable()
 	right_mega_card.disable()
 	
-	if _case.PARTY_A == GlobalData.Faction.NOBILITY:
-		if _aPicks == 0:
-			emit_signal("case_complete", _case, GlobalData.Faction.NOBILITY, true)
-		else:
-			emit_signal("case_complete", _case, GlobalData.Faction.NOBILITY, false)
-		##
+	if effects == _case.EFFECTS_A:
+		emit_signal("case_complete", _case, faction, _case.PARTY_A_ARGUMENT, effects)
 	else:
-		if _bPicks == 0:
-			emit_signal("case_complete", _case, GlobalData.Faction.NOBILITY, true)
-		else:
-			emit_signal("case_complete", _case, GlobalData.Faction.NOBILITY, false)
-		##
+		emit_signal("case_complete", _case, faction, _case.PARTY_B_ARGUMENT, effects)
 	##
 ##
 

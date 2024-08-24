@@ -156,33 +156,15 @@ func _pick_rand_case_id():
 	return rand_id
 ##
 
-func _case_complete(case:BaseCaseResource, faction:GlobalData.Faction, chose_A:bool):
+func _case_complete(case, faction:GlobalData.Faction, case_desc, effects:Array[BaseEffectResource]):
 	$Reputation.show_all_bars()
 	$Society.show_all()
 	bg_chatter.release()
 	SoundManager.play("env", "CrowdGasp")
 	
-	var effects:Array[BaseEffectResource] = []
-	
 	var affected_parties:Array[GlobalData.Faction]
 	
-	if case.PARTY_A == case.PARTY_B:
-		if chose_A:
-			effects = case.EFFECTS_A
-			$WinningCard.load_data(case.PARTY_A, case.PARTY_A_ARGUMENT, case.EFFECTS_A)
-		else:
-			effects = case.EFFECTS_B
-			$WinningCard.load_data(case.PARTY_B, case.PARTY_B_ARGUMENT, case.EFFECTS_B)
-		##
-	else:
-		if case.PARTY_A == faction:
-			effects = case.EFFECTS_A
-			$WinningCard.load_data(case.PARTY_A, case.PARTY_A_ARGUMENT, case.EFFECTS_A)
-		else:
-			effects = case.EFFECTS_B
-			$WinningCard.load_data(case.PARTY_B, case.PARTY_B_ARGUMENT, case.EFFECTS_B)
-		##
-	##
+	$WinningCard.load_data(faction, case_desc, effects)
 	
 	for eff in effects:
 		if not (eff.Group in affected_parties):
