@@ -164,7 +164,6 @@ func _case_complete(case, faction:GlobalData.Faction, case_desc, effects:Array[B
 	
 	var affected_parties:Array[GlobalData.Faction]
 	
-	print("Winner:", faction)
 	$WinningCard.load_data(faction, case_desc, effects)
 	
 	for eff in effects:
