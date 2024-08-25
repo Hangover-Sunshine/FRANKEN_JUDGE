@@ -30,24 +30,24 @@ const FAVORED_ISSUES = {
 var _town_stats:Dictionary = {
 	GlobalData.Faction.NOBILITY: {
 		GlobalData.Effects.TAX: 20,
-		GlobalData.Effects.LITERACY: 5,
-		GlobalData.Effects.POLICING: 5,
-		GlobalData.Effects.LABOR: 5,
-		GlobalData.Effects.HEALTHCARE: 5
+		GlobalData.Effects.LITERACY: 4,
+		GlobalData.Effects.POLICING: 4,
+		GlobalData.Effects.LABOR: 4,
+		GlobalData.Effects.HEALTHCARE: 4
 	},
 	GlobalData.Faction.PEASANTS: {
 		GlobalData.Effects.TAX: 60,
-		GlobalData.Effects.LITERACY: 5,
-		GlobalData.Effects.POLICING: 5,
-		GlobalData.Effects.LABOR: 5,
-		GlobalData.Effects.HEALTHCARE: 5
+		GlobalData.Effects.LITERACY: 4,
+		GlobalData.Effects.POLICING: 4,
+		GlobalData.Effects.LABOR: 4,
+		GlobalData.Effects.HEALTHCARE: 4
 	},
 	GlobalData.Faction.CLERGY: {
 		GlobalData.Effects.TAX: 20,
-		GlobalData.Effects.LITERACY: 5,
-		GlobalData.Effects.POLICING: 5,
-		GlobalData.Effects.LABOR: 5,
-		GlobalData.Effects.HEALTHCARE: 5
+		GlobalData.Effects.LITERACY: 4,
+		GlobalData.Effects.POLICING: 4,
+		GlobalData.Effects.LABOR: 4,
+		GlobalData.Effects.HEALTHCARE: 4
 	}
 }
 
