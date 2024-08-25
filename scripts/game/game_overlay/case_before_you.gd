@@ -162,3 +162,15 @@ func _right_released():
 	play_sound = false
 	ap_scale_control.play("RESET")
 ##
+
+func play_scale_on_table():
+	SoundManager.play_varied("scale", "scale_on_table", randf_range(0.9, 1.1))
+##
+
+func play_card_bounced():
+	SoundManager.play_varied("scale", "card_bounce", randf_range(0.8, 1.1))
+##
+
+func play_card_bounced_quieter():
+	SoundManager.play_varied("scale", "card_bounce", 1, linear_to_db(0.25))
+##

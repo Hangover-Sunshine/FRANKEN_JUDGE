@@ -105,15 +105,15 @@ func _show_sides():
 	
 	await get_tree().create_timer(2, false).timeout
 	
-	SoundManager.play_varied("scale", "scale_on_table", randf_range(0.9, 1.1))
+	#SoundManager.play_varied("scale", "scale_on_table", randf_range(0.9, 1.1))
 	
 	await get_tree().create_timer(2.5, false).timeout
-	SoundManager.play_varied("scale", "card_bounce", randf_range(0.8, 1.1))
-	SoundManager.play_varied("scale", "card_bounce", randf_range(0.8, 1.1))
+	#SoundManager.play_varied("scale", "card_bounce", randf_range(0.8, 1.1))
+	#SoundManager.play_varied("scale", "card_bounce", randf_range(0.8, 1.1))
 	
 	await get_tree().create_timer(0.5, false).timeout
-	SoundManager.play_varied("scale", "card_bounce", 1, linear_to_db(0.2))
-	SoundManager.play_varied("scale", "card_bounce", 1, linear_to_db(0.2))
+	#SoundManager.play_varied("scale", "card_bounce", 1, linear_to_db(0.25))
+	#SoundManager.play_varied("scale", "card_bounce", 1, linear_to_db(0.25))
 ##
 
 func _pick_rand_case_id():
@@ -147,103 +147,13 @@ func _case_complete(case, faction:GlobalData.Faction, case_desc, effects:Array[B
 	
 	$Society.changes_to_stats(effects)
 	
-	#var starts = [Vector2(600, 570), Vector2(600, 700), Vector2(600, 830)]
-	#var ends = Vector2(1110, 730)
-	
 	emit_signal("case_resolved", effects, faction)
 	
 	ap_states.play("Part5")
-	
-	#await get_tree().create_timer(1.7, false).timeout
-	#
-	#SoundManager.play_varied("ui", "swoosh", randf_range(0.8, 1.2))
-	
-	#await get_tree().create_timer(2.8, false).timeout
-	#
-	#SoundManager.play_varied("ui", "swoosh", randf_range(0.6, 0.8))
-	
-	#await get_tree().create_timer(5.6).timeout
-	#await get_tree().create_timer(1.1, false).timeout
-	
-	# fire off the lightnings
-	#for group in affected_parties:
-		#if group == GlobalData.Faction.PEASANTS:
-			#peasant_bolt.set_start_position(starts[0])
-			#peasant_bolt.set_target_position(ends)
-			#peasant_bolt.Emit = true
-			#starts.pop_front()
-		#elif group == GlobalData.Faction.NOBILITY:
-			#nobility_bolt.set_start_position(starts[0])
-			#nobility_bolt.set_target_position(ends)
-			#nobility_bolt.Emit = true
-			#starts.pop_front()
-		#else:
-			#clergy_bolt.set_start_position(starts[0])
-			#clergy_bolt.set_target_position(ends)
-			#clergy_bolt.Emit = true
-			#starts.pop_front()
-		###
-	###
-	#zapping.trigger_varied(randf_range(0.7, 1))
-	
-	#await get_tree().create_timer(0.9, false).timeout
-	
-	# re-add the modifiers
-	#$Society.show_changes_to_stats()
-	
-	#await get_tree().create_timer(2.3, false).timeout
-	
-	# stop
-	#zapping.release()
-	#zapping = SoundManager.instance("env", "zapping")
-	#peasant_bolt.Emit = false
-	#nobility_bolt.Emit = false
-	#clergy_bolt.Emit = false
-	
-	# hide the mods, update the table
-	#$Society.hide_changes_to_stats()
-	#$Society.update_stats()
 ##
 
 func _tally_finished():
 	ap_states.play("Part6")
-	
-	#await get_tree().create_timer(0.2, false).timeout
-	
-	#SoundManager.play_varied("ui", "swoosh", randf_range(0.6, 0.8))
-	
-	#await get_tree().create_timer(1.3, false).timeout
-	
-	#zapping.trigger_varied(randf_range(1, 1.4))
-	
-	#peasant_bolt.set_start_position(Vector2(1450, 630))
-	#peasant_bolt.set_target_position(Vector2(860, 680))
-	#peasant_bolt.Emit = true
-	#
-	#nobility_bolt.set_start_position(Vector2(1450, 630))
-	#nobility_bolt.set_target_position(Vector2(860, 740))
-	#nobility_bolt.Emit = true
-	#
-	#clergy_bolt.set_start_position(Vector2(1450, 630))
-	#clergy_bolt.set_target_position(Vector2(860, 800))
-	#clergy_bolt.Emit = true
-	
-	#await get_tree().create_timer(0.3, false).timeout
-	
-	# Show the tallies
-	#$Reputation.show_changes()
-	
-	#await get_tree().create_timer(1.7, false).timeout
-	
-	#zapping.release()
-	#peasant_bolt.Emit = false
-	#nobility_bolt.Emit = false
-	#clergy_bolt.Emit = false
-	
-	#await get_tree().create_timer(1.0, false).timeout
-	
-	# Iterate, hide tallies once they hit 0
-	#$Reputation.update_reputations()
 ##
 # ============== BOTTOM HALF CONTROL ============== #
 
