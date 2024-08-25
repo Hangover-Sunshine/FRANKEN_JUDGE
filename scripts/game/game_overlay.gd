@@ -92,7 +92,34 @@ func _case_picked(case_id:int):
 	var sp:bool = _case.PARTY_A == GlobalData.Faction.PEASANTS or _case.PARTY_B == GlobalData.Faction.PEASANTS
 	var sn:bool = _case.PARTY_A == GlobalData.Faction.NOBILITY or _case.PARTY_B == GlobalData.Faction.NOBILITY
 	var sc:bool = _case.PARTY_A == GlobalData.Faction.CLERGY or _case.PARTY_B == GlobalData.Faction.CLERGY
+	# Reputation is easy - it immediately affects one of the two cards
 	$Reputation.change_bar_display(sp, sn, sc)
+	
+	# Now we get into effects, where a one card might affect more...
+	sp = false
+	sn = false
+	sc = false
+	
+	for eff in _case.EFFECTS_A:
+		if eff.Group == GlobalData.Faction.PEASANTS:
+			sp = true
+		elif eff.Group == GlobalData.Faction.CLERGY:
+			sc = true
+		else:
+			sn = true
+		##
+	##
+	
+	for eff in _case.EFFECTS_B:
+		if eff.Group == GlobalData.Faction.PEASANTS:
+			sp = true
+		elif eff.Group == GlobalData.Faction.CLERGY:
+			sc = true
+		else:
+			sn = true
+		##
+	##
+	
 	$Society.change_table_display(sp, sn, sc)
 ##
 
