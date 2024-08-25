@@ -14,3 +14,15 @@ func set_current_day(curr_day):
 	day_number_header.text = (GlobalData.TWO_NUM_DISPLAY % curr_day) + " / " +\
 								(GlobalData.TWO_NUM_DISPLAY % day_total)
 ##
+
+func play_bell1():
+	SoundManager.play("env", "bell1")
+##
+
+func play_bell2():
+	SoundManager.play("env", "bell2")
+##
+
+func play_bell3():
+	SoundManager.play("env", "bell3")
+##

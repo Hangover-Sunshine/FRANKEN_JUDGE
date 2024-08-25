@@ -52,3 +52,11 @@ func _yellow_entered():
 func _folder_exited():
 	$Case_Header.text = _DEFAULT_TEXT
 ##
+
+func play_swoosh():
+	SoundManager.play("env", "swoosh")
+##
+
+func play_papers():
+	SoundManager.play_varied("folder", "in_place", randf_range(0.9, 1.1))
+##

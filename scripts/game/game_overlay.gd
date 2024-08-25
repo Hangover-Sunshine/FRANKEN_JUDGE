@@ -71,13 +71,6 @@ func show_day(curr_day):
 	ap_states.play("Part1")
 	
 	$Background.change_hater()
-	
-	await get_tree().create_timer(1, false).timeout
-	SoundManager.play("env", "bell1")
-	await get_tree().create_timer(2, false).timeout
-	SoundManager.play("env", "bell2")
-	await get_tree().create_timer(2.5, false).timeout
-	SoundManager.play("env", "bell3")
 ##
 
 func show_cases(cases:Array[BaseCaseResource]):
@@ -87,24 +80,6 @@ func show_cases(cases:Array[BaseCaseResource]):
 	$CasePick.here_the_cases(cases)
 	ap_states.play("Part2")
 	bg_chatter = SoundManager.instance("env", "BGChatter")
-	
-	await get_tree().create_timer(0.5, false).timeout
-	SoundManager.play("env", "swoosh")
-	
-	await get_tree().create_timer(0.8, false).timeout
-	SoundManager.play("env", "swoosh")
-	
-	await get_tree().create_timer(0.5, false).timeout
-	SoundManager.play_varied("folder", "in_place", randf_range(0.9, 1.1))
-	
-	await get_tree().create_timer(0.3, false).timeout
-	SoundManager.play("env", "swoosh")
-	
-	await get_tree().create_timer(0.6, false).timeout
-	SoundManager.play_varied("folder", "in_place", randf_range(0.9, 1.1))
-	
-	await get_tree().create_timer(0.9, false).timeout
-	SoundManager.play_varied("folder", "in_place", randf_range(0.9, 1.1))
 ##
 
 func _case_picked(case_id:int):
