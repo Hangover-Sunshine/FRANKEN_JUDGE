@@ -52,8 +52,10 @@ var emit_clergy:bool = false
 var emit_nobility:bool = false
 var emit_peasant:bool = false
 var open_bolt:int = 0
+var zapping
 
 func setup(faction:GlobalData.Faction, effects:Array[BaseEffectResource]):
+	zapping = SoundManager.instance("env", "zapping")
 	var bolts = []
 	
 	if faction == GlobalData.Faction.PEASANTS:
@@ -89,6 +91,8 @@ func emit_bolts():
 	for i in range(open_bolt):
 		bolts[i].Emit = true
 	##
+	
+	zapping.trigger()
 ##
 
 func disable_bolts():
@@ -112,4 +116,5 @@ func disable_bolts():
 	emit_nobility = false
 	emit_peasant = false
 	open_bolt = 0
+	zapping.release()
 ##

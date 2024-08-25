@@ -4,9 +4,6 @@ signal cases_left(cases:Array[BaseCaseResource])
 signal case_resolved(effects:Array[BaseEffectResource], faction:GlobalData.Faction)
 
 @onready var ap_states = $AP_States
-#@onready var clergy_bolt = $ClergyBolt
-#@onready var nobility_bolt = $NobilityBolt
-#@onready var peasant_bolt = $PeasantBolt
 
 var _cases:Array[BaseCaseResource]
 var _case:BaseCaseResource
@@ -18,7 +15,6 @@ var _can_click_to_proceed:bool = false
 var curr_screen:int = 0
 
 var bg_chatter
-var zapping
 
 func initialize(max_num_days:int):
 	$LilDays.set_day_total(max_num_days)
@@ -84,7 +80,6 @@ func show_cases(cases:Array[BaseCaseResource]):
 
 func _case_picked(case_id:int):
 	SoundManager.play_varied("folder", "selected")
-	zapping = SoundManager.instance("env", "zapping")
 	bg_chatter.trigger()
 	_case = _cases[case_id]
 	_cases.remove_at(case_id)

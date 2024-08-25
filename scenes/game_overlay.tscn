@@ -2628,7 +2628,6 @@ mouse_filter = 1
 script = ExtResource("5_e5niu")
 
 [node name="Case_Header" type="Label" parent="CasePick"]
-modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -2650,12 +2649,12 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -340.0
-offset_top = -110.0
-offset_right = 360.0
-offset_bottom = 690.0
+offset_left = 129.352
+offset_top = 185.0
+offset_right = 829.352
+offset_bottom = 985.0
 grow_horizontal = 2
-rotation = 0.0966646
+rotation = 0.20944
 pivot_offset = Vector2(350, 0)
 CaseID = 2
 
@@ -2664,10 +2663,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -340.0
-offset_top = -110.0
-offset_right = 360.0
-offset_bottom = 690.013
+offset_left = -360.648
+offset_top = 100.0
+offset_right = 339.352
+offset_bottom = 900.013
 grow_horizontal = 2
 pivot_offset = Vector2(350, 0)
 CaseID = 1
@@ -2677,12 +2676,12 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -340.0
-offset_top = -110.0
-offset_right = 360.0
-offset_bottom = 690.0
+offset_left = -868.648
+offset_top = 184.0
+offset_right = -168.648
+offset_bottom = 984.0
 grow_horizontal = 2
-rotation = -0.0966646
+rotation = -0.20944
 pivot_offset = Vector2(350, 0)
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -2712,16 +2711,15 @@ position = Vector2(-513, 246)
 texture = ExtResource("9_7s0gt")
 
 [node name="LeftMegaCard" parent="Scale/Scale_Body/Scale_Left" instance=ExtResource("18_4l78d")]
-visible = false
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -170.0
-offset_top = -1450.0
-offset_right = 175.0
-offset_bottom = -1029.98
+offset_left = -400.5
+offset_top = -492.0
+offset_right = -55.5
+offset_bottom = -71.9796
 grow_horizontal = 2
 grow_vertical = 0
 
@@ -2730,11 +2728,10 @@ position = Vector2(514, 246)
 texture = ExtResource("9_7s0gt")
 
 [node name="RightMegaCard" parent="Scale/Scale_Body/Scale_Right" instance=ExtResource("18_4l78d")]
-visible = false
 offset_left = -170.0
-offset_top = -1450.0
+offset_top = -410.0
 offset_right = 175.0
-offset_bottom = -1030.0
+offset_bottom = 10.0
 IsRight = true
 
 [node name="HandOverLeft" type="Sprite2D" parent="Scale"]
