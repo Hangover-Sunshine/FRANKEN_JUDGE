@@ -19,11 +19,11 @@ modulate = Color(0.996078, 0.827451, 0.709804, 1)
 AngleVar = 50.0
 
 [node name="Lightning4" parent="." instance=ExtResource("2_lp4go")]
-modulate = Color(0.976471, 0.607843, 0.317647, 1)
+modulate = Color(0.996078, 0.827451, 0.709804, 1)
 AngleVar = 25.0
 
 [node name="Lightning5" parent="." instance=ExtResource("2_lp4go")]
-modulate = Color(0.976471, 0.607843, 0.317647, 1)
+modulate = Color(0.996078, 0.827451, 0.709804, 1)
 AngleVar = 25.0
 
 [node name="Lightning6" parent="." instance=ExtResource("2_lp4go")]
