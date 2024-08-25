@@ -62,3 +62,23 @@ func get_reputations():
 func get_reputation_for(group:GlobalData.Faction) -> int:
 	return _reputations[group]
 ##
+
+func get_angriest_faction():
+	var angriest = 0
+	var curr_lowest:int = _reputations[angriest]
+	var found:bool = false
+	
+	for i in range(0, 3):
+		if _reputations[i] < 33 and _reputations[i] < curr_lowest:
+			found = true
+			angriest = i
+			curr_lowest = _reputations[i]
+		##
+	##
+	
+	if found:
+		return angriest + 1 # S's system has 0 as "no one" angry
+	else:
+		return 0
+	##
+##

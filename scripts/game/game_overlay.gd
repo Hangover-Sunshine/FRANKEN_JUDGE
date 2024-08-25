@@ -70,6 +70,8 @@ func show_day(curr_day):
 	# Play big day
 	ap_states.play("Part1")
 	
+	$Background.change_hater()
+	
 	await get_tree().create_timer(1, false).timeout
 	SoundManager.play("env", "bell1")
 	await get_tree().create_timer(2, false).timeout
@@ -162,7 +164,7 @@ func _case_complete(case, faction:GlobalData.Faction, case_desc, effects:Array[B
 	bg_chatter.release()
 	SoundManager.play("env", "CrowdGasp")
 	
-	var affected_parties:Array[GlobalData.Faction]
+	var affected_parties:Array[GlobalData.Faction] = []
 	
 	$WinningCard.load_data(faction, case_desc, effects)
 	

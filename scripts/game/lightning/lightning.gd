@@ -28,7 +28,7 @@ func _on_timer_timeout():
 	##
 ##
 
-func _process(delta):
+func _process(_delta):
 	if emitting and $Timer.is_stopped():
 		_on_timer_timeout()
 	##

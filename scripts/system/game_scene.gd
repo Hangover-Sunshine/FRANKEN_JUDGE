@@ -96,6 +96,7 @@ func _update_stats_done():
 		return
 	##
 	
+	$Game_Overlay/Background.next_faction = $RepuationStats.get_angriest_faction()
 	# Otherwise, keep going...
 	$Game_Overlay.show_day(_curr_day)
 ##
