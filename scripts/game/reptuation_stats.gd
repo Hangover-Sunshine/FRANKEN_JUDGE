@@ -24,22 +24,18 @@ func _ready():
 
 func has_lost() -> GlobalData.END_CONDITION:
 	var lowest_faction:GlobalData.Faction = GlobalData.Faction.PEASANTS
-	var below_25:int = 0
-	var below_35:int = 0
+	var zero_hit:bool = false
 	
 	for key in _reputations.keys():
-		if _reputations[key] < 25:
-			below_25 += 1
-			if _reputations[key] < _reputations[lowest_faction]:
-				lowest_faction = key
-			##
-		##
-		if _reputations[key] < 35:
-			below_35 += 1
+		# Grab the first lowest
+		if _reputations[key] == 0:
+			zero_hit = true
+			lowest_faction = key
+			break
 		##
 	##
 	
-	if below_25 > 0 and below_35 > 1:
+	if zero_hit:
 		match lowest_faction:
 			GlobalData.Faction.CLERGY:
 				return GlobalData.END_CONDITION.LOSS_CLERGY
