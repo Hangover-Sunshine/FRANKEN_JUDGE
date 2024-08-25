@@ -2761,12 +2761,11 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -400.5
-offset_top = -467.0
+offset_top = -492.0
 offset_right = -55.5
-offset_bottom = -46.9757
+offset_bottom = -71.9756
 grow_horizontal = 2
 grow_vertical = 0
-scale = Vector2(1, 0.95)
 
 [node name="Scale_Right" type="Sprite2D" parent="Scale/Scale_Body"]
 position = Vector2(514, 246)
@@ -2777,7 +2776,6 @@ offset_left = -170.0
 offset_top = -410.0
 offset_right = 175.0
 offset_bottom = 10.0
-scale = Vector2(1, 0.95)
 IsRight = true
 
 [node name="HandOverLeft" type="Sprite2D" parent="Scale"]

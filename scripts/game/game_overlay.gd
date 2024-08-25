@@ -102,18 +102,6 @@ func _show_sides():
 	SoundManager.play("scale", "chain_pull")
 	
 	ap_states.play("Part4")
-	
-	await get_tree().create_timer(2, false).timeout
-	
-	#SoundManager.play_varied("scale", "scale_on_table", randf_range(0.9, 1.1))
-	
-	await get_tree().create_timer(2.5, false).timeout
-	#SoundManager.play_varied("scale", "card_bounce", randf_range(0.8, 1.1))
-	#SoundManager.play_varied("scale", "card_bounce", randf_range(0.8, 1.1))
-	
-	await get_tree().create_timer(0.5, false).timeout
-	#SoundManager.play_varied("scale", "card_bounce", 1, linear_to_db(0.25))
-	#SoundManager.play_varied("scale", "card_bounce", 1, linear_to_db(0.25))
 ##
 
 func _pick_rand_case_id():
