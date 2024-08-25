@@ -62,7 +62,6 @@ script = ExtResource("4_fdghg")
 
 [node name="RepuationStats" type="Node" parent="."]
 script = ExtResource("5_4xgmw")
-StartingClergyRep = 1
 
 [node name="PauseLayer" type="CanvasLayer" parent="."]
 process_mode = 2

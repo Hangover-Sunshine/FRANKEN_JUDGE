@@ -1,9 +1,10 @@
-[gd_scene load_steps=89 format=3 uid="uid://2nl8bwm5pvgk"]
+[gd_scene load_steps=90 format=3 uid="uid://2nl8bwm5pvgk"]
 
 [ext_resource type="Script" path="res://scripts/game/game_overlay.gd" id="1_hcafl"]
 [ext_resource type="FontFile" uid="uid://73eyyuro8nvv" path="res://assets/fonts/PirataOne.ttf" id="1_qps4p"]
 [ext_resource type="FontFile" uid="uid://cqxld14ctgocv" path="res://assets/fonts/MedulaOne.ttf" id="2_o6xmb"]
 [ext_resource type="PackedScene" uid="uid://ntpnt0u7qah3" path="res://prefabs/gui/background.tscn" id="2_yuue2"]
+[ext_resource type="Script" path="res://scripts/game/game_overlay/lightning_controller.gd" id="3_2gsow"]
 [ext_resource type="Script" path="res://scripts/game/game_overlay/reputation.gd" id="3_4svti"]
 [ext_resource type="PackedScene" uid="uid://dxy4n82notrv7" path="res://prefabs/lightning/clergy_bolt.tscn" id="3_84dlq"]
 [ext_resource type="Texture2D" uid="uid://dvg5oc3axuiqe" path="res://assets/particle/Circle1.png" id="3_bg1du"]
@@ -45,7 +46,7 @@
 
 [sub_resource type="Animation" id="Animation_fi0l2"]
 resource_name = "Part1"
-length = 8.0
+length = 5.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -173,14 +174,14 @@ tracks/10/path = NodePath("BigDays:modulate")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
-"times": PackedFloat32Array(0, 4.5, 7.5),
+"times": PackedFloat32Array(0, 4.5, 5.5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 tracks/11/type = "value"
 tracks/11/imported = false
-tracks/11/enabled = true
+tracks/11/enabled = false
 tracks/11/path = NodePath("Society:modulate")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
@@ -192,7 +193,7 @@ tracks/11/keys = {
 }
 tracks/12/type = "value"
 tracks/12/imported = false
-tracks/12/enabled = true
+tracks/12/enabled = false
 tracks/12/path = NodePath("Reputation:modulate")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
@@ -755,7 +756,7 @@ tracks/15/keys = {
 
 [sub_resource type="Animation" id="Animation_8ymef"]
 resource_name = "Part5"
-length = 10.0
+length = 5.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -819,115 +820,142 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Society:position")
+tracks/5/path = NodePath("LilDays:visible")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(4, 5),
-"transitions": PackedFloat32Array(-2, 1),
-"update": 0,
-"values": [Vector2(1194, 74), Vector2(1092, 550)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("LilDays:visible")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
 }
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("Society:rotation")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(4, 4.5, 4.7, 5, 5.3),
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Society:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(2.7, 3.2, 3.5, 3.9, 4.4),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 0.5),
 "update": 0,
 "values": [0.0, -0.174533, -0.174533, 0.0698132, 0.0]
 }
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("LilDays:modulate")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("LilDays:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
 "times": PackedFloat32Array(0, 0.6, 1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("WinningCard:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 1.2, 2.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(794, 1131), Vector2(794, 1131), Vector2(784, 500)]
+}
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("WinningCard:position")
+tracks/9/path = NodePath("Scale:position")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(0, 1.5, 2.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(794, 1131), Vector2(794, 1131), Vector2(430, 500)]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("Scale:position")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(0, 1, 1.5),
+"times": PackedFloat32Array(0, 0.5, 1),
 "transitions": PackedFloat32Array(-0.5, 2, 1),
 "update": 0,
 "values": [Vector2(960, 740), Vector2(960, 696), Vector2(960, 1508)]
 }
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("WinningCard:rotation")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
-"times": PackedFloat32Array(1.3, 1.5, 2.4, 2.6, 2.8, 3.1, 3.5, 5.5, 5.8, 6.1, 6.4, 6.7, 7, 7.3, 7.6, 7.9, 8.2, 8.5, 8.8, 9.1),
-"transitions": PackedFloat32Array(1, 1, 0.5, -0.5, -2, 0.5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [0.0, -0.0872665, -0.0872665, 0.0872665, -0.0349066, 0.0174533, 0.0, 0.0, -0.174533, 0.174533, -0.174533, 0.174533, -0.174533, 0.174533, -0.174533, 0.174533, -0.174533, 0.174533, -0.174533, 0.174533]
-}
-tracks/12/type = "value"
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/path = NodePath("WinningCard:modulate")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/keys = {
-"times": PackedFloat32Array(0, 8.2, 9.3),
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("WinningCard:modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 2.7, 3.8),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
-tracks/13/type = "value"
-tracks/13/imported = false
-tracks/13/enabled = true
-tracks/13/path = NodePath("Society:scale")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/keys = {
-"times": PackedFloat32Array(7.9, 8.2, 8.5, 8.8, 9.1, 9.6),
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Society:scale")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(2.7, 3, 3.3, 3.6, 3.9, 4.4),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(1, 1), Vector2(0.95, 1.05), Vector2(1.05, 0.95), Vector2(0.9, 1.1), Vector2(1.1, 0.9), Vector2(1, 1)]
 }
+tracks/12/type = "method"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("WinningCard")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(1.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.8, 1.2],
+"method": &"play_swoosh"
+}]
+}
+tracks/13/type = "method"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Society")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(3, 4.4, 4.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"values": [{
+"args": [],
+"method": &"show_changes_to_stats"
+}, {
+"args": [],
+"method": &"hide_changes_to_stats"
+}, {
+"args": [],
+"method": &"update_stats"
+}]
+}
+tracks/14/type = "method"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("LightningController")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(2.3, 3.6),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"emit_bolts"
+}, {
+"args": [],
+"method": &"disable_bolts"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_no2no"]
 resource_name = "Part6"
-length = 8.5
+length = 5.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -942,87 +970,44 @@ tracks/0/keys = {
 }
 tracks/1/type = "value"
 tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Reputation:position")
+tracks/1/enabled = false
+tracks/1/path = NodePath("Reputation:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 1, 3.6, 4, 8, 8.2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(118, 51), Vector2(267, 562), Vector2(267, 562), Vector2(629, 562), Vector2(629, 562), Vector2(118, 51)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Reputation:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.7, 1, 1.5, 1.7, 2, 2.3, 2.6, 2.9, 3.2, 3.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [0.0, 0.0872665, 0.0872665, 0.0, 0.0, 0.10472, -0.261799, -0.10472, 0.139626, -0.174533, 0.15708, 0.0]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Society:scale")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 1.2, 1.5, 1.9, 2.3, 2.6, 2.9, 3.2, 3.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1.05, 0.95), Vector2(0.95, 1.05), Vector2(1.05, 0.95), Vector2(1.05, 1.05), Vector2(0.95, 0.9), Vector2(0.9, 1.05), Vector2(1, 1)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Society:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 1.2, 1.9, 3.1, 4.2, 4.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(1092, 550), Vector2(1092, 550), Vector2(1092, 450), Vector2(1092, 450), Vector2(1092, 550), Vector2(1194, 74)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Society:modulate")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 3.1, 4),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Reputation:modulate")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(7.7, 8),
+"times": PackedFloat32Array(3, 4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("Society:rotation")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0, 1.2, 1.5, 4.3, 4.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = false
+tracks/2/path = NodePath("Society:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.5, 2.4),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.0, 0.0, -0.261799, -0.261799, 0.0]
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Reputation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.5, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"show_changes"
+}, {
+"args": [],
+"method": &"update_reputations"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_glr1j"]
@@ -1765,11 +1750,94 @@ libraries = {
 "": SubResource("AnimationLibrary_rkl8t")
 }
 
-[node name="ClergyBolt" parent="." instance=ExtResource("3_84dlq")]
+[node name="Markers" type="Node2D" parent="."]
 
-[node name="NobilityBolt" parent="." instance=ExtResource("4_8lrjn")]
+[node name="PED" type="Marker2D" parent="Markers"]
+position = Vector2(1477, 208)
+gizmo_extents = 60.0
 
-[node name="PeasantBolt" parent="." instance=ExtResource("5_lb0gc")]
+[node name="PHE" type="Marker2D" parent="Markers"]
+position = Vector2(1477, 359)
+gizmo_extents = 60.0
+
+[node name="PLA" type="Marker2D" parent="Markers"]
+position = Vector2(1477, 307)
+gizmo_extents = 60.0
+
+[node name="PTA" type="Marker2D" parent="Markers"]
+position = Vector2(1477, 156)
+gizmo_extents = 60.0
+
+[node name="PPO" type="Marker2D" parent="Markers"]
+position = Vector2(1477, 258)
+gizmo_extents = 60.0
+
+[node name="NED" type="Marker2D" parent="Markers"]
+position = Vector2(1633, 208)
+gizmo_extents = 60.0
+
+[node name="NHE" type="Marker2D" parent="Markers"]
+position = Vector2(1633, 359)
+gizmo_extents = 60.0
+
+[node name="NLA" type="Marker2D" parent="Markers"]
+position = Vector2(1633, 307)
+gizmo_extents = 60.0
+
+[node name="NTA" type="Marker2D" parent="Markers"]
+position = Vector2(1633, 156)
+gizmo_extents = 60.0
+
+[node name="NPO" type="Marker2D" parent="Markers"]
+position = Vector2(1633, 258)
+gizmo_extents = 60.0
+
+[node name="CED" type="Marker2D" parent="Markers"]
+position = Vector2(1787, 208)
+gizmo_extents = 60.0
+
+[node name="CHE" type="Marker2D" parent="Markers"]
+position = Vector2(1787, 359)
+gizmo_extents = 60.0
+
+[node name="CLA" type="Marker2D" parent="Markers"]
+position = Vector2(1787, 307)
+gizmo_extents = 60.0
+
+[node name="CTA" type="Marker2D" parent="Markers"]
+position = Vector2(1787, 156)
+gizmo_extents = 60.0
+
+[node name="CPO" type="Marker2D" parent="Markers"]
+position = Vector2(1787, 258)
+gizmo_extents = 60.0
+
+[node name="LightningController" type="Node2D" parent="."]
+script = ExtResource("3_2gsow")
+
+[node name="ClergyBolt" parent="LightningController" instance=ExtResource("3_84dlq")]
+
+[node name="ClergyBolt2" parent="LightningController" instance=ExtResource("3_84dlq")]
+
+[node name="ClergyBolt3" parent="LightningController" instance=ExtResource("3_84dlq")]
+
+[node name="ClergyBolt4" parent="LightningController" instance=ExtResource("3_84dlq")]
+
+[node name="NobilityBolt" parent="LightningController" instance=ExtResource("4_8lrjn")]
+
+[node name="NobilityBolt2" parent="LightningController" instance=ExtResource("4_8lrjn")]
+
+[node name="NobilityBolt3" parent="LightningController" instance=ExtResource("4_8lrjn")]
+
+[node name="NobilityBolt4" parent="LightningController" instance=ExtResource("4_8lrjn")]
+
+[node name="PeasantBolt" parent="LightningController" instance=ExtResource("5_lb0gc")]
+
+[node name="PeasantBolt2" parent="LightningController" instance=ExtResource("5_lb0gc")]
+
+[node name="PeasantBolt3" parent="LightningController" instance=ExtResource("5_lb0gc")]
+
+[node name="PeasantBolt4" parent="LightningController" instance=ExtResource("5_lb0gc")]
 
 [node name="Portrait" type="Control" parent="."]
 layout_mode = 3
@@ -2394,6 +2462,7 @@ text = "(+00)"
 
 [node name="LilDays" type="Control" parent="."]
 visible = false
+modulate = Color(1, 1, 1, 0)
 layout_mode = 3
 anchors_preset = 0
 offset_left = 431.0
@@ -2581,9 +2650,9 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -360.0
+offset_left = -340.0
 offset_top = -110.0
-offset_right = 340.0
+offset_right = 360.0
 offset_bottom = 690.0
 grow_horizontal = 2
 rotation = 0.0966646
@@ -2595,9 +2664,9 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -360.0
+offset_left = -340.0
 offset_top = -110.0
-offset_right = 340.0
+offset_right = 360.0
 offset_bottom = 690.013
 grow_horizontal = 2
 pivot_offset = Vector2(350, 0)
@@ -2608,9 +2677,9 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -360.0
+offset_left = -340.0
 offset_top = -110.0
-offset_right = 340.0
+offset_right = 360.0
 offset_bottom = 690.0
 grow_horizontal = 2
 rotation = -0.0966646
@@ -2626,7 +2695,7 @@ mouse_filter = 2
 
 [node name="Scale" type="Node2D" parent="."]
 visible = false
-position = Vector2(960, 1506)
+position = Vector2(960, 1508)
 script = ExtResource("11_svn5q")
 HoldDuration = 3.5
 
@@ -2649,10 +2718,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 752.0
-offset_top = -1122.0
-offset_right = 1097.0
-offset_bottom = -701.98
+offset_left = -170.0
+offset_top = -1450.0
+offset_right = 175.0
+offset_bottom = -1029.98
 grow_horizontal = 2
 grow_vertical = 0
 
@@ -2702,11 +2771,11 @@ modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(345, 420)
 layout_mode = 3
 anchors_preset = 0
-offset_left = 430.0
+offset_left = 784.0
 offset_top = 500.0
-offset_right = 775.0
+offset_right = 1129.0
 offset_bottom = 920.01
-rotation = 0.174533
+rotation = 0.00109083
 mouse_filter = 2
 script = ExtResource("19_u43l4")
 

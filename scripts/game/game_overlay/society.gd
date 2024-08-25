@@ -153,8 +153,8 @@ func changes_to_stats(affected_stats):
 	_changed_stats = affected_stats
 ##
 
-func show_changes_to_stats(effects:Array[BaseEffectResource]):
-	_hovered_over_card(effects)
+func show_changes_to_stats():
+	_hovered_over_card(_changed_stats)
 ##
 
 func hide_changes_to_stats():
