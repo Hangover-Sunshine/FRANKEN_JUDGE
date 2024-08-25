@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cdx15nqmqr1cu"]
+[gd_scene load_steps=22 format=3 uid="uid://cdx15nqmqr1cu"]
 
 [ext_resource type="Script" path="res://scripts/menus/menu_pregame.gd" id="1_3jfox"]
 [ext_resource type="FontFile" uid="uid://73eyyuro8nvv" path="res://assets/fonts/PirataOne.ttf" id="2_mimgg"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cbw6yyak4eu4g" path="res://assets/pregame/Pregame5.png" id="9_i6jym"]
 [ext_resource type="Texture2D" uid="uid://cqibirulyh3j2" path="res://assets/pregame/Pregame6.png" id="10_osh57"]
 [ext_resource type="Texture2D" uid="uid://dnhvj3rt18pap" path="res://assets/pregame/Pregame7.png" id="11_dnvj7"]
+[ext_resource type="Texture2D" uid="uid://d0kgrxjbrrma0" path="res://assets/pregame/Pregame8.png" id="12_6xd74"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q47eg"]
 atlas = ExtResource("6_dwn7y")
@@ -40,6 +41,10 @@ region = Rect2(0, 0, 1800, 650)
 atlas = ExtResource("11_dnvj7")
 region = Rect2(0, 0, 1800, 650)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_rlqx1"]
+atlas = ExtResource("12_6xd74")
+region = Rect2(0, 0, 1800, 650)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_u2bfj"]
 animations = [{
 "frames": [{
@@ -63,6 +68,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_w3qef")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rlqx1")
 }],
 "loop": false,
 "name": &"default",
