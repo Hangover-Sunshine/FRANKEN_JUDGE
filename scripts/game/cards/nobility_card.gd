@@ -68,6 +68,7 @@ func _on_timer_timeout():
 
 func _on_mouse_entered():
 	GlobalSignals.emit_signal("hovered_over_card", _effects)
+	GlobalSignals.emit_signal("hovered_over_card_fac", GlobalData.Faction.NOBILITY)
 ##
 
 func _on_mouse_exited():

@@ -113,6 +113,7 @@ func _mouse_hovering(effects):
 			hand_over_left.visible = true
 		else:
 			hand_over_right.visible = true
+		##
 	##
 ##
 

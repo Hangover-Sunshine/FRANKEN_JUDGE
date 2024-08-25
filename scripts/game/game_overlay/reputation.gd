@@ -15,7 +15,7 @@ extends Control
 var _changed_stats:Dictionary
 
 func _ready():
-	GlobalSignals.connect("hovered_over_card", _hovered_over_card)
+	GlobalSignals.connect("hovered_over_card_fac", _hovered_over_card)
 	GlobalSignals.connect("not_hovering", _not_hovering)
 	
 	for key in rep_rates.keys():
@@ -37,8 +37,26 @@ func load_clergy_rep(rep):
 
 func change_bar_display(show_peasants:bool, show_nobility:bool, show_clergy:bool):
 	bars[0].get_parent().visible = show_peasants
+	if show_peasants:
+		rep_rates[0].visible = true
+		rep_rates[0].modulate = Color(1, 1, 1, 0)
+	else:
+		rep_rates[0].visible = false
+	##
 	bars[1].get_parent().visible = show_nobility
+	if show_nobility:
+		rep_rates[1].visible = true
+		rep_rates[1].modulate = Color(1, 1, 1, 0)
+	else:
+		rep_rates[1].visible = false
+	##
 	bars[2].get_parent().visible = show_clergy
+	if show_clergy:
+		rep_rates[2].visible = true
+		rep_rates[2].modulate = Color(1, 1, 1, 0)
+	else:
+		rep_rates[2].visible = false
+	##
 ##
 
 func show_all_bars():
@@ -47,25 +65,14 @@ func show_all_bars():
 	bars[2].get_parent().visible = true
 ##
 
-func _hovered_over_card(effects:Array[BaseEffectResource]):
-	for eff in effects:
-		if eff.Affect != GlobalData.Effects.REPUTATION:
-			continue
-		##
-		
-		rep_rates[eff.Group].visible = true
-		
-		if eff.ValueChange < 0:
-			rep_rates[eff.Group].text = "-" + (GlobalData.TWO_NUM_DISPLAY % -eff.ValueChange)
-		else:
-			rep_rates[eff.Group].text = "+" + (GlobalData.TWO_NUM_DISPLAY % eff.ValueChange)
-		##
-	##
+func _hovered_over_card(faction:GlobalData.Faction):
+	rep_rates[faction].text = "(+" + (GlobalData.TWO_NUM_DISPLAY % 10) + ")"
+	rep_rates[faction].modulate = Color(1, 1, 1, 1)
 ##
 
 func _not_hovering():
 	for key in rep_rates.keys():
-		rep_rates[key].visible = false
+		rep_rates[key].modulate = Color(1, 1, 1, 0)
 	##
 ##
 
