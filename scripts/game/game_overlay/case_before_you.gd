@@ -125,15 +125,6 @@ func _left_selected():
 	play_sound = true
 	ap_scale_control.play("press_left")
 	clicking_sound = SoundManager.instance("scale", "clicking")
-	
-	#await get_tree().create_timer(1.4, false).timeout
-	#
-	#if play_sound == false:
-		#return
-	###
-	#
-	#SoundManager.play("scale", "thumb_scale")
-	#clicking_sound.trigger()
 ##
 
 func _left_released():
@@ -146,15 +137,6 @@ func _right_selected():
 	play_sound = true
 	ap_scale_control.play("press_right")
 	clicking_sound = SoundManager.instance("scale", "clicking")
-	
-	#await get_tree().create_timer(1.4, false).timeout
-	#
-	#if play_sound == false:
-		#return
-	###
-	#
-	#SoundManager.play("scale", "thumb_scale")
-	#clicking_sound.trigger()
 ##
 
 func _right_released():
