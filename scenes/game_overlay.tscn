@@ -760,7 +760,7 @@ tracks/16/path = NodePath("Scale")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
-"times": PackedFloat32Array(1, 4.5, 5),
+"times": PackedFloat32Array(1.4, 4.5, 5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "values": [{
 "args": [],
@@ -1577,6 +1577,23 @@ tracks/5/keys = {
 "update": 0,
 "values": [0.0, 0.0, -0.0698132]
 }
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(1.4, 1.6),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"thumb_hit"
+}, {
+"args": [],
+"method": &"play_clicking_sound"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_7m4iw"]
 resource_name = "press_right"
@@ -1652,6 +1669,23 @@ tracks/5/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(-513, 246), Vector2(-513, 246), Vector2(-513, 206)]
+}
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.9, 1.1),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"thumb_hit"
+}, {
+"args": [],
+"method": &"play_clicking_sound"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vgkn6"]
@@ -2738,7 +2772,7 @@ mouse_filter = 2
 
 [node name="Scale" type="Node2D" parent="."]
 visible = false
-position = Vector2(960, 740)
+position = Vector2(960, 1506)
 script = ExtResource("11_svn5q")
 HoldDuration = 3.5
 
@@ -2755,15 +2789,16 @@ position = Vector2(-513, 246)
 texture = ExtResource("9_7s0gt")
 
 [node name="LeftMegaCard" parent="Scale/Scale_Body/Scale_Left" instance=ExtResource("18_4l78d")]
+visible = false
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -400.5
-offset_top = -492.0
+offset_top = -1532.0
 offset_right = -55.5
-offset_bottom = -71.9756
+offset_bottom = -1111.98
 grow_horizontal = 2
 grow_vertical = 0
 
@@ -2772,10 +2807,11 @@ position = Vector2(514, 246)
 texture = ExtResource("9_7s0gt")
 
 [node name="RightMegaCard" parent="Scale/Scale_Body/Scale_Right" instance=ExtResource("18_4l78d")]
+visible = false
 offset_left = -170.0
-offset_top = -410.0
+offset_top = -1450.0
 offset_right = 175.0
-offset_bottom = 10.0
+offset_bottom = -1030.0
 IsRight = true
 
 [node name="HandOverLeft" type="Sprite2D" parent="Scale"]
@@ -2793,6 +2829,7 @@ autoplay = "Throb"
 [node name="HandOverRight" type="Sprite2D" parent="Scale"]
 visible = false
 position = Vector2(779, -280)
+rotation = -0.00349066
 texture = ExtResource("21_44ht1")
 
 [node name="AP_RightHand" type="AnimationPlayer" parent="Scale/HandOverRight"]

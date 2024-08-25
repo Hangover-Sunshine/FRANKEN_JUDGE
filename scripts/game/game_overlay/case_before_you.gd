@@ -126,14 +126,14 @@ func _left_selected():
 	ap_scale_control.play("press_left")
 	clicking_sound = SoundManager.instance("scale", "clicking")
 	
-	await get_tree().create_timer(1.4, false).timeout
-	
-	if play_sound == false:
-		return
-	##
-	
-	SoundManager.play("scale", "thumb_scale")
-	clicking_sound.trigger()
+	#await get_tree().create_timer(1.4, false).timeout
+	#
+	#if play_sound == false:
+		#return
+	###
+	#
+	#SoundManager.play("scale", "thumb_scale")
+	#clicking_sound.trigger()
 ##
 
 func _left_released():
@@ -147,14 +147,14 @@ func _right_selected():
 	ap_scale_control.play("press_right")
 	clicking_sound = SoundManager.instance("scale", "clicking")
 	
-	await get_tree().create_timer(1.4, false).timeout
-	
-	if play_sound == false:
-		return
-	##
-	
-	SoundManager.play("scale", "thumb_scale")
-	clicking_sound.trigger()
+	#await get_tree().create_timer(1.4, false).timeout
+	#
+	#if play_sound == false:
+		#return
+	###
+	#
+	#SoundManager.play("scale", "thumb_scale")
+	#clicking_sound.trigger()
 ##
 
 func _right_released():
@@ -173,4 +173,12 @@ func play_card_bounced():
 
 func play_card_bounced_quieter():
 	SoundManager.play_varied("scale", "card_bounce", 1, linear_to_db(0.25))
+##
+
+func play_clicking_sound():
+	clicking_sound.trigger()
+##
+
+func thumb_hit():
+	SoundManager.play("scale", "thumb_scale")
 ##
