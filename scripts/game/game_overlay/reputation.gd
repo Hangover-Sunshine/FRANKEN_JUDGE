@@ -111,6 +111,7 @@ func show_changes():
 			rep_rates[key].text = "+" + (GlobalData.TWO_NUM_DISPLAY % _changed_stats[key])
 		##
 		
+		rep_rates[key].modulate = Color(1, 1, 1, 1)
 		rep_rates[key].visible = true
 	##
 ##

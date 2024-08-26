@@ -53,8 +53,12 @@ func _confirm_case(effects:Array[BaseEffectResource],
 		GlobalData.Faction.PEASANTS: 0
 	}
 	
-	changes[winner] += 10
-	changes[loser] -= 5
+	if winner != loser:
+		changes[winner] += 10
+		changes[loser] -= 5
+	else:
+		changes[winner] += 5
+	##
 	
 	# Update stats
 	for eff in effects:

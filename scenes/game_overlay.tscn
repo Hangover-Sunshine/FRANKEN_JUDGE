@@ -2573,7 +2573,6 @@ text = "00 / 30"
 horizontal_alignment = 1
 
 [node name="BigDays" type="Control" parent="."]
-modulate = Color(1, 1, 1, 0)
 layout_mode = 3
 anchors_preset = 0
 offset_left = 943.0
@@ -2584,6 +2583,7 @@ mouse_filter = 2
 script = ExtResource("4_lmcgd")
 
 [node name="Day_Header" type="Label" parent="BigDays"]
+visible = false
 layout_mode = 0
 offset_left = -366.0
 offset_top = -95.0
@@ -2595,6 +2595,7 @@ text = "DAY"
 horizontal_alignment = 1
 
 [node name="Day_Number_Header" type="Label" parent="BigDays"]
+visible = false
 layout_mode = 0
 offset_left = -66.0
 offset_top = -95.0
@@ -2727,9 +2728,9 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 129.352
+offset_left = 149.352
 offset_top = 185.0
-offset_right = 829.352
+offset_right = 849.352
 offset_bottom = 985.0
 grow_horizontal = 2
 rotation = 0.20944
@@ -2741,9 +2742,9 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -360.648
+offset_left = -340.648
 offset_top = 100.0
-offset_right = 339.352
+offset_right = 359.352
 offset_bottom = 900.013
 grow_horizontal = 2
 pivot_offset = Vector2(350, 0)
@@ -2754,9 +2755,9 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -868.648
+offset_left = -848.648
 offset_top = 184.0
-offset_right = -168.648
+offset_right = -148.648
 offset_bottom = 984.0
 grow_horizontal = 2
 rotation = -0.20944
@@ -2772,7 +2773,7 @@ mouse_filter = 2
 
 [node name="Scale" type="Node2D" parent="."]
 visible = false
-position = Vector2(960, 1506)
+position = Vector2(960, 1508)
 script = ExtResource("11_svn5q")
 HoldDuration = 3.5
 
@@ -2795,10 +2796,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -400.5
-offset_top = -1532.0
-offset_right = -55.5
-offset_bottom = -1111.98
+offset_left = -170.0
+offset_top = -1450.0
+offset_right = 175.0
+offset_bottom = -1029.98
 grow_horizontal = 2
 grow_vertical = 0
 
