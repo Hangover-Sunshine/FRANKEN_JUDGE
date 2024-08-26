@@ -18,6 +18,8 @@ func _ready():
 	GlobalSignals.connect("update_stats_done", _update_stats_done)
 	$PauseLayer/HubPause.connect("unpause_by_button", _unpaused_by_button)
 	
+	MusicManager.set_volume(linear_to_db(1.0))
+	
 	# Shuffle the cases
 	CASES.shuffle()
 	
