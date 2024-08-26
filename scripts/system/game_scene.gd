@@ -43,7 +43,8 @@ func _unpaused_by_button():
 ##
 
 ## Fired when the case has been submit.
-func _confirm_case(effects:Array[BaseEffectResource], faction:GlobalData.Faction):
+func _confirm_case(effects:Array[BaseEffectResource],
+					winner:GlobalData.Faction, loser:GlobalData.Faction):
 	_curr_day += 1
 	
 	var changes:Dictionary = {
@@ -52,12 +53,12 @@ func _confirm_case(effects:Array[BaseEffectResource], faction:GlobalData.Faction
 		GlobalData.Faction.PEASANTS: 0
 	}
 	
-	changes[faction] += 10
+	changes[winner] += 10
+	changes[loser] -= 5
 	
 	# Update stats
 	for eff in effects:
 		_faction_stats.update_value_for(eff.Group, eff.Affect, eff.ValueChange)
-		##
 	##
 	
 	$Game_Overlay.change_society_stats_by(effects)

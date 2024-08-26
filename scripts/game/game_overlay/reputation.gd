@@ -13,6 +13,8 @@ extends Control
 }
 
 var _changed_stats:Dictionary
+var faction_one:int = -1
+var faction_two:int = -1
 
 func _ready():
 	GlobalSignals.connect("hovered_over_card_fac", _hovered_over_card)
@@ -40,6 +42,7 @@ func change_bar_display(show_peasants:bool, show_nobility:bool, show_clergy:bool
 	if show_peasants:
 		rep_rates[0].visible = true
 		rep_rates[0].modulate = Color(1, 1, 1, 0)
+		faction_one = 0
 	else:
 		rep_rates[0].visible = false
 	##
@@ -47,6 +50,11 @@ func change_bar_display(show_peasants:bool, show_nobility:bool, show_clergy:bool
 	if show_nobility:
 		rep_rates[1].visible = true
 		rep_rates[1].modulate = Color(1, 1, 1, 0)
+		if faction_one == -1:
+			faction_one = 1
+		else:
+			faction_two = 1
+		##
 	else:
 		rep_rates[1].visible = false
 	##
@@ -54,20 +62,39 @@ func change_bar_display(show_peasants:bool, show_nobility:bool, show_clergy:bool
 	if show_clergy:
 		rep_rates[2].visible = true
 		rep_rates[2].modulate = Color(1, 1, 1, 0)
+		if faction_one == -1:
+			faction_one = 2
+		else:
+			faction_two = 2
+		##
 	else:
 		rep_rates[2].visible = false
 	##
 ##
 
 func show_all_bars():
+	faction_one = -1
+	faction_two = -1
 	bars[0].get_parent().visible = true
 	bars[1].get_parent().visible = true
 	bars[2].get_parent().visible = true
 ##
 
 func _hovered_over_card(faction:GlobalData.Faction):
-	rep_rates[faction].text = "(+" + (GlobalData.TWO_NUM_DISPLAY % 10) + ")"
-	rep_rates[faction].modulate = Color(1, 1, 1, 1)
+	if faction_two != -1:
+		rep_rates[faction].text = "(+" + (GlobalData.TWO_NUM_DISPLAY % 10) + ")"
+		rep_rates[faction].modulate = Color(1, 1, 1, 1)
+		if faction == faction_one:
+			rep_rates[faction_two].text = "(-" + (GlobalData.TWO_NUM_DISPLAY % 5) + ")"
+			rep_rates[faction_two].modulate = Color(1, 1, 1, 1)
+		else:
+			rep_rates[faction_one].text = "(-" + (GlobalData.TWO_NUM_DISPLAY % 5) + ")"
+			rep_rates[faction_one].modulate = Color(1, 1, 1, 1)
+		##
+	else:
+		rep_rates[faction].text = "(+" + (GlobalData.TWO_NUM_DISPLAY % 5) + ")"
+		rep_rates[faction].modulate = Color(1, 1, 1, 1)
+	##
 ##
 
 func _not_hovering():

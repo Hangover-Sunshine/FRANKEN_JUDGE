@@ -1,7 +1,8 @@
 extends Node2D
 
 signal cases_left(cases:Array[BaseCaseResource])
-signal case_resolved(effects:Array[BaseEffectResource], faction:GlobalData.Faction)
+signal case_resolved(effects:Array[BaseEffectResource],
+						winner:GlobalData.Faction, loser:GlobalData.Faction)
 
 @onready var ap_states = $AP_States
 
@@ -149,20 +150,24 @@ func _case_complete(case, faction:GlobalData.Faction, case_desc, effects:Array[B
 	bg_chatter.release()
 	SoundManager.play("env", "CrowdGasp")
 	
-	var affected_parties:Array[GlobalData.Faction] = []
+	#var affected_parties:Array[GlobalData.Faction] = []
 	
 	$WinningCard.load_data(faction, case_desc, effects)
 	$LightningController.setup(faction, effects)
 	
-	for eff in effects:
-		if not (eff.Group in affected_parties):
-			affected_parties.append(eff.Group)
+	#for eff in effects:
+		#if not (eff.Group in affected_parties):
+			#affected_parties.append(eff.Group)
 		##
 	##
 	
 	$Society.changes_to_stats(effects)
 	
-	emit_signal("case_resolved", effects, faction)
+	if faction == case.PARTY_A:
+		emit_signal("case_resolved", effects, faction, case.PARTY_B)
+	else:
+		emit_signal("case_resolved", effects, faction, case.PARTY_A)
+	##
 	
 	ap_states.play("Part5")
 ##
