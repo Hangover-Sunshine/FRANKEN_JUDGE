@@ -68,6 +68,10 @@ func get_angriest_faction():
 	var curr_lowest:int = _reputations[angriest]
 	var found:bool = false
 	
+	if curr_lowest < 33:
+		found = true
+	##
+	
 	for i in range(0, 3):
 		if _reputations[i] < 33 and _reputations[i] < curr_lowest:
 			found = true
