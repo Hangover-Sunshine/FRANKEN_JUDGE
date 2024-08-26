@@ -24,11 +24,11 @@ theme_override_constants/margin_top = 60
 theme_override_constants/margin_right = 60
 theme_override_constants/margin_bottom = 60
 
-[node name="Main_VBox" type="VBoxContainer" parent="Main_MC"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Main_MC"]
 layout_mode = 2
 alignment = 1
 
-[node name="Label" type="Label" parent="Main_MC/Main_VBox"]
+[node name="Label" type="Label" parent="Main_MC/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0.839216, 0.905882, 0.972549, 1)
@@ -38,43 +38,47 @@ text = "HANGOVER SUNSHINE - Version 1.2 - GMTK24 Game Jam"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Header_VBox" type="VBoxContainer" parent="Main_MC/Main_VBox"]
+[node name="SplashTitle" type="Sprite2D" parent="Main_MC/VBoxContainer"]
+position = Vector2(900, 365)
+texture = ExtResource("3_eetui")
+
+[node name="Header_VBox" type="VBoxContainer" parent="Main_MC/VBoxContainer"]
 custom_minimum_size = Vector2(0, 300)
 layout_mode = 2
 
-[node name="Button_HBox" type="HBoxContainer" parent="Main_MC/Main_VBox"]
+[node name="Button_HBox" type="HBoxContainer" parent="Main_MC/VBoxContainer"]
 layout_mode = 2
 alignment = 1
 
-[node name="Button_VBox" type="VBoxContainer" parent="Main_MC/Main_VBox/Button_HBox"]
+[node name="Button_VBox" type="VBoxContainer" parent="Main_MC/VBoxContainer/Button_HBox"]
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="Start_Button" type="Button" parent="Main_MC/Main_VBox/Button_HBox/Button_VBox"]
+[node name="Start_Button" type="Button" parent="Main_MC/VBoxContainer/Button_HBox/Button_VBox"]
 custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
 theme = ExtResource("3_bmako")
 text = "Start"
 
-[node name="Settings_Button" type="Button" parent="Main_MC/Main_VBox/Button_HBox/Button_VBox"]
+[node name="Settings_Button" type="Button" parent="Main_MC/VBoxContainer/Button_HBox/Button_VBox"]
 custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
 theme = ExtResource("3_bmako")
 text = "Settings"
 
-[node name="Exit_Button" type="Button" parent="Main_MC/Main_VBox/Button_HBox/Button_VBox"]
+[node name="Exit_Button" type="Button" parent="Main_MC/VBoxContainer/Button_HBox/Button_VBox"]
 custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
 theme = ExtResource("3_bmako")
 text = "Exit"
 
-[node name="SplashTitle" type="Sprite2D" parent="."]
-position = Vector2(960, 410)
-texture = ExtResource("3_eetui")
+[node name="Main_VBox" type="VBoxContainer" parent="Main_MC"]
+layout_mode = 2
+alignment = 1
 
-[connection signal="mouse_entered" from="Main_MC/Main_VBox/Button_HBox/Button_VBox/Start_Button" to="." method="_on_focus_entered"]
-[connection signal="pressed" from="Main_MC/Main_VBox/Button_HBox/Button_VBox/Start_Button" to="." method="_on_start_button_pressed"]
-[connection signal="mouse_entered" from="Main_MC/Main_VBox/Button_HBox/Button_VBox/Settings_Button" to="." method="_on_focus_entered"]
-[connection signal="pressed" from="Main_MC/Main_VBox/Button_HBox/Button_VBox/Settings_Button" to="." method="_on_settings_button_pressed"]
-[connection signal="mouse_entered" from="Main_MC/Main_VBox/Button_HBox/Button_VBox/Exit_Button" to="." method="_on_focus_entered"]
-[connection signal="pressed" from="Main_MC/Main_VBox/Button_HBox/Button_VBox/Exit_Button" to="." method="_on_exit_button_pressed"]
+[connection signal="mouse_entered" from="Main_MC/VBoxContainer/Button_HBox/Button_VBox/Start_Button" to="." method="_on_focus_entered"]
+[connection signal="pressed" from="Main_MC/VBoxContainer/Button_HBox/Button_VBox/Start_Button" to="." method="_on_start_button_pressed"]
+[connection signal="mouse_entered" from="Main_MC/VBoxContainer/Button_HBox/Button_VBox/Settings_Button" to="." method="_on_focus_entered"]
+[connection signal="pressed" from="Main_MC/VBoxContainer/Button_HBox/Button_VBox/Settings_Button" to="." method="_on_settings_button_pressed"]
+[connection signal="mouse_entered" from="Main_MC/VBoxContainer/Button_HBox/Button_VBox/Exit_Button" to="." method="_on_focus_entered"]
+[connection signal="pressed" from="Main_MC/VBoxContainer/Button_HBox/Button_VBox/Exit_Button" to="." method="_on_exit_button_pressed"]
