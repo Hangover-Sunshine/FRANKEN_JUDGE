@@ -46,6 +46,11 @@ texture = ExtResource("3_eetui")
 custom_minimum_size = Vector2(0, 300)
 layout_mode = 2
 
+[node name="ColorRect" type="ColorRect" parent="Main_MC/VBoxContainer/Header_VBox"]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
 [node name="Button_HBox" type="HBoxContainer" parent="Main_MC/VBoxContainer"]
 layout_mode = 2
 alignment = 1
@@ -71,10 +76,6 @@ custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
 theme = ExtResource("3_bmako")
 text = "Exit"
-
-[node name="Main_VBox" type="VBoxContainer" parent="Main_MC"]
-layout_mode = 2
-alignment = 1
 
 [connection signal="mouse_entered" from="Main_MC/VBoxContainer/Button_HBox/Button_VBox/Start_Button" to="." method="_on_focus_entered"]
 [connection signal="pressed" from="Main_MC/VBoxContainer/Button_HBox/Button_VBox/Start_Button" to="." method="_on_start_button_pressed"]
